@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --clinic-primary: #0ea5e9;
+  --clinic-secondary: #64748b;
+  --clinic-accent: #10b981;
+  --clinic-text: #1e293b;
+  --clinic-text-light: #64748b;
+  --clinic-bg: #ffffff;
+  --clinic-bg-light: #f8fafc;
+}
+
+/* Dark mode variables */
+:root.dark {
+  --clinic-text: #f1f5f9;
+  --clinic-text-light: #cbd5e1;
+  --clinic-bg: #0f172a;
+  --clinic-bg-light: #1e293b;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--clinic-text);
+  background-color: var(--clinic-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-primary-600 font-medium py-3 px-6 rounded-lg border border-primary-600 transition-colors duration-200;
+  }
+  
+  .btn-outline-white {
+    @apply bg-transparent hover:bg-white hover:text-primary-600 text-white font-medium py-3 px-6 rounded-lg border border-white transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-heading {
+    @apply text-gray-900 font-heading;
+  }
+  
+  .text-body {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  /* Modern form controls powered by @tailwindcss/forms */
+  .form-input {
+    @apply block w-full rounded-lg border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-300;
+  }
+  .form-textarea {
+    @apply block w-full rounded-lg border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-3 resize-y bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-300;
+  }
+  .form-select {
+    @apply block w-full rounded-lg border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+  .form-checkbox {
+    @apply h-4 w-4 text-primary-600 border-gray-300 dark:border-gray-600 rounded focus:ring-primary-500 bg-white dark:bg-gray-800 transition-colors duration-300;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  @apply rounded-lg shadow-sm;
+}
+
+/* Custom marker styles */
+.clinic-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.clinic-marker {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clinic-marker-inner {
+  width: 32px;
+  height: 32px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+  border: 3px solid white;
+}
+
+.clinic-marker-inner svg {
+  color: white;
+}
+
+/* Compact/Simple marker styles */
+.simple-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.simple-marker {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-marker-inner {
+  width: 20px;
+  height: 20px;
+  background: #0ea5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(14, 165, 233, 0.4);
+  border: 2px solid white;
+}
+
+.simple-marker-inner svg {
+  color: white;
+}
+
+/* Popup personalizado */
+.clinic-popup .leaflet-popup-content-wrapper {
+  @apply bg-white rounded-lg shadow-lg border border-gray-200;
+  padding: 0;
+}
+
+.clinic-popup .leaflet-popup-content {
+  margin: 0;
+  min-width: 280px;
+}
+
+.clinic-popup .leaflet-popup-tip {
+  @apply bg-white border-gray-200;
+}
+
+/* Controles del mapa */
+.leaflet-control-zoom a {
+  @apply bg-white border border-gray-300 text-gray-700;
+}
+
+.leaflet-control-zoom a:hover {
+  @apply bg-gray-50 border-gray-400;
+}
+
+/* Attribution */
+.leaflet-control-attribution {
+  @apply bg-white bg-opacity-80 text-gray-600 text-xs;
+}
+
+/* WhatsApp Button Pulse Animation */
+.whatsapp-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
