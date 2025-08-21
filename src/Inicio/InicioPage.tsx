@@ -239,7 +239,114 @@ const Inicio: React.FC = () => {
                 <div className="absolute top-1/4 right-1/6 w-[300px] h-[300px] bg-gradient-to-br from-accent-400/20 to-accent-600/10 rounded-full blur-2xl animate-pulse-soft" style={{ animationDelay: '3s' }} />
                 <div className="absolute bottom-1/3 left-1/5 w-[200px] h-[200px] bg-gradient-to-br from-white/15 to-white/5 rounded-full blur-xl animate-pulse-soft" style={{ animationDelay: '5s' }} />
 
-                {/* CARRUSEL INFORMATIVO MEJORADO - Campañas, Protocolos y Propuestas de Valor */}
+                
+
+                {/* Contenido principal */}
+                <div className="w-full max-w-7xl flex flex-col items-center text-center relative z-10">
+
+                    {/* Título principal RENOVADO - RESPONSIVO */}
+                    <div className="mb-6 sm:mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-3 sm:mb-4 tracking-tight leading-none">
+                            <span className="block text-azul-600 drop-shadow-2xl">Red</span>
+                            <span className="block bg-gradient-to-r from-azul via-medical-400 to-medical-500 bg-clip-text text-transparent drop-shadow-xl">
+                                Medicron
+                            </span>
+                            <span className="block text-medical-600 drop-shadow-2xl">IPS</span>
+                        </h1>
+
+                        {/* Línea decorativa animada */}
+                        <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-azul to-transparent mx-auto animate-pulse-soft"></div>
+                    </div>
+
+                    {/* Subtítulo impactante - RESPONSIVO */}
+                    <div className="max-w-5xl text-center mb-12 sm:mb-16 animate-slide-up px-4" style={{ animationDelay: '0.4s' }}>
+                        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-white font-bold mb-4 sm:mb-6 leading-tight font-display">
+                            Cuidando vidas con <span className="text-azul-600">Calidad</span><br />
+                            y <span className="text-medical-600">Humanidad</span>
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+                            <span className="font-semibold text-white">Más de 20 años</span> transformando vidas en el sur de Colombia con
+                            <span className="text-medical-600 font-semibold"> tecnología de vanguardia</span>,
+                            <span className="text-azul-500 font-semibold"> atención humanizada</span> y
+                            <span className="text-white font-semibold"> compromiso absoluto</span> con tu salud.
+                        </p>
+                    </div>
+
+                    {/* Botones de acción RENOVADOS - RESPONSIVOS */}
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-16 sm:mb-20 animate-slide-up px-4" style={{ animationDelay: '0.6s' }}>
+                        <button
+                            onClick={() => setShowPortafolioModal(true)}
+                            className="group relative bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-black px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-glow transition-all duration-500 text-lg sm:text-xl hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-4 focus:ring-accent-400/50 overflow-hidden"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-r from-accent-400 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                            <div className="relative z-10 flex items-center justify-center">
+                                <MdHealthAndSafety className="mr-3 sm:mr-4 group-hover:rotate-12 transition-transform duration-300" size={24} />
+                                <span className="tracking-wide text-sm sm:text-base">DESCUBRE NUESTROS SERVICIOS</span>
+                                <div className="ml-3 sm:ml-4 w-5 sm:w-6 h-5 sm:h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                                    <FaArrowRight className="w-2.5 sm:w-3 h-2.5 sm:h-3 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </button>
+
+                        <Link
+                            to="/sedes"
+                            className="group inline-flex items-center justify-center bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-large border border-white/30 hover:border-white/50 transition-all duration-500 text-lg sm:text-xl hover:scale-110 focus:outline-none focus:ring-4 focus:ring-white/30"
+                        >
+                            <FaMapMarkerAlt className="mr-3 sm:mr-4 group-hover:animate-bounce-subtle" size={20} />
+                            <span className="tracking-wide text-sm sm:text-base">ENCUENTRA TU SEDE</span>
+                        </Link>
+                    </div>
+
+                    {/* Estadísticas destacadas RENOVADAS - RESPONSIVAS */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full max-w-6xl mb-12 sm:mb-16 animate-slide-up px-4" style={{ animationDelay: '0.8s' }}>
+                        {estadisticasAvanzadas.map((stat, index) => (
+                            <div key={index} className="group bg-white/5 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center border border-white/10 shadow-soft hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-2 transition-all duration-500">
+                                <div className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.color} rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-glow`}>
+                                    <stat.icon className="text-white text-lg sm:text-2xl md:text-3xl" />
+                                </div>
+                                <div className="text-xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2 font-display group-hover:text-accent-300 transition-colors">{stat.numero}</div>
+                                <div className="text-white/80 font-semibold text-xs sm:text-sm md:text-base group-hover:text-white transition-colors">{stat.descripcion}</div>
+
+                                {/* Barra de progreso decorativa */}
+                                <div className="w-full bg-white/10 rounded-full h-1 mt-2 sm:mt-3 overflow-hidden">
+                                    <div className="h-full bg-gradient-to-r from-medical-400 to-accent-400 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" style={{ animationDelay: `${index * 200}ms` }}></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    
+                </div>
+
+                {/* Scroll indicator elegante */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle cursor-pointer group" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+                    <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center group-hover:border-white/60 transition-colors">
+                        <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse-soft group-hover:bg-white/80 transition-colors"></div>
+                    </div>
+                    <p className="text-white/50 text-xs mt-2 group-hover:text-white/70 transition-colors">Explora</p>
+                </div>
+
+                {/* Partículas flotantes decorativas */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-1/4 left-1/12 w-2 h-2 bg-medical-400/60 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
+                    <div className="absolute top-1/3 right-1/6 w-1 h-1 bg-accent-400/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+                    <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-white/30 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+                    <div className="absolute top-1/2 right-1/12 w-1 h-1 bg-primary-400/70 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-medical-300/50 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+                    <div className="absolute top-1/5 left-1/3 w-1 h-1 bg-accent-300/60 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
+                </div>
+
+                {/* Overlay con imagen de fondo médica profesional */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-gradient-to-br from-primary-950/95 via-primary-900/90 to-medical-950/95 mix-blend-multiply"
+                    style={{
+                        backgroundImage: `url('/images/hero-bg.jpg')`,
+                        backgroundAttachment: 'fixed'
+                    }}
+                />
+            </section>
+
+            {/* CARRUSEL INFORMATIVO MEJORADO - Campañas, Protocolos y Propuestas de Valor */}
                 <section className="relative py-10 sm:py-8 md:py-12 px-3 sm:px-4 md:px-6 bg-transparent overflow-hidden">
                     <div className=" relative z-10">
 
@@ -340,139 +447,6 @@ const Inicio: React.FC = () => {
                         </div>
                     </div>
                 </section>
-
-                {/* Contenido principal */}
-                <div className="w-full max-w-7xl flex flex-col items-center text-center relative z-10">
-
-                    {/* Badge superior - RESPONSIVO */}
-                    <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border border-white/20 animate-fade-in">
-                        <div className="w-2 h-2 bg-medical-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
-                        <span className="text-white/90 font-semibold text-xs sm:text-sm tracking-wide">
-                            ✨ MÁS DE 100,000 PACIENTES ATENDIDOS CON EXCELENCIA
-                        </span>
-                    </div>
-
-                    {/* Título principal RENOVADO - RESPONSIVO */}
-                    <div className="mb-6 sm:mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-3 sm:mb-4 tracking-tight leading-none">
-                            <span className="block text-azul-600 drop-shadow-2xl">Red</span>
-                            <span className="block bg-gradient-to-r from-azul via-medical-400 to-medical-500 bg-clip-text text-transparent drop-shadow-xl">
-                                Medicron
-                            </span>
-                            <span className="block text-medical-600 drop-shadow-2xl">IPS</span>
-                        </h1>
-
-                        {/* Línea decorativa animada */}
-                        <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-azul to-transparent mx-auto animate-pulse-soft"></div>
-                    </div>
-
-                    {/* Subtítulo impactante - RESPONSIVO */}
-                    <div className="max-w-5xl text-center mb-12 sm:mb-16 animate-slide-up px-4" style={{ animationDelay: '0.4s' }}>
-                        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-white font-bold mb-4 sm:mb-6 leading-tight font-display">
-                            Cuidando vidas con <span className="text-azul-600">Calidad</span><br />
-                            y <span className="text-medical-600">Humanidad</span>
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                            <span className="font-semibold text-white">Más de 20 años</span> transformando vidas en el sur de Colombia con
-                            <span className="text-medical-600 font-semibold"> tecnología de vanguardia</span>,
-                            <span className="text-azul-500 font-semibold"> atención humanizada</span> y
-                            <span className="text-white font-semibold"> compromiso absoluto</span> con tu salud.
-                        </p>
-                    </div>
-
-                    {/* Botones de acción RENOVADOS - RESPONSIVOS */}
-                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-16 sm:mb-20 animate-slide-up px-4" style={{ animationDelay: '0.6s' }}>
-                        <button
-                            onClick={() => setShowPortafolioModal(true)}
-                            className="group relative bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-black px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-glow transition-all duration-500 text-lg sm:text-xl hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-4 focus:ring-accent-400/50 overflow-hidden"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-r from-accent-400 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                            <div className="relative z-10 flex items-center justify-center">
-                                <MdHealthAndSafety className="mr-3 sm:mr-4 group-hover:rotate-12 transition-transform duration-300" size={24} />
-                                <span className="tracking-wide text-sm sm:text-base">DESCUBRE NUESTROS SERVICIOS</span>
-                                <div className="ml-3 sm:ml-4 w-5 sm:w-6 h-5 sm:h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                                    <FaArrowRight className="w-2.5 sm:w-3 h-2.5 sm:h-3 group-hover:translate-x-1 transition-transform" />
-                                </div>
-                            </div>
-                        </button>
-
-                        <Link
-                            to="/sedes"
-                            className="group inline-flex items-center justify-center bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-large border border-white/30 hover:border-white/50 transition-all duration-500 text-lg sm:text-xl hover:scale-110 focus:outline-none focus:ring-4 focus:ring-white/30"
-                        >
-                            <FaMapMarkerAlt className="mr-3 sm:mr-4 group-hover:animate-bounce-subtle" size={20} />
-                            <span className="tracking-wide text-sm sm:text-base">ENCUENTRA TU SEDE</span>
-                        </Link>
-                    </div>
-
-                    {/* Estadísticas destacadas RENOVADAS - RESPONSIVAS */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full max-w-6xl mb-12 sm:mb-16 animate-slide-up px-4" style={{ animationDelay: '0.8s' }}>
-                        {estadisticasAvanzadas.map((stat, index) => (
-                            <div key={index} className="group bg-white/5 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center border border-white/10 shadow-soft hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                                <div className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.color} rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-glow`}>
-                                    <stat.icon className="text-white text-lg sm:text-2xl md:text-3xl" />
-                                </div>
-                                <div className="text-xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2 font-display group-hover:text-accent-300 transition-colors">{stat.numero}</div>
-                                <div className="text-white/80 font-semibold text-xs sm:text-sm md:text-base group-hover:text-white transition-colors">{stat.descripcion}</div>
-
-                                {/* Barra de progreso decorativa */}
-                                <div className="w-full bg-white/10 rounded-full h-1 mt-2 sm:mt-3 overflow-hidden">
-                                    <div className="h-full bg-gradient-to-r from-medical-400 to-accent-400 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" style={{ animationDelay: `${index * 200}ms` }}></div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Indicadores de confianza RENOVADOS - RESPONSIVOS */}
-                    <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 text-white/70 animate-fade-in px-4" style={{ animationDelay: '1s' }}>
-                        <div className="flex items-center group hover:text-white transition-colors">
-                            <div className="w-8 sm:w-10 h-8 sm:h-10 bg-accent-500/20 rounded-xl flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-accent-500/30 transition-colors">
-                                <RiShieldCheckFill className="text-accent-400 group-hover:text-accent-300" size={16} />
-                            </div>
-                            <span className="font-medium text-sm sm:text-base">Certificación Nacional de Calidad</span>
-                        </div>
-                        <div className="flex items-center group hover:text-white transition-colors">
-                            <div className="w-8 sm:w-10 h-8 sm:h-10 bg-medical-500/20 rounded-xl flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-medical-500/30 transition-colors">
-                                <MdSecurity className="text-medical-400 group-hover:text-medical-300" size={16} />
-                            </div>
-                            <span className="font-medium text-sm sm:text-base">Protocolos de Seguridad Avanzados</span>
-                        </div>
-                        <div className="flex items-center group hover:text-white transition-colors">
-                            <div className="w-8 sm:w-10 h-8 sm:h-10 bg-primary-500/20 rounded-xl flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-primary-500/30 transition-colors">
-                                <MdHealthAndSafety className="text-primary-400 group-hover:text-primary-300" size={16} />
-                            </div>
-                            <span className="font-medium text-sm sm:text-base">Tecnología Médica de Vanguardia</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll indicator elegante */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle cursor-pointer group" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-                    <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center group-hover:border-white/60 transition-colors">
-                        <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse-soft group-hover:bg-white/80 transition-colors"></div>
-                    </div>
-                    <p className="text-white/50 text-xs mt-2 group-hover:text-white/70 transition-colors">Explora</p>
-                </div>
-
-                {/* Partículas flotantes decorativas */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/4 left-1/12 w-2 h-2 bg-medical-400/60 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-                    <div className="absolute top-1/3 right-1/6 w-1 h-1 bg-accent-400/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-                    <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-white/30 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-                    <div className="absolute top-1/2 right-1/12 w-1 h-1 bg-primary-400/70 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-                    <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-medical-300/50 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
-                    <div className="absolute top-1/5 left-1/3 w-1 h-1 bg-accent-300/60 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
-                </div>
-
-                {/* Overlay con imagen de fondo médica profesional */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-gradient-to-br from-primary-950/95 via-primary-900/90 to-medical-950/95 mix-blend-multiply"
-                    style={{
-                        backgroundImage: `url('/images/hero-bg.jpg')`,
-                        backgroundAttachment: 'fixed'
-                    }}
-                />
-            </section>
 
             {/* SECCIÓN PORTAFOLIO PROMINENTE - PRIMERA PRIORIDAD */}
             <section className="relative py-24 px-4 bg-gradient-to-br from-primary-800 via-primary-900 to-medical-900 overflow-hidden">
