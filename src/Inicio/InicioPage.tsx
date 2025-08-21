@@ -32,8 +32,7 @@ const Inicio: React.FC = () => {
                 { label: "Conoce los Beneficios", type: "primary" },
                 { label: "Afiliarme Ahora", type: "secondary" }
             ],
-            categoria: "AFILIACIÓN FOMAG",
-            destacado: "NUEVA CAMPAÑA"
+            
         },
         {
             id: 2,
@@ -47,13 +46,12 @@ const Inicio: React.FC = () => {
                 { label: "Ver Protocolo", type: "primary" },
                 { label: "Agendar Cita", type: "secondary" }
             ],
-            categoria: "SALUD NEONATAL",
-            destacado: "PROTOCOLO ACTUALIZADO"
+            
         },
         {
             id: 3,
             titulo: "Nuestra Propuesta de Valor: Excelencia en Salud",
-            descripcion: "Más de 15,000 pacientes confían en nosotros. Tecnología de vanguardia, personal altamente calificado y atención humanizada son nuestros pilares fundamentales.",
+            descripcion: "Más de 100,000 pacientes confían en nosotros. Tecnología de vanguardia, personal altamente calificado y atención humanizada son nuestros pilares fundamentales.",
             fecha: "Red Medicron IPS 2025",
             gradiente: "from-accent-600 to-accent-700",
             imagen: "/images/doctora.jpg",
@@ -62,8 +60,7 @@ const Inicio: React.FC = () => {
                 { label: "Conoce Más", type: "primary" },
                 { label: "Ver Servicios", type: "secondary" }
             ],
-            categoria: "PROPUESTA DE VALOR",
-            destacado: "15,000+ PACIENTES"
+            
         },
         {
             id: 4,
@@ -77,8 +74,7 @@ const Inicio: React.FC = () => {
                 { label: "Ver Certificación", type: "primary" },
                 { label: "Conoce Estándares", type: "secondary" }
             ],
-            categoria: "CERTIFICACIÓN",
-            destacado: "CALIDAD INTERNACIONAL"
+        
         },
         {
             id: 5,
@@ -92,8 +88,7 @@ const Inicio: React.FC = () => {
                 { label: "Agendar Teleconsulta", type: "primary" },
                 { label: "Conoce el Servicio", type: "secondary" }
             ],
-            categoria: "TELEMEDICINA",
-            destacado: "DISPONIBLE 24/7"
+            
         }
     ];
 
@@ -173,7 +168,7 @@ const Inicio: React.FC = () => {
     ];
 
     const estadisticasAvanzadas = [
-        { numero: "15,000+", descripcion: "Pacientes atendidos", icon: MdGroups, color: "from-primary-500 to-primary-700" },
+        { numero: "100,000+", descripcion: "Pacientes atendidos", icon: MdGroups, color: "from-primary-500 to-primary-700" },
         { numero: "98%", descripcion: "Satisfacción del usuario", icon: MdStars, color: "from-medical-500 to-medical-700" },
         { numero: "24/7", descripcion: "Atención de urgencias", icon: MdHealthAndSafety, color: "from-accent-500 to-accent-700" },
         { numero: "7", descripcion: "Sedes estratégicas", icon: FaMapMarkerAlt, color: "from-primary-600 to-medical-600" }
@@ -245,8 +240,8 @@ const Inicio: React.FC = () => {
                 <div className="absolute bottom-1/3 left-1/5 w-[200px] h-[200px] bg-gradient-to-br from-white/15 to-white/5 rounded-full blur-xl animate-pulse-soft" style={{ animationDelay: '5s' }} />
 
                 {/* CARRUSEL INFORMATIVO MEJORADO - Campañas, Protocolos y Propuestas de Valor */}
-                <section className="relative py-1 sm:py-8 md:py-12 px-3 sm:px-4 md:px-6 bg-transparent overflow-hidden">
-                    <div className="max-w-7xl mx-auto relative z-10">
+                <section className="relative py-10 sm:py-8 md:py-12 px-3 sm:px-4 md:px-6 bg-transparent overflow-hidden">
+                    <div className=" relative z-10">
 
                         {/* Carrusel principal mejorado */}
                         <div className="relative">
@@ -271,46 +266,25 @@ const Inicio: React.FC = () => {
                                                 {/* Elementos decorativos animados - RESPONSIVOS */}
                                                 <div className="hidden sm:block absolute -top-20 -right-20 w-40 h-40 bg-white/5 rounded-full blur-2xl animate-pulse-soft"></div>
                                                 <div className="hidden sm:block absolute -bottom-16 -left-16 w-32 h-32 bg-medical-400/20 rounded-full blur-xl animate-pulse-soft" style={{ animationDelay: '2s' }}></div>
-                                                <div className="absolute top-1/4 right-1/4 w-4 sm:w-6 h-4 sm:h-6 bg-accent-400/60 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-                                                <div className="absolute bottom-1/4 left-1/3 w-3 sm:w-4 h-3 sm:h-4 bg-medical-300/60 rounded-full animate-ping" style={{ animationDelay: '3s' }}></div>
-
                                                 <div className="relative z-10 h-full flex items-center">
                                                     <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
                                                         {/* Contenido principal - RESPONSIVO */}
                                                         <div className="text-white space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-0">
-                                                            {/* Badge de categoría mejorado - RESPONSIVO */}
-                                                            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 mb-3 sm:mb-4 md:mb-6">
-                                                                <div className="flex items-center bg-white/15 backdrop-blur-sm rounded-full px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 border border-white/20 w-fit">
-                                                                    <slide.icono className="text-white mr-1 sm:mr-1.5 md:mr-2" size={14} />
-                                                                    <span className="text-white/90 text-xs sm:text-xs md:text-sm font-bold uppercase tracking-wide">
-                                                                        {slide.categoria}
-                                                                    </span>
-                                                                </div>
-                                                                <div className="bg-accent-500/80 backdrop-blur-sm rounded-full px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 border border-accent-400/30 w-fit">
-                                                                    <span className="text-white text-xs font-bold uppercase tracking-wider">
-                                                                        {slide.destacado}
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-
                                                             {/* Título con efectos de texto - RESPONSIVO */}
                                                             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-2 sm:mb-3 md:mb-4 leading-tight pr-2 sm:pr-4">
                                                                 <span className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent drop-shadow-2xl">
                                                                     {slide.titulo}
                                                                 </span>
                                                             </h3>
-
                                                             {/* Descripción mejorada - RESPONSIVO */}
                                                             <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6 md:mb-8 max-w-lg pr-2 sm:pr-4">
                                                                 {slide.descripcion}
                                                             </p>
-
                                                             {/* Fecha con icono - RESPONSIVO */}
                                                             <div className="flex items-center text-white/80 mb-4 sm:mb-6 md:mb-8">
                                                                 <FaCalendarAlt className="mr-1.5 sm:mr-2" size={11} />
                                                                 <span className="text-xs sm:text-xs md:text-sm font-medium">{slide.fecha}</span>
                                                             </div>
-
                                                             {/* Botones de acción mejorados - RESPONSIVOS */}
                                                             <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 md:gap-4 pr-2 sm:pr-4">
                                                                 {slide.acciones?.map((btn, idx) => (
@@ -328,26 +302,6 @@ const Inicio: React.FC = () => {
                                                                 ))}
                                                             </div>
                                                         </div>
-
-                                                        {/* Elemento visual del lado derecho - RESPONSIVO */}
-                                                        <div className="hidden lg:flex items-center justify-center px-4">
-                                                            <div className="relative">
-                                                                {/* Card flotante con icono - OPTIMIZADO */}
-                                                                <div className="w-64 lg:w-72 xl:w-80 h-48 lg:h-56 xl:h-64 bg-white/10 backdrop-blur-lg rounded-2xl lg:rounded-3xl border border-white/20 flex items-center justify-center hover:bg-white/15 transition-all duration-500 shadow-2xl hover:shadow-3xl hover:scale-105">
-                                                                    <div className="text-center p-4">
-                                                                        <div className="w-14 lg:w-16 xl:w-20 h-14 lg:h-16 xl:h-20 bg-white/20 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-3 lg:mb-4 hover:bg-white/30 transition-colors duration-300">
-                                                                            <slide.icono className="text-white text-xl lg:text-2xl xl:text-3xl" />
-                                                                        </div>
-                                                                        <h4 className="text-white font-bold text-base lg:text-lg xl:text-xl mb-1 lg:mb-2">{slide.categoria}</h4>
-                                                                        <p className="text-white/80 text-xs lg:text-sm">{slide.destacado}</p>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                {/* Elementos decorativos alrededor del card - RESPONSIVOS */}
-                                                                <div className="absolute -top-3 lg:-top-4 -right-3 lg:-right-4 w-6 lg:w-7 xl:w-8 h-6 lg:h-7 xl:h-8 bg-accent-400/60 rounded-full animate-ping"></div>
-                                                                <div className="absolute -bottom-3 lg:-bottom-4 -left-3 lg:-left-4 w-4 lg:w-5 xl:w-6 h-4 lg:h-5 xl:h-6 bg-medical-400/60 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -355,7 +309,6 @@ const Inicio: React.FC = () => {
                                     ))}
                                 </div>
                             </div>
-
                             {/* Controles del carrusel mejorados - RESPONSIVOS OPTIMIZADOS */}
                             <button 
                                 onClick={prevSlide}
@@ -371,7 +324,6 @@ const Inicio: React.FC = () => {
                                 <FaChevronRight size={12} className="sm:text-sm md:text-base lg:text-lg group-hover:translate-x-0.5 transition-transform duration-300" />
                             </button>
                         </div>
-
                         {/* Indicadores mejorados - RESPONSIVOS OPTIMIZADOS */}
                         <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 space-x-1.5 sm:space-x-2 md:space-x-3 px-4">
                             {carruselData.map((_, index) => (
@@ -396,7 +348,7 @@ const Inicio: React.FC = () => {
                     <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border border-white/20 animate-fade-in">
                         <div className="w-2 h-2 bg-medical-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
                         <span className="text-white/90 font-semibold text-xs sm:text-sm tracking-wide">
-                            ✨ MÁS DE 15,000 PACIENTES ATENDIDOS CON EXCELENCIA
+                            ✨ MÁS DE 100,000 PACIENTES ATENDIDOS CON EXCELENCIA
                         </span>
                     </div>
 
