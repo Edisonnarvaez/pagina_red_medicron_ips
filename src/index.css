@@ -395,3 +395,28 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
+
+/* Facebook Widget Styles */
+.facebook-widget {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.facebook-widget .fb-page {
+  width: 100% !important;
+}
+
+.facebook-widget iframe {
+  border-radius: 12px !important;
+  border: none !important;
+}
+
+/* Responsive Facebook Widget */
+@media (max-width: 768px) {
+  .facebook-widget .fb-page {
+    width: 100% !important;
+    min-width: 280px !important;
+  }
+}
