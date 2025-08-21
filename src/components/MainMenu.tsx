@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { MdHealthAndSafety } from 'react-icons/md';
 
 // Solo las pestañas principales en el menú
 const navLinks = [
@@ -8,14 +9,13 @@ const navLinks = [
   { to: '/quienes-somos', label: 'Quiénes Somos' },
   { to: '/sedes', label: 'Sedes' },
   { to: '/servicios', label: 'Servicios' },
-  { to: '/transparencia', label: 'Transparencia' },
   { to: '/talento-humano', label: 'Talento Humano' },
   { to: '/contabilidad', label: 'Contabilidad' },
   { to: '/pqrsf', label: 'PQRSF' },
   { to: '/contacto', label: 'Contacto' },
 ];
 
-const MainMenu: React.FC = () => {
+const MainMenu: React.FC<{ onOpenModal?: () => void }> = ({ onOpenModal }) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -45,6 +45,19 @@ const MainMenu: React.FC = () => {
               </Link>
             </li>
           ))}
+          
+          {/* Botón flotante para abrir modal */}
+          {onOpenModal && (
+            <li>
+              <button
+                onClick={onOpenModal}
+                className="ml-2 bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 text-white p-3 rounded-full font-bold transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl animate-pulse focus:outline-none focus-visible:ring-2 focus-visible:ring-medical-400/50"
+                title="Elección FOMAG - Docentes"
+              >
+                <MdHealthAndSafety size={20} />
+              </button>
+            </li>
+          )}
         </ul>
 
         {/* Mobile menu button */}
@@ -77,6 +90,22 @@ const MainMenu: React.FC = () => {
                   </Link>
                 </li>
               ))}
+              
+              {/* Botón móvil para abrir modal */}
+              {onOpenModal && (
+                <li className="pt-2 border-t border-gray-200">
+                  <button
+                    onClick={() => {
+                      onOpenModal();
+                      setMobileMenuOpen(false);
+                    }}
+                    className="w-full bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center space-x-2 animate-pulse"
+                  >
+                    <MdHealthAndSafety size={20} />
+                    <span>Elección FOMAG</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>

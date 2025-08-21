@@ -1,5 +1,6 @@
 import Footer from './Footer/FooterPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import Inicio from './Inicio/InicioPage';
 import QuienesSomos from './QuienesSomos/QuienesSomosPage';
 import MainMenu from './components/MainMenu';
@@ -21,11 +22,14 @@ import DerechosDeberes from './DerechosDeberes/DerechosDeberesPage';
 import LineaEtica from './LineaEtica/LineaEticaPage';
 import PQRSF from './PQRSF/PQRSFPage';
 import Contacto from './Contacto/ContactoPage';
+import ModalPortafolio from './Inicio/ModalInicial';
 
 function App() {
+  const [showPortafolioModal, setShowPortafolioModal] = useState(false);
+
   return (
     <Router>
-      <MainMenu />
+      <MainMenu onOpenModal={() => setShowPortafolioModal(true)} />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
@@ -49,6 +53,12 @@ function App() {
         <Route path="/accesibilidad" element={<Accesibilidad />} />
       </Routes>
       <Footer />
+      
+      {/* Modal global */}
+      <ModalPortafolio 
+        showPortafolioModal={showPortafolioModal} 
+        setShowPortafolioModal={setShowPortafolioModal} 
+      />
     </Router>
   );
 }

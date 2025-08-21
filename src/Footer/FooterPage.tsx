@@ -15,6 +15,9 @@ const secondaryLinks = [
 	{ to: '/linea-etica', label: 'Línea Ética' },
 	{ to: '/contacto', label: 'Contacto' },
 	{ to: '/accesibilidad', label: 'Accesibilidad' },
+	{ to: '/habeas-data', label: 'Habeas Data' },
+	{ to: '/confidencialidad', label: 'Confidencialidad' },
+	{ to: '/transparencia', label: 'Transparencia' }
 ];
 
 const Footer: React.FC = () => {

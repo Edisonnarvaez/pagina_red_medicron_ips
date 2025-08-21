@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FaUserMd, FaMapMarkerAlt, FaPhone, FaWhatsapp, FaPlay, FaCalendarAlt, FaArrowRight, FaTimes, FaDownload, FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaChevronLeft, FaChevronRight, FaBullhorn, FaFileAlt, FaHeart, FaAward, FaUsers, FaShieldAlt } from 'react-icons/fa';
+import { FaUserMd, FaMapMarkerAlt, FaPhone, FaWhatsapp, FaPlay, FaCalendarAlt, FaArrowRight, FaDownload, FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaChevronLeft, FaChevronRight, FaBullhorn, FaFileAlt, FaHeart, FaAward, FaUsers, FaShieldAlt } from 'react-icons/fa';
 import { MdHealthAndSafety, MdSecurity, MdTrendingUp, MdGroups, MdStars, MdNotifications, MdCampaign, MdNewReleases, MdVerified } from 'react-icons/md';
 import { RiHeart3Fill, RiShieldCheckFill } from 'react-icons/ri';
 import { BiNews } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import ModalPortafolio from './ModalInicial';
 
 const Inicio: React.FC = () => {
     const [showPortafolioModal, setShowPortafolioModal] = useState(false);
@@ -161,55 +162,11 @@ const Inicio: React.FC = () => {
 
     return (
         <>
-            {/* Modal Portafolio de Servicios */}
-            {showPortafolioModal && (
-                <div className="fixed inset-0 bg-gray-950/60 backdrop-blur-md flex items-center justify-center p-4 z-50">
-                    <div className="bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-large animate-scale-in border border-gray-100">
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-2xl font-bold text-primary-700">Portafolio de Servicios</h3>
-                            <button
-                                onClick={() => setShowPortafolioModal(false)}
-                                className="text-gray-400 hover:text-primary-600 transition-colors duration-200 p-2 hover:bg-gray-50 rounded-xl"
-                            >
-                                <FaTimes size={20} />
-                            </button>
-                        </div>
-
-                        <div className="text-center mb-6">
-                            <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-medical-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
-                                <MdHealthAndSafety className="text-white text-3xl" />
-                            </div>
-                            <p className="text-gray-600 mb-4 leading-relaxed">
-                                Descarga nuestro portafolio completo de servicios médicos y conoce todo lo que tenemos para ofrecerte.
-                            </p>
-                        </div>
-
-                        <div className="space-y-3">
-                            <a
-                                href="/portafolio-servicios.pdf"
-                                download
-                                className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-xl font-semibold flex items-center justify-center hover:shadow-medium transition-all duration-300 hover:scale-[1.02] hover:from-primary-700 hover:to-primary-800"
-                            >
-                                <FaDownload className="mr-2" />
-                                Descargar Portafolio PDF
-                            </a>
-                            <Link
-                                to="/servicios"
-                                className="w-full bg-medical-500 text-white py-4 px-6 rounded-xl font-semibold flex items-center justify-center hover:bg-medical-600 transition-all duration-300 hover:scale-[1.02]"
-                                onClick={() => setShowPortafolioModal(false)}
-                            >
-                                Ver Servicios Online
-                            </Link>
-                            <button
-                                onClick={() => setShowPortafolioModal(false)}
-                                className="w-full text-gray-500 py-3 hover:text-primary-600 transition-colors duration-200 font-medium"
-                            >
-                                Cerrar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            {/* Modal Portafolio de Servicios Mejorado */}
+            <ModalPortafolio 
+                showPortafolioModal={showPortafolioModal} 
+                setShowPortafolioModal={setShowPortafolioModal} 
+            />
 
             {/* Hero Section RENOVADO - Máximo Impacto Visual */}
             <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
@@ -465,7 +422,7 @@ const Inicio: React.FC = () => {
                                 <FaUserMd className="text-white text-2xl" />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Hospital Tuquerres</h3>
-                            <p className="text-white/80 mb-4 leading-relaxed">Urgencias 24/7, UCI, UCIN, Cirugía y servicios de hospitalización con tecnología avanzada.</p>
+                            <p className="text-white/80 mb-4 leading-relaxed">Urgencias 24/7, UCI, Cirugía, Servicios de primer nivel y hospitalización con tecnología avanzada.</p>
                             <div className="flex items-center text-accent-400 font-semibold">
                                 <span>Ver detalles</span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
@@ -531,15 +488,15 @@ const Inicio: React.FC = () => {
                     {/* Estadísticas de confianza modernizadas */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-16 border-t border-white/20">
                         <div className="text-center">
-                            <div className="text-4xl md:text-5xl font-black text-accent-400 mb-2 font-display">50+</div>
+                            <div className="text-4xl md:text-5xl font-black text-accent-400 mb-2 font-display">30+</div>
                             <div className="text-white/80 font-semibold">Servicios Médicos</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl md:text-5xl font-black text-medical-400 mb-2 font-display">12+</div>
+                            <div className="text-4xl md:text-5xl font-black text-medical-400 mb-2 font-display">20+</div>
                             <div className="text-white/80 font-semibold">Años de Experiencia</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl md:text-5xl font-black text-white mb-2 font-display">15K+</div>
+                            <div className="text-4xl md:text-5xl font-black text-white mb-2 font-display">100K+</div>
                             <div className="text-white/80 font-semibold">Pacientes Atendidos</div>
                         </div>
                         <div className="text-center">
