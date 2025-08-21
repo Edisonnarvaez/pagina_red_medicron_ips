@@ -22,73 +22,59 @@ const Inicio: React.FC = () => {
     const carruselData = [
         {
             id: 1,
-            titulo: "¡Únete a FOMAG y protege tu futuro!",
-            descripcion: "¿Eres docente activo, pensionado o beneficiario del magisterio en Nariño? Te ayudamos con tu afiliación a FOMAG para que tengas acceso a servicios de salud especializados y de calidad.",
-            fecha: "Vigente hasta diciembre 2025",
+            titulo: "¿Eres docente activo, pensionado o beneficiario del magisterio en Nariño?",
+            descripcion: "Sabemos que dedicas tu vida a la educación y el bienestar de tus estudiantes. Por eso, en Red Medicron IPS queremos apoyarte.",
             gradiente: "from-medical-600 to-medical-700",
             imagen: "/images/doctora.jpg",
-            icono: FaUserMd,
             acciones: [
-                { label: "Conoce los Beneficios", type: "primary" },
-                { label: "Afiliarme Ahora", type: "secondary" }
+                { label: "Elige a Red Medicron IPS", type: "primary", onclick: () => window.open("http://200.116.57.140:8080/formulario_primaria/public/formulario", "_blank") },
+                { label: "Conoce más", type: "secondary", onclick: () => window.location.href = "/quienes-somos" }
             ],
             
         },
         {
             id: 2,
-            titulo: "Protocolo de Atención Neonatal Avanzado",
-            descripcion: "Implementamos los más altos estándares en cuidado neonatal siguiendo protocolos del Ministerio de Salud. Tu bebé recibirá la mejor atención desde el primer momento de vida.",
-            fecha: "Actualizado agosto 2025",
+            titulo: "Propuesta de valor",
+            descripcion: "Hacemos grata la experiencia de la persona y su familia durante todo el ciclo de atención en salud, siendo resolutivos y promoviendo su bienestar, a través de servicios integrados, humanizados y seguros en los diferentes niveles de complejidad, a costos razonables y en cumplimiento de los resultados en salud.",
             gradiente: "from-primary-600 to-primary-700",
-            imagen: "/images/doctora.jpg",
-            icono: FaHeart,
+            imagen: "/images/sliderValores-1.jpg",
             acciones: [
-                { label: "Ver Protocolo", type: "primary" },
-                { label: "Agendar Cita", type: "secondary" }
+                { label: "Acerca de nosotros", type: "primary", onclick: () => window.location.href = "/quienes-somos" }
             ],
             
         },
         {
             id: 3,
-            titulo: "Nuestra Propuesta de Valor: Excelencia en Salud",
-            descripcion: "Más de 100,000 pacientes confían en nosotros. Tecnología de vanguardia, personal altamente calificado y atención humanizada son nuestros pilares fundamentales.",
-            fecha: "Red Medicron IPS 2025",
+            titulo: "Líneas telefónicas para solicitar citas",
+            descripcion: "Citas en Nariño al 318 338 0107 y en Tuquerres al 321 666 0990.",
             gradiente: "from-accent-600 to-accent-700",
-            imagen: "/images/doctora.jpg",
-            icono: MdStars,
+            imagen: "/images/sliderCitas-1.jpg",
             acciones: [
-                { label: "Conoce Más", type: "primary" },
-                { label: "Ver Servicios", type: "secondary" }
+                { label: "Contacto", type: "primary", onclick: () => window.location.href = "/contacto" }
             ],
             
         },
         {
             id: 4,
-            titulo: "Certificación Internacional en Calidad",
-            descripcion: "Orgullosamente certificados bajo estándares internacionales de calidad. Nuestro compromiso con la excelencia nos posiciona como líderes en el sector salud.",
-            fecha: "Certificación 2025",
+            titulo: "Protocolos de Vigilancia",
+            descripcion: "A través del siguiente botón descarga los protocolos y las fichas de notificación de vigilancia en salud pública",
             gradiente: "from-medical-500 to-accent-600",
-            imagen: "/images/doctora.jpg",
-            icono: MdVerified,
+            imagen: "/images/seguridad.jpg",
             acciones: [
-                { label: "Ver Certificación", type: "primary" },
-                { label: "Conoce Estándares", type: "secondary" }
+                { label: "Descargar Protocolos", type: "primary", onclick: () => window.open("/portafolio-servicios.pdf", "_blank") }
             ],
         
         },
         {
             id: 5,
-            titulo: "Telemedicina: Consultas desde Casa",
-            descripcion: "Accede a consultas médicas especializadas desde la comodidad de tu hogar. Tecnología de punta que acerca la salud a ti y tu familia las 24 horas.",
-            fecha: "Disponible 24/7",
-            gradiente: "from-primary-500 to-medical-600",
-            imagen: "/images/doctora.jpg",
-            icono: MdHealthAndSafety,
+            titulo: "Portafolio",
+            descripcion: "Hemos puesto a tu disposicion nuestro portafolio de servicios para que consultes lo que tenemos para ti.",
+            gradiente: "from-medical-500 to-accent-600",
+            imagen: "/images/imgPortafolioiz.jpg",
             acciones: [
-                { label: "Agendar Teleconsulta", type: "primary" },
-                { label: "Conoce el Servicio", type: "secondary" }
+                { label: "Descargar Portafolio", type: "primary", onclick: () => window.open("/portafolio-servicios.pdf", "_blank") }
             ],
-            
+        
         }
     ];
 
@@ -347,7 +333,8 @@ const Inicio: React.FC = () => {
             </section>
 
             {/* CARRUSEL INFORMATIVO MEJORADO - Campañas, Protocolos y Propuestas de Valor */}
-                <section className="relative py-10 sm:py-8 md:py-12 px-3 sm:px-4 md:px-6 bg-transparent overflow-hidden">
+                <section className={`relative py-10 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 overflow-hidden transition-colors duration-700 ease-in-out 
+                bg-gradient-to-br ${carruselData[currentSlide].gradiente} bg-black/40 md:bg-black/30 lg:bg-black/20`}>
                     <div className=" relative z-10">
 
                         {/* Carrusel principal mejorado */}
@@ -365,9 +352,9 @@ const Inicio: React.FC = () => {
                                                     <img
                                                         src={slide.imagen}
                                                         alt={slide.titulo}
-                                                        className="w-full h-full object-cover opacity-40 scale-110 hover:scale-105 transition-transform duration-700"
+                                                        className="w-full h-full object-cover opacity-60 scale-110 hover:scale-105 transition-transform duration-700"
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-transparent"></div>
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/5 to-transparent"></div>
                                                 </div>
 
                                                 {/* Elementos decorativos animados - RESPONSIVOS */}
@@ -387,16 +374,13 @@ const Inicio: React.FC = () => {
                                                             <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6 md:mb-8 max-w-lg pr-2 sm:pr-4">
                                                                 {slide.descripcion}
                                                             </p>
-                                                            {/* Fecha con icono - RESPONSIVO */}
-                                                            <div className="flex items-center text-white/80 mb-4 sm:mb-6 md:mb-8">
-                                                                <FaCalendarAlt className="mr-1.5 sm:mr-2" size={11} />
-                                                                <span className="text-xs sm:text-xs md:text-sm font-medium">{slide.fecha}</span>
-                                                            </div>
+                                                            
                                                             {/* Botones de acción mejorados - RESPONSIVOS */}
                                                             <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3 md:gap-4 pr-2 sm:pr-4">
                                                                 {slide.acciones?.map((btn, idx) => (
                                                                     <button
                                                                         key={idx}
+                                                                        onClick={btn.onclick}
                                                                         className={`group inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 border backdrop-blur-sm font-bold text-xs sm:text-sm md:text-base w-full sm:w-auto ${
                                                                             btn.type === "primary"
                                                                                 ? "bg-white/20 hover:bg-white/30 text-white border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl"

@@ -12,6 +12,7 @@ const navLinks = [
   { to: '/talento-humano', label: 'Talento Humano' },
   { to: '/contabilidad', label: 'Contabilidad' },
   { to: '/pqrsf', label: 'PQRSF' },
+  { to: '/contacto', label: 'Contacto' },
 ];
 
 const MainMenu: React.FC = () => {

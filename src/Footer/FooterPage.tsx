@@ -13,6 +13,7 @@ const secondaryLinks = [
 	{ to: '/asociados', label: 'Asociados' },
 	{ to: '/derechos-deberes', label: 'Derechos y Deberes' },
 	{ to: '/linea-etica', label: 'Línea Ética' },
+	{ to: '/contacto', label: 'Contacto' },
 	{ to: '/accesibilidad', label: 'Accesibilidad' },
 ];
 

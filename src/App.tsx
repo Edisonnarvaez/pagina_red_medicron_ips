@@ -1,5 +1,4 @@
 import Footer from './Footer/FooterPage';
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Inicio from './Inicio/InicioPage';
 import QuienesSomos from './QuienesSomos/QuienesSomosPage';
@@ -21,6 +20,7 @@ import Asociados from './Asociados/AsociadosPage';
 import DerechosDeberes from './DerechosDeberes/DerechosDeberesPage';
 import LineaEtica from './LineaEtica/LineaEticaPage';
 import PQRSF from './PQRSF/PQRSFPage';
+import Contacto from './Contacto/ContactoPage';
 
 function App() {
   return (
@@ -45,6 +45,7 @@ function App() {
         <Route path="/derechos-deberes" element={<DerechosDeberes />} />
         <Route path="/linea-etica" element={<LineaEtica />} />
         <Route path="/pqrsf" element={<PQRSF />} />
+        <Route path="/contacto" element={<Contacto />} />
         <Route path="/accesibilidad" element={<Accesibilidad />} />
       </Routes>
       <Footer />
