@@ -47,7 +47,7 @@ const Inicio: React.FC = () => {
             id: 3,
             titulo: "Líneas telefónicas para solicitar citas",
             descripcion: "Citas en Nariño al 318 338 0107 y en Tuquerres al 321 666 0990.",
-            gradiente: "from-accent-600 to-accent-700",
+            gradiente: "from-primary-400 to-medical-500",
             imagen: "/images/sliderCitas-1.jpg",
             acciones: [
                 { label: "Contacto", type: "primary", onclick: () => window.location.href = "/contacto" }
@@ -69,12 +69,11 @@ const Inicio: React.FC = () => {
             id: 5,
             titulo: "Portafolio",
             descripcion: "Hemos puesto a tu disposicion nuestro portafolio de servicios para que consultes lo que tenemos para ti.",
-            gradiente: "from-medical-500 to-accent-600",
+            gradiente: "from-accent-400 to-primary-700 ",
             imagen: "/images/imgPortafolioiz.jpg",
             acciones: [
                 { label: "Descargar Portafolio", type: "primary", onclick: () => window.open("/portafolio-servicios.pdf", "_blank") }
             ],
-        
         }
     ];
 
@@ -340,8 +339,9 @@ const Inicio: React.FC = () => {
                         {/* Carrusel principal mejorado */}
                         <div className="relative">
                             <div className="overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10">
+                                
                                 <div 
-                                    className="flex transition-transform duration-1000 ease-out"
+                                    className="flex transition-transform duration-700  ease-in-out"
                                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                                 >
                                     {carruselData.map((slide) => (
@@ -354,7 +354,7 @@ const Inicio: React.FC = () => {
                                                         alt={slide.titulo}
                                                         className="w-full h-full object-cover opacity-60 scale-110 hover:scale-105 transition-transform duration-700"
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/5 to-transparent"></div>
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/5 to-transparent"></div>
                                                 </div>
 
                                                 {/* Elementos decorativos animados - RESPONSIVOS */}
