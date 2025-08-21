@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram, FaEmpire, FaElementor } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const secondaryLinks = [
@@ -64,6 +64,10 @@ const Footer: React.FC = () => {
 							<div className="flex items-center gap-3">
 								<FaEnvelope className="text-verdeLima flex-shrink-0" size={14} />
 								<span className="text-white/80">notificaciones@redmedicron.com.co</span>
+							</div>
+							<div className="flex items-center gap-3">
+								<FaElementor className="text-verdeLima flex-shrink-0" size={14} />
+								<span className="text-white/80">Nit: 900077584-5</span>
 							</div>
 						</div>
 					</div>
