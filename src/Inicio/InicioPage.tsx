@@ -590,8 +590,8 @@ const Inicio: React.FC = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Sección de Noticias */}
+            {/*}
+            {/* Sección de Noticias 
             <section className="py-20 px-4 bg-gradient-to-r from-azul-light/10 to-verdeLima/5">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
@@ -651,7 +651,7 @@ const Inicio: React.FC = () => {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section>*/}
 
             {/* Testimonios de Pacientes */}
             <section className="py-20 px-4 bg-gradient-to-br from-verdeOscuro to-azul">

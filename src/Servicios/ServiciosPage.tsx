@@ -6,7 +6,7 @@ const Servicios: React.FC = () => {
     const serviciosHospital = [
         { icon: FaAmbulance, titulo: "Urgencias 24/7", descripcion: "Atención médica de emergencia las 24 horas del día" },
         { icon: FaHospital, titulo: "Hospitalización", descripcion: "Servicios de hospitalización para adultos y pediatría" },
-        { icon: FaHeartbeat, titulo: "UCI & UCIN", descripcion: "Unidades de cuidados intensivos y neonatales" },
+        { icon: FaHeartbeat, titulo: "UCI", descripcion: "Unidades de cuidados intensivos" },
         { icon: FaStethoscope, titulo: "Medicina Interna", descripcion: "Atención especializada en medicina interna" },
         { icon: MdMedicalServices, titulo: "Cirugía", descripcion: "Servicios quirúrgicos con tecnología avanzada" },
         { icon: FaMicroscope, titulo: "Laboratorio", descripcion: "Laboratorio clínico e imágenes diagnósticas" },
@@ -70,7 +70,7 @@ const Servicios: React.FC = () => {
                             Sedes <span className="text-azul">Regionales</span>
                         </h2>
                         <p className="text-grisOscuro text-lg max-w-3xl mx-auto">
-                            Pasto, Ipiales, Tumaco, La Unión, Sandoná y Samaniego - Atención especializada cerca de ti
+                            Pasto, Buesaco, Ipiales, La Cruz y Tumaco - Atención especializada cerca de ti
                         </p>
                     </div>
 
@@ -88,7 +88,7 @@ const Servicios: React.FC = () => {
 
                     {/* Lista de sedes */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        {['Pasto', 'Ipiales', 'Tumaco', 'La Unión', 'Sandoná', 'Samaniego'].map((sede) => (
+                        {['Pasto', 'Buesaco', 'Ipiales', 'La Cruz', 'Tumaco', 'Tuquerres'].map((sede) => (
                             <div key={sede} className="bg-white rounded-xl p-4 text-center shadow-md hover:shadow-lg transition-shadow">
                                 <div className="w-12 h-12 bg-gradient-to-br from-verdeLima to-verdeOscuro rounded-full flex items-center justify-center mx-auto mb-2">
                                     <FaHospital className="text-white" />

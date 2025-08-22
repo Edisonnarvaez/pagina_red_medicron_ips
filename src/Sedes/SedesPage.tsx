@@ -6,29 +6,49 @@ const Sedes: React.FC = () => {
     const sedes = [
         {
             nombre: "Hospital Tuquerres",
-            tipo: "Hospital Principal",
-            direccion: "Calle 20 # 22-30, Tuquerres, Nariño",
-            telefono: "(2) 729-0000",
+            tipo: "Hospital - Centro de atencion",
+            direccion: "Calle 27 # 14-58, Tuquerres, Nariño",
+            telefono: "(321) 666-0990 ",
             horario: "24 horas",
-            servicios: ["Urgencias 24h", "Hospitalización", "UCI y UCIN", "Medicina interna", "Quirófano", "Nefroprotección"],
+            servicios: ["Urgencias 24h", "Hospitalización", "UCI", "Medicina interna", "Quirófano", "Nefroprotección"],
             esHospital: true,
             icon: FaHospital
         },
         {
-            nombre: "Sede Pasto",
-            tipo: "Centro de Atención",
-            direccion: "Cra 32 # 18-50, Pasto, Nariño",
-            telefono: "(2) 721-0000",
+            nombre: "Sede Obrero",
+            tipo: "Sede principal",
+            direccion: "Carrera 26 # 9-22, Pasto, Nariño -  Frente a la entrada principal de La Normal",
+            telefono: "(318) 338-0107",
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección", "Especialistas"],
             esHospital: false,
             icon: MdLocalHospital
         },
         {
+            nombre: "Sede Terapias Fatima",
+            tipo: "Centro de Atención",
+            direccion: "Calle 20 N° 11-40, Pasto, Nariño",
+            telefono: "(318) 338-0107",
+            horario: "7:00 AM - 5:00 PM",
+            servicios: ["Terapias", "Servicios complementarios"],
+            esHospital: false,
+            icon: MdLocalHospital
+        },
+        //{
+        //    nombre: "Sede Aurora",
+        //    tipo: "Centro de Atención",
+        //    direccion: "Calle 11 No 29-27, Pasto, Nariño",
+        //    telefono: "(318) 338-0107",
+        //    horario: "7:00 AM - 5:00 PM",
+        //    servicios: ["Consulta externa"],
+        //    esHospital: false,
+        //    icon: MdLocalHospital
+        //},
+        {
             nombre: "Sede Ipiales",
             tipo: "Centro de Atención",
-            direccion: "Calle 13 # 7-20, Ipiales, Nariño",
-            telefono: "(2) 773-0000",
+            direccion: "Carrera 4a No 14-52, Ipiales, Nariño",
+            telefono: "(318) 338-0107",
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
@@ -38,37 +58,28 @@ const Sedes: React.FC = () => {
             nombre: "Sede Tumaco",
             tipo: "Centro de Atención",
             direccion: "Av. La Playa # 5-10, Tumaco, Nariño",
-            telefono: "(2) 727-0000",
+            telefono: "(318) 338-0107",
+            horario: "7:00 AM - 5:00 PM",
+            servicios: ["Consulta externa", "Nefroprotección"],
+            esHospital: false,
+            icon: MdLocalHospital
+        },
+        
+        {
+            nombre: "Sede Buesaco",
+            tipo: "Centro de Atención",
+            direccion: "Carrera  3 No 15-57, Buesaco, Nariño",
+            telefono: "(318) 338-0107",
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
             icon: MdLocalHospital
         },
         {
-            nombre: "Sede La Unión",
+            nombre: "Sede La Cruz",
             tipo: "Centro de Atención",
-            direccion: "Calle 10 # 8-15, La Unión, Nariño",
-            telefono: "(2) 728-0000",
-            horario: "7:00 AM - 5:00 PM",
-            servicios: ["Consulta externa", "Nefroprotección"],
-            esHospital: false,
-            icon: MdLocalHospital
-        },
-        {
-            nombre: "Sede Sandoná",
-            tipo: "Centro de Atención",
-            direccion: "Cra 5 # 4-20, Sandoná, Nariño",
-            telefono: "(2) 726-0000",
-            horario: "7:00 AM - 5:00 PM",
-            servicios: ["Consulta externa", "Nefroprotección"],
-            esHospital: false,
-            icon: MdLocalHospital
-        },
-        {
-            nombre: "Sede Samaniego",
-            tipo: "Centro de Atención",
-            direccion: "Calle 6 # 7-30, Samaniego, Nariño",
-            telefono: "(2) 725-0000",
+            direccion: "Carrera 8 No 10-77, La Cruz, Nariño",
+            telefono: "(318) 338-0107",
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
@@ -123,18 +134,18 @@ const Sedes: React.FC = () => {
                                 <div className="flex items-center mb-4">
                                     <FaHospital className="text-4xl mr-4 text-acento" />
                                     <div>
-                                        <h2 className="text-2xl md:text-3xl font-bold">Hospital Tuquerres</h2>
-                                        <p className="text-azul-light">Sede Principal - Atención 24/7</p>
+                                        <h2 className="text-2xl md:text-3xl font-bold">Hospital San Jose de Tuquerres</h2>
+                                        <p className="text-azul-light">Atención 24/7</p>
                                     </div>
                                 </div>
                                 <div className="space-y-3 mb-6">
                                     <div className="flex items-center">
                                         <FaMapMarkerAlt className="mr-3 text-acento" />
-                                        <span>Calle 20 # 22-30, Tuquerres, Nariño</span>
+                                        <span>Calle 27 # 14-58, Tuquerres, Nariño</span>
                                     </div>
                                     <div className="flex items-center">
                                         <FaPhone className="mr-3 text-acento" />
-                                        <span>(2) 729-0000</span>
+                                        <span>(321) 666-0990</span>
                                     </div>
                                     <div className="flex items-center">
                                         <FaClock className="mr-3 text-acento" />
@@ -145,7 +156,7 @@ const Sedes: React.FC = () => {
                             <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
                                 <h3 className="text-xl font-bold mb-4 text-acento">Servicios Especializados</h3>
                                 <div className="grid grid-cols-2 gap-3">
-                                    {["Urgencias 24h", "Hospitalización", "UCI y UCIN", "Medicina interna", "Quirófano", "Nefroprotección"].map((servicio) => (
+                                    {["Urgencias 24h", "Hospitalización", "UCI", "Medicina interna", "Quirófano", "Nefroprotección"].map((servicio) => (
                                         <div key={servicio} className="flex items-center">
                                             <MdMedicalServices className="mr-2 text-acento" />
                                             <span className="text-sm">{servicio}</span>
