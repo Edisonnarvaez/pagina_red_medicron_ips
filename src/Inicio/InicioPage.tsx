@@ -16,7 +16,7 @@ const Inicio: React.FC = () => {
     const youtubeVideos = [
         {
             id: "AcRy3TqP_DA",
-            title: "FOMAC y Red Medicron IPS",
+            title: "FOMAG y Red Medicron IPS",
             description: "Conoce nuestra alianza estratégica",
             thumbnail: `https://img.youtube.com/vi/AcRy3TqP_DA/maxresdefault.jpg`
         },

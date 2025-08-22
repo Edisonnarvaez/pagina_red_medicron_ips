@@ -12,7 +12,8 @@ const Sedes: React.FC = () => {
             horario: "24 horas",
             servicios: ["Urgencias 24h", "Hospitalización", "UCI", "Medicina interna", "Quirófano", "Nefroprotección"],
             esHospital: true,
-            icon: FaHospital
+            icon: FaHospital,
+            imagen: "/sedes/hospital_san_jose_de_tuquerres.jpeg"
         },
         {
             nombre: "Sede Obrero",
@@ -22,7 +23,8 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección", "Especialistas"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/Obrero.jpeg"
         },
         {
             nombre: "Sede Terapias Fatima",
@@ -32,18 +34,10 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Terapias", "Servicios complementarios"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/Fatima.jpeg"
         },
-        //{
-        //    nombre: "Sede Aurora",
-        //    tipo: "Centro de Atención",
-        //    direccion: "Calle 11 No 29-27, Pasto, Nariño",
-        //    telefono: "(318) 338-0107",
-        //    horario: "7:00 AM - 5:00 PM",
-        //    servicios: ["Consulta externa"],
-        //    esHospital: false,
-        //    icon: MdLocalHospital
-        //},
+        
         {
             nombre: "Sede Ipiales",
             tipo: "Centro de Atención",
@@ -52,7 +46,8 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/ipiales.jpg"
         },
         {
             nombre: "Sede Tumaco",
@@ -62,7 +57,8 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/Tumaco.jpg"
         },
         
         {
@@ -73,7 +69,8 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/Buesaco.png"
         },
         {
             nombre: "Sede La Cruz",
@@ -83,7 +80,8 @@ const Sedes: React.FC = () => {
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
-            icon: MdLocalHospital
+            icon: MdLocalHospital,
+            imagen: "/sedes/la_cruz.png"
         }
     ];
 
@@ -128,9 +126,9 @@ const Sedes: React.FC = () => {
             {/* Hospital Principal Destacado */}
             <section className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
-                    <div className="bg-gradient-to-r from-azul to-azul-dark rounded-3xl p-8 md:p-12 text-white mb-16 shadow-2xl">
-                        <div className="grid md:grid-cols-2 gap-8 items-center">
-                            <div>
+                    <div className="bg-gradient-to-r from-azul to-azul-dark rounded-3xl overflow-hidden shadow-2xl mb-16">
+                        <div className="grid md:grid-cols-2 gap-0 items-center">
+                            <div className="p-8 md:p-12 text-white">
                                 <div className="flex items-center mb-4">
                                     <FaHospital className="text-4xl mr-4 text-acento" />
                                     <div>
@@ -152,16 +150,27 @@ const Sedes: React.FC = () => {
                                         <span>Atención 24 horas</span>
                                     </div>
                                 </div>
+                                <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                                    <h3 className="text-xl font-bold mb-4 text-acento">Servicios Especializados</h3>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        {["Urgencias 24h", "Hospitalización", "UCI", "Medicina interna", "Quirófano", "Nefroprotección"].map((servicio) => (
+                                            <div key={servicio} className="flex items-center bg-white/10 rounded-lg p-2">
+                                                <MdMedicalServices className="mr-2 text-acento text-sm" />
+                                                <span className="text-xs">{servicio}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
-                                <h3 className="text-xl font-bold mb-4 text-acento">Servicios Especializados</h3>
-                                <div className="grid grid-cols-2 gap-3">
-                                    {["Urgencias 24h", "Hospitalización", "UCI", "Medicina interna", "Quirófano", "Nefroprotección"].map((servicio) => (
-                                        <div key={servicio} className="flex items-center">
-                                            <MdMedicalServices className="mr-2 text-acento" />
-                                            <span className="text-sm">{servicio}</span>
-                                        </div>
-                                    ))}
+                            <div className="relative h-64 md:h-full">
+                                <img 
+                                    src="/sedes/hospital_san_jose_de_tuquerres.jpeg" 
+                                    alt="Hospital San José de Tuquerres"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-r from-azul/20 to-transparent"></div>
+                                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-2">
+                                    <span className="text-azul font-bold text-sm">🏥 Hospital Principal</span>
                                 </div>
                             </div>
                         </div>
@@ -183,41 +192,52 @@ const Sedes: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {sedes.filter(sede => !sede.esHospital).map((sede, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-verdeLima to-verdeOscuro rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                                        <sede.icon className="text-white text-xl" />
+                            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                                {/* Imagen de la sede */}
+                                <div className="relative h-48 overflow-hidden">
+                                    <img 
+                                        src={sede.imagen} 
+                                        alt={sede.nombre}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2">
+                                        <sede.icon className="text-verdeLima text-xl" />
                                     </div>
-                                    <div>
+                                </div>
+
+                                {/* Contenido de la tarjeta */}
+                                <div className="p-6">
+                                    <div className="mb-4">
                                         <h3 className="text-lg font-bold text-verdeOscuro">{sede.nombre}</h3>
                                         <p className="text-sm text-grisOscuro">{sede.tipo}</p>
                                     </div>
-                                </div>
 
-                                <div className="space-y-3 mb-4">
-                                    <div className="flex items-start">
-                                        <FaMapMarkerAlt className="mr-3 mt-1 text-verdeLima flex-shrink-0" />
-                                        <span className="text-sm text-grisOscuro">{sede.direccion}</span>
+                                    <div className="space-y-3 mb-4">
+                                        <div className="flex items-start">
+                                            <FaMapMarkerAlt className="mr-3 mt-1 text-verdeLima flex-shrink-0" />
+                                            <span className="text-sm text-grisOscuro">{sede.direccion}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <FaPhone className="mr-3 text-verdeLima" />
+                                            <span className="text-sm text-grisOscuro">{sede.telefono}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <FaClock className="mr-3 text-verdeLima" />
+                                            <span className="text-sm text-grisOscuro">{sede.horario}</span>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center">
-                                        <FaPhone className="mr-3 text-verdeLima" />
-                                        <span className="text-sm text-grisOscuro">{sede.telefono}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <FaClock className="mr-3 text-verdeLima" />
-                                        <span className="text-sm text-grisOscuro">{sede.horario}</span>
-                                    </div>
-                                </div>
 
-                                <div className="border-t pt-4">
-                                    <h4 className="text-sm font-semibold text-verdeOscuro mb-2">Servicios:</h4>
-                                    <div className="space-y-1">
-                                        {sede.servicios.map((servicio) => (
-                                            <div key={servicio} className="flex items-center">
-                                                <MdHealthAndSafety className="mr-2 text-verdeLima text-sm" />
-                                                <span className="text-xs text-grisOscuro">{servicio}</span>
-                                            </div>
-                                        ))}
+                                    <div className="border-t pt-4">
+                                        <h4 className="text-sm font-semibold text-verdeOscuro mb-2">Servicios:</h4>
+                                        <div className="space-y-1">
+                                            {sede.servicios.map((servicio) => (
+                                                <div key={servicio} className="flex items-center">
+                                                    <MdHealthAndSafety className="mr-2 text-verdeLima text-sm" />
+                                                    <span className="text-xs text-grisOscuro">{servicio}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +246,7 @@ const Sedes: React.FC = () => {
                 </div>
             </section>
 
-            {/* Mapa y Call to Action */}
+            {/* Mapa y Call to Action 
             <section className="py-20 px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-gradient-to-br from-azul-light via-white to-verdeLima/20 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -268,7 +288,7 @@ const Sedes: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>*/}
         </div>
     );
 };

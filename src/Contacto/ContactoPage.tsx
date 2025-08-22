@@ -46,11 +46,13 @@ const Contacto: React.FC = () => {
     ];
 
     const sedes = [
-        { value: 'hospital-pasto', label: 'Hospital - Pasto' },
-        { value: 'sede-ipiales', label: 'Sede Ipiales' },
-        { value: 'sede-tuquerres', label: 'Sede Túquerres' },
-        { value: 'sede-tumaco', label: 'Sede Tumaco' },
-        { value: 'sede-samaniego', label: 'Sede Samaniego' }
+        { value: 'sede-obrero', label: 'Sede - Pasto Obrero' },
+        { value: 'sede-fatima', label: 'Sede - Pasto Fátima' },
+        { value: 'sede-buesaco', label: 'Sede - Buesaco' },
+        { value: 'sede-ipiales', label: 'Sede - Ipiales' },
+        { value: 'sede-la_cruz', label: 'Sede - La Cruz' },
+        { value: 'hospital-tuquerres', label: 'Hospital - Túquerres' },
+        { value: 'sede-tumaco', label: 'Sede Tumaco' }
     ];
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -145,15 +147,20 @@ const Contacto: React.FC = () => {
                             </h3>
 
                             <div className="space-y-6">
-                                {/* Teléfono principal */}
-                                <div className="flex items-start group">
-                                    <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-primary-200 transition-colors">
-                                        <FaPhone className="text-primary-600" size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-800">Teléfono Principal</h4>
-                                        <p className="text-gray-600">+57 (2) 123-4567</p>
-                                        <p className="text-sm text-gray-500">Línea de atención 24/7</p>
+                                {/* Teléfonos */}
+                                <div className="space-y-4">
+                                    <div className="flex items-start group">
+                                        <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-primary-200 transition-colors">
+                                            <FaPhone className="text-primary-600" size={20} />
+                                        </div>
+                                        <div className="flex-1">
+                                            <h4 className="font-bold text-gray-800 mb-1">Líneas de Atención</h4>
+                                            <div className="space-y-1">
+                                                <p className="text-gray-600 font-medium">+57 (318) 338-0107</p>
+                                                <p className="text-gray-600">Hospital Túquerres: +57 (321) 666-0990</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 5:00 PM</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -162,9 +169,9 @@ const Contacto: React.FC = () => {
                                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors">
                                         <FaWhatsapp className="text-green-600" size={20} />
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-800">WhatsApp</h4>
-                                        <p className="text-gray-600">+57 300 123 4567</p>
+                                    <div className="flex-1">
+                                        <h4 className="font-bold text-gray-800 mb-1">WhatsApp</h4>
+                                        <p className="text-gray-600 font-medium">+57 318 338 0107</p>
                                         <p className="text-sm text-gray-500">Disponible 24 horas</p>
                                     </div>
                                 </div>
@@ -174,10 +181,9 @@ const Contacto: React.FC = () => {
                                     <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-accent-200 transition-colors">
                                         <FaEnvelope className="text-accent-600" size={20} />
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-800">Email</h4>
-                                        <p className="text-gray-600">contacto@redmedicronips.com</p>
-                                        <p className="text-sm text-gray-500">Respuesta en 24 horas</p>
+                                    <div className="flex-1">
+                                        <h4 className="font-bold text-gray-800 mb-1">Email</h4>
+                                        <p className="text-gray-600 font-medium break-all">notificaciones@redmedicronips.com.co</p>
                                     </div>
                                 </div>
 
@@ -186,10 +192,9 @@ const Contacto: React.FC = () => {
                                     <div className="w-12 h-12 bg-medical-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-medical-200 transition-colors">
                                         <FaMapMarkerAlt className="text-medical-600" size={20} />
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-800">Sede Principal</h4>
-                                        <p className="text-gray-600">Calle 18 No. 23-45</p>
-                                        <p className="text-gray-600">Pasto, Nariño</p>
+                                    <div className="flex-1">
+                                        <h4 className="font-bold text-gray-800 mb-1">Sede Principal</h4>
+                                        <p className="text-gray-600">Cra 27 No. 9-22, Pasto, Nariño</p>
                                         <p className="text-sm text-gray-500">Colombia</p>
                                     </div>
                                 </div>
@@ -199,11 +204,13 @@ const Contacto: React.FC = () => {
                                     <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gray-200 transition-colors">
                                         <FaClock className="text-gray-600" size={20} />
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-800">Horarios de Atención</h4>
-                                        <p className="text-gray-600">Lun - Vie: 7:00 AM - 6:00 PM</p>
-                                        <p className="text-gray-600">Sábados: 8:00 AM - 2:00 PM</p>
-                                        <p className="text-sm text-gray-500">Urgencias 24/7</p>
+                                    <div className="flex-1">
+                                        <h4 className="font-bold text-gray-800 mb-1">Horarios</h4>
+                                        <div className="space-y-1">
+                                            <p className="text-gray-600">Lun - Vie: 7:00 AM - 5:00 PM</p>
+                                            <p className="text-gray-600">Sábados: 8:00 AM - 12:00 PM</p>
+                                            <p className="text-sm text-red-600 font-medium">🚨 Urgencias 24/7</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +218,7 @@ const Contacto: React.FC = () => {
 
                         {/* Botón de WhatsApp */}
                         <a
-                            href="https://wa.me/573001234567"
+                            href="https://wa.me/573183380107?text=Hola%20Red%20Medicron%20IPS,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20salud.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center hover:scale-105"
@@ -219,6 +226,8 @@ const Contacto: React.FC = () => {
                             <FaWhatsapp className="inline mr-3" size={24} />
                             Chatea con nosotros por WhatsApp
                         </a>
+
+                    
                     </div>
 
                     {/* Formulario de contacto */}
@@ -406,32 +415,6 @@ const Contacto: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Sección de urgencias */}
-                <div className="mt-16 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-8 text-white text-center shadow-xl">
-                    <h3 className="text-2xl font-bold mb-4 flex items-center justify-center">
-                        <FaPhone className="mr-3 animate-pulse" size={28} />
-                        ¿Tienes una Emergencia?
-                    </h3>
-                    <p className="text-xl mb-6">
-                        Para urgencias médicas, contacta inmediatamente:
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <a
-                            href="tel:+573001234567"
-                            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105"
-                        >
-                            📞 Llamar Urgencias: +57 300 123 4567
-                        </a>
-                        <a
-                            href="https://wa.me/573001234567?text=Tengo%20una%20emergencia%20médica"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105"
-                        >
-                            📱 WhatsApp Urgencias
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
     );

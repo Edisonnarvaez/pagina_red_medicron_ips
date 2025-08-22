@@ -23,6 +23,7 @@ import LineaEtica from './LineaEtica/LineaEticaPage';
 import PQRSF from './PQRSF/PQRSFPage';
 import Contacto from './Contacto/ContactoPage';
 import ModalPortafolio from './Inicio/ModalInicial';
+import WhatsAppFloatButton from './components/WhatsAppFloat/WhatsAppFloatButton';
 
 function App() {
   const [showPortafolioModal, setShowPortafolioModal] = useState(false);
@@ -53,6 +54,9 @@ function App() {
         <Route path="/accesibilidad" element={<Accesibilidad />} />
       </Routes>
       <Footer />
+      
+      {/* Botón flotante de WhatsApp - disponible en todas las páginas */}
+      <WhatsAppFloatButton />
       
       {/* Modal global */}
       <ModalPortafolio 

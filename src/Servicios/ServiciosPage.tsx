@@ -164,7 +164,7 @@ const Servicios: React.FC = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="/pqrsf"
+                            href="/contacto"
                             className="inline-flex items-center justify-center bg-acento hover:bg-warning text-negro font-bold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
                         >
                             Solicitar Información

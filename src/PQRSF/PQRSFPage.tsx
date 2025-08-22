@@ -181,12 +181,12 @@ const PQRSF: React.FC = () => {
                                     >
                                         <option value="">Selecciona una sede</option>
                                         <option value="tuquerres">Hospital Tuquerres</option>
-                                        <option value="pasto">Sede Pasto</option>
+                                        <option value="pasto">Sede Pasto Obrero</option>
+                                        <option value="pasto">Sede Pasto Fatima</option>
+                                        <option value="buesaco">Sede Buesaco</option>
                                         <option value="ipiales">Sede Ipiales</option>
+                                        <option value="lacruz">Sede La Cruz</option>
                                         <option value="tumaco">Sede Tumaco</option>
-                                        <option value="launion">Sede La Unión</option>
-                                        <option value="sandona">Sede Sandoná</option>
-                                        <option value="samaniego">Sede Samaniego</option>
                                     </select>
                                 </div>
                             </div>
