@@ -14,8 +14,9 @@ const secondaryLinks = [
 	{ to: '/derechos-deberes', label: 'Derechos y Deberes' },
 	{ to: '/linea-etica', label: 'Línea Ética' },
 	{ to: '/contacto', label: 'Contacto' },
-	{ to: '/confidencialidad', label: 'Confidencialidad' },
-	{ to: '/transparencia', label: 'Transparencia' }
+	{ to: '/asamblea', label: 'Asamblea General' },
+	{ to: '/transparencia', label: 'Transparencia' },
+	{ to: '/contabilidad', label: 'Contabilidad' },
 ];
 
 const Footer: React.FC = () => {

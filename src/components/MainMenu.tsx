@@ -10,7 +10,6 @@ const navLinks = [
   { to: '/sedes', label: 'Sedes' },
   { to: '/servicios', label: 'Servicios' },
   { to: '/talento-humano', label: 'Talento Humano' },
-  { to: '/contabilidad', label: 'Contabilidad' },
   { to: '/pqrsf', label: 'PQRSF' },
   { to: '/contacto', label: 'Contacto' },
   { to: '/enlaces-externos', label: 'Enlaces Externos' }

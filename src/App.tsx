@@ -22,6 +22,7 @@ import DerechosDeberes from './DerechosDeberes/DerechosDeberesPage';
 import LineaEtica from './LineaEtica/LineaEticaPage';
 import PQRSF from './PQRSF/PQRSFPage';
 import Contacto from './Contacto/ContactoPage';
+import Asamblea from './Asamblea/AsambleaPage';
 import ModalPortafolio from './Inicio/ModalInicial';
 import WhatsAppFloatButton from './components/WhatsAppFloat/WhatsAppFloatButton';
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/linea-etica" element={<LineaEtica />} />
         <Route path="/pqrsf" element={<PQRSF />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/asamblea" element={<Asamblea />} />
         <Route path="/accesibilidad" element={<Accesibilidad />} />
       </Routes>
       <Footer />
