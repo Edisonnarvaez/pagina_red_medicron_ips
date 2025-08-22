@@ -6,47 +6,29 @@ import { RiTeamFill } from 'react-icons/ri';
 const QuienesSomos: React.FC = () => {
     const valores = [
         {
-            icon: FaHandshake,
-            nombre: "Ética",
-            descripcion: "Actuamos con integridad y responsabilidad en cada decisión",
+            icon: FaHeart,
+            nombre: "HUMANIDAD",
+            descripcion: "Servimos con amabilidad, dignidad, seguridad y empatía, respondiendo a las necesidades de las personas",
             color: "from-azul to-azul-dark"
         },
         {
             icon: FaUsers,
-            nombre: "Respeto",
-            descripcion: "Valoramos la dignidad de cada persona en nuestra atención",
+            nombre: "RESPONSABILIDAD",
+            descripcion: "Cumplimos nuestros compromisos",
             color: "from-verdeLima to-verdeOscuro"
         },
         {
-            icon: FaHeart,
-            nombre: "Compromiso",
-            descripcion: "Cumplimos con excelencia nuestra labor diaria",
+            icon: FaHandshake,
+            nombre: "INTEGRIDAD",
+            descripcion: "Actuamos y servimos de una manera respetuosa y honesta, generando relaciones de confianza con todos los grupos de interés",
             color: "from-acento to-warning"
-        },
-        {
-            icon: FaLightbulb,
-            nombre: "Innovación",
-            descripcion: "Mejoramos continuamente procesos y servicios",
-            color: "from-azul-light to-azul"
-        },
-        {
-            icon: FaEye,
-            nombre: "Transparencia",
-            descripcion: "Gestionamos con claridad y acceso a la información",
-            color: "from-verdeOscuro to-verdeLima"
-        },
-        {
-            icon: FaShieldAlt,
-            nombre: "Humanización",
-            descripcion: "Ponemos al usuario y su familia en el centro de nuestra atención",
-            color: "from-azul to-verdeOscuro"
         }
     ];
 
     const estadisticas = [
-        { numero: "2012", descripcion: "Año de fundación", icon: MdStar },
+        { numero: "2005", descripcion: "Año de fundación", icon: MdStar },
         { numero: "7", descripcion: "Sedes en operación", icon: RiTeamFill },
-        { numero: "11+", descripcion: "Años de experiencia", icon: MdTrendingUp },
+        { numero: "20+", descripcion: "Años de experiencia", icon: MdTrendingUp },
         { numero: "24/7", descripcion: "Atención hospitalaria", icon: MdHealthAndSafety }
     ];
 
@@ -62,8 +44,7 @@ const QuienesSomos: React.FC = () => {
                         ¿Quiénes <span className="text-azul">Somos?</span>
                     </h1>
                     <p className="text-lg md:text-xl text-grisOscuro max-w-3xl mx-auto mb-12 leading-relaxed">
-                        Red Medicron IPS es una institución de salud comprometida con la excelencia, 
-                        innovación y humanización en la atención médica del sur de Colombia.
+                        Red Medicron IPS es una institución de salud comprometida con la salud integral y humanizada en el departamento de Nariño.
                     </p>
 
                     {/* Estadísticas */}
@@ -89,9 +70,7 @@ const QuienesSomos: React.FC = () => {
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">Misión</h3>
                             <p className="text-azul-light leading-relaxed">
-                                Brindar servicios de salud integrales, seguros y humanizados, con un equipo 
-                                comprometido y tecnología de vanguardia, promoviendo el bienestar y la calidad 
-                                de vida de nuestros usuarios y sus familias.
+                                Somos una institución nariñense que presta servicios de salud primarios y complementarios, articulados en una red integrada de prestadores, con un modelo de atención integral con enfoque de riesgo centrado en el usuario y su familia. Contamos con un equipo humano competente y en constante aprendizaje, comprometido con la calidad, seguridad y humanización de la atención; con procesos, tecnología y sistemas de información basados en las mejores prácticas del mercado y acorde a las necesidades de sus grupos de interés. Promovemos el cuidado del medio ambiente, contribuimos al mantenimiento de la salud de nuestros usuarios y al equilibrio financiero institucional y del sistema. 
                             </p>
                         </div>
 
@@ -101,8 +80,7 @@ const QuienesSomos: React.FC = () => {
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">Visión</h3>
                             <p className="text-verde-light leading-relaxed">
-                                Ser reconocidos como la IPS líder en el sur de Colombia, referente en calidad, 
-                                innovación y humanización en la atención en salud.
+                                Para el año 2027, Red Medicron IPS será reconocida como una red de servicios de salud líder en Nariño, destacándose por su atención integral centrada en el usuario y su familia, comprometida con la sostenibilidad ambiental y financiera, la gestión del riesgo y un servicio humanizado que transforme la experiencia de salud en la región.
                             </p>
                         </div>
                     </div>
@@ -120,16 +98,27 @@ const QuienesSomos: React.FC = () => {
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             <div>
-                                <h3 className="text-2xl font-bold text-verdeOscuro mb-4">Desde 2012</h3>
+                                <h3 className="text-2xl font-bold text-verdeOscuro mb-4">Desde 2005</h3>
                                 <p className="text-grisOscuro leading-relaxed mb-6">
-                                    Red Medicron IPS fue fundada en 2012 con el objetivo de transformar la atención 
-                                    en salud en Nariño y el sur de Colombia. A lo largo de los años, hemos crecido 
-                                    en infraestructura, servicios y cobertura, consolidándonos como una institución 
-                                    innovadora, transparente y cercana a la comunidad.
+                                    Somos una IPS de naturaleza jurídica privada,
+                                    perteneciente a la economía solidaria y sin ánimo de
+                                    lucro, constituida el 15 de diciembre de 2005 y
+                                    reconocida legalmente por la Superintendencia
+                                    Nacional de Salud mediante la Resolución No. 00120
+                                    del 7 de marzo de 2006.
+                                    Nuestra entidad se encuentra registrada mediante
+                                    documento privado en la Cámara de Comercio de
+                                    la ciudad de Pasto.
+                                    Contamos con más de veinte años de experiencia
+                                    en el departamento de Nariño, destacándonos por la
+                                    prestación de servicios de salud ambulatorios y
+                                    hospitalarios en su componente primario y
+                                    complementario, con un enfoque integral y ajustados
+                                    a la complejidad requerida.
                                 </p>
                                 <div className="flex items-center space-x-4">
                                     <div className="text-center">
-                                        <div className="text-2xl font-bold text-azul">11+</div>
+                                        <div className="text-2xl font-bold text-azul">20+</div>
                                         <div className="text-sm text-grisOscuro">Años</div>
                                     </div>
                                     <div className="text-center">
@@ -186,7 +175,7 @@ const QuienesSomos: React.FC = () => {
             <section className="py-20 px-4 bg-gradient-to-r from-verdeOscuro to-azul">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        "Cuidamos tu salud, protegemos tu vida"
+                        "Cuidamos vidas con calidad y humanidad!"
                     </h2>
                     <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                         Red Medicron IPS — Excelencia, innovación y humanización en salud
