@@ -1,0 +1,20 @@
+{
+  "name": "Red Medicron IPS",
+  "short_name": "RMIPS",
+  "description": "Sitio web oficial de Red Medicron IPS - Institución Prestadora de Servicios de Salud en Nariño, Colombia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00a63e",
+  "icons": [
+    {
+      "src": "/iconoRMIPS.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["health", "medical", "healthcare"]
+}

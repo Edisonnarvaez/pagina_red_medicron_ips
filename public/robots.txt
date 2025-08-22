@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://redmedicronips.com.co/sitemap.xml
+
+# Bloquear acceso a archivos de configuración
+Disallow: /.htaccess
+Disallow: /config/
+Disallow: /scripts/
+Disallow: /admin/
+Disallow: /*.js$
+Disallow: /*.json$
+
+# Permitir acceso a recursos importantes
+Allow: /images/
+Allow: /sedes/
+Allow: /*.pdf$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$

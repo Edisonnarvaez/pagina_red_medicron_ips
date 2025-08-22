@@ -421,6 +421,54 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Mobile Modal Fixes */
+@media (max-width: 640px) {
+  .modal-container {
+    max-height: calc(100vh - 20px) !important;
+    max-height: calc(100dvh - 20px) !important; /* Dynamic viewport for mobile */
+    margin: 10px !important;
+    padding: 0 !important;
+  }
+  
+  .modal-content {
+    max-height: calc(100vh - 40px) !important;
+    max-height: calc(100dvh - 40px) !important;
+    overflow-y: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .modal-section {
+    flex-shrink: 0 !important;
+    min-height: auto !important;
+    padding-bottom: 20px !important;
+  }
+  
+  /* Prevent viewport issues on mobile */
+  .modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 640px) {
+    .modal-container {
+      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 20px) !important;
+    }
+    
+    .modal-content {
+      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 40px) !important;
+    }
+  }
+}
+
 /* WhatsApp Float Button Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }

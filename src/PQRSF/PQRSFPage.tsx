@@ -35,8 +35,8 @@ const PQRSF: React.FC = () => {
     ];
 
     const canalesAtencion = [
-        { icon: FaEnvelope, titulo: 'Correo Electrónico', descripcion: 'pqrsf@redmedicron.com', link: 'mailto:pqrsf@redmedicron.com' },
-        { icon: FaPhone, titulo: 'Línea Telefónica', descripcion: '01 8000 123 456 opción 3', link: 'tel:018000123456' },
+        { icon: FaEnvelope, titulo: 'Correo Electrónico', descripcion: 'pqrsf@redmedicron.com.co', link: 'mailto:pqrsf@redmedicron.com.co' },
+        { icon: FaPhone, titulo: 'Línea Telefónica', descripcion: '318 338 0107', link: 'tel:3183380107' },
         { icon: FaMapMarkerAlt, titulo: 'Puntos Físicos', descripcion: 'En cada una de nuestras 7 sedes', link: '/sedes' },
         { icon: MdSupportAgent, titulo: 'Chat en Línea', descripcion: 'Próximamente disponible', link: '#' }
     ];

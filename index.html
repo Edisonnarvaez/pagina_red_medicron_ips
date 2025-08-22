@@ -1,19 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/iconoRMIPS.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Red Medicron IPS - Institución Prestadora de Servicios de Salud en Nariño, Colombia. Atención médica de calidad, sedes en Pasto, Túquerres, Ipiales, Tumaco y más." />
+    <link rel="manifest" href="/manifest.json" />
     <title>Red Medicron IPS</title>
+    
+    <!-- Security headers para prevenir inyección de scripts -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net https://www.facebook.com https://fonts.googleapis.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https: wss:;
+      frame-src 'self' https://www.facebook.com https://www.youtube.com https://www.youtube-nocookie.com;
+      media-src 'self' https:;
+    ">
+    
     <!-- Google Fonts for modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Script bloqueador debe ir primero -->
+    <script src="/script-blocker.js"></script>
+    
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v23.0"></script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Script para prevenir errores de jQuery si es inyectado por el servidor -->
+    <script>
+      // Prevenir errores de scripts externos no deseados
+      window.addEventListener('error', function(e) {
+        if (e.message && (e.message.includes('jQuery') || e.message.includes('$'))) {
+          console.warn('Script jQuery no autorizado detectado y bloqueado:', e.message);
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // Crear un jQuery dummy si es necesario para evitar errores
+      if (typeof jQuery === 'undefined' && typeof $ === 'undefined') {
+        window.$ = window.jQuery = function() {
+          console.warn('Intento de usar jQuery bloqueado - No necesario para esta aplicación React');
+          return {
+            ready: function() {},
+            on: function() {},
+            off: function() {},
+            click: function() {},
+            each: function() {},
+            css: function() {},
+            html: function() {},
+            text: function() {},
+            val: function() {},
+            attr: function() {},
+            prop: function() {},
+            addClass: function() {},
+            removeClass: function() {},
+            hide: function() {},
+            show: function() {},
+            fadeIn: function() {},
+            fadeOut: function() {},
+            animate: function() {}
+          };
+        };
+      }
+    </script>
   </body>
 </html>

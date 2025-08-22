@@ -52,7 +52,7 @@ const Sedes: React.FC = () => {
         {
             nombre: "Sede Tumaco",
             tipo: "Centro de Atención",
-            direccion: "Av. La Playa # 5-10, Tumaco, Nariño",
+            direccion: "Carrera 7 15A - 14, Tumaco, Nariño",
             telefono: "(318) 338-0107",
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
@@ -170,7 +170,7 @@ const Sedes: React.FC = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-r from-azul/20 to-transparent"></div>
                                 <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-2">
-                                    <span className="text-azul font-bold text-sm">🏥 Hospital Principal</span>
+                                    <span className="text-azul font-bold text-sm">🏥 Hospital</span>
                                 </div>
                             </div>
                         </div>

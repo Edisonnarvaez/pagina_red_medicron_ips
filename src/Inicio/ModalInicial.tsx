@@ -69,11 +69,11 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
         <>
             {showPortafolioModal && (
                 <div 
-                    className="fixed inset-0 bg-black/80 backdrop-blur-lg flex items-center justify-center p-2 sm:p-4 z-50 overflow-hidden"
+                    className="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-lg flex items-center justify-center p-2 sm:p-4 z-50"
                     onClick={() => setShowPortafolioModal(false)}
                 >
                     <div 
-                        className={`relative rounded-2xl sm:rounded-3xl max-w-6xl w-full h-[95vh] max-h-[95vh] overflow-y-auto shadow-2xl animate-scale-in border modal-scrollbar ${
+                        className={`modal-container relative rounded-2xl sm:rounded-3xl max-w-6xl w-full max-h-[95vh] shadow-2xl animate-scale-in border modal-scrollbar ${
                             step === 1 ? 'bg-transparent border-transparent' : 'bg-white border-gray-200'
                         }`}
                         onClick={(e) => e.stopPropagation()}
@@ -123,13 +123,13 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
 
                         {/* PANTALLA 1 - Portafolio (SECUNDARIA) */}
                         {step === 1 && (
-                            <div className="relative h-full min-h-[80vh] rounded-2xl sm:rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat"
+                            <div className="relative w-full max-h-[95vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-cover bg-center bg-no-repeat"
                                 style={{ backgroundImage: "url('/images/portafolio.jpg')" }}
                             >
                                 {/* Overlay mejorado que cubre toda el área */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
                                 
-                                <div className="relative z-10 h-full flex flex-col justify-center text-center p-4 sm:p-6 md:p-8 lg:p-12">
+                                <div className="relative z-10 flex flex-col justify-center text-center p-4 sm:p-6 md:p-8 lg:p-12 min-h-[60vh] sm:min-h-[70vh]">
                                     <div className="flex justify-center mb-4 sm:mb-6">
                                         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary-500 to-medical-500 rounded-2xl flex items-center justify-center shadow-glow">
                                             <MdHealthAndSafety className="text-white text-2xl sm:text-3xl md:text-4xl" />
@@ -175,12 +175,12 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
 
                         {/* PANTALLA 2 - Invitación Docentes (PRINCIPAL) */}
                         {step === 2 && (
-                            <div className="relative bg-cover bg-center text-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center justify-center min-h-[80vh] overflow-y-auto"
+                            <div className="relative w-full max-h-[95vh] overflow-y-auto bg-cover bg-center text-white rounded-2xl sm:rounded-3xl"
                                 style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/85 rounded-2xl sm:rounded-3xl" />
 
-                                <div className="relative z-10 text-center space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl mx-auto px-2 sm:px-4 md:px-6">
+                                <div className="relative z-10 text-center space-y-4 sm:space-y-6 md:space-y-8 max-w-5xl mx-auto px-2 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12 min-h-[60vh] sm:min-h-[70vh] flex flex-col justify-center">
                                     {/* Badge informativo */}
                                     <div className="inline-flex items-center bg-medical-500/20 backdrop-blur-sm rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-3 border border-medical-400/30 mb-3 sm:mb-4">
                                         <MdHealthAndSafety className="text-medical-400 mr-2 sm:mr-3" size={16} />
@@ -227,7 +227,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                     </div>
 
                                     {/* Botones de acción mejorados */}
-                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-center justify-center pt-4">
+                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-center justify-center pt-4 pb-6">
                                         <a
                                             href="http://200.116.57.140:8080/formulario_primaria/public/formulario"
                                             target="_blank"
@@ -247,7 +247,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                     </div>
 
                                     {/* Información adicional */}
-                                    <div className="mt-4 sm:mt-6 md:mt-8 text-center">
+                                    <div className="mt-4 sm:mt-6 md:mt-8 text-center pb-4 sm:pb-6">
                                         <p className="text-xs sm:text-sm text-white/70 max-w-3xl mx-auto leading-relaxed">
                                             Al elegir Red Medicron IPS tendrás acceso a servicios de salud de alta calidad, 
                                             tecnología avanzada y atención humanizada en toda la región de Nariño.
