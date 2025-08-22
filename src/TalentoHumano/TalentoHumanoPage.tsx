@@ -30,33 +30,67 @@ const TalentoHumano: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Perfiles destacados */}
+                {/* Estructura Organizacional */}
                 <div className="mb-10 w-full animate-fade-in">
-                    <h3 className="font-bold text-lg mb-4 text-verdeOscuro text-center">Perfiles Destacados</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
-                            <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
-                                <span className="text-3xl font-bold text-verdeOscuro">JD</span>
+                    <h3 className="font-bold text-2xl mb-6 text-verdeOscuro text-center">Estructura Organizacional</h3>
+                    
+                    {/* Director Ejecutivo */}
+                    <div className="flex justify-center mb-8">
+                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10 max-w-sm">
+                            <div className="w-24 h-24 rounded-full bg-verdeOscuro/20 flex items-center justify-center mb-4">
+                                <span className="text-2xl font-bold text-verdeOscuro">ME</span>
                             </div>
-                            <span className="font-bold text-verdeOscuro">Dra. Juliana Díaz</span>
-                            <span className="text-sm text-grisOscuro mb-2">Directora Científica</span>
-                            <p className="text-xs">Lidera la estrategia clínica y la innovación en la atención de pacientes crónicos.</p>
+                            <span className="font-bold text-verdeOscuro text-lg">Dr. Mauricio Enríquez</span>
+                            <span className="text-sm text-grisOscuro mb-2 font-semibold">Director Ejecutivo</span>
+                            <p className="text-xs">Lidera la estrategia institucional y la gestión integral de Red Medicron IPS.</p>
                         </div>
+                    </div>
+
+                    {/* Equipo Directivo */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
                             <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
-                                <span className="text-3xl font-bold text-verdeOscuro">MC</span>
+                                <span className="text-xl font-bold text-verdeOscuro">DJ</span>
                             </div>
-                            <span className="font-bold text-verdeOscuro">MSc. Mario Castillo</span>
-                            <span className="text-sm text-grisOscuro mb-2">Coordinador de Sedes</span>
-                            <p className="text-xs">Gestiona la operación y calidad en las sedes de la red, promoviendo la excelencia.</p>
+                            <span className="font-bold text-verdeOscuro">Jefe Deisy Jojoa</span>
+                            <span className="text-sm text-grisOscuro mb-2">Gerente Hospital</span>
+                            <p className="text-xs">Gestiona las operaciones hospitalarias y la calidad asistencial.</p>
                         </div>
+                        
                         <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
                             <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
-                                <span className="text-3xl font-bold text-verdeOscuro">AP</span>
+                                <span className="text-xl font-bold text-verdeOscuro">SM</span>
                             </div>
-                            <span className="font-bold text-verdeOscuro">Ana Pérez</span>
-                            <span className="text-sm text-grisOscuro mb-2">Enfermera Jefe</span>
-                            <p className="text-xs">Referente en humanización y acompañamiento a pacientes y familias.</p>
+                            <span className="font-bold text-verdeOscuro">Dra. Sandra Moncayo</span>
+                            <span className="text-sm text-grisOscuro mb-2">Jefe de Servicios de Salud</span>
+                            <p className="text-xs">Coordina los servicios asistenciales y la atención médica especializada.</p>
+                        </div>
+                        
+                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
+                            <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
+                                <span className="text-xl font-bold text-verdeOscuro">JF</span>
+                            </div>
+                            <span className="font-bold text-verdeOscuro">Jefe Juan Manuel Fuertes</span>
+                            <span className="text-sm text-grisOscuro mb-2">Jefe Financiero</span>
+                            <p className="text-xs">Administra los recursos financieros y la gestión económica institucional.</p>
+                        </div>
+                        
+                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
+                            <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
+                                <span className="text-xl font-bold text-verdeOscuro">MO</span>
+                            </div>
+                            <span className="font-bold text-verdeOscuro">Dra. Mary Ordóñez</span>
+                            <span className="text-sm text-grisOscuro mb-2">Jefe de Talento Humano</span>
+                            <p className="text-xs">Dirige el desarrollo del capital humano y bienestar organizacional.</p>
+                        </div>
+                        
+                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
+                            <div className="w-20 h-20 rounded-full bg-verdeLima/30 flex items-center justify-center mb-3">
+                                <span className="text-xl font-bold text-verdeOscuro">DG</span>
+                            </div>
+                            <span className="font-bold text-verdeOscuro">Jefe Daniel Granda</span>
+                            <span className="text-sm text-grisOscuro mb-2">Jefe de Calidad</span>
+                            <p className="text-xs">Supervisa la implementación y mejora continua del sistema de calidad.</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +109,7 @@ const TalentoHumano: React.FC = () => {
                 </div>
 
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes dudas sobre talento humano? Escribe a <a href="mailto:talento@redmedicron.com" className="underline text-azul">talento@redmedicron.com</a></span>
+                    <span>¿Tienes dudas sobre talento humano? Escribe a <a href="mailto:talentohumano@redmedicron.com.co" className="underline text-azul">talentohumano@redmedicron.com.co</a></span>
                 </div>
             </div>
         </section>
