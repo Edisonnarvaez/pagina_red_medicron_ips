@@ -21,10 +21,10 @@ const Inicio: React.FC = () => {
             thumbnail: `https://img.youtube.com/vi/AcRy3TqP_DA/maxresdefault.jpg`
         },
         {
-            id: "XziSiHcJ0jc",
+            id: "xFMYKF5lgho",
             title: "Plan Padrino Fundación Valle de Lili",
             description: "Programa de apoyo social",
-            thumbnail: `https://img.youtube.com/vi/XziSiHcJ0jc/maxresdefault.jpg`
+            thumbnail: `https://img.youtube.com/vi/xFMYKF5lgho/maxresdefault.jpg`
         },
         {
             id: "fbFa74Kt61A",
