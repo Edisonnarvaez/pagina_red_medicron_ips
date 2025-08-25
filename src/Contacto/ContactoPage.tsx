@@ -77,11 +77,7 @@ const Contacto: React.FC = () => {
                 horaEnvio: new Date().toLocaleTimeString('es-CO')
             };
 
-            console.log('📧 Enviando datos de contacto a Google Apps Script:', {
-                nombre: dataToSend.nombre,
-                email: dataToSend.email,
-                tipoConsulta: dataToSend.tipoConsulta
-            });
+            
 
             // Enviar a Google Apps Script
             await fetch(GOOGLE_SCRIPT_URL, {
@@ -92,9 +88,6 @@ const Contacto: React.FC = () => {
                 },
                 body: JSON.stringify(dataToSend)
             });
-
-            // Con no-cors, la petición se envía exitosamente aunque aparezca error CSP en consola
-            console.log('✅ Datos enviados exitosamente a Google Apps Script');
             
             setFormStatus({
                 type: 'success',
@@ -116,11 +109,9 @@ const Contacto: React.FC = () => {
             }, 5000);
 
         } catch (error) {
-            console.log('⚠️ Error detectado:', error);
             
             // Si es un error de CSP pero usamos no-cors, el formulario sí funciona
             if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
-                console.log('📋 Error CSP detectado pero datos enviados con no-cors mode');
                 
                 setFormStatus({
                     type: 'success',

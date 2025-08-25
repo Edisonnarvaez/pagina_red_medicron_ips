@@ -133,16 +133,9 @@ const PQRSF: React.FC = () => {
             }, 5000);
 
         } catch (error) {
-            console.error('Error al enviar PQRSF:', error);
             
             // Verificar si es un error de CSP pero el envío fue exitoso
-            if (error instanceof TypeError && (error as Error).message.includes('Failed to fetch')) {
-                console.log('🔄 Posible envío exitoso a pesar del error CSP');
-                setFormStatus({
-                    type: 'success',
-                    message: '¡PQRSF enviada exitosamente! (Verificar en Google Sheets para confirmar)'
-                });
-                
+            if (error instanceof TypeError && (error as Error).message.includes('Failed to fetch')) {                
                 // Limpiar formulario
                 setTimeout(() => {
                     setFormData({
