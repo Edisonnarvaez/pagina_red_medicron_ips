@@ -229,7 +229,7 @@ const LineaEtica: React.FC = () => {
                 {/* Canales de Reporte */}
                 <div className="mb-6 sm:mb-8 bg-gradient-to-r from-verdeLima/20 to-green-100 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
                     <h3 className="font-bold text-xl sm:text-2xl mb-4 sm:mb-6 text-verdeOscuro">Canales de Reporte</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
                         <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
                             <h4 className="font-semibold text-base sm:text-lg mb-2">Formulario Online</h4>
                             <p className="text-gray-600 text-sm sm:text-base">Formulario confidencial en línea (ver abajo)</p>
@@ -239,10 +239,6 @@ const LineaEtica: React.FC = () => {
                             <a href="mailto:lineaetica@redmedicronips.com.co" className="text-azul hover:underline font-medium text-sm sm:text-base break-all">
                                 lineaetica@redmedicronips.com.co
                             </a>
-                        </div>
-                        <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md sm:col-span-2 lg:col-span-1">
-                            <h4 className="font-semibold text-base sm:text-lg mb-2">Canal Confidencial</h4>
-                            <p className="text-gray-600 text-sm sm:text-base">Reportes presenciales con total confidencialidad</p>
                         </div>
                     </div>
                 </div>
