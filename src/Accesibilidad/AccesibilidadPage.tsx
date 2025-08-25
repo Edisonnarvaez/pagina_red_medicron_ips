@@ -45,7 +45,7 @@ const Accesibilidad: React.FC = () => {
                     <h3 className="font-bold text-lg mb-2 text-verdeOscuro">¿Necesitas ayuda?</h3>
                     <p className="mb-2">Si tienes dificultades para navegar el sitio o requieres información en un formato accesible, contáctanos:</p>
                     <ul className="list-disc ml-6 text-base">
-                        <li>Correo: <a href="mailto:accesibilidad@redmedicron.com" className="underline text-azul">accesibilidad@redmedicron.com</a></li>
+                        <li>Correo: <a href="mailto:accesibilidad@redmedicronips.com.co" className="underline text-azul">accesibilidad@redmedicronips.com.co</a></li>
                         <li>Teléfono: <a href="tel:+573001234567" className="underline text-azul">+57 300 123 4567</a></li>
                     </ul>
                 </div>

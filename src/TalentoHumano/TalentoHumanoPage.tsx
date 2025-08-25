@@ -81,7 +81,7 @@ const TalentoHumano: React.FC = () => {
                             </div>
                             <span className="font-bold text-verdeOscuro">Dra. Mary Ordóñez</span>
                             <span className="text-sm text-grisOscuro mb-2">Jefe de Talento Humano</span>
-                            <p className="text-xs">Dirige el desarrollo del capital humano y bienestar organizacional.</p>
+                            <p className="text-xs">Dirige el desarrollo del talento humano y bienestar organizacional.</p>
                         </div>
                         
                         <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-verdeLima/10">
@@ -100,7 +100,7 @@ const TalentoHumano: React.FC = () => {
                     <div className="flex-1 bg-verdeLima/30 rounded-2xl p-6 shadow-lg flex flex-col items-center text-center">
                         <h4 className="font-bold text-lg mb-2 text-verdeOscuro">Convocatorias y Vinculación</h4>
                         <p className="mb-2">¿Quieres hacer parte de nuestro equipo? Consulta las convocatorias abiertas o envía tu hoja de vida.</p>
-                        <a href="mailto:talento@redmedicron.com" className="inline-block bg-acento hover:bg-warning text-negro font-bold px-6 py-2 rounded-full shadow transition-all duration-200 mt-2">Enviar hoja de vida</a>
+                        <a href="mailto:gestionhumana@redmedicronips.com.co" className="inline-block bg-acento hover:bg-warning text-negro font-bold px-6 py-2 rounded-full shadow transition-all duration-200 mt-2">Enviar hoja de vida</a>
                     </div>
                     <div className="flex-1 bg-verdeLima/30 rounded-2xl p-6 shadow-lg flex flex-col items-center text-center">
                         <h4 className="font-bold text-lg mb-2 text-verdeOscuro">Bienestar y Formación</h4>
@@ -109,7 +109,7 @@ const TalentoHumano: React.FC = () => {
                 </div>
 
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes dudas sobre talento humano? Escribe a <a href="mailto:talentohumano@redmedicron.com.co" className="underline text-azul">talentohumano@redmedicron.com.co</a></span>
+                    <span>¿Tienes dudas sobre talento humano? Escribe a <a href="mailto:gestionhumana@redmedicronips.com.co" className="underline text-azul">gestionhumana@redmedicronips.com.co</a></span>
                 </div>
             </div>
         </section>
