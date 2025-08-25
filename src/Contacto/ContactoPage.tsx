@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaUser, FaBuilding, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { MdHealthAndSafety, MdLocalHospital, MdSend } from 'react-icons/md';
-import { LoadingSpinner } from '../components/Loading';
+import { ButtonSpinner } from '../components/Loading';
 
 interface FormData {
     nombre: string;
@@ -112,7 +112,8 @@ const Contacto: React.FC = () => {
                     sede: '',
                     mensaje: ''
                 });
-            }, 3000);
+                setFormStatus({ type: 'idle', message: '' });
+            }, 5000);
 
         } catch (error) {
             console.log('⚠️ Error detectado:', error);
@@ -137,7 +138,8 @@ const Contacto: React.FC = () => {
                         sede: '',
                         mensaje: ''
                     });
-                }, 3000);
+                    setFormStatus({ type: 'idle', message: '' });
+                }, 5000);
             } else {
                 console.error('❌ Error real al enviar:', error);
                 setFormStatus({
@@ -276,18 +278,24 @@ const Contacto: React.FC = () => {
 
                             {/* Estado del formulario */}
                             {formStatus.type !== 'idle' && (
-                                <div className={`mb-6 p-4 rounded-xl border ${
+                                <div className={`mb-6 p-4 rounded-xl border transition-all duration-500 animate-fade-in ${
                                     formStatus.type === 'success' 
-                                        ? 'bg-green-50 border-green-200 text-green-800' 
+                                        ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 text-green-800 shadow-green-100 shadow-lg' 
                                         : formStatus.type === 'error'
-                                        ? 'bg-red-50 border-red-200 text-red-800'
-                                        : 'bg-blue-50 border-blue-200 text-blue-800'
+                                        ? 'bg-gradient-to-r from-red-50 to-rose-50 border-red-200 text-red-800 shadow-red-100 shadow-lg'
+                                        : 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 text-blue-800 shadow-blue-100 shadow-lg'
                                 }`}>
                                     <div className="flex items-center">
-                                        {formStatus.type === 'success' && <FaCheckCircle className="mr-2" />}
-                                        {formStatus.type === 'error' && <FaExclamationTriangle className="mr-2" />}
-                                        {formStatus.type === 'loading' && <div className="animate-spin w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full mr-2" />}
-                                        <span>{formStatus.message}</span>
+                                        {formStatus.type === 'success' && (
+                                            <FaCheckCircle className="mr-3 text-green-600 animate-bounce" size={20} />
+                                        )}
+                                        {formStatus.type === 'error' && (
+                                            <FaExclamationTriangle className="mr-3 text-red-600 animate-pulse" size={20} />
+                                        )}
+                                        {formStatus.type === 'loading' && (
+                                            <div className="animate-spin w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full mr-3" />
+                                        )}
+                                        <span className="font-medium">{formStatus.message}</span>
                                     </div>
                                 </div>
                             )}
@@ -424,17 +432,39 @@ const Contacto: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={formStatus.type === 'loading'}
-                                    className="w-full bg-gradient-to-r from-azul to-verdeOscuro hover:from-azul-dark hover:to-verdeOscuro text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] flex items-center justify-center"
+                                    className={`
+                                        w-full relative overflow-hidden
+                                        bg-gradient-to-r from-azul to-verdeOscuro
+                                        hover:from-azul-dark hover:to-verdeOscuro
+                                        text-white font-bold py-4 px-8 rounded-xl
+                                        shadow-lg hover:shadow-xl
+                                        transition-all duration-300
+                                        disabled:opacity-50 disabled:cursor-not-allowed
+                                        hover:scale-[1.02] active:scale-[0.98]
+                                        flex items-center justify-center
+                                        transform-gpu
+                                        group
+                                        ${formStatus.type === 'loading' ? 'animate-pulse' : ''}
+                                        ${formStatus.type === 'success' ? 'bg-gradient-to-r from-green-500 to-emerald-600' : ''}
+                                    `}
                                 >
+                                    {/* Efecto de brillo */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                                    
                                     {formStatus.type === 'loading' ? (
                                         <>
-                                            <LoadingSpinner size="sm" variant="minimal" />
-                                            <span className="ml-3">Enviando mensaje...</span>
+                                            <ButtonSpinner size="sm" color="white" />
+                                            <span className="ml-3 animate-pulse">Enviando mensaje...</span>
+                                        </>
+                                    ) : formStatus.type === 'success' ? (
+                                        <>
+                                            <FaCheckCircle className="mr-3 animate-bounce" size={20} />
+                                            <span>¡Mensaje Enviado!</span>
                                         </>
                                     ) : (
                                         <>
-                                            <MdSend className="mr-3" size={20} />
-                                            Enviar Mensaje
+                                            <MdSend className="mr-3 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                                            <span>Enviar Mensaje</span>
                                         </>
                                     )}
                                 </button>

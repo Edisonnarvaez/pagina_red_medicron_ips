@@ -145,21 +145,14 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
         );
     }
 
-    // Variante minimalista
+    // Variante minimalista para botones
     if (variant === 'minimal') {
         return (
-            <div className={`flex flex-col items-center justify-center ${currentSize.container}`}>
-                <motion.div 
-                    className={`${currentSize.spinner} border-2 border-gray-300 border-t-azul rounded-full`}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                />
-                {message && (
-                    <p className={`mt-3 text-gray-600 ${currentSize.text}`}>
-                        {message}
-                    </p>
-                )}
-            </div>
+            <motion.div 
+                className={`${currentSize.spinner} border-2 border-gray-200 border-t-white rounded-full`}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+            />
         );
     }
 
