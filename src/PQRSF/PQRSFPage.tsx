@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaComments, FaEnvelope, FaPhone, FaMapMarkerAlt, FaExclamationCircle, FaThumbsUp, FaPaperPlane } from 'react-icons/fa';
 import { MdSend, MdSupportAgent, MdFeedback } from 'react-icons/md';
+import { LoadingSpinner } from '../components/Loading';
 
 const PQRSF: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,9 @@ const PQRSF: React.FC = () => {
         sede: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -19,11 +23,36 @@ const PQRSF: React.FC = () => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí iría la lógica de envío del formulario
-        console.log('Formulario enviado:', formData);
-        alert('Tu PQRSF ha sido enviada exitosamente. Te contactaremos pronto.');
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        
+        try {
+            // Simular envío (aquí conectarías con tu API)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            console.log('Formulario enviado:', formData);
+            setSubmitStatus('success');
+            
+            // Limpiar formulario después del éxito
+            setTimeout(() => {
+                setFormData({
+                    nombre: '',
+                    email: '',
+                    tipo: '',
+                    mensaje: '',
+                    sede: ''
+                });
+                setSubmitStatus('idle');
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Error enviando PQRSF:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const tiposSolicitud = [
@@ -209,11 +238,36 @@ const PQRSF: React.FC = () => {
                             <div className="text-center">
                                 <button
                                     type="submit"
-                                    className="inline-flex items-center justify-center bg-gradient-to-r from-azul to-verdeOscuro hover:from-azul-dark hover:to-verdeOscuro text-white font-bold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
+                                    disabled={isSubmitting}
+                                    className="inline-flex items-center justify-center bg-gradient-to-r from-azul to-verdeOscuro hover:from-azul-dark hover:to-verdeOscuro text-white font-bold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
-                                    <FaPaperPlane className="mr-2" />
-                                    Enviar PQRSF
+                                    {isSubmitting ? (
+                                        <>
+                                            <LoadingSpinner size="sm" variant="minimal" />
+                                            <span className="ml-2">Enviando PQRSF...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <FaPaperPlane className="mr-2" />
+                                            Enviar PQRSF
+                                        </>
+                                    )}
                                 </button>
+                                
+                                {/* Mensajes de estado */}
+                                {submitStatus === 'success' && (
+                                    <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                        <p className="text-green-700 font-medium">✅ PQRSF enviada exitosamente</p>
+                                        <p className="text-green-600 text-sm">Te contactaremos pronto.</p>
+                                    </div>
+                                )}
+                                
+                                {submitStatus === 'error' && (
+                                    <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                        <p className="text-red-700 font-medium">❌ Error al enviar PQRSF</p>
+                                        <p className="text-red-600 text-sm">Por favor, intenta de nuevo.</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="bg-azul-light/10 rounded-xl p-4 text-center">

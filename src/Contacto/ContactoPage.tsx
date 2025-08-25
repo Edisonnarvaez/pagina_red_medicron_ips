@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaUser, FaBuilding, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { MdHealthAndSafety, MdLocalHospital, MdSend } from 'react-icons/md';
+import { LoadingSpinner } from '../components/Loading';
 
 interface FormData {
     nombre: string;
@@ -34,7 +35,7 @@ const Contacto: React.FC = () => {
     });
 
     // URL de tu Google Apps Script (deberás reemplazar esto con tu URL real)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwxt98vsnlh1KgArusZJAkx1qe0MxCAJHr_DOQHOiZR1rfqhNiSPZSn95Z7Fx3aFzEp/exec';
 
     const tiposConsulta = [
         { value: 'informacion-general', label: 'Información General', icon: MdHealthAndSafety },
@@ -388,12 +389,12 @@ const Contacto: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={formStatus.type === 'loading'}
-                                    className="w-full bg-gradient-to-r from-primary-600 to-medical-600 hover:from-primary-700 hover:to-medical-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] flex items-center justify-center"
+                                    className="w-full bg-gradient-to-r from-azul to-verdeOscuro hover:from-azul-dark hover:to-verdeOscuro text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] flex items-center justify-center"
                                 >
                                     {formStatus.type === 'loading' ? (
                                         <>
-                                            <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-3" />
-                                            Enviando...
+                                            <LoadingSpinner size="sm" variant="minimal" />
+                                            <span className="ml-3">Enviando mensaje...</span>
                                         </>
                                     ) : (
                                         <>

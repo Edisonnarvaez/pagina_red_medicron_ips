@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaYoutube, FaPlay, FaFacebook, FaInstagram, FaLinkedin, FaHeart } from 'react-icons/fa';
+import { FaYoutube, FaPlay, FaFacebook, FaInstagram, FaTiktok, FaHeart } from 'react-icons/fa';
 
 // Extiende la interfaz Window para incluir FB
 declare global {
@@ -287,23 +287,23 @@ const RedesSocialesSection: React.FC<RedesSocialesSectionProps> = ({ videos }) =
                             </div>
                         </a>
 
-                        {/* LinkedIn */}
+                        {/* TikTok */}
                         <a
-                            href="https://linkedin.com/company/redmedicronips"
+                            href="https://www.tiktok.com/@redmedicronips"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block group relative overflow-hidden"
                         >
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 group-hover:-translate-y-2 relative z-10">
-                                <div className="absolute -top-2 -right-2 w-16 h-16 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-black/10 group-hover:-translate-y-2 relative z-10">
+                                <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-black/10 to-red-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 <div className="flex items-center relative z-10">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                        <FaLinkedin className="text-white text-xl" />
+                                    <div className="w-14 h-14 bg-gradient-to-br from-black to-red-500 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                        <FaTiktok className="text-white text-xl" />
                                     </div>
                                     <div>
-                                        <h4 className="font-black text-gray-800 text-lg">LinkedIn</h4>
-                                        <p className="text-gray-600">Red profesional</p>
-                                        <p className="text-blue-600 text-sm font-semibold">Red Medicron IPS</p>
+                                        <h4 className="font-black text-gray-800 text-lg">TikTok</h4>
+                                        <p className="text-gray-600">Videos creativos</p>
+                                        <p className="text-black text-sm font-semibold">@redmedicronips</p>
                                     </div>
                                 </div>
                             </div>

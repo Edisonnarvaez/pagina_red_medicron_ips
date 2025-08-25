@@ -113,7 +113,7 @@ const EnlacesExternos: React.FC = () => {
                         
                         
                         <a 
-                            href="https://www.red.redmedicron.com/" 
+                            href="http://www.red.redmedicronips.com.co/" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6 flex flex-col items-center shadow-md hover:bg-purple-100 hover:border-purple-300 transition-all duration-300"
