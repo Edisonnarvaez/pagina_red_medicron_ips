@@ -23,6 +23,7 @@ import LineaEtica from './LineaEtica/LineaEticaPage';
 import PQRSF from './PQRSF/PQRSFPage';
 import Contacto from './Contacto/ContactoPage';
 import Asamblea from './Asamblea/AsambleaPage';
+import NotFound from './NotFound/NotFoundPage';
 import ModalPortafolio from './Inicio/ModalInicial';
 import WhatsAppFloatButton from './components/WhatsAppFloat/WhatsAppFloatButton';
 
@@ -54,6 +55,8 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/asamblea" element={<Asamblea />} />
         <Route path="/accesibilidad" element={<Accesibilidad />} />
+        {/* Ruta catch-all para páginas no encontradas (404) */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       

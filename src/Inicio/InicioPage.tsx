@@ -15,6 +15,12 @@ const Inicio: React.FC = () => {
     // Videos de YouTube para el componente de redes sociales
     const youtubeVideos = [
         {
+            id: "VT0SHXu2vS8",
+            title: "Docente elije a tu prestador de servicos ",
+            description: "Conoce como hacerlo ",
+            thumbnail: `https://img.youtube.com/vi/VT0SHXu2vS8/maxresdefault.jpg`
+        },
+        {
             id: "AcRy3TqP_DA",
             title: "FOMAG y Red Medicron IPS",
             description: "Conoce nuestra alianza estratégica",
