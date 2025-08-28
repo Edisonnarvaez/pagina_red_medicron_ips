@@ -46,19 +46,41 @@ const RedesSocialesSection: React.FC<RedesSocialesSectionProps> = ({ videos }) =
 
     const youtubeVideos = videos || defaultVideos;
 
-    // Reinicializar Facebook SDK
+    // Reinicializar Facebook SDK con manejo de errores
     useEffect(() => {
+        let retryCount = 0;
+        const maxRetries = 3;
+        
         const initFacebookSDK = () => {
-            if (window.FB) {
-                window.FB.XFBML.parse();
-            } else {
-                // Si FB no está disponible aún, esperar un poco y reintentar
-                setTimeout(initFacebookSDK, 1000);
+            try {
+                if (typeof window !== 'undefined' && window.FB) {
+                    // Limpiar cualquier widget anterior
+                    const existingWidgets = document.querySelectorAll('.fb-page');
+                    existingWidgets.forEach(widget => {
+                        if (widget.getAttribute('fb-xfbml-state') === 'rendered') {
+                            widget.removeAttribute('fb-xfbml-state');
+                        }
+                    });
+                    
+                    // Re-parsear los widgets de Facebook
+                    window.FB.XFBML.parse();
+                } else if (retryCount < maxRetries) {
+                    // Si FB no está disponible aún, reintentar
+                    retryCount++;
+                    setTimeout(initFacebookSDK, 2000 * retryCount);
+                }
+            } catch (error) {
+                console.warn('Error inicializando Facebook SDK (no crítico):', error);
+                // No mostrar error al usuario, es solo un widget
             }
         };
         
-        // Esperar un poco para que el DOM esté listo
-        setTimeout(initFacebookSDK, 2000);
+        // Esperar que el DOM y Facebook SDK estén listos
+        const timer = setTimeout(initFacebookSDK, 3000);
+        
+        return () => {
+            clearTimeout(timer);
+        };
     }, []);
 
     return (
@@ -233,20 +255,37 @@ const RedesSocialesSection: React.FC<RedesSocialesSectionProps> = ({ videos }) =
                                     </div>
                                 </div>
                                 
-                                {/* Widget de Facebook */}
+                                {/* Widget de Facebook Mejorado */}
                                 <div className="facebook-widget">
                                     <div className="fb-page" 
                                         data-href="https://www.facebook.com/IPSmedicron" 
                                         data-tabs="timeline" 
-                                        data-width="" 
+                                        data-width="300" 
                                         data-height="300" 
                                         data-small-header="true" 
                                         data-adapt-container-width="true" 
                                         data-hide-cover="false" 
-                                        data-show-facepile="true">
+                                        data-show-facepile="true"
+                                        data-lazy="true"
+                                        key="facebook-widget-unique">
                                         <blockquote className="fb-xfbml-parse-ignore" cite="https://www.facebook.com/IPSmedicron">
                                             <a href="https://www.facebook.com/IPSmedicron">Red Medicron IPS</a>
                                         </blockquote>
+                                    </div>
+                                    
+                                    {/* Fallback si el widget no carga */}
+                                    <div className="mt-3 text-center bg-blue-50 rounded-lg p-4">
+                                        <p className="text-gray-600 text-sm mb-2">
+                                            ¿No puedes ver nuestro feed de Facebook?
+                                        </p>
+                                        <a
+                                            href="https://www.facebook.com/IPSmedicron"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-blue-600 hover:text-blue-800 font-medium text-sm underline"
+                                        >
+                                            Visítanos directamente en Facebook
+                                        </a>
                                     </div>
                                 </div>
                                 

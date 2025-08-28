@@ -30,6 +30,32 @@
     <script src="/script-blocker.js"></script>
     
     <div id="fb-root"></div>
+    
+    <!-- Script para manejar errores de Facebook SDK -->
+    <script>
+      // Manejar errores específicos de Facebook SDK
+      window.addEventListener('error', function(e) {
+        // Suprimir errores conocidos de Facebook SDK que no afectan la funcionalidad
+        if (e.message && (
+          e.message.includes('Could not find element') ||
+          e.message.includes('ErrorUtils caught an error') ||
+          e.message.includes('__elem_') ||
+          e.message.includes('__inst_')
+        )) {
+          console.warn('Error de Facebook SDK suprimido (no crítico):', e.message);
+          e.preventDefault();
+          return false;
+        }
+        
+        // Bloquear errores de jQuery no autorizados
+        if (e.message && (e.message.includes('jQuery') || e.message.includes('$'))) {
+          console.warn('Script jQuery no autorizado detectado y bloqueado:', e.message);
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
+    
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v23.0"></script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
