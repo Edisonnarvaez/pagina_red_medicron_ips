@@ -1,8 +1,18 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Asociados: React.FC = () => {
     return (
-        <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Asociados a la Cooperativa - Red Medicron IPS"
+                description="Información para asociados de Red Medicron IPS en Nariño. Beneficios, requisitos, documentos y normatividad colombiana para participar en la cooperativa de salud."
+                keywords="asociados red medicron ips, cooperativa salud nariño, beneficios asociados ips túquerres, requisitos cooperativa red medicron"
+                canonical="/asociados"
+                noindex={true}
+            />
+            
+            <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-4xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Asociados a la Cooperativa</h2>
                 <p className="mb-8 text-center text-lg">Conoce los beneficios, requisitos y documentos para los asociados de Red Medicron IPS, en cumplimiento de la normatividad colombiana.</p>
@@ -42,6 +52,7 @@ const Asociados: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

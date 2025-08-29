@@ -1,7 +1,19 @@
 
+import React from 'react';
+import { SEOHelmet } from '../components/SEO';
+
 const Contabilidad: React.FC = () => {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-azul-light via-white to-verdeLima/20 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+        <>
+            <SEOHelmet
+                title="Información Contable y Financiera - Red Medicron IPS"
+                description="Información contable, estados financieros y gestión fiscal de Red Medicron IPS en Nariño. Transparencia financiera e informes de gestión según normatividad colombiana."
+                keywords="contabilidad red medicron ips, estados financieros nariño, información fiscal ips túquerres, gestión financiera red medicron"
+                canonical="/contabilidad"
+                noindex={true}
+            />
+            
+            <section className="relative min-h-screen bg-gradient-to-br from-azul-light via-white to-verdeLima/20 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
             {/* Fondo decorativo institucional */}
             <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-azul-light rounded-full blur-2xl opacity-30 -z-10" />
             <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-verdeLima/30 rounded-full blur-2xl opacity-20 -z-10" />
@@ -195,6 +207,7 @@ const Contabilidad: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

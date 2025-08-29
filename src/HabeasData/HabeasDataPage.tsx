@@ -1,8 +1,17 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const HabeasData: React.FC = () => {
     return (
-        <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Habeas Data - Protección de Datos Personales | Red Medicron IPS"
+                description="Conoce tus derechos sobre el tratamiento de datos personales en Red Medicron IPS. Política de protección de datos según la Ley 1581 de 2012 y normatividad colombiana."
+                keywords="habeas data red medicron ips, protección datos personales nariño, ley 1581 2012 red medicron, derechos datos ips túquerres, privacidad información médica"
+                canonical="/habeas-data"
+            />
+            
+            <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-3xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Habeas Data</h2>
                 <p className="mb-8 text-center text-lg">Conoce tus derechos sobre el tratamiento de datos personales en Red Medicron IPS y cómo ejercerlos según la Ley 1581 de 2012 y demás normatividad colombiana.</p>
@@ -27,6 +36,7 @@ const HabeasData: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

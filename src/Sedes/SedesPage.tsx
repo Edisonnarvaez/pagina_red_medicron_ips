@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHospital, FaMapMarkerAlt, FaPhone, FaClock, FaUserMd } from 'react-icons/fa';
 import { MdLocalHospital, MdHealthAndSafety, MdMedicalServices } from 'react-icons/md';
+import { SEOHelmet } from '../components/SEO';
 
 const Sedes: React.FC = () => {
     const sedes = [
@@ -86,7 +87,16 @@ const Sedes: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/30">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Sedes y Ubicaciones - Red Medicron IPS"
+                description="Encuentra todas las sedes de Red Medicron IPS en Nariño: Túquerres, Pasto, Ipiales, Tumaco, Buesaco, La Cruz. Horarios, direcciones y servicios disponibles."
+                keywords="sedes red medicron ips, ubicaciones ips nariño, hospital túquerres, clinica pasto, ips ipiales, servicios salud tumaco"
+                canonical="/sedes"
+            />
+            
+            <div className="min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/30">
             {/* Hero Section */}
             <section className="relative py-20 px-4 overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-verdeLima/20 rounded-full blur-3xl -z-10" />
@@ -290,6 +300,7 @@ const Sedes: React.FC = () => {
                 </div>
             </section>*/}
         </div>
+        </>
     );
 };
 

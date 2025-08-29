@@ -6,6 +6,7 @@ import { BiNews } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import ModalPortafolio from './ModalInicial';
 import { RedesSocialesSection } from '../components/RedesSociales';
+import { SEOHelmet } from '../components/SEO';
 
 const Inicio: React.FC = () => {
     const [showPortafolioModal, setShowPortafolioModal] = useState(false);
@@ -191,6 +192,14 @@ const Inicio: React.FC = () => {
 
     return (
         <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Red Medicron IPS - Institución de Salud Integral en Nariño"
+                description="Red Medicron IPS ofrece servicios de salud integral en Nariño, Colombia. Atención médica de calidad en Pasto, Túquerres, Ipiales, Tumaco. Medicina general, odontología, promoción y prevención."
+                keywords="red medicron ips, salud nariño, ips túquerres, medicina pasto, salud ipiales, servicios médicos colombia, eps nariño, atención médica integral"
+                canonical="/"
+            />
+            
             {/* Modal Portafolio de Servicios Mejorado */}
             <ModalPortafolio 
                 showPortafolioModal={showPortafolioModal} 

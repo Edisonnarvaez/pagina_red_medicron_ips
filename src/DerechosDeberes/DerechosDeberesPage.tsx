@@ -1,8 +1,17 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const DerechosDeberes: React.FC = () => {
     return (
-        <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Derechos y Deberes de los Usuarios - Red Medicron IPS"
+                description="Conoce tus derechos y deberes como usuario de Red Medicron IPS en Nariño. Información sobre normatividad colombiana, participación activa y atención médica de calidad."
+                keywords="derechos deberes usuarios red medicron ips, derechos pacientes nariño, deberes usuarios ips túquerres, normatividad salud colombia"
+                canonical="/derechos-deberes"
+            />
+            
+            <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-4xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Derechos y Deberes de los Usuarios</h2>
                 <p className="mb-8 text-center text-lg">En Red Medicron IPS promovemos el respeto, la equidad y la participación activa de nuestros usuarios. Conoce tus derechos y deberes según la normatividad colombiana y nuestra política institucional.</p>
@@ -46,6 +55,7 @@ const DerechosDeberes: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

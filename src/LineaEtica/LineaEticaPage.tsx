@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaShieldAlt, FaEye, FaEyeSlash, FaCheckCircle, FaExclamationTriangle, FaUserSecret, FaGavel, FaHandshake, FaBullhorn, FaExclamationCircle } from 'react-icons/fa';
 import { ButtonSpinner } from '../components/Loading';
+import { SEOHelmet } from '../components/SEO';
 
 interface FormData {
     nombre: string;
@@ -191,7 +192,17 @@ const LineaEtica: React.FC = () => {
     };
 
     return (
-        <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-green-50 text-negro p-4 sm:p-6 lg:p-8 flex flex-col items-center">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Línea Ética - Red Medicron IPS"
+                description="Canal confidencial de reportes éticos de Red Medicron IPS. Reporta situaciones que atenten contra la integridad, ética y valores institucionales de forma segura y anónima."
+                keywords="línea ética red medicron ips, reportes éticos salud, canal confidencial ips, integridad institucional, valores éticos salud"
+                canonical="/linea-etica"
+                noindex={true}
+            />
+            
+            <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-green-50 text-negro p-4 sm:p-6 lg:p-8 flex flex-col items-center">
             <div className="w-full max-w-4xl">
                 {/* Header */}
                 <div className="text-center mb-6 sm:mb-8">
@@ -499,6 +510,7 @@ const LineaEtica: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

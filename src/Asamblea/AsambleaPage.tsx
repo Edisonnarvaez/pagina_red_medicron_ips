@@ -1,8 +1,18 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Asamblea: React.FC = () => {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/30 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+        <>
+            <SEOHelmet
+                title="Asamblea General - Red Medicron IPS"
+                description="Información sobre la Asamblea General de Red Medicron IPS en Nariño. Convocatorias, actas, decisiones y participación de asociados en la gestión institucional."
+                keywords="asamblea general red medicron ips, convocatorias asamblea nariño, actas red medicron, participación asociados ips túquerres"
+                canonical="/asamblea"
+                noindex={true}
+            />
+            
+            <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/30 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
             {/* Fondo decorativo institucional */}
             <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-verdeLima/30 rounded-full blur-2xl opacity-30 -z-10" />
             <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-azul-light rounded-full blur-2xl opacity-20 -z-10" />
@@ -176,6 +186,7 @@ const Asamblea: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

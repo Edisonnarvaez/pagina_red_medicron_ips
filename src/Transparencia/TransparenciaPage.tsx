@@ -1,7 +1,15 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Transparencia: React.FC = () => {
     return (
+        <>
+            <SEOHelmet
+                title="Transparencia y Acceso a la Información - Red Medicron IPS"
+                description="Portal de transparencia de Red Medicron IPS en Nariño. Accede a información pública, estados financieros, contratación y documentos institucionales según la Ley de Transparencia."
+                keywords="transparencia red medicron ips, información pública ips nariño, estados financieros red medicron, contratación ips túquerres, ley transparencia"
+                canonical="/transparencia"
+            />
 
         <section className="relative min-h-screen bg-gradient-to-br from-azul-light via-white to-verdeLima/20 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
             {/* Fondo decorativo institucional */}
@@ -66,6 +74,7 @@ const Transparencia: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

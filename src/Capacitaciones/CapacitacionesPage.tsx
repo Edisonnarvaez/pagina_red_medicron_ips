@@ -1,8 +1,17 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Capacitaciones: React.FC = () => {
     return (
-        <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Capacitaciones y Formación Continua - Red Medicron IPS"
+                description="Calendario de capacitaciones, talleres y recursos de formación para el personal de Red Medicron IPS en Nariño. Desarrollo profesional en salud y actualización médica."
+                keywords="capacitaciones red medicron ips, formación médica nariño, talleres salud túquerres, desarrollo profesional ips, educación médica continua"
+                canonical="/capacitaciones"
+            />
+            
+            <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-4xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Capacitaciones</h2>
                 <p className="mb-8 text-center text-lg">Consulta el calendario de capacitaciones, talleres y recursos de formación para el personal de Red Medicron IPS.</p>
@@ -53,6 +62,7 @@ const Capacitaciones: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

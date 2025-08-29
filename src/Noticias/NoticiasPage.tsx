@@ -1,8 +1,17 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Noticias: React.FC = () => {
     return (
-        <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Noticias y Eventos - Red Medicron IPS"
+                description="Mantente informado con las últimas noticias, eventos y novedades de Red Medicron IPS en Nariño. Actualidad en salud, capacitaciones y servicios médicos."
+                keywords="noticias red medicron ips, eventos salud nariño, novedades ips túquerres, actualidad médica pasto, eventos red medicron"
+                canonical="/noticias"
+            />
+            
+            <section className="min-h-screen bg-grisClaro text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-5xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Noticias</h2>
                 <p className="mb-8 text-center text-lg">Mantente informado con las últimas noticias, eventos y novedades de Red Medicron IPS.</p>
@@ -37,6 +46,7 @@ const Noticias: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

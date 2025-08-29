@@ -1,8 +1,17 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const EnlacesExternos: React.FC = () => {
     return (
-        <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Enlaces de Sistemas y Herramientas - Red Medicron IPS"
+                description="Accede a sistemas, portales y herramientas digitales de Red Medicron IPS. Enlaces directos a plataformas de gestión, consultas médicas y servicios en línea para usuarios en Nariño."
+                keywords="sistemas red medicron ips, portales médicos nariño, herramientas digitales ips, plataforma salud túquerres, acceso sistemas red medicron"
+                canonical="/enlaces-externos"
+            />
+            
+            <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-6xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Enlaces de Sistemas</h2>
                 <p className="mb-8 text-center text-lg">Accede rápidamente a las aplicaciones y plataformas institucionales de Red Medicron IPS.</p>
@@ -158,6 +167,7 @@ const EnlacesExternos: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

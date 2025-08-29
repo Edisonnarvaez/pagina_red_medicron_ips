@@ -1,8 +1,18 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Roadmap: React.FC = () => {
     return (
-        <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Roadmap de Desarrollo - Red Medicron IPS"
+                description="Plan de desarrollo, próximos hitos y mejoras continuas del sitio web y servicios de Red Medicron IPS en Nariño. Roadmap tecnológico e institucional."
+                keywords="roadmap red medicron ips, plan desarrollo nariño, mejoras sitio web ips túquerres, hitos tecnológicos red medicron"
+                canonical="/roadmap"
+                noindex={true}
+            />
+            
+            <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-3xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Roadmap</h2>
                 <p className="mb-8 text-center text-lg">Consulta el plan de desarrollo, próximos hitos y mejoras continuas del sitio web y los servicios de Red Medicron IPS.</p>
@@ -33,6 +43,7 @@ const Roadmap: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

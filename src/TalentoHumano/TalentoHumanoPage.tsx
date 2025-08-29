@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight, FaUserTie, FaUsers, FaAward, FaFileUpload, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { ButtonSpinner } from '../components/Loading';
+import { SEOHelmet } from '../components/SEO';
 
 // Interfaces para el formulario de convocatoria
 interface FormDataConvocatoria {
@@ -370,7 +371,16 @@ const TalentoHumano: React.FC = () => {
         }
     };
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/30 via-white to-azul-light text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Talento Humano - Red Medicron IPS"
+                description="Conoce nuestro equipo de profesionales en Red Medicron IPS. Únete a nuestro talento humano, consulta convocatorias laborales y oportunidades de empleo en el sector salud."
+                keywords="trabajo red medicron ips, empleo salud nariño, convocatorias médicas, recursos humanos ips, trabajar en salud túquerres"
+                canonical="/talento-humano"
+            />
+            
+            <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/30 via-white to-azul-light text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
             {/* Fondo decorativo institucional */}
             <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-verdeLima/30 rounded-full blur-2xl opacity-40 -z-10" />
             <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-azul-light rounded-full blur-2xl opacity-20 -z-10" />
@@ -857,6 +867,7 @@ const TalentoHumano: React.FC = () => {
                 </div>
             )}
         </section>
+        </>
     );
 };
 

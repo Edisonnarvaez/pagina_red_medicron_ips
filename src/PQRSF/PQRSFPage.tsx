@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaComments, FaEnvelope, FaPhone, FaMapMarkerAlt, FaExclamationCircle, FaThumbsUp, FaCheckCircle, FaExclamationTriangle, FaUser, FaBuilding } from 'react-icons/fa';
 import { MdSend, MdSupportAgent, MdFeedback, MdHealthAndSafety, MdLocalHospital } from 'react-icons/md';
 import { ButtonSpinner } from '../components/Loading';
+import { SEOHelmet } from '../components/SEO';
 
 interface FormData {
     nombre: string;
@@ -173,7 +174,16 @@ const PQRSF: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-azul-light/20 via-white to-verdeLima/10">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="PQRSF - Red Medicron IPS"
+                description="Sistema PQRSF de Red Medicron IPS: Peticiones, Quejas, Reclamos, Sugerencias y Felicitaciones. Tu opinión nos ayuda a mejorar nuestros servicios de salud."
+                keywords="pqrsf red medicron ips, quejas ips nariño, sugerencias salud, reclamos atención médica, felicitaciones servicios salud"
+                canonical="/pqrsf"
+            />
+            
+            <div className="min-h-screen bg-gradient-to-br from-azul-light/20 via-white to-verdeLima/10">
             {/* Hero Section */}
             <section className="relative py-20 px-4 overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-azul-light/20 rounded-full blur-3xl -z-10" />
@@ -550,6 +560,7 @@ const PQRSF: React.FC = () => {
                 </div>
             </section>
         </div>
+        </>
     );
 };
 

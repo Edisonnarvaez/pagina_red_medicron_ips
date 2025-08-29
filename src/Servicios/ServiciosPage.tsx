@@ -3,6 +3,7 @@ import { FaHospital, FaUserMd, FaHeartbeat, FaAmbulance, FaStethoscope, FaMicros
 import { MdMedicalServices, MdPregnantWoman, MdBloodtype, MdHealing } from 'react-icons/md';
 import { GiKidneys } from 'react-icons/gi';
 import { RiMentalHealthLine } from 'react-icons/ri';
+import { SEOHelmet } from '../components/SEO';
 
 const Servicios: React.FC = () => {
     // Servicios de Primer Nivel (Sedes Regionales)
@@ -46,7 +47,16 @@ const Servicios: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-azul-light/30 via-white to-verdeLima/10">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Servicios de Salud - Red Medicron IPS"
+                description="Servicios médicos integrales de Red Medicron IPS: medicina general, odontología, promoción y prevención, programas especializados. Atención de calidad en Nariño, Colombia."
+                keywords="servicios médicos nariño, medicina general túquerres, odontología ips, promoción salud, prevención enfermedades, programas especializados salud"
+                canonical="/servicios"
+            />
+            
+            <div className="min-h-screen bg-gradient-to-br from-azul-light/30 via-white to-verdeLima/10">
             {/* Hero Section */}
             <section className="relative py-20 px-4 overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-azul-light/20 rounded-full blur-3xl -z-10" />
@@ -179,6 +189,7 @@ const Servicios: React.FC = () => {
                 </div>
             </section>
         </div>
+        </>
     );
 };
 

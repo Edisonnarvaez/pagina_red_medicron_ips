@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaUser, FaBuilding, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { MdHealthAndSafety, MdLocalHospital, MdSend } from 'react-icons/md';
 import { ButtonSpinner } from '../components/Loading';
+import { SEOHelmet } from '../components/SEO';
 
 interface FormData {
     nombre: string;
@@ -142,7 +143,16 @@ const Contacto: React.FC = () => {
     };
 
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-medical-50 py-16 px-4 overflow-hidden">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Contacto - Red Medicron IPS"
+                description="Contáctanos en Red Medicron IPS. Información de contacto, horarios de atención, ubicaciones y formulario de contacto. Estamos para atenderte en Nariño, Colombia."
+                keywords="contacto red medicron ips, teléfono red medicron, dirección ips nariño, horarios atención salud, contactar ips túquerres"
+                canonical="/contacto"
+            />
+            
+            <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-medical-50 py-16 px-4 overflow-hidden">
             {/* Elementos decorativos de fondo */}
             <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-medical-200/30 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -right-24 w-[350px] h-[350px] bg-primary-200/30 rounded-full blur-3xl" />
@@ -474,6 +484,7 @@ const Contacto: React.FC = () => {
 
             </div>
         </section>
+        </>
     );
 };
 

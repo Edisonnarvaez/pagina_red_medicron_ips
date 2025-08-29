@@ -1,8 +1,18 @@
 import React from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Confidencialidad: React.FC = () => {
     return (
-        <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
+        <>
+            <SEOHelmet
+                title="Política de Confidencialidad - Red Medicron IPS"
+                description="Política de confidencialidad de la información en Red Medicron IPS. Protección de datos de usuarios, empleados y aliados según normatividad colombiana y estándares éticos."
+                keywords="confidencialidad red medicron ips, política privacidad nariño, protección información médica, confidencialidad datos ips túquerres"
+                canonical="/confidencialidad"
+                noindex={true}
+            />
+            
+            <section className="min-h-screen bg-white text-negro p-8 flex flex-col items-center">
             <div className="w-full max-w-3xl">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Confidencialidad de la Información</h2>
                 <p className="mb-8 text-center text-lg">Red Medicron IPS protege la privacidad y confidencialidad de la información de usuarios, empleados y aliados, cumpliendo la normatividad colombiana y los más altos estándares éticos.</p>
@@ -29,6 +39,7 @@ const Confidencialidad: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { FaHeart, FaUsers, FaLightbulb, FaHandshake, FaEye, FaShieldAlt } from 'react-icons/fa';
 import { MdHealthAndSafety, MdTrendingUp, MdStar } from 'react-icons/md';
 import { RiTeamFill } from 'react-icons/ri';
+import { SEOHelmet } from '../components/SEO';
 
 const QuienesSomos: React.FC = () => {
     const valores = [
@@ -33,7 +34,16 @@ const QuienesSomos: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/20">
+        <>
+            {/* SEO Meta Tags */}
+            <SEOHelmet
+                title="Quiénes Somos - Red Medicron IPS"
+                description="Red Medicron IPS es una institución de salud comprometida con la salud integral y humanizada en Nariño. Conoce nuestra misión, visión, valores y compromiso con la comunidad."
+                keywords="red medicron ips nariño, institución salud túquerres, misión visión ips, valores institucionales salud, compromiso social nariño"
+                canonical="/quienes-somos"
+            />
+            
+            <div className="min-h-screen bg-gradient-to-br from-verdeLima/20 via-white to-azul-light/20">
             {/* Hero Section */}
             <section className="relative py-20 px-4 overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-verdeLima/20 rounded-full blur-3xl -z-10" />
@@ -197,6 +207,7 @@ const QuienesSomos: React.FC = () => {
                 </div>
             </section>
         </div>
+        </>
     );
 };
 

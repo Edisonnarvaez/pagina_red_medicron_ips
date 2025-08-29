@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
+import { SEOHelmet } from '../components/SEO';
 
 const Accesibilidad: React.FC = () => {
     const [contraste, setContraste] = useState(false);
     const [fontSize, setFontSize] = useState(1);
 
     return (
-        <section className={`min-h-screen p-8 ${contraste ? 'bg-black text-white' : 'bg-grisClaro text-negro'}`} style={{ fontSize: `${fontSize}em` }}>
+        <>
+            <SEOHelmet
+                title="Accesibilidad Web - Red Medicron IPS"
+                description="Opciones de accesibilidad del sitio web de Red Medicron IPS en Nariño. Herramientas para mejorar la navegación y acceso a la información de salud para todos los usuarios."
+                keywords="accesibilidad web red medicron ips, navegación inclusiva nariño, herramientas accesibilidad ips túquerres, inclusión digital salud"
+                canonical="/accesibilidad"
+            />
+            
+            <section className={`min-h-screen p-8 ${contraste ? 'bg-black text-white' : 'bg-grisClaro text-negro'}`} style={{ fontSize: `${fontSize}em` }}>
             <div className="w-full max-w-3xl mx-auto">
                 <h2 className="text-4xl font-extrabold mb-6 text-center">Accesibilidad</h2>
                 <div className="mb-6 flex gap-4 justify-center">
@@ -54,6 +63,7 @@ const Accesibilidad: React.FC = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 
