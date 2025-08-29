@@ -42,7 +42,7 @@ const DerechosDeberes: React.FC = () => {
                     </ul>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes dudas sobre tus derechos o deberes? Escribe a <a href="mailto:usuarios@redmedicron.com" className="underline text-azul">usuarios@redmedicron.com</a> o consulta la <a href="/pqrsf" className="underline text-azul">sección PQRSF</a>.</span>
+                    <span>¿Tienes dudas sobre tus derechos o deberes? Escribe a <a href="mailto:atencionalusuario@redmedicronips.com.co" className="underline text-azul">atencionalusuario@redmedicronips.com.co</a> o consulta la <a href="/pqrsf" className="underline text-azul">sección PQRSF</a>.</span>
                 </div>
             </div>
         </section>

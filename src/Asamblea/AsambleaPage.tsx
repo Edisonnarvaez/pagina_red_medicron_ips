@@ -161,7 +161,7 @@ const Asamblea: React.FC = () => {
                         <div className="space-y-3 text-sm">
                             <p>¿Necesitas información sobre asambleas o documentos relacionados?</p>
                             <a 
-                                href="mailto:asamblea@redmedicronips.com" 
+                                href="mailto:asamblea@redmedicronips.com.co" 
                                 className="inline-block bg-verdeOscuro text-white px-4 py-2 rounded-lg hover:bg-verdeOscuro/80 transition-colors"
                             >
                                 Contactar Secretaría

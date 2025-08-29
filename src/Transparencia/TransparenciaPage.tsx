@@ -62,7 +62,7 @@ const Transparencia: React.FC = () => {
                 </div>
 
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>Para ejercer tu derecho a la información, consulta los enlaces o <a href="mailto:info@redmedicron.com" className="underline text-azul">contáctanos</a>.</span>
+                    <span>Para ejercer tu derecho a la información, consulta los enlaces o <a href="mailto:notificaciones@redmedicronips.com.co" className="underline text-azul">contáctanos</a>.</span>
                 </div>
             </div>
         </section>

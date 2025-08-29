@@ -150,8 +150,8 @@ const EnlacesExternos: React.FC = () => {
                     <p className="mb-2">¿Necesitas ayuda con algún enlace o tienes problemas de acceso?</p>
                     <p>
                         Escríbenos a{' '}
-                        <a href="mailto:soporte@redmedicron.com" className="underline text-blue-600 hover:text-blue-800">
-                            soporte@redmedicron.com.co
+                        <a href="mailto:soporteips@redmedicronips.com.co" className="underline text-blue-600 hover:text-blue-800">
+                            soporteips@redmedicronips.com.co
                         </a>
                         {' '}o contacta al área de Sistemas.
                     </p>

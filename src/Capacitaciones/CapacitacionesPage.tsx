@@ -49,7 +49,7 @@ const Capacitaciones: React.FC = () => {
                     </ul>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes dudas sobre las capacitaciones? Escribe a <a href="mailto:capacitaciones@redmedicron.com" className="underline text-azul">capacitaciones@redmedicron.com</a></span>
+                    <span>¿Tienes dudas sobre las capacitaciones? Escribe a <a href="mailto:capacitaciones@redmedicronips.com.co" className="underline text-azul">capacitaciones@redmedicronips.com.co</a></span>
                 </div>
             </div>
         </section>

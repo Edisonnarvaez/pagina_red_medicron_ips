@@ -25,7 +25,7 @@ const Confidencialidad: React.FC = () => {
                     </ul>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes dudas sobre privacidad? Escribe a <a href="mailto:privacidad@redmedicron.com" className="underline text-azul">privacidad@redmedicron.com</a></span>
+                    <span>¿Tienes dudas sobre privacidad? Escribe a <a href="mailto:privacidad@redmedicronips.com.co" className="underline text-azul">privacidad@redmedicronips.com.co</a></span>
                 </div>
             </div>
         </section>

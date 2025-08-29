@@ -23,7 +23,7 @@ const HabeasData: React.FC = () => {
                     <a href="#" className="text-azul underline">Descargar política de tratamiento de datos (PDF)</a>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>Para ejercer tus derechos o realizar solicitudes, escribe a <a href="mailto:habeasdata@redmedicron.com" className="underline text-azul">habeasdata@redmedicron.com</a></span>
+                    <span>Para ejercer tus derechos o realizar solicitudes, escribe a <a href="mailto:tics@redmedicronips.com.co" className="underline text-azul">tics@redmedicronips.com.co</a></span>
                 </div>
             </div>
         </section>

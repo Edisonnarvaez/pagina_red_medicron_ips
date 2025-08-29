@@ -38,7 +38,7 @@ const Asociados: React.FC = () => {
                     </ul>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Eres asociado y tienes dudas? Escribe a <a href="mailto:asociados@redmedicron.com" className="underline text-azul">asociados@redmedicron.com</a> o consulta la documentación disponible.</span>
+                    <span>¿Eres asociado y tienes dudas? Escribe a <a href="mailto:comunicacionesasociados@redmedicronips.com.co" className="underline text-azul">comunicacionesasociados@redmedicronips.com.co</a> o consulta la documentación disponible.</span>
                 </div>
             </div>
         </section>

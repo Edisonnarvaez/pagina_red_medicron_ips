@@ -33,7 +33,7 @@ const Noticias: React.FC = () => {
                     </div>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
-                    <span>¿Tienes una noticia para compartir? Escríbenos a <a href="mailto:comunicaciones@redmedicron.com" className="underline text-azul">comunicaciones@redmedicron.com</a></span>
+                    <span>¿Tienes una noticia para compartir? Escríbenos a <a href="mailto:comunicaciones@redmedicronips.com.co" className="underline text-azul">comunicaciones@redmedicronips.com.co</a></span>
                 </div>
             </div>
         </section>

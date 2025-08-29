@@ -26,7 +26,7 @@ const Roadmap: React.FC = () => {
                 </div>
                 <div className="mb-10 bg-white rounded-lg shadow p-6">
                     <h3 className="font-bold text-lg mb-2 text-verdeOscuro">¿Tienes sugerencias?</h3>
-                    <p className="mb-2">Tu opinión es clave para seguir mejorando. Si tienes ideas o sugerencias para el sitio web o los servicios, escríbenos a <a href="mailto:innovacion@redmedicron.com" className="underline text-azul">innovacion@redmedicron.com</a>.</p>
+                    <p className="mb-2">Tu opinión es clave para seguir mejorando. Si tienes ideas o sugerencias para el sitio web o los servicios, escríbenos a <a href="mailto:tics@redmedicronips.com.co" className="underline text-azul">tics@redmedicronips.com.co</a>.</p>
                 </div>
                 <div className="w-full text-center text-xs opacity-70 mt-8">
                     <span>Este roadmap se actualiza periódicamente para reflejar el compromiso de Red Medicron IPS con la mejora continua.</span>

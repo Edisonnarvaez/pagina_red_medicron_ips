@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
 							</div>
 							<div className="flex items-center gap-3">
 								<FaEnvelope className="text-verdeLima flex-shrink-0" size={14} />
-								<span className="text-white/80">notificaciones@redmedicron.com.co</span>
+								<span className="text-white/80">notificaciones@redmedicronips.com.co</span>
 							</div>
 							<div className="flex items-center gap-3">
 								<FaElementor className="text-verdeLima flex-shrink-0" size={14} />
