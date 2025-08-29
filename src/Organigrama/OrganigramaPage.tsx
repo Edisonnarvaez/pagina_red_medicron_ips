@@ -1,9 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SEOHelmet } from '../components/SEO';
 
 const Organigrama: React.FC = () => {
     const [selectedOrganigrama, setSelectedOrganigrama] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Manejar cierre con tecla ESC
+    useEffect(() => {
+        const handleEscKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && isModalOpen) {
+                closeModal();
+            }
+        };
+
+        if (isModalOpen) {
+            document.addEventListener('keydown', handleEscKey);
+            // Prevenir scroll del body cuando el modal está abierto
+            document.body.style.overflow = 'hidden';
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscKey);
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
 
     // Organigrama principal
     const organigramaGeneral = {
@@ -66,7 +86,7 @@ const Organigrama: React.FC = () => {
         }
     ];
 
-    const openModal = (image: string, title: string) => {
+    const openModal = (image: string) => {
         setSelectedOrganigrama(image);
         setIsModalOpen(true);
     };
@@ -85,49 +105,49 @@ const Organigrama: React.FC = () => {
                 canonical="/organigrama"
             />
             
-            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro p-8 flex flex-col items-center">
+            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex flex-col items-center">
                 <div className="w-full max-w-7xl">
                     {/* Header */}
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-center tracking-tight">
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight">
                             Organigrama Institucional
                         </h1>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
                             Conoce la estructura organizacional de Red Medicron IPS, diseñada para garantizar una gestión eficiente, transparente y orientada al usuario en todo el departamento de Nariño.
                         </p>
                     </div>
 
                     {/* Organigrama General */}
-                    <div className="mb-16">
-                        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                            <div className="text-center mb-8">
-                                <h2 className="text-3xl font-bold text-azul mb-4">
+                    <div className="mb-12 sm:mb-16">
+                        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100">
+                            <div className="text-center mb-6 sm:mb-8">
+                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-azul mb-3 sm:mb-4">
                                     {organigramaGeneral.title}
                                 </h2>
-                                <p className="text-lg text-gray-600 mb-6">
+                                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-2 sm:px-0">
                                     {organigramaGeneral.subtitle}
                                 </p>
-                                <p className="text-gray-500 max-w-2xl mx-auto">
+                                <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto px-2 sm:px-0">
                                     {organigramaGeneral.description}
                                 </p>
                             </div>
                             
                             <div className="flex justify-center">
                                 <div 
-                                    className="relative group cursor-pointer transform transition-all duration-300 hover:scale-[1.02]"
-                                    onClick={() => openModal(organigramaGeneral.image, organigramaGeneral.title)}
+                                    className="relative group cursor-pointer transform transition-all duration-300 hover:scale-[1.02] w-full max-w-5xl"
+                                    onClick={() => openModal(organigramaGeneral.image)}
                                 >
                                     <div className="relative overflow-hidden rounded-xl shadow-lg border border-gray-200">
                                         <img 
                                             src={organigramaGeneral.image}
                                             alt={organigramaGeneral.title}
-                                            className="w-full max-w-4xl h-auto object-contain"
+                                            className="w-full h-auto object-contain min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]"
                                             loading="lazy"
                                         />
                                         <div className="absolute inset-0 bg-azul/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                            <div className="bg-white/90 px-6 py-3 rounded-lg shadow-lg">
-                                                <span className="text-azul font-semibold flex items-center gap-2">
-                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <div className="bg-white/90 px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg">
+                                                <span className="text-azul font-semibold flex items-center gap-2 text-sm sm:text-base">
+                                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                                                     </svg>
                                                     Ver en grande
@@ -142,45 +162,45 @@ const Organigrama: React.FC = () => {
 
                     {/* Organigramas por Áreas */}
                     <div className="mb-12">
-                        <div className="text-center mb-10">
-                            <h2 className="text-3xl font-bold text-azul mb-4">
+                        <div className="text-center mb-8 sm:mb-10">
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-azul mb-3 sm:mb-4 px-4 sm:px-0">
                                 Organigramas por Áreas
                             </h2>
-                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
                                 Explora la estructura organizacional específica de cada área y departamento de Red Medicron IPS.
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                             {organigramasPorArea.map((item) => (
                                 <div 
                                     key={item.id}
                                     className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 cursor-pointer"
-                                    onClick={() => openModal(item.image, item.title)}
+                                    onClick={() => openModal(item.image)}
                                 >
                                     <div className="relative overflow-hidden rounded-t-xl">
                                         <img 
                                             src={item.image}
                                             alt={item.title}
-                                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                            className="w-full h-36 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                                             loading="lazy"
                                         />
-                                        <div className="absolute top-4 right-4">
-                                            <span className="bg-azul/90 text-white px-3 py-1 rounded-full text-xs font-medium">
+                                        <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                                            <span className="bg-azul/90 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
                                                 {item.area}
                                             </span>
                                         </div>
                                     </div>
                                     
-                                    <div className="p-6">
-                                        <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2">
+                                    <div className="p-4 sm:p-6">
+                                        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">
                                             {item.title}
                                         </h3>
-                                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                                        <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 min-h-[3rem] sm:min-h-[3.5rem]">
                                             {item.description}
                                         </p>
-                                        <div className="flex items-center text-azul font-semibold text-sm">
-                                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="flex items-center text-azul font-semibold text-xs sm:text-sm">
+                                            <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                                             </svg>
                                             Ver organigrama
@@ -192,50 +212,50 @@ const Organigrama: React.FC = () => {
                     </div>
 
                     {/* Información adicional */}
-                    <div className="bg-gradient-to-r from-azul/10 to-verdeLima/10 rounded-2xl p-8 border border-azul/20">
+                    <div className="bg-gradient-to-r from-azul/10 to-verdeLima/10 rounded-2xl p-4 sm:p-6 lg:p-8 border border-azul/20">
                         <div className="text-center">
-                            <h3 className="text-2xl font-bold text-azul mb-4">
+                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-azul mb-3 sm:mb-4 px-2 sm:px-0">
                                 Gestión Organizacional Transparente
                             </h3>
-                            <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">
+                            <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base px-2 sm:px-0">
                                 Nuestra estructura organizacional está diseñada para garantizar una atención médica de calidad, 
                                 con procesos eficientes y una clara definición de responsabilidades en cada nivel jerárquico.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
                                 <div className="text-center">
-                                    <div className="bg-azul/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <svg className="w-8 h-8 text-azul" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="bg-azul/10 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-azul" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
                                     </div>
-                                    <h4 className="font-semibold text-gray-800 mb-2">Equipo Multidisciplinario</h4>
-                                    <p className="text-sm text-gray-600">Profesionales especializados en cada área</p>
+                                    <h4 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">Equipo Multidisciplinario</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Profesionales especializados en cada área</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="bg-verdeLima/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <svg className="w-8 h-8 text-verdeLima" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="bg-verdeLima/10 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-verdeLima" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
-                                    <h4 className="font-semibold text-gray-800 mb-2">Gestión de Calidad</h4>
-                                    <p className="text-sm text-gray-600">Procesos certificados y mejora continua</p>
+                                    <h4 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">Gestión de Calidad</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Procesos certificados y mejora continua</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="bg-acento/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <svg className="w-8 h-8 text-acento" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="bg-acento/10 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-acento" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
                                     </div>
-                                    <h4 className="font-semibold text-gray-800 mb-2">Eficiencia Operativa</h4>
-                                    <p className="text-sm text-gray-600">Procesos optimizados para mejor servicio</p>
+                                    <h4 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">Eficiencia Operativa</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Procesos optimizados para mejor servicio</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Footer informativo */}
-                    <div className="text-center mt-12 text-gray-500">
-                        <p className="text-sm">
+                    <div className="text-center mt-8 sm:mt-12 text-gray-500 px-4 sm:px-0">
+                        <p className="text-xs sm:text-sm">
                             Para más información sobre la estructura organizacional, consulta la sección de 
                             <a href="/transparencia" className="text-azul hover:underline ml-1">transparencia</a> o 
                             <a href="/contacto" className="text-azul hover:underline ml-1">contáctanos</a>.
@@ -246,24 +266,45 @@ const Organigrama: React.FC = () => {
                 {/* Modal para ver imágenes en grande */}
                 {isModalOpen && selectedOrganigrama && (
                     <div 
-                        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+                        className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-2 sm:p-4 lg:p-6"
                         onClick={closeModal}
                     >
-                        <div className="relative max-w-7xl max-h-full">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            {/* Botón de cerrar */}
                             <button
                                 onClick={closeModal}
-                                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+                                className="absolute top-4 right-4 z-20 text-white hover:text-gray-300 transition-colors bg-black/60 rounded-full p-2 sm:p-3 hover:bg-black/80"
+                                aria-label="Cerrar modal"
                             >
-                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                            <img 
-                                src={selectedOrganigrama}
-                                alt="Organigrama ampliado"
-                                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                                onClick={(e) => e.stopPropagation()}
-                            />
+
+                            {/* Contenedor de imagen optimizado */}
+                            <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-8">
+                                <img 
+                                    src={selectedOrganigrama}
+                                    alt="Organigrama ampliado"
+                                    className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                                    style={{
+                                        maxWidth: '98vw',
+                                        maxHeight: '90vh',
+                                        width: 'auto',
+                                        height: 'auto'
+                                    }}
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            </div>
+
+                            {/* Indicadores de navegación */}
+                            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+                                <div className="bg-black/60 rounded-full px-3 py-1 sm:px-4 sm:py-2">
+                                    <p className="text-white text-xs sm:text-sm font-medium">
+                                        Click en la imagen para hacer zoom • Presiona ESC para cerrar
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )}

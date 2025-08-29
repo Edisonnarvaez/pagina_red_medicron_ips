@@ -8,7 +8,7 @@ const secondaryLinks = [
 	{ to: '/enlaces-externos', label: 'Enlaces Externos' },
 	{ to: '/habeas-data', label: 'Habeas Data' },
 	{ to: '/confidencialidad', label: 'Confidencialidad' },
-	{ to: '/noticias', label: 'Noticias' },
+	//{ to: '/noticias', label: 'Noticias' },
 	{ to: '/roadmap', label: 'Roadmap' },
 	{ to: '/asociados', label: 'Asociados' },
 	{ to: '/derechos-deberes', label: 'Derechos y Deberes' },
