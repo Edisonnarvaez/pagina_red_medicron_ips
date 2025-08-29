@@ -141,7 +141,7 @@ const Transparencia: React.FC = () => {
                 { nombre: "Localización Física", enlace: "/sedes" },
                 { nombre: "Horarios de Atención", enlace: "/contacto#horarios" },
                 { nombre: "Líneas de Atención", enlace: "/contacto#lineas" },
-                { nombre: "Correo Electrónico Institucional", enlace: "mailto:contacto@redmedicronips.com.co" },
+                { nombre: "Correo Electrónico Institucional", enlace: "mailto:notificaciones@redmedicronips.com.co" },
                 { nombre: "Canales de Atención Virtual", enlace: "/enlaces-externos" }
             ]
         }
@@ -372,7 +372,7 @@ const Transparencia: React.FC = () => {
                     <div className="text-center mt-8 sm:mt-12 text-gray-600 text-xs sm:text-sm">
                         <p className="mb-2">
                             Para ejercer tu derecho a la información pública según la <strong className="text-gray-800">Ley 1712 de 2014</strong>, consulta los enlaces anteriores o  
-                            <a href="mailto:transparencia@redmedicronips.com.co" className="text-azul hover:text-azul-dark hover:underline ml-1 font-medium">contáctanos directamente</a>.
+                            <a href="mailto:notificaciones@redmedicronips.com.co" className="text-azul hover:text-azul-dark hover:underline ml-1 font-medium">contáctanos directamente</a>.
                         </p>
                         <p>
                             Red Medicron IPS garantiza el acceso a la información pública conforme al <strong className="text-gray-800">Decreto 1081 de 2015</strong> y la normatividad vigente.
