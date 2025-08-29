@@ -162,7 +162,7 @@ const MainMenu: React.FC<{ onOpenModal?: () => void }> = ({ onOpenModal }) => {
                     className="w-full bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 active:from-medical-700 active:to-medical-800 text-white py-3 px-4 rounded-xl font-bold transition-all duration-200 flex items-center justify-center space-x-2 animate-pulse shadow-lg"
                   >
                     <MdHealthAndSafety size={20} />
-                    <span>Abrir Modal de Portafolio</span>
+                    <span>Ver Portafolio</span>
                   </button>
                 </li>
               )}
