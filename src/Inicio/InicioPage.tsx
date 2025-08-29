@@ -346,7 +346,7 @@ const Inicio: React.FC = () => {
                                                 <div className="absolute inset-0">
                                                     <img
                                                         src={slide.imagen}
-                                                        alt={slide.titulo}
+                                                        alt={`Imagen ilustrativa de ${slide.titulo} - ${slide.descripcion.substring(0, 100)}${slide.descripcion.length > 100 ? '...' : ''}`}
                                                         className="w-full h-full object-cover opacity-60 scale-110 hover:scale-105 transition-transform duration-700"
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/5 to-transparent"></div>

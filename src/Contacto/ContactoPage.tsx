@@ -3,6 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaUser, FaBui
 import { MdHealthAndSafety, MdLocalHospital, MdSend } from 'react-icons/md';
 import { ButtonSpinner } from '../components/Loading';
 import { SEOHelmet } from '../components/SEO';
+import AccessibleFormField from '../components/AccessibleFormField';
 
 interface FormData {
     nombre: string;
@@ -62,6 +63,14 @@ const Contacto: React.FC = () => {
         setFormData(prev => ({
             ...prev,
             [name]: value
+        }));
+    };
+
+    // Método para manejar cambios de componentes accesibles
+    const handleAccessibleFieldChange = (name: string) => (value: string | boolean | File[]) => {
+        setFormData(prev => ({
+            ...prev,
+            [name]: value as string
         }));
     };
 
@@ -301,133 +310,118 @@ const Contacto: React.FC = () => {
                                 </div>
                             )}
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                {/* Nombres */}
+                            <form onSubmit={handleSubmit} className="space-y-6" role="form" aria-labelledby="contact-form-title">
+                                <h3 id="contact-form-title" className="sr-only">
+                                    Formulario de contacto accesible
+                                </h3>
+                                
+                                {/* Nombres con componentes accesibles */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label htmlFor="nombre" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Nombre *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="nombre"
-                                            name="nombre"
-                                            value={formData.nombre}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                            placeholder="Tu nombre"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="apellido" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Apellido *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="apellido"
-                                            name="apellido"
-                                            value={formData.apellido}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                            placeholder="Tu apellido"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Email y Teléfono */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Email *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                            placeholder="tu@email.com"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="telefono" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Teléfono
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            id="telefono"
-                                            name="telefono"
-                                            value={formData.telefono}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                            placeholder="300 123 4567"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Tipo de consulta y Sede */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label htmlFor="tipoConsulta" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Tipo de Consulta *
-                                        </label>
-                                        <select
-                                            id="tipoConsulta"
-                                            name="tipoConsulta"
-                                            value={formData.tipoConsulta}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                        >
-                                            <option value="">Selecciona un tipo</option>
-                                            {tiposConsulta.map((tipo) => (
-                                                <option key={tipo.value} value={tipo.value}>
-                                                    {tipo.label}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="sede" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Sede de Interés
-                                        </label>
-                                        <select
-                                            id="sede"
-                                            name="sede"
-                                            value={formData.sede}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm"
-                                        >
-                                            <option value="">Selecciona una sede</option>
-                                            {sedes.map((sede) => (
-                                                <option key={sede.value} value={sede.value}>
-                                                    {sede.label}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
-
-                                {/* Mensaje */}
-                                <div>
-                                    <label htmlFor="mensaje" className="block text-sm font-semibold text-gray-700 mb-2">
-                                        Mensaje *
-                                    </label>
-                                    <textarea
-                                        id="mensaje"
-                                        name="mensaje"
-                                        value={formData.mensaje}
-                                        onChange={handleInputChange}
-                                        required
-                                        rows={6}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-white/70 backdrop-blur-sm resize-none"
-                                        placeholder="Escribe tu mensaje aquí..."
+                                    <AccessibleFormField
+                                        type="text"
+                                        name="nombre"
+                                        label="Nombre"
+                                        value={formData.nombre}
+                                        required={true}
+                                        placeholder="Tu nombre completo"
+                                        helpText="Ingresa tu nombre tal como aparece en tu documento de identidad"
+                                        onChange={handleAccessibleFieldChange('nombre')}
+                                        minLength={2}
+                                        maxLength={50}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                    <AccessibleFormField
+                                        type="text"
+                                        name="apellido"
+                                        label="Apellido"
+                                        value={formData.apellido}
+                                        required={true}
+                                        placeholder="Tu apellido completo"
+                                        helpText="Ingresa tu apellido tal como aparece en tu documento de identidad"
+                                        onChange={handleAccessibleFieldChange('apellido')}
+                                        minLength={2}
+                                        maxLength={50}
+                                        className="bg-white/70 backdrop-blur-sm"
                                     />
                                 </div>
+
+                                {/* Email y Teléfono con componentes accesibles */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <AccessibleFormField
+                                        type="email"
+                                        name="email"
+                                        label="Correo Electrónico"
+                                        value={formData.email}
+                                        required={true}
+                                        placeholder="tu@email.com"
+                                        helpText="Te contactaremos a través de este correo. Verifica que esté bien escrito"
+                                        onChange={handleAccessibleFieldChange('email')}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                    <AccessibleFormField
+                                        type="tel"
+                                        name="telefono"
+                                        label="Teléfono"
+                                        value={formData.telefono}
+                                        required={false}
+                                        placeholder="300 123 4567"
+                                        helpText="Incluye código de área. Solo números, espacios y guiones"
+                                        onChange={handleAccessibleFieldChange('telefono')}
+                                        pattern="[0-9\s\-\+\(\)]+"
+                                        minLength={7}
+                                        maxLength={15}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                </div>
+
+                                {/* Tipo de consulta y Sede con componentes accesibles */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <AccessibleFormField
+                                        type="select"
+                                        name="tipoConsulta"
+                                        label="Tipo de Consulta"
+                                        value={formData.tipoConsulta}
+                                        required={true}
+                                        placeholder="Selecciona el tipo de consulta"
+                                        helpText="Esto nos ayuda a dirigir tu consulta al departamento correcto"
+                                        options={tiposConsulta.map(tipo => ({ 
+                                            value: tipo.value, 
+                                            label: tipo.label 
+                                        }))}
+                                        onChange={handleAccessibleFieldChange('tipoConsulta')}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                    <AccessibleFormField
+                                        type="select"
+                                        name="sede"
+                                        label="Sede de Interés"
+                                        value={formData.sede}
+                                        required={false}
+                                        placeholder="Selecciona una sede (opcional)"
+                                        helpText="Si tu consulta es sobre una sede específica, selecciónala aquí"
+                                        options={sedes.map(sede => ({ 
+                                            value: sede.value, 
+                                            label: sede.label 
+                                        }))}
+                                        onChange={handleAccessibleFieldChange('sede')}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                </div>
+
+                                {/* Mensaje con componente accesible */}
+                                <AccessibleFormField
+                                    type="textarea"
+                                    name="mensaje"
+                                    label="Mensaje"
+                                    value={formData.mensaje}
+                                    required={true}
+                                    placeholder="Escribe tu mensaje aquí..."
+                                    helpText="Describe detalladamente tu consulta. Mínimo 10 caracteres para una mejor atención"
+                                    onChange={handleAccessibleFieldChange('mensaje')}
+                                    minLength={10}
+                                    maxLength={1000}
+                                    className="bg-white/70 backdrop-blur-sm"
+                                />
 
                                 {/* Botón de envío */}
                                 <button

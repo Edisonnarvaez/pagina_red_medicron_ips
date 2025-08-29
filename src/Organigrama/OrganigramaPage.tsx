@@ -33,6 +33,14 @@ const Organigrama: React.FC = () => {
         description: "Estructura organizacional completa de Red Medicron IPS que muestra la jerarquía directiva y operativa de toda la institución."
     };
 
+    // Mapa de procesos
+    const mapaProcesos = {
+        title: "Mapa de Procesos",
+        subtitle: "Flujo de Procesos Institucionales",
+        image: "/procesos/mapa de procesos.png",
+        description: "Representación gráfica de todos los procesos institucionales de Red Medicron IPS, incluyendo procesos estratégicos, misionales y de apoyo que garantizan la calidad en la prestación de servicios de salud."
+    };
+
     // Organigramas por áreas/departamentos
     const organigramasPorArea = [
         {
@@ -99,9 +107,9 @@ const Organigrama: React.FC = () => {
     return (
         <>
             <SEOHelmet
-                title="Organigrama Institucional - Red Medicron IPS"
-                description="Conoce la estructura organizacional de Red Medicron IPS en Nariño. Organigrama completo con jerarquía directiva, área administrativa y operativa para una gestión eficiente."
-                keywords="organigrama red medicron ips, estructura organizacional ips nariño, jerarquía red medicron, directivos ips túquerres, administración red medicron"
+                title="Organigrama y Mapa de Procesos - Red Medicron IPS"
+                description="Conoce la estructura organizacional y el mapa de procesos de Red Medicron IPS en Nariño. Organigrama completo, procesos estratégicos, misionales y de apoyo para una gestión eficiente."
+                keywords="organigrama red medicron ips, mapa procesos ips nariño, estructura organizacional red medicron, procesos institucionales ips túquerres, directivos red medicron, administración ips"
                 canonical="/organigrama"
             />
             
@@ -110,10 +118,10 @@ const Organigrama: React.FC = () => {
                     {/* Header */}
                     <div className="text-center mb-8 sm:mb-12">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 text-center tracking-tight">
-                            Organigrama Institucional
+                            Organigrama y Mapa de Procesos
                         </h1>
-                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-                            Conoce la estructura organizacional de Red Medicron IPS, diseñada para garantizar una gestión eficiente, transparente y orientada al usuario en todo el departamento de Nariño.
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+                            Conoce la estructura organizacional completa y el mapa de procesos de Red Medicron IPS, diseñados para garantizar una gestión eficiente, transparente y orientada al usuario en todo el departamento de Nariño.
                         </p>
                     </div>
 
@@ -155,6 +163,83 @@ const Organigrama: React.FC = () => {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mapa de Procesos */}
+                    <div className="mb-12 sm:mb-16">
+                        <div className="bg-gradient-to-r from-verdeLima/10 to-azul/10 rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 border border-verdeLima/20">
+                            <div className="text-center mb-6 sm:mb-8">
+                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-verdeLima mb-3 sm:mb-4">
+                                    {mapaProcesos.title}
+                                </h2>
+                                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-2 sm:px-0">
+                                    {mapaProcesos.subtitle}
+                                </p>
+                                <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto px-2 sm:px-0">
+                                    {mapaProcesos.description}
+                                </p>
+                            </div>
+                            
+                            <div className="flex justify-center">
+                                <div 
+                                    className="relative group cursor-pointer transform transition-all duration-300 hover:scale-[1.02] w-full max-w-5xl"
+                                    onClick={() => openModal(mapaProcesos.image)}
+                                >
+                                    <div className="relative overflow-hidden rounded-xl shadow-lg border border-verdeLima/30">
+                                        <img 
+                                            src={mapaProcesos.image}
+                                            alt={mapaProcesos.title}
+                                            className="w-full h-auto object-contain min-h-[200px] sm:min-h-[300px] lg:min-h-[400px] bg-white"
+                                            loading="lazy"
+                                        />
+                                        <div className="absolute inset-0 bg-verdeLima/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div className="bg-white/90 px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg">
+                                                <span className="text-verdeLima font-semibold flex items-center gap-2 text-sm sm:text-base">
+                                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                                    </svg>
+                                                    Ver mapa completo
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Información sobre el mapa de procesos */}
+                            <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                                <div className="text-center p-4 bg-white/50 rounded-xl">
+                                    <div className="bg-blue-500/10 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Procesos Estratégicos</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Planificación y dirección institucional</p>
+                                </div>
+                                
+                                <div className="text-center p-4 bg-white/50 rounded-xl">
+                                    <div className="bg-green-500/10 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Procesos Misionales</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Atención directa al usuario</p>
+                                </div>
+                                
+                                <div className="text-center p-4 bg-white/50 rounded-xl">
+                                    <div className="bg-orange-500/10 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Procesos de Apoyo</h4>
+                                    <p className="text-xs sm:text-sm text-gray-600">Soporte administrativo y técnico</p>
                                 </div>
                             </div>
                         </div>
