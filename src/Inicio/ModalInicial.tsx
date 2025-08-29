@@ -9,7 +9,7 @@ interface ModalPortafolioProps {
 }
 
 export default function ModalPortafolio({ showPortafolioModal, setShowPortafolioModal }: ModalPortafolioProps) {
-    const [step, setStep] = useState<1 | 2>(2); // Comenzar en pantalla 2 (docentes)
+    const [step, setStep] = useState<1 | 2>(1); // Comenzar en pantalla 1 (docentes)
     const [timeLeft, setTimeLeft] = useState<string>("");
 
     // Fecha límite en zona horaria de Colombia (Bogotá, UTC-5)
@@ -56,7 +56,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     setStep(1);
                     break;
                 case '2':
-                    setStep(2);
+                    setStep(1);
                     break;
             }
         };
@@ -90,7 +90,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Controladores de navegación */}
                         <div className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-20">
                             <button
-                                onClick={() => setStep(step === 1 ? 2 : 1)}
+                                onClick={() => setStep(step === 1 ? 1 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronLeft size={16} className="sm:text-lg" />
@@ -99,7 +99,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         
                         <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-20">
                             <button
-                                onClick={() => setStep(step === 1 ? 2 : 1)}
+                                onClick={() => setStep(step === 1 ? 1 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronRight size={16} className="sm:text-lg" />
@@ -110,14 +110,14 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-20">
                             <div className="flex space-x-2">
                                 <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
-                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 2 ? 'bg-white' : 'bg-white/40'}`} />
+                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
                             </div>
                             <div className="hidden sm:flex items-center space-x-2 text-white/60 text-xs">
                                 <span>↔ Flechas</span>
                                 <span>•</span>
                                 <span>ESC Cerrar</span>
                                 <span>•</span>
-                                <span>1/2 Directo</span>
+                                <span>1/1 Directo</span>
                             </div>
                         </div>
 
@@ -163,35 +163,33 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             Ver Servicios Online
                                         </Link>
                                         
-                                        <button
+                                        {/*<button
                                             onClick={() => setStep(2)}
                                             className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 text-white py-3 sm:py-4 lg:py-6 xl:py-8 transition-colors duration-200 font-medium hover:scale-[1.02] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl rounded-xl lg:rounded-2xl"
                                         >
                                             ← Volver a Invitación Docentes
-                                        </button>
+                                        </button>*/}
                                     </div>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {/* PANTALLA 2 - Invitación Docentes (PRINCIPAL) */}
+                        {/* 
                         {step === 2 && (
                             <div className="modal-section relative w-full h-full overflow-hidden bg-cover bg-center bg-no-repeat text-white rounded-2xl sm:rounded-3xl"
                                 style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
                             >
-                                {/* Overlay que cubre toda el área uniformemente */}
                                 <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
 
                                 <div className="relative z-10 h-full overflow-y-auto">
                                     <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 min-h-full flex flex-col justify-center">
-                                    {/* Badge informativo */}
+                                    
                                     <div className="inline-flex items-center bg-medical-500/20 backdrop-blur-sm rounded-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 lg:py-4 border border-medical-400/30 mb-3 sm:mb-4 lg:mb-6">
                                         <MdHealthAndSafety className="text-medical-400 mr-2 sm:mr-3 lg:mr-4" size={16} />
                                         <span className="text-medical-300 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">ELECCIÓN IPS PRIMARIA FOMAG</span>
                                     </div>
 
-                                    {/* Título principal mejorado */}
                                     <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight">
                                         <span className="block text-white mb-1 sm:mb-2 lg:mb-3">¡Docente, elige a</span>
                                         <span className="block bg-gradient-to-r from-medical-300 to-medical-500 bg-clip-text text-transparent">
@@ -202,7 +200,6 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         </span>
                                     </h3>
 
-                                    {/* Descripción mejorada */}
                                     <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                                         <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-gray-200 leading-relaxed">
                                             Queremos acompañarte con <span className="text-medical-300 font-bold">atención médica de calidad</span>. 
@@ -221,7 +218,6 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         </div>
                                     </div>
 
-                                    {/* Contador regresivo destacado */}
                                     <div className="bg-gradient-to-r from-red-600/90 to-red-700/90 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-red-400/30 max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto">
                                         <p className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-2 sm:mb-3 lg:mb-4">⏰ TIEMPO RESTANTE:</p>
                                         <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-mono bg-black/50 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg">
@@ -230,7 +226,6 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         <p className="text-red-200 text-xs sm:text-sm lg:text-base xl:text-lg mt-2 lg:mt-4 font-medium">Hasta el 28 de agosto de 2025 - 11:59 PM (Hora Colombia)</p>
                                     </div>
 
-                                    {/* Botones de acción mejorados */}
                                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 items-center justify-center pt-4 lg:pt-8 xl:pt-12 pb-6 lg:pb-12 xl:pb-16">
                                         <a
                                             href="http://200.116.57.140:8080/formulario_primaria/public/formulario"
@@ -250,7 +245,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         </button>
                                     </div>
 
-                                    {/* Información adicional */}
+                                    
                                     <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 text-center pb-4 sm:pb-6 lg:pb-12 xl:pb-16">
                                         <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-white/70 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto leading-relaxed">
                                             Al elegir Red Medicron IPS tendrás acceso a servicios de salud de alta calidad, 
@@ -260,7 +255,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                 </div>
                                 </div>
                             </div>
-                        )}
+                        )}*/}
                     </div>
                 </div>
             )}

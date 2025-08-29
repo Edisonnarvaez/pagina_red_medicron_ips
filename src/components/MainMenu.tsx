@@ -52,7 +52,7 @@ const MainMenu: React.FC<{ onOpenModal?: () => void }> = ({ onOpenModal }) => {
               <button
                 onClick={onOpenModal}
                 className="ml-2 bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 text-white p-2 xl:p-3 rounded-full font-bold transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl animate-pulse focus:outline-none focus-visible:ring-2 focus-visible:ring-medical-400/50"
-                title="Elección FOMAG - Docentes"
+                title="Abrir Modal de Portafolio"
               >
                 <MdHealthAndSafety size={18} className="xl:w-5 xl:h-5" />
               </button>
@@ -162,7 +162,7 @@ const MainMenu: React.FC<{ onOpenModal?: () => void }> = ({ onOpenModal }) => {
                     className="w-full bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 active:from-medical-700 active:to-medical-800 text-white py-3 px-4 rounded-xl font-bold transition-all duration-200 flex items-center justify-center space-x-2 animate-pulse shadow-lg"
                   >
                     <MdHealthAndSafety size={20} />
-                    <span>Elección FOMAG - Docentes</span>
+                    <span>Abrir Modal de Portafolio</span>
                   </button>
                 </li>
               )}
