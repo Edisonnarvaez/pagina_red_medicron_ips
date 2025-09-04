@@ -63,7 +63,7 @@ const Confetti: React.FC<ConfettiProps> = ({ active, onComplete }) => {
                     }
                 `}
             </style>
-            <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+            <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden">
                 {particles.map((particle) => (
                     <div
                         key={particle.id}

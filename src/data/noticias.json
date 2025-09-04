@@ -1,0 +1,161 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Nueva sede en Samaniego",
+      "descripcion": "Red Medicron IPS inaugura una nueva sede en Samaniego para ampliar la cobertura y mejorar la atención en la región.",
+      "fecha": "2025-08-12",
+      "categoria": "expansion",
+      "imagen": "/images/noticias/nueva-sede-samaniego.jpg",
+      "enlaceExterno": null,
+      "video": null,
+      "resumenCorto": "Inauguración de nueva sede para ampliar cobertura en Samaniego.",
+      "autor": "Área de Comunicaciones",
+      "destacada": true,
+      "contenidoCompleto": "Red Medicron IPS se complace en anunciar la apertura de su nueva sede en el municipio de Samaniego, Nariño. Esta nueva instalación representa un paso significativo en nuestro compromiso de brindar servicios de salud de calidad y accesibles a todas las comunidades de la región...",
+      "tags": ["sede nueva", "samaniego", "expansion", "cobertura"],
+      "galeria": [
+        "/images/noticias/samaniego-inauguracion-1.jpg",
+        "/images/noticias/samaniego-instalaciones-1.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Jornada de salud renal",
+      "descripcion": "Se realizó con éxito la jornada de prevención y diagnóstico de enfermedades renales en la sede Pasto.",
+      "fecha": "2025-08-01",
+      "categoria": "eventos",
+      "imagen": "/images/noticias/jornada-salud-renal.jpg",
+      "enlaceExterno": null,
+      "video": "https://www.youtube.com/watch?v=ejemplo-salud-renal",
+      "resumenCorto": "Exitosa jornada de prevención renal en Pasto.",
+      "autor": "Dr. María González",
+      "destacada": false,
+      "contenidoCompleto": "Durante el mes de agosto se llevó a cabo una exitosa jornada de prevención y diagnóstico temprano de enfermedades renales en nuestra sede principal de Pasto. La actividad contó con la participación de más de 200 pacientes...",
+      "tags": ["salud renal", "prevencion", "pasto", "jornada"],
+      "galeria": [
+        "/images/noticias/jornada-renal-1.jpg",
+        "/images/noticias/jornada-renal-2.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Reconocimiento a la excelencia",
+      "descripcion": "Red Medicron IPS recibió el reconocimiento regional por calidad y humanización en la atención en salud.",
+      "fecha": "2025-07-20",
+      "categoria": "reconocimientos",
+      "imagen": "/images/noticias/reconocimiento-excelencia.jpg",
+      "enlaceExterno": "https://www.ejemplo-ministerio-salud.gov.co/reconocimientos-2025",
+      "video": null,
+      "resumenCorto": "Reconocimiento regional por calidad en atención en salud.",
+      "autor": "Ministerio de Salud",
+      "destacada": true,
+      "contenidoCompleto": "Es un honor para Red Medicron IPS haber recibido el reconocimiento regional por excelencia en calidad y humanización en la atención en salud, otorgado por el Ministerio de Salud y Protección Social...",
+      "tags": ["reconocimiento", "calidad", "humanizacion", "ministerio"],
+      "galeria": [
+        "/images/noticias/ceremonia-reconocimiento.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Capacitación en bioseguridad",
+      "descripcion": "Personal de todas las sedes participó en la actualización de protocolos de bioseguridad.",
+      "fecha": "2025-07-10",
+      "categoria": "capacitacion",
+      "imagen": "/images/noticias/capacitacion-bioseguridad.jpg",
+      "enlaceExterno": null,
+      "video": null,
+      "resumenCorto": "Actualización de protocolos de bioseguridad para todo el personal.",
+      "autor": "Área de Gestión de Calidad",
+      "destacada": false,
+      "contenidoCompleto": "Durante la primera semana de julio, todo el personal de Red Medicron IPS participó en un programa intensivo de actualización en protocolos de bioseguridad. Esta capacitación forma parte de nuestro compromiso continuo...",
+      "tags": ["capacitacion", "bioseguridad", "personal", "protocolos"],
+      "galeria": [
+        "/images/noticias/capacitacion-bioseguridad-1.jpg",
+        "/images/noticias/capacitacion-bioseguridad-2.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Telemedicina: Innovación en atención médica",
+      "descripcion": "Implementación exitosa del sistema de telemedicina para consultas especializadas en zonas rurales.",
+      "fecha": "2025-06-15",
+      "categoria": "tecnologia",
+      "imagen": "/images/noticias/telemedicina.jpg",
+      "enlaceExterno": null,
+      "video": "https://www.youtube.com/watch?v=ejemplo-telemedicina",
+      "resumenCorto": "Nueva plataforma de telemedicina para atención en zonas rurales.",
+      "autor": "Área de Innovación Tecnológica",
+      "destacada": true,
+      "contenidoCompleto": "Red Medicron IPS ha implementado con éxito un innovador sistema de telemedicina que permite brindar consultas especializadas a pacientes en zonas rurales y de difícil acceso...",
+      "tags": ["telemedicina", "innovacion", "tecnologia", "rural"],
+      "galeria": [
+        "/images/noticias/telemedicina-consulta.jpg",
+        "/images/noticias/telemedicina-equipo.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Jornada de vacunación infantil",
+      "descripcion": "Campaña masiva de vacunación para niños menores de 5 años en todas las sedes.",
+      "fecha": "2025-05-30",
+      "categoria": "salud-publica",
+      "imagen": "/images/noticias/vacunacion-infantil.jpg",
+      "enlaceExterno": "https://www.minsalud.gov.co/campana-vacunacion-2025",
+      "video": null,
+      "resumenCorto": "Campaña de vacunación infantil en todas las sedes.",
+      "autor": "Área de Epidemiología",
+      "destacada": false,
+      "contenidoCompleto": "Como parte del programa nacional de inmunización, Red Medicron IPS llevó a cabo una exitosa jornada de vacunación dirigida a niños menores de 5 años en todas nuestras sedes...",
+      "tags": ["vacunacion", "infantil", "salud publica", "inmunizacion"],
+      "galeria": [
+        "/images/noticias/vacunacion-pasto.jpg",
+        "/images/noticias/vacunacion-ipiales.jpg"
+      ]
+    }
+  ],
+  "categorias": [
+    {
+      "id": "expansion",
+      "nombre": "Expansión",
+      "descripcion": "Noticias sobre nuevas sedes y crecimiento",
+      "color": "#047857",
+      "icono": "BuildingOfficeIcon"
+    },
+    {
+      "id": "eventos",
+      "nombre": "Eventos",
+      "descripcion": "Jornadas, talleres y actividades especiales",
+      "color": "#2563EB",
+      "icono": "CalendarDaysIcon"
+    },
+    {
+      "id": "reconocimientos",
+      "nombre": "Reconocimientos",
+      "descripcion": "Premios y distinciones recibidas",
+      "color": "#B45309",
+      "icono": "TrophyIcon"
+    },
+    {
+      "id": "capacitacion",
+      "nombre": "Capacitación",
+      "descripcion": "Formación y desarrollo del personal",
+      "color": "#6D28D9",
+      "icono": "AcademicCapIcon"
+    },
+    {
+      "id": "tecnologia",
+      "nombre": "Tecnología",
+      "descripcion": "Innovaciones y avances tecnológicos",
+      "color": "#0891B2",
+      "icono": "ComputerDesktopIcon"
+    },
+    {
+      "id": "salud-publica",
+      "nombre": "Salud Pública",
+      "descripcion": "Campañas y programas de salud pública",
+      "color": "#DC2626",
+      "icono": "HeartIcon"
+    }
+  ]
+}

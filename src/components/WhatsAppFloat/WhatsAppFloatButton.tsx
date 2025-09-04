@@ -39,7 +39,7 @@ const WhatsAppFloatButton: React.FC = () => {
     return (
         <>
             {/* Botón flotante de WhatsApp */}
-            <div className={`fixed bottom-6 right-6 z-50 ${isVisible ? 'animate-bounce-in' : ''}`}>
+            <div className={`fixed bottom-6 right-6 z-40 ${isVisible ? 'animate-bounce-in' : ''}`}>
                 {/* Tooltip */}
                 {showTooltip && (
                     <div className="absolute bottom-full right-0 mb-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 p-3 animate-bounce-in">

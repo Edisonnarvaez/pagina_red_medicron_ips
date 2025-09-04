@@ -472,38 +472,113 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Mobile Modal Fixes */
+/* Mobile Modal Fixes - Improved for accessibility */
 @media (max-width: 640px) {
-  .modal-container {
-    max-height: calc(100vh - 20px) !important;
-    max-height: calc(100dvh - 20px) !important; /* Dynamic viewport for mobile */
-    margin: 10px !important;
-    padding: 0 !important;
+  .modal-container, .news-modal {
+    max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px); /* Dynamic viewport for mobile */
+    margin: 10px;
+    padding: 0;
+    width: calc(100vw - 20px);
   }
   
   .modal-content {
-    max-height: calc(100vh - 40px) !important;
-    max-height: calc(100dvh - 40px) !important;
-    overflow-y: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
   
   .modal-section {
-    flex-shrink: 0 !important;
-    min-height: auto !important;
-    padding-bottom: 20px !important;
+    flex-shrink: 0;
+    min-height: auto;
+    padding-bottom: 20px;
   }
   
   /* Prevent viewport issues on mobile */
   .modal-backdrop {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    height: 100vh !important;
-    height: 100dvh !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  /* Específico para modales */
+  .news-modal, .talent-modal, .organigrama-modal {
+    border-radius: 0.75rem; /* rounded-xl en móvil */
+  }
+  
+  .news-modal .sticky, .talent-modal .sticky, .organigrama-modal .sticky {
+    border-radius: 0.75rem 0.75rem 0 0; /* Solo esquinas superiores */
+  }
+  
+  /* Skip Links responsivos */
+  .skip-links-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    max-width: 90vw !important;
+    padding: 8px !important;
+  }
+  
+  .skip-link {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    padding: 6px 8px !important;
+  }
+  
+  .keyboard-help {
+    right: 5px !important;
+    top: 5px !important;
+    max-width: 150px !important;
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+  }
+}
+
+/* Skip Links extra small screens */
+@media (max-width: 480px) {
+  .skip-links-container {
+    max-width: 85vw !important;
+  }
+  
+  .skip-link {
+    font-size: 12px !important;
+    padding: 5px 6px !important;
+  }
+  
+  .keyboard-help {
+    max-width: 120px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* Desktop Skip Links */
+@media (min-width: 641px) {
+  .skip-links-container {
+    flex-direction: row !important;
+    align-items: center !important;
+    max-width: 95vw !important;
+    padding: 6px !important;
+  }
+  
+  .skip-link {
+    width: auto !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+  }
+  
+  .keyboard-help {
+    right: 10px !important;
+    top: 10px !important;
+    max-width: 200px !important;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
   }
 }
 
@@ -583,13 +658,32 @@ h1, h2, h3, h4, h5, h6 {
 /* iOS Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 640px) {
-    .modal-container {
-      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 20px) !important;
+    .modal-container, .news-modal {
+      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 20px);
     }
     
     .modal-content {
-      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 40px) !important;
+      max-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 40px);
     }
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .news-modal {
+    margin: 5px;
+    width: calc(100vw - 10px);
+    max-height: calc(100vh - 10px);
+    border-radius: 0.5rem; /* rounded-lg en pantallas muy pequeñas */
+  }
+  
+  .news-modal .sticky {
+    padding: 0.75rem; /* p-3 en móvil pequeño */
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .news-modal .p-4 {
+    padding: 0.75rem;
   }
 }
 

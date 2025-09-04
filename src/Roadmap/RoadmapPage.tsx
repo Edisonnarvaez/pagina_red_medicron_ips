@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCheckCircle, FaClock, FaRocket, FaLightbulb, FaCode, FaMobile, FaShieldAlt, FaUsers, FaChartLine, FaEnvelope, FaCalendarAlt, FaArrowRight, FaStar, FaTools, FaBug, FaHeart } from 'react-icons/fa';
+import { FaCheckCircle, FaClock, FaRocket, FaLightbulb, FaCode, FaMobile, FaShieldAlt, FaUsers, FaChartLine, FaEnvelope, FaCalendarAlt, FaArrowRight, FaStar, FaTools, FaBug, FaHeart, FaGavel, FaCheck, FaEye, FaFileAlt, FaUniversalAccess, FaBalanceScale, FaSitemap } from 'react-icons/fa';
 import { MdAccessibility, MdUpdate, MdIntegrationInstructions, MdAnalytics } from 'react-icons/md';
 import { SEOHelmet } from '../components/SEO';
 
@@ -21,11 +21,11 @@ const Roadmap: React.FC = () => {
 
     const categories = [
         { id: 'all', label: 'Todos', icon: FaRocket, color: 'bg-gradient-to-r from-azul to-azul-light' },
-        { id: 'tecnologia', label: 'Tecnología', icon: FaCode, color: 'bg-gradient-to-r from-blue-500 to-blue-600' },
-        { id: 'accesibilidad', label: 'Accesibilidad', icon: MdAccessibility, color: 'bg-gradient-to-r from-green-500 to-green-600' },
-        { id: 'servicios', label: 'Servicios', icon: FaUsers, color: 'bg-gradient-to-r from-purple-500 to-purple-600' },
-        { id: 'seguridad', label: 'Seguridad', icon: FaShieldAlt, color: 'bg-gradient-to-r from-red-500 to-red-600' },
-        { id: 'experiencia', label: 'Experiencia', icon: FaHeart, color: 'bg-gradient-to-r from-pink-500 to-pink-600' }
+        { id: 'tecnologia', label: 'Tecnología', icon: FaCode, color: 'bg-gradient-to-r from-blue-600 to-blue-700' },
+        { id: 'accesibilidad', label: 'Accesibilidad', icon: MdAccessibility, color: 'bg-gradient-to-r from-green-600 to-green-700' },
+        { id: 'servicios', label: 'Servicios', icon: FaUsers, color: 'bg-gradient-to-r from-purple-600 to-purple-700' },
+        { id: 'seguridad', label: 'Seguridad', icon: FaShieldAlt, color: 'bg-gradient-to-r from-red-600 to-red-700' },
+        { id: 'experiencia', label: 'Experiencia', icon: FaHeart, color: 'bg-gradient-to-r from-pink-600 to-pink-700' }
     ];
 
     const roadmapItems: RoadmapItem[] = [
@@ -33,18 +33,20 @@ const Roadmap: React.FC = () => {
         {
             id: 'matriz-ita',
             title: 'Implementación Matriz ITA',
-            description: 'Cumplimiento integral de los 9 criterios de accesibilidad según normatividad colombiana',
+            description: 'Cumplimiento integral de los 9 criterios de accesibilidad según Resolución 1519 de 2020 del MinTIC',
             status: 'completed',
             category: 'accesibilidad',
             date: '2024-12-15',
             progress: 100,
             icon: MdAccessibility,
             details: [
+                'Cumplimiento Resolución 1519 de 2020 MinTIC',
                 'Implementación de texto alternativo descriptivo',
                 'Soporte para multimedia accesible',
                 'Escalado de fuentes hasta 200%',
                 'Navegación por teclado completa',
-                'Formularios WCAG AA compliant'
+                'Formularios WCAG 2.1 AA compliant',
+                '9/9 criterios Matriz ITA certificados'
             ]
         },
         {
@@ -111,6 +113,24 @@ const Roadmap: React.FC = () => {
                 'Consulta de historia clínica',
                 'Notificaciones push',
                 'Integración con sistemas HIS'
+            ]
+        },
+        {
+            id: 'monitoreo-normativo',
+            title: 'Monitoreo Continuo de Cumplimiento Normativo',
+            description: 'Sistema de seguimiento y auditoria automatizada para el cumplimiento de la Resolución 1519 de 2020',
+            status: 'in-progress',
+            category: 'accesibilidad',
+            date: '2025-02-28',
+            progress: 60,
+            icon: FaGavel,
+            details: [
+                'Auditorías automatizadas WCAG 2.1 AA',
+                'Reportes trimestrales de cumplimiento',
+                'Alertas de no conformidades',
+                'Dashboard de métricas de accesibilidad',
+                'Seguimiento Resolución 1519 de 2020',
+                'Certificación continua Matriz ITA'
             ]
         },
         
@@ -204,33 +224,33 @@ const Roadmap: React.FC = () => {
             case 'completed':
                 return { 
                     label: 'Completado', 
-                    color: 'bg-green-500', 
-                    textColor: 'text-green-700',
-                    bgColor: 'bg-green-50',
+                    color: 'bg-green-600', 
+                    textColor: 'text-green-800',
+                    bgColor: 'bg-green-100',
                     icon: FaCheckCircle 
                 };
             case 'in-progress':
                 return { 
                     label: 'En Progreso', 
-                    color: 'bg-blue-500', 
-                    textColor: 'text-blue-700',
-                    bgColor: 'bg-blue-50',
+                    color: 'bg-blue-600', 
+                    textColor: 'text-blue-800',
+                    bgColor: 'bg-blue-100',
                     icon: FaClock 
                 };
             case 'planned':
                 return { 
                     label: 'Planificado', 
-                    color: 'bg-yellow-500', 
-                    textColor: 'text-yellow-700',
-                    bgColor: 'bg-yellow-50',
+                    color: 'bg-yellow-600', 
+                    textColor: 'text-yellow-800',
+                    bgColor: 'bg-yellow-100',
                     icon: FaCalendarAlt 
                 };
             case 'future':
                 return { 
                     label: 'Futuro', 
-                    color: 'bg-purple-500', 
-                    textColor: 'text-purple-700',
-                    bgColor: 'bg-purple-50',
+                    color: 'bg-purple-600', 
+                    textColor: 'text-purple-800',
+                    bgColor: 'bg-purple-100',
                     icon: FaRocket 
                 };
             default:
@@ -264,8 +284,8 @@ const Roadmap: React.FC = () => {
         <>
             <SEOHelmet
                 title="Roadmap de Desarrollo Tecnológico - Red Medicron IPS"
-                description="Conoce el plan de desarrollo tecnológico, próximos hitos y mejoras continuas de Red Medicron IPS en Nariño. Innovación en salud digital, accesibilidad web y servicios médicos."
-                keywords="roadmap red medicron ips, plan desarrollo tecnológico nariño, innovación salud digital, mejoras sitio web ips túquerres, hitos tecnológicos red medicron, accesibilidad matriz ITA"
+                description="Conoce el plan de desarrollo tecnológico, próximos hitos y mejoras continuas de Red Medicron IPS en Nariño. Innovación en salud digital, accesibilidad web y servicios médicos según Resolución 1519 de 2020."
+                keywords="roadmap red medicron ips, plan desarrollo tecnológico nariño, innovación salud digital, mejoras sitio web ips túquerres, hitos tecnológicos red medicron, accesibilidad matriz ITA, resolución 1519 2020"
                 canonical="/roadmap"
             />
             
@@ -527,6 +547,121 @@ const Roadmap: React.FC = () => {
                             <FaUsers className="mr-3" size={20} />
                             PQRSF
                         </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Cumplimiento Normativo */}
+            <section className="bg-gradient-to-r from-green-50 to-blue-50 py-12">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-8">
+                        <FaShieldAlt className="text-green-600 text-4xl mb-4 mx-auto" />
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                            Cumplimiento Normativo y Regulatorio
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Nuestro roadmap está alineado con las normativas colombianas de accesibilidad 
+                            web y transparencia en el sector salud.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Resolución 1519 de 2020 */}
+                        <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600">
+                            <div className="flex items-start">
+                                <FaGavel className="text-green-600 text-2xl mr-4 mt-1" />
+                                <div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                                        Resolución 1519 de 2020
+                                    </h3>
+                                    <p className="text-gray-600 mb-4 text-sm">
+                                        Cumplimiento de los lineamientos de accesibilidad web para 
+                                        entidades del sector salud establecidos por el MinTIC.
+                                    </p>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>Matriz ITA implementada (9/9 criterios)</span>
+                                        </div>
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>Estándares WCAG 2.1 AA certificados</span>
+                                        </div>
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>Navegación accesible y contenido adaptable</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Transparencia y Acceso */}
+                        <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600">
+                            <div className="flex items-start">
+                                <FaEye className="text-blue-600 text-2xl mr-4 mt-1" />
+                                <div>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                                        Transparencia y Acceso
+                                    </h3>
+                                    <p className="text-gray-600 mb-4 text-sm">
+                                        Compromiso con la transparencia en la información y 
+                                        acceso universal a nuestros servicios digitales.
+                                    </p>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>Portal de transparencia activo</span>
+                                        </div>
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>PQRSF digital habilitado</span>
+                                        </div>
+                                        <div className="flex items-center text-sm">
+                                            <FaCheck className="text-green-500 mr-2" />
+                                            <span>Información pública disponible</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Certificaciones y Enlaces */}
+                    <div className="mt-8 bg-white rounded-xl shadow-lg p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+                            Documentación de Cumplimiento
+                        </h3>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a
+                                href="/transparencia"
+                                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                            >
+                                <FaFileAlt className="mr-2" />
+                                Matriz ITA
+                            </a>
+                            <a
+                                href="/accesibilidad"
+                                className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                            >
+                                <FaUniversalAccess className="mr-2" />
+                                Accesibilidad Web
+                            </a>
+                            <a
+                                href="/derechos-deberes"
+                                className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm"
+                            >
+                                <FaBalanceScale className="mr-2" />
+                                Derechos y Deberes
+                            </a>
+                            <a
+                                href="/mapa-sitio"
+                                className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm"
+                            >
+                                <FaSitemap className="mr-2" />
+                                Mapa del Sitio
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

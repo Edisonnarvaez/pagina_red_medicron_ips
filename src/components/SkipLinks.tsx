@@ -63,16 +63,33 @@ const SkipLinks: React.FC<SkipLinksProps> = ({
 
   return (
     <>
-      {/* Skip Links - Visibles solo al hacer foco o con Alt+S */}
+      {/* Skip Links - Responsivos y accesibles */}
       <nav 
-        className="skip-links"
+        className={`skip-links-container ${isVisible ? 'skip-links-visible' : ''}`}
         role="navigation"
         aria-label="Enlaces de navegación rápida"
+        style={{
+          position: 'fixed',
+          top: isVisible ? '6px' : '-60px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 1000,
+          transition: 'top 0.3s ease',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '8px',
+          justifyContent: 'center',
+          padding: '6px',
+          maxWidth: '95vw',
+          background: 'rgba(0, 0, 0, 0.9)',
+          borderRadius: '8px',
+          border: '2px solid #fff'
+        }}
       >
-        {links.map((link, index) => (
+        {links.map((link) => (
           <button
             key={link.href}
-            className={`skip-link ${isVisible ? 'skip-link-visible' : ''}`}
+            className="skip-link"
             onClick={() => handleSkipLinkClick(link.href)}
             onFocus={() => setIsVisible(true)}
             onBlur={(e) => {
@@ -83,20 +100,18 @@ const SkipLinks: React.FC<SkipLinksProps> = ({
               }
             }}
             style={{
-              position: 'absolute',
-              top: isVisible ? '6px' : '-40px',
-              left: `${6 + (index * 200)}px`,
               background: '#000',
               color: '#fff',
               padding: '8px 12px',
               textDecoration: 'none',
-              zIndex: 1000,
               borderRadius: '4px',
-              border: '2px solid #fff',
+              border: '1px solid #fff',
               fontSize: '14px',
               fontWeight: '600',
-              transition: 'top 0.3s ease',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              minWidth: 'fit-content',
+              transition: 'all 0.2s ease'
             }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -104,37 +119,47 @@ const SkipLinks: React.FC<SkipLinksProps> = ({
                 handleSkipLinkClick(link.href);
               }
             }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#333';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#000';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           >
             {link.label}
           </button>
         ))}
       </nav>
 
-      {/* Indicador de ayuda de teclado */}
+      {/* Indicador de ayuda de teclado - Responsivo */}
       <div 
         className="keyboard-help"
         style={{
           position: 'fixed',
           top: '10px',
           right: '10px',
-          background: 'rgba(0, 0, 0, 0.8)',
+          background: 'rgba(0, 0, 0, 0.9)',
           color: 'white',
           padding: '8px 12px',
           borderRadius: '6px',
           fontSize: '12px',
           zIndex: 999,
-          display: isVisible ? 'block' : 'none'
+          display: isVisible ? 'block' : 'none',
+          maxWidth: '200px',
+          wordWrap: 'break-word'
         }}
         role="tooltip"
         aria-label="Ayuda de navegación por teclado"
       >
         <div className="text-center">
-          <p className="mb-1"><strong>Navegación por teclado:</strong></p>
-          <p>• Tab: Siguiente elemento</p>
-          <p>• Shift+Tab: Elemento anterior</p>
-          <p>• Enter/Espacio: Activar</p>
-          <p>• Escape: Cerrar</p>
-          <p>• Alt+S: Mostrar enlaces rápidos</p>
+          <p className="mb-1 font-semibold">Navegación:</p>
+          <p className="text-xs">• Tab: Siguiente</p>
+          <p className="text-xs">• Shift+Tab: Anterior</p>
+          <p className="text-xs">• Enter/Espacio: Activar</p>
+          <p className="text-xs">• Escape: Cerrar</p>
+          <p className="text-xs">• Alt+S: Enlaces rápidos</p>
         </div>
       </div>
     </>

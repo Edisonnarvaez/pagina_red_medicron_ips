@@ -620,7 +620,7 @@ const TalentoHumano: React.FC = () => {
 
             {/* Modal de Formulario de Convocatoria */}
             {showConvocatoriaForm && (
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[90] p-4 talent-modal">
                     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                         {/* Header del modal */}
                         <div className="bg-gradient-to-r from-azul to-verdeOscuro text-white p-6 rounded-t-2xl">

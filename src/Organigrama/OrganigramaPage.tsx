@@ -351,7 +351,7 @@ const Organigrama: React.FC = () => {
                 {/* Modal para ver imágenes en grande */}
                 {isModalOpen && selectedOrganigrama && (
                     <div 
-                        className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-2 sm:p-4 lg:p-6"
+                        className="fixed inset-0 bg-black/90 flex items-center justify-center z-[90] p-2 sm:p-4 lg:p-6 organigrama-modal"
                         onClick={closeModal}
                     >
                         <div className="relative w-full h-full flex items-center justify-center">

@@ -18,7 +18,7 @@ const FullPageLoading: React.FC<FullPageLoadingProps> = ({
 }) => {
     return (
         <motion.div 
-            className="fixed inset-0 z-50 bg-gradient-to-br from-azul-light/20 via-white to-verdeLima/10 flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[95] bg-gradient-to-br from-azul-light/20 via-white to-verdeLima/10 flex flex-col items-center justify-center overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

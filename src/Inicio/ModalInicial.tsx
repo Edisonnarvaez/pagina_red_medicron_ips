@@ -69,7 +69,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
         <>
             {showPortafolioModal && (
                 <div 
-                    className="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-lg flex items-center justify-center p-2 sm:p-4 z-50"
+                    className="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-lg flex items-center justify-center p-2 sm:p-4 z-[90]"
                     onClick={() => setShowPortafolioModal(false)}
                 >
                     <div 
@@ -82,13 +82,13 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Botón cerrar */}
                         <button
                             onClick={() => setShowPortafolioModal(false)}
-                            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 sm:p-3 transition z-20"
+                            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 sm:p-3 transition z-30"
                         >
                             <FaTimes size={16} className="sm:text-lg" />
                         </button>
 
                         {/* Controladores de navegación */}
-                        <div className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-20">
+                        <div className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-30">
                             <button
                                 onClick={() => setStep(step === 1 ? 1 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
@@ -97,7 +97,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                             </button>
                         </div>
                         
-                        <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-20">
+                        <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-30">
                             <button
                                 onClick={() => setStep(step === 1 ? 1 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
@@ -107,7 +107,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         </div>
 
                         {/* Indicadores de pantalla y ayuda de teclado */}
-                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-20">
+                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-30">
                             <div className="flex space-x-2">
                                 <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
                                 <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />

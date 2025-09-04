@@ -17,6 +17,7 @@ import HabeasData from './HabeasData/HabeasDataPage';
 import Confidencialidad from './Confidencialidad/ConfidencialidadPage';
 import Noticias from './Noticias/NoticiasPage';
 import Roadmap from './Roadmap/RoadmapPage';
+import MapaSitio from './MapaSitio/MapaSitioPage';
 import Asociados from './Asociados/AsociadosPage';
 import DerechosDeberes from './DerechosDeberes/DerechosDeberesPage';
 import LineaEtica from './LineaEtica/LineaEticaPage';
@@ -101,6 +102,7 @@ function App() {
           <Route path="/confidencialidad" element={<Confidencialidad />} />
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/mapa-sitio" element={<MapaSitio />} />
           <Route path="/asociados" element={<Asociados />} />
           <Route path="/derechos-deberes" element={<DerechosDeberes />} />
           <Route path="/linea-etica" element={<LineaEtica />} />
