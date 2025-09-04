@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FaUserMd, FaMapMarkerAlt, FaPhone, FaWhatsapp, FaPlay, FaCalendarAlt, FaArrowRight, FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { MdHealthAndSafety, MdSecurity, MdTrendingUp, MdGroups, MdStars, MdNotifications, MdCampaign, MdNewReleases, MdVerified } from 'react-icons/md';
+import { FaUserMd, FaMapMarkerAlt, FaPhone, FaWhatsapp, FaPlay, FaArrowRight, FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { MdHealthAndSafety, MdTrendingUp, MdGroups, MdStars } from 'react-icons/md';
 import { RiHeart3Fill, RiShieldCheckFill } from 'react-icons/ri';
-import { BiNews } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import ModalPortafolio from './ModalInicial';
 import { RedesSocialesSection } from '../components/RedesSociales';
+import { NoticiasDestacadas } from '../components/NoticiasDestacadas';
 import { SEOHelmet } from '../components/SEO';
 
 const Inicio: React.FC = () => {
@@ -158,30 +158,6 @@ const Inicio: React.FC = () => {
         }, 5000);
         return () => clearInterval(interval);
     }, [testimonios.length]);
-
-    const noticias = [
-        {
-            fecha: "15 Ago 2025",
-            titulo: "Nueva Tecnología en UCI Neonatal",
-            descripcion: "Implementamos equipos de última generación para el cuidado de recién nacidos.",
-            imagen: "/api/placeholder/300/200",
-            categoria: "Innovación"
-        },
-        {
-            fecha: "10 Ago 2025",
-            titulo: "Ampliación de Sede Tumaco",
-            descripcion: "Inauguramos nuevas consultorios especializados en nuestra sede de Tumaco.",
-            imagen: "/api/placeholder/300/200",
-            categoria: "Infraestructura"
-        },
-        {
-            fecha: "5 Ago 2025",
-            titulo: "Programa de Telemedicina",
-            descripcion: "Lanzamos consultas médicas virtuales para mayor accesibilidad.",
-            imagen: "/api/placeholder/300/200",
-            categoria: "Servicios"
-        }
-    ];
 
     const estadisticasAvanzadas = [
         { numero: "100,000+", descripcion: "Pacientes atendidos", icon: MdGroups, color: "from-primary-500 to-primary-700" },
@@ -709,6 +685,9 @@ const Inicio: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Noticias Destacadas */}
+            <NoticiasDestacadas />
 
             {/* Componente de Redes Sociales Separado */}
             <RedesSocialesSection videos={youtubeVideos} />

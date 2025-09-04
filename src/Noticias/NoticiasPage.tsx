@@ -61,13 +61,62 @@ const Noticias: React.FC = () => {
     const noticiasDestacadas = noticiasFiltradas.filter(noticia => noticia.destacada);
     const noticiasRegulares = noticiasFiltradas.filter(noticia => !noticia.destacada);
 
-    // Formatear fecha
+    // Formatear fecha (ajustada para zona horaria de Bogotá, Colombia)
     const formatearFecha = (fecha: string) => {
-        return new Date(fecha).toLocaleDateString('es-CO', {
+        // Crear fecha local sin problemas de zona horaria
+        const [year, month, day] = fecha.split('-').map(num => parseInt(num, 10));
+        const fechaLocal = new Date(year, month - 1, day); // month - 1 porque los meses en JS van de 0-11
+        
+        return fechaLocal.toLocaleDateString('es-CO', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
+            timeZone: 'America/Bogota'
         });
+    };
+
+    // Convertir URL de video a formato embebible (YouTube y Facebook)
+    const convertirVideoURL = (url: string) => {
+        if (!url) return url;
+        
+        // Manejar URLs de Facebook
+        if (url.includes('facebook.com')) {
+            // Facebook video: https://www.facebook.com/IPSmedicron/videos/1508469990153359
+            if (url.includes('/videos/')) {
+                // Para Facebook, es mejor usar el plugin de Facebook embebido
+                // Codificar la URL original para el plugin de Facebook
+                const encodedURL = encodeURIComponent(url);
+                return `https://www.facebook.com/plugins/video.php?href=${encodedURL}&show_text=false&width=560&height=315&appId`;
+            }
+            return url;
+        }
+        
+        // Manejar URLs de YouTube
+        let videoId = '';
+        
+        // YouTube Shorts: https://youtube.com/shorts/VIDEO_ID
+        if (url.includes('youtube.com/shorts/')) {
+            videoId = url.split('shorts/')[1].split('?')[0];
+        }
+        // YouTube watch: https://www.youtube.com/watch?v=VIDEO_ID
+        else if (url.includes('watch?v=')) {
+            videoId = url.split('watch?v=')[1].split('&')[0];
+        }
+        // YouTube short URL: https://youtu.be/VIDEO_ID
+        else if (url.includes('youtu.be/')) {
+            videoId = url.split('youtu.be/')[1].split('?')[0];
+        }
+        // YouTube embed: https://www.youtube.com/embed/VIDEO_ID
+        else if (url.includes('embed/')) {
+            return url; // Ya está en formato correcto
+        }
+        
+        // Si encontramos un ID de YouTube, devolver URL embebible
+        if (videoId) {
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+        
+        return url; // Devolver URL original si no se puede convertir
     };
 
     // Obtener color de categoría
@@ -422,13 +471,37 @@ const Noticias: React.FC = () => {
                                         Video relacionado
                                     </h3>
                                     <div className="aspect-w-16 aspect-h-9 rounded-lg sm:rounded-xl overflow-hidden">
-                                        <iframe
-                                            src={noticiaSeleccionada.video.replace('watch?v=', 'embed/')}
-                                            title={noticiaSeleccionada.titulo}
-                                            className="w-full h-48 sm:h-64 lg:h-80 rounded-lg sm:rounded-xl"
-                                            frameBorder="0"
-                                            allowFullScreen
-                                        ></iframe>
+                                        {noticiaSeleccionada.video.includes('facebook.com') ? (
+                                            // Para videos de Facebook, mostrar un enlace directo con preview
+                                            <div className="bg-blue-50 border border-blue-200 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center">
+                                                <div className="mb-4">
+                                                    <PlayCircleIcon className="h-12 w-12 text-blue-600 mx-auto mb-3" />
+                                                    <p className="text-gray-700 mb-4">
+                                                        Este video está alojado en Facebook. Haz clic en el botón para verlo.
+                                                    </p>
+                                                </div>
+                                                <a
+                                                    href={noticiaSeleccionada.video}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                                                >
+                                                    <PlayCircleIcon className="h-5 w-5" />
+                                                    Ver video en Facebook
+                                                    <LinkIcon className="h-4 w-4" />
+                                                </a>
+                                            </div>
+                                        ) : (
+                                            // Para videos de YouTube y otros
+                                            <iframe
+                                                src={convertirVideoURL(noticiaSeleccionada.video)}
+                                                title={noticiaSeleccionada.titulo}
+                                                className="w-full h-48 sm:h-64 lg:h-80 rounded-lg sm:rounded-xl"
+                                                frameBorder="0"
+                                                allowFullScreen
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            ></iframe>
+                                        )}
                                     </div>
                                 </div>
                             )}

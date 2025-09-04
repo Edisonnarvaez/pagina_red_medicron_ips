@@ -1,161 +1,174 @@
 {
-  "noticias": [
+    "noticias": [
     {
-      "id": 1,
-      "titulo": "Nueva sede en Samaniego",
-      "descripcion": "Red Medicron IPS inaugura una nueva sede en Samaniego para ampliar la cobertura y mejorar la atención en la región.",
-      "fecha": "2025-08-12",
-      "categoria": "expansion",
-      "imagen": "/images/noticias/nueva-sede-samaniego.jpg",
-      "enlaceExterno": null,
-      "video": null,
-      "resumenCorto": "Inauguración de nueva sede para ampliar cobertura en Samaniego.",
-      "autor": "Área de Comunicaciones",
-      "destacada": true,
-      "contenidoCompleto": "Red Medicron IPS se complace en anunciar la apertura de su nueva sede en el municipio de Samaniego, Nariño. Esta nueva instalación representa un paso significativo en nuestro compromiso de brindar servicios de salud de calidad y accesibles a todas las comunidades de la región...",
-      "tags": ["sede nueva", "samaniego", "expansion", "cobertura"],
-      "galeria": [
-        "/images/noticias/samaniego-inauguracion-1.jpg",
-        "/images/noticias/samaniego-instalaciones-1.jpg"
-      ]
+        "id": 1,
+        "titulo": "Conoce nuestros servicios",
+        "descripcion": "Red Medicron IPS quiere que conozcas nuestras sedes y los servicios que ofrecemos en cada una de ellas.",
+        "fecha": "2025-08-12",
+        "categoria": "servicios",
+        "imagen": "/images/noticias/nuestros_servicios.png",
+        "enlaceExterno": null,
+        "video": "https://www.youtube.com/embed/T61YAM6WePo",
+        "resumenCorto": "Conoce nuestros servicos.",
+        "autor": "Área de Comunicaciones",
+        "destacada": true,
+        "contenidoCompleto": "En Red Medicron IPS no solo prestamos servicios de salud, trabajamos con calidad, experiencia y calidez humana para marcar la diferencia en cada atención. Nuestro valor agregado está en acompañarte siempre, con un equipo comprometido con tu bienestar.",
+        "tags": ["servicios", "cobertura"],
+        "galeria": [
+        "/images/noticias/nuestros-servicios.png"
+        ]
     },
     {
-      "id": 2,
-      "titulo": "Jornada de salud renal",
-      "descripcion": "Se realizó con éxito la jornada de prevención y diagnóstico de enfermedades renales en la sede Pasto.",
-      "fecha": "2025-08-01",
-      "categoria": "eventos",
-      "imagen": "/images/noticias/jornada-salud-renal.jpg",
-      "enlaceExterno": null,
-      "video": "https://www.youtube.com/watch?v=ejemplo-salud-renal",
-      "resumenCorto": "Exitosa jornada de prevención renal en Pasto.",
-      "autor": "Dr. María González",
-      "destacada": false,
-      "contenidoCompleto": "Durante el mes de agosto se llevó a cabo una exitosa jornada de prevención y diagnóstico temprano de enfermedades renales en nuestra sede principal de Pasto. La actividad contó con la participación de más de 200 pacientes...",
-      "tags": ["salud renal", "prevencion", "pasto", "jornada"],
-      "galeria": [
-        "/images/noticias/jornada-renal-1.jpg",
-        "/images/noticias/jornada-renal-2.jpg"
-      ]
+        "id": 2,
+        "titulo": "nuestra atencion especializada",
+        "descripcion": "En Red Medicron IPS contamos con servicios especializados para nuestros usuarios.",
+        "fecha": "2025-08-01",
+        "categoria": "nosotros",
+        "imagen": "/images/noticias/atencion_especializada.png",
+        "enlaceExterno": null,
+        "video": "https://www.youtube.com/embed/4iLXfxnOqMk",
+        "resumenCorto": "Atencion especializada.",
+        "autor": "Área de Comunicaciones",
+        "destacada": false,
+        "contenidoCompleto": "En Red Medicron IPS ofrecemos nuestros servicios especializados a nuestros usuarios, siempre guiando a nuestros usuarios de la mejor manera y en compañía de los mejores profesionales de la salud.",
+        "tags": ["salud", "prevencion", "pasto"],
+        "galeria": [
+        "/images/noticias/atencion_especializada.png"
+        ]
     },
     {
-      "id": 3,
-      "titulo": "Reconocimiento a la excelencia",
-      "descripcion": "Red Medicron IPS recibió el reconocimiento regional por calidad y humanización en la atención en salud.",
-      "fecha": "2025-07-20",
-      "categoria": "reconocimientos",
-      "imagen": "/images/noticias/reconocimiento-excelencia.jpg",
-      "enlaceExterno": "https://www.ejemplo-ministerio-salud.gov.co/reconocimientos-2025",
-      "video": null,
-      "resumenCorto": "Reconocimiento regional por calidad en atención en salud.",
-      "autor": "Ministerio de Salud",
-      "destacada": true,
-      "contenidoCompleto": "Es un honor para Red Medicron IPS haber recibido el reconocimiento regional por excelencia en calidad y humanización en la atención en salud, otorgado por el Ministerio de Salud y Protección Social...",
-      "tags": ["reconocimiento", "calidad", "humanizacion", "ministerio"],
-      "galeria": [
-        "/images/noticias/ceremonia-reconocimiento.jpg"
-      ]
+        "id": 3,
+        "titulo": "5 cosas que quizas no conocias sobre las enfermedades renales",
+        "descripcion": "Campaña de concientización sobre la salud renal.",
+        "fecha": "2025-08-30",
+        "categoria": "salud-publica",
+        "imagen": "/images/noticias/5_cosas.png",
+        "enlaceExterno": null,
+        "video": "https://www.youtube.com/embed/JqjcwAl80us",
+        "resumenCorto": "Campaña de concientización sobre la salud renal",
+        "autor": "Área de Comunicaciones",
+        "destacada": true,
+        "contenidoCompleto": "En Red Medicron IPS queremos que conozcas más sobre las enfermedades renales y cómo prevenirlas. Aquí te presentamos 5 datos importantes que quizás no conocías sobre la salud renal...",
+        "tags": ["salud", "prevencion", "pasto"],
+        "galeria": [
+        "/images/noticias/5_cosas.png"
+        ]
     },
     {
-      "id": 4,
-      "titulo": "Capacitación en bioseguridad",
-      "descripcion": "Personal de todas las sedes participó en la actualización de protocolos de bioseguridad.",
-      "fecha": "2025-07-10",
-      "categoria": "capacitacion",
-      "imagen": "/images/noticias/capacitacion-bioseguridad.jpg",
-      "enlaceExterno": null,
-      "video": null,
-      "resumenCorto": "Actualización de protocolos de bioseguridad para todo el personal.",
-      "autor": "Área de Gestión de Calidad",
-      "destacada": false,
-      "contenidoCompleto": "Durante la primera semana de julio, todo el personal de Red Medicron IPS participó en un programa intensivo de actualización en protocolos de bioseguridad. Esta capacitación forma parte de nuestro compromiso continuo...",
-      "tags": ["capacitacion", "bioseguridad", "personal", "protocolos"],
-      "galeria": [
-        "/images/noticias/capacitacion-bioseguridad-1.jpg",
-        "/images/noticias/capacitacion-bioseguridad-2.jpg"
-      ]
+        "id": 4,
+        "titulo": "Nuestras sedes",
+        "descripcion": "Te presentamos nuestras sedes en los municipios de Nariño.",
+        "fecha": "2025-08-20",
+        "categoria": "nosotros",
+        "imagen": "/images/noticias/nuestras_sedes.png",
+        "enlaceExterno": null,
+        "video": "https://www.youtube.com/embed/lpullmL1nOA",
+        "resumenCorto": "Nuestras sedes en Nariño",
+        "autor": "Área de Comunicaciones",
+        "destacada": false,
+        "contenidoCompleto": "Te presentamos nuestras sedes en los municipios de Nariño, donde ofrecemos una atención de calidad y calidez humana. Ven y conócenos, estamos para servirte.",
+        "tags": ["nosotros", "calidad", "humanizacion"],
+        "galeria": [
+        "/images/noticias/nuestras_sedes.png"
+        ]
     },
     {
-      "id": 5,
-      "titulo": "Telemedicina: Innovación en atención médica",
-      "descripcion": "Implementación exitosa del sistema de telemedicina para consultas especializadas en zonas rurales.",
-      "fecha": "2025-06-15",
-      "categoria": "tecnologia",
-      "imagen": "/images/noticias/telemedicina.jpg",
-      "enlaceExterno": null,
-      "video": "https://www.youtube.com/watch?v=ejemplo-telemedicina",
-      "resumenCorto": "Nueva plataforma de telemedicina para atención en zonas rurales.",
-      "autor": "Área de Innovación Tecnológica",
-      "destacada": true,
-      "contenidoCompleto": "Red Medicron IPS ha implementado con éxito un innovador sistema de telemedicina que permite brindar consultas especializadas a pacientes en zonas rurales y de difícil acceso...",
-      "tags": ["telemedicina", "innovacion", "tecnologia", "rural"],
-      "galeria": [
-        "/images/noticias/telemedicina-consulta.jpg",
-        "/images/noticias/telemedicina-equipo.jpg"
-      ]
+        "id": 5,
+        "titulo": "¡Comienza el Mes de la Lactancia Materna 2025!",
+        "descripcion": "Red Medicron IPS se une a la celebración del Mes de la Lactancia Materna con actividades y campañas de concientización.",
+        "fecha": "2025-08-10",
+        "categoria": "capacitacion",
+        "imagen": "/images/noticias/lactancia_materna.png",
+        "enlaceExterno": null,
+        "video": "https://youtu.be/C0z5Djd2ufU",
+        "resumenCorto": "Celebración del Mes de la Lactancia Materna.",
+        "autor": "Área de APS",
+        "destacada": true,
+        "contenidoCompleto": "Durante leste mes de agosto, Red Medicron IPS se une a la celebración del Mes de la Lactancia Materna con diversas actividades y campañas de concientización para promover la importancia de esta práctica vital para la salud de madres y bebés. Invitamos a toda nuestra comunidad a participar y apoyar esta noble causa.",
+        "tags": ["capacitacion", "lactancia", "personal", "protocolos"],
+        "galeria": [
+        "/images/noticias/lactancia-materna.png"
+        ]
     },
     {
-      "id": 6,
-      "titulo": "Jornada de vacunación infantil",
-      "descripcion": "Campaña masiva de vacunación para niños menores de 5 años en todas las sedes.",
-      "fecha": "2025-05-30",
-      "categoria": "salud-publica",
-      "imagen": "/images/noticias/vacunacion-infantil.jpg",
-      "enlaceExterno": "https://www.minsalud.gov.co/campana-vacunacion-2025",
-      "video": null,
-      "resumenCorto": "Campaña de vacunación infantil en todas las sedes.",
-      "autor": "Área de Epidemiología",
-      "destacada": false,
-      "contenidoCompleto": "Como parte del programa nacional de inmunización, Red Medicron IPS llevó a cabo una exitosa jornada de vacunación dirigida a niños menores de 5 años en todas nuestras sedes...",
-      "tags": ["vacunacion", "infantil", "salud publica", "inmunizacion"],
-      "galeria": [
-        "/images/noticias/vacunacion-pasto.jpg",
-        "/images/noticias/vacunacion-ipiales.jpg"
-      ]
+        "id": 6,
+        "titulo": "Plan padrino Red Medicron IPS - Fundacion Valle de Lili",
+        "descripcion": "Plan padrino Red Medicron IPS - Fundacion Valle de Lili",
+        "fecha": "2025-06-15",
+        "categoria": "tecnologia",
+        "imagen": "/images/noticias/plan_padrino.jpg",
+        "enlaceExterno": null,
+        "video": "https://youtu.be/xFMYKF5lgho",
+        "resumenCorto": "Plan padrino.",
+        "autor": "Hospital San Jose de Tuquerres",
+        "destacada": false,
+        "contenidoCompleto": "A través del Plan Padrino, la Fundación Valle de Lili y el Hospital San José de Túquerres están transformando la atención del ataque cerebrovascular (ACV). Con activaciones de pacientes, hemos mejorado el acceso a tratamientos oportunos como la trombólisis y fortalecido la red de atención en Nariño.",
+        "tags": ["plan padrino", "innovacion", "tecnologia", "rural"],
+        "galeria": [
+        "/images/noticias/telemedicina-consulta.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "titulo": "Dia del trabajador",
+        "descripcion": "Dia del trabajador Red Medicron IPS",
+        "fecha": "2025-05-01",
+        "categoria": "nosotros",
+        "imagen": "/images/noticias/dia_trabajo.png",
+        "enlaceExterno": null,
+        "video": "https://www.youtube.com/embed/fbFa74Kt61A",
+        "resumenCorto": "Dia del Trabajador Red Medicron IPS 2025",
+        "autor": "Talento Humano",
+        "destacada": false,
+        "contenidoCompleto": "¡Feliz Día del Trabajador! Gracias por dar siempre lo mejor de ti. Hoy es tu día, ¡disfrútalo mucho!",
+        "tags": ["telemedicina", "innovacion", "tecnologia", "rural"],
+        "galeria": [
+        "/images/noticias/telemedicina-consulta.jpg"
+        ]
     }
-  ],
-  "categorias": [
+    ],
+    "categorias": [
     {
-      "id": "expansion",
-      "nombre": "Expansión",
-      "descripcion": "Noticias sobre nuevas sedes y crecimiento",
-      "color": "#047857",
-      "icono": "BuildingOfficeIcon"
+        "id": "servicios",
+        "nombre": "Servicios",
+        "descripcion": "Noticias sobre los servicios ofrecidos por Red Medicron IPS",
+        "color": "#047857",
+        "icono": "BuildingOfficeIcon"
     },
     {
-      "id": "eventos",
-      "nombre": "Eventos",
-      "descripcion": "Jornadas, talleres y actividades especiales",
-      "color": "#2563EB",
-      "icono": "CalendarDaysIcon"
+        "id": "eventos",
+        "nombre": "Eventos",
+        "descripcion": "Jornadas, talleres y actividades especiales",
+        "color": "#2563EB",
+        "icono": "CalendarDaysIcon"
     },
     {
-      "id": "reconocimientos",
-      "nombre": "Reconocimientos",
-      "descripcion": "Premios y distinciones recibidas",
-      "color": "#B45309",
-      "icono": "TrophyIcon"
+        "id": "nosotros",
+        "nombre": "Nosotros",
+        "descripcion": "Información sobre Red Medicron IPS",
+        "color": "#B45309",
+        "icono": "TrophyIcon"
     },
     {
-      "id": "capacitacion",
-      "nombre": "Capacitación",
-      "descripcion": "Formación y desarrollo del personal",
-      "color": "#6D28D9",
-      "icono": "AcademicCapIcon"
+        "id": "capacitacion",
+        "nombre": "Capacitación",
+        "descripcion": "Formación y desarrollo del personal",
+        "color": "#6D28D9",
+        "icono": "AcademicCapIcon"
     },
     {
-      "id": "tecnologia",
-      "nombre": "Tecnología",
-      "descripcion": "Innovaciones y avances tecnológicos",
-      "color": "#0891B2",
-      "icono": "ComputerDesktopIcon"
+        "id": "tecnologia",
+        "nombre": "Tecnología",
+        "descripcion": "Innovaciones y avances tecnológicos",
+        "color": "#0891B2",
+        "icono": "ComputerDesktopIcon"
     },
     {
-      "id": "salud-publica",
-      "nombre": "Salud Pública",
-      "descripcion": "Campañas y programas de salud pública",
-      "color": "#DC2626",
-      "icono": "HeartIcon"
+        "id": "salud-publica",
+        "nombre": "Salud Pública",
+        "descripcion": "Campañas y programas de salud pública",
+        "color": "#DC2626",
+        "icono": "HeartIcon"
     }
-  ]
+    ]
 }
