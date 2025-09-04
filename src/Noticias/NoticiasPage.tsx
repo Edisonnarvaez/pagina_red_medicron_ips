@@ -160,7 +160,7 @@ const Noticias: React.FC = () => {
                 canonical="/noticias"
             />
             {/* Header Section */}
-            <section className="bg-gradient-to-br from-verde to-verdeOscuro text-white py-12 sm:py-16 lg:py-20">
+            <section className="bg-gradient-to-br from-verde-400 to-verdeOscuro text-white py-12 sm:py-16 lg:py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
@@ -188,7 +188,7 @@ const Noticias: React.FC = () => {
                             <button
                                 onClick={() => setFiltroCategoria('todas')}
                                 className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-60 ${filtroCategoria === 'todas'
-                                        ? 'bg-white text-verde shadow-lg border-2 border-white'
+                                        ? 'bg-white text-white shadow-lg border-2 border-white'
                                         : 'bg-green-800 text-white hover:bg-green-700 border-2 border-green-800 hover:border-green-700'
                                     }`}
                                 aria-pressed={filtroCategoria === 'todas'}
@@ -200,7 +200,7 @@ const Noticias: React.FC = () => {
                                     key={categoria.id}
                                     onClick={() => setFiltroCategoria(categoria.id)}
                                     className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-60 ${filtroCategoria === categoria.id
-                                            ? 'bg-white text-verde shadow-lg border-2 border-white'
+                                            ? 'bg-white text-white shadow-lg border-2 border-white'
                                             : 'bg-green-800 text-white hover:bg-green-700 border-2 border-green-800 hover:border-green-700'
                                         }`}
                                     aria-pressed={filtroCategoria === categoria.id}
