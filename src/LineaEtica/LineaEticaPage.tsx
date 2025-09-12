@@ -214,7 +214,7 @@ const LineaEtica: React.FC = () => {
                         </div>
                     </div>
                     <p className="text-center text-sm sm:text-base lg:text-lg max-w-3xl mx-auto px-2">
-                        La Línea Ética de Red Medicron IPS es un canal confidencial para reportar situaciones que atenten contra la integridad, la ética y los valores institucionales. Garantizamos la protección del denunciante y el seguimiento oportuno de cada caso.
+                        La Línea Ética de Red Medicron IPS es un canal confidencial para reportar situaciones que atenten contra la integridad, la ética y los valores institucionales. Garantizamos la protección del denunciante y el seguimiento oportuno de cada caso .
                     </p>
                 </div>
 
