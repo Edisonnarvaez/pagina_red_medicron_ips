@@ -2,12 +2,187 @@ import React from 'react';
 import { SEOHelmet } from '../components/SEO';
 
 const EnlacesExternos: React.FC = () => {
+    const entidadesSalud = [
+        {
+            nombre: "Academia Colombiana de Odontología Pediátrica",
+            sigla: "ACOP",
+            url: "https://www.acop.com.co/academia-colombiana-de-odontologia-pediatrica-acop/#:~:text=La%20academia%20colombiana%20de%20odontolog%C3%ADa,la%20sa%20lud%20oral%20de%20la",
+            imagen: "/images/agremiacion/acop.jpg",
+            categoria: "Odontología"
+        },
+        {
+            nombre: "Asociación Colombiana de Audiología",
+            sigla: "ASOAUDIO",
+            url: "http://www.asoaudio.org.co",
+            imagen: "/images/agremiacion/asoaudio.jpg",
+            categoria: "Audiología"
+        },
+        {
+            nombre: "Asociación Colombiana de Cirugía General",
+            sigla: "ASCOLCIRUGIA",
+            url: "https://www.ascolcirugia.org/",
+            imagen: "/images/agremiacion/ascolcirugia.jpg",
+            categoria: "Cirugía"
+        },
+        {
+            nombre: "Asociación Colombiana de Cirugía Oral y Maxilofacial",
+            sigla: "ACCOMF",
+            url: "https://accomf.org/",
+            imagen: "/images/agremiacion/accomf.jpg",
+            categoria: "Cirugía"
+        },
+        {
+            nombre: "Asociación Colombiana de Hepatología",
+            sigla: "ACH",
+            url: "http://www.higadocolombia.org",
+            imagen: "/images/agremiacion/hepatologia.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Asociación Colombiana de Hospitales y Clínicas",
+            sigla: "ACHC",
+            url: "https://achc.org.co/",
+            imagen: "/images/agremiacion/achc.jpg",
+            categoria: "Hospitalaria"
+        },
+        {
+            nombre: "Asociación Colombiana de Infectología",
+            sigla: "ACIN",
+            url: "https://www.acin.org/",
+            imagen: "/images/agremiacion/acin.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Asociación Colombiana de Instituciones de Salud Domiciliaria",
+            sigla: "ACISD",
+            url: "https://acisd.com.co/",
+            imagen: "/images/agremiacion/acisd.jpg",
+            categoria: "Hospitalaria"
+        },
+        {
+            nombre: "Asociación Colombiana de Medicina Interna",
+            sigla: "ACMI",
+            url: "https://acmi.org.co/",
+            imagen: "/images/agremiacion/acmi.jpg",
+            categoria: "Medicina"
+        },
+        {
+            nombre: "Asociación Colombiana de Neonatología",
+            sigla: "ASCON",
+            url: "http://www.ascon.org.co",
+            imagen: "/images/agremiacion/ascon.jpg",
+            categoria: "Pediatría"
+        },
+        {
+            nombre: "Asociación Colombiana de Neumología Pediátrica",
+            sigla: "ACNP",
+            url: "http://www.neumopediatriacolombia.com",
+            imagen: "/images/agremiacion/neumopediatria.jpg",
+            categoria: "Pediatría"
+        },
+        {
+            nombre: "Asociación Colombiana de Neurología Infantil",
+            sigla: "ASCONI",
+            url: "http://www.asconi.com.co",
+            imagen: "/images/agremiacion/asconi.jpg",
+            categoria: "Pediatría"
+        },
+        {
+            nombre: "Asociación Colombiana de Ortopedia",
+            sigla: "SCCOT",
+            url: "https://sccot.org/",
+            imagen: "/images/agremiacion/sccot.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Asociación Colombiana de Radiología",
+            sigla: "ACR",
+            url: "http://www.acronline.org",
+            imagen: "/images/agremiacion/radiologia.jpg",
+            categoria: "Diagnóstico"
+        },
+        {
+            nombre: "Asociación de Empresas Gestoras del Aseguramiento en Salud",
+            sigla: "GESTARSALUD",
+            url: "https://www.gestarsalud.com/",
+            imagen: "/images/agremiacion/gestarsalud.jpg",
+            categoria: "Aseguramiento"
+        },
+        {
+            nombre: "Federación Colombiana de Obstetricia y Ginecología",
+            sigla: "FECOLSOG",
+            url: "https://fecolsog.org/",
+            imagen: "/images/agremiacion/fecolsog.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Sociedad Colombiana de Anestesiología y Reanimación",
+            sigla: "SCARE",
+            url: "http://www.scare.org.co",
+            imagen: "/images/agremiacion/scare.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Sociedad Colombiana de Medicina Familiar",
+            sigla: "SOCMEF",
+            url: "http://socmef.co/",
+            imagen: "/images/agremiacion/socmef.jpg",
+            categoria: "Medicina"
+        },
+        {
+            nombre: "Sociedad Colombiana de Pediatría",
+            sigla: "SCP",
+            url: "https://scp.com.co/",
+            imagen: "/images/agremiacion/scp.jpg",
+            categoria: "Pediatría"
+        },
+        {
+            nombre: "Sociedad Colombiana de Urología",
+            sigla: "SCU",
+            url: "http://www.scu.org.co",
+            imagen: "/images/agremiacion/scu.jpg",
+            categoria: "Especialidades"
+        },
+        {
+            nombre: "Sociedad Latinoamericana de Infectología Pediátrica",
+            sigla: "SLIPE",
+            url: "http://www.slipe.org",
+            imagen: "/images/agremiacion/slipe.jpg",
+            categoria: "Pediatría"
+        }
+    ];
+
+    type CategoriaKey =
+        | "Medicina"
+        | "Pediatría"
+        | "Cirugía"
+        | "Especialidades"
+        | "Odontología"
+        | "Audiología"
+        | "Hospitalaria"
+        | "Diagnóstico"
+        | "Aseguramiento";
+
+    type CategoriaInfo = { color: string; icon: string };
+
+    const categorias: Record<CategoriaKey, CategoriaInfo> = {
+        Medicina: { color: "blue", icon: "🩺" },
+        Pediatría: { color: "pink", icon: "👶" },
+        Cirugía: { color: "red", icon: "🔬" },
+        Especialidades: { color: "green", icon: "⚕️" },
+        Odontología: { color: "yellow", icon: "🦷" },
+        Audiología: { color: "purple", icon: "👂" },
+        Hospitalaria: { color: "indigo", icon: "🏥" },
+        Diagnóstico: { color: "cyan", icon: "📊" },
+        Aseguramiento: { color: "orange", icon: "🛡️" }
+    };
+
     return (
         <>
             <SEOHelmet
                 title="Enlaces de Sistemas y Herramientas - Red Medicron IPS"
                 description="Accede a sistemas, portales y herramientas digitales de Red Medicron IPS. Enlaces directos a plataformas de gestión, consultas médicas y servicios en línea para usuarios en Nariño."
-                keywords="sistemas red medicron ips, portales médicos nariño, herramientas digitales ips, plataforma salud túquerres, acceso sistemas red medicron"
+                keywords="sistemas red medicron ips, portales médicos nariño, herramientas digitales ips, plataforma salud túquerres, acceso sistemas red medicron, asociaciones médicas colombia"
                 canonical="/enlaces-externos"
             />
             
@@ -119,8 +294,6 @@ const EnlacesExternos: React.FC = () => {
                             <span className="text-xs mt-2 px-3 py-1 bg-purple-200 text-purple-800 rounded-full">Gubernamental</span>
                         </a>
                         
-                        
-                        
                         <a 
                             href="http://www.red.redmedicronips.com.co/" 
                             target="_blank" 
@@ -132,10 +305,77 @@ const EnlacesExternos: React.FC = () => {
                             <span className="text-sm text-center text-purple-600">Plataforma interna para empleados</span>
                             <span className="text-xs mt-2 px-3 py-1 bg-purple-200 text-purple-800 rounded-full">Corporativo</span>
                         </a>
-                        
-                        
-                        
-                        
+                    </div>
+                </div>
+
+                {/* Nueva Sección: Entidades del Sector Salud */}
+                <div className="mb-12">
+                    <h3 className="text-2xl font-bold mb-6 text-center text-orange-700">🏥 Entidades del Sector Salud</h3>
+                    <p className="mb-8 text-center text-gray-700">Asociaciones médicas, sociedades científicas y organizaciones de interés institucional</p>
+                    
+                    {/* Filtro por categorías */}
+                    <div className="flex flex-wrap justify-center gap-2 mb-8">
+                        {Object.entries(categorias).map(([categoria, { color, icon }]) => (
+                            <span 
+                                key={categoria}
+                                className={`px-3 py-1 text-xs font-semibold rounded-full bg-${color}-100 text-${color}-800 border border-${color}-200`}
+                            >
+                                {icon} {categoria}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Grid de entidades organizadas por categorías */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {entidadesSalud.map((entidad, index) => {
+                            const categoria = categorias[entidad.categoria as CategoriaKey];
+                            return (
+                                <a
+                                    key={index}
+                                    href={entidad.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`bg-${categoria.color}-50 border-2 border-${categoria.color}-200 rounded-lg p-4 flex flex-col items-center shadow-md hover:bg-${categoria.color}-100 hover:border-${categoria.color}-300 hover:shadow-lg transition-all duration-300 group`}
+                                >
+                                    {/* Logo/Imagen */}
+                                    <div className="w-16 h-16 mb-3 flex items-center justify-center rounded-full bg-white shadow-sm">
+                                        <img 
+                                            src={entidad.imagen} 
+                                            alt={`Logo ${entidad.sigla}`}
+                                            className="w-12 h-12 object-contain"
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.style.display = 'none';
+                                                target.nextElementSibling?.classList.remove('hidden');
+                                            }}
+                                        />
+                                        <span className={`text-2xl hidden text-${categoria.color}-600`}>
+                                            {categoria.icon}
+                                        </span>
+                                    </div>
+                                    
+                                    {/* Sigla */}
+                                    <div className={`text-xs font-bold mb-2 px-2 py-1 rounded bg-${categoria.color}-200 text-${categoria.color}-800`}>
+                                        {entidad.sigla}
+                                    </div>
+                                    
+                                    {/* Nombre */}
+                                    <h4 className={`font-bold text-sm mb-2 text-center text-${categoria.color}-900 group-hover:text-${categoria.color}-700 line-clamp-2`}>
+                                        {entidad.nombre}
+                                    </h4>
+                                    
+                                    {/* Categoría */}
+                                    <span className={`text-xs text-${categoria.color}-600 bg-${categoria.color}-100 px-2 py-1 rounded-full`}>
+                                        {categoria.icon} {entidad.categoria}
+                                    </span>
+                                    
+                                    {/* Indicador de enlace externo */}
+                                    <div className="mt-3 opacity-70 group-hover:opacity-100 transition-opacity">
+                                        <span className="text-xs text-gray-500">🔗 Enlace externo</span>
+                                    </div>
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
