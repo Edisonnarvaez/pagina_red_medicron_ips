@@ -1,0 +1,292 @@
+{
+  "enlacesInternos": [
+    {
+      "id": "historia-clinica-prueba",
+      "nombre": "Historia Clínica - Prueba",
+      "url": "http://192.168.59.230/SaludIPSPrueba/Home/HC",
+      "descripcion": "Sistema interno de historias clínicas en ambiente de prueba para desarrollo y testing",
+      "icono": "🏥",
+      "categoria": "Red Interna",
+      "tipo": "interno"
+    },
+    {
+      "id": "saludips-interno",
+      "nombre": "SaludIPS Interno",
+      "url": "http://192.168.59.230/SaludIPS",
+      "descripcion": "Sistema principal de gestión de salud para uso interno del personal autorizado",
+      "icono": "💻",
+      "categoria": "Red Interna",
+      "tipo": "interno"
+    }
+  ],
+  "enlacesExternos": [
+    {
+      "id": "visor-hc",
+      "nombre": "Visor HC",
+      "url": "http://186.115.218.10/VisorHC/",
+      "descripcion": "Visualizador de historias clínicas para consulta externa",
+      "icono": "👁️",
+      "categoria": "Externo",
+      "tipo": "externo"
+    },
+    {
+      "id": "saludips",
+      "nombre": "SaludIPS",
+      "url": "http://186.115.218.10/SaludIPS/",
+      "descripcion": "Sistema principal de gestión de salud",
+      "icono": "🏥",
+      "categoria": "Externo",
+      "tipo": "externo"
+    },
+    {
+      "id": "saludips-prueba",
+      "nombre": "SaludIPS Prueba",
+      "url": "http://186.115.218.10/SaludIPSprueba/",
+      "descripcion": "Ambiente de pruebas del sistema principal",
+      "icono": "🧪",
+      "categoria": "Externo",
+      "tipo": "externo"
+    }
+  ],
+  "enlacesInstitucionales": [
+    {
+      "id": "mi-seguridad-social",
+      "nombre": "Mi Seguridad Social",
+      "url": "https://www.miseguridadsocial.gov.co/",
+      "descripcion": "Consulta tu afiliación y derechos en salud",
+      "icono": "🔗",
+      "categoria": "Gubernamental",
+      "tipo": "institucional"
+    },
+    {
+      "id": "supersalud",
+      "nombre": "Supersalud",
+      "url": "https://www.supersalud.gov.co/",
+      "descripcion": "Superintendencia Nacional de Salud",
+      "icono": "🏛️",
+      "categoria": "Gubernamental",
+      "tipo": "institucional"
+    },
+    {
+      "id": "portal-institucional",
+      "nombre": "Portal Institucional",
+      "url": "http://www.red.redmedicronips.com.co/",
+      "descripcion": "Plataforma interna para empleados",
+      "icono": "💻",
+      "categoria": "Corporativo",
+      "tipo": "institucional"
+    }
+  ],
+  "entidadesSalud": [
+    {
+      "id": "acop",
+      "nombre": "Academia Colombiana de Odontología Pediátrica",
+      "sigla": "ACOP",
+      "url": "https://www.acop.com.co/academia-colombiana-de-odontologia-pediatrica-acop/",
+      "imagen": "/images/agremiacion/acop.jpg",
+      "categoria": "Odontología",
+      "descripcion": "Promoción de la salud oral infantil y adolescente",
+      "tipo": "entidad"
+    },
+    {
+      "id": "asoaudio",
+      "nombre": "Asociación Colombiana de Audiología",
+      "sigla": "ASOAUDIO",
+      "url": "http://www.asoaudio.org.co",
+      "imagen": "/images/agremiacion/asoaudio.jpg",
+      "categoria": "Audiología",
+      "descripcion": "Desarrollo de la audiología y la salud auditiva",
+      "tipo": "entidad"
+    },
+    {
+      "id": "ascolcirugia",
+      "nombre": "Asociación Colombiana de Cirugía General",
+      "sigla": "ASCOLCIRUGIA",
+      "url": "https://www.ascolcirugia.org/",
+      "imagen": "/images/agremiacion/ascolcirugia.jpg",
+      "categoria": "Cirugía",
+      "descripcion": "Excelencia en cirugía general y especializada",
+      "tipo": "entidad"
+    },
+    {
+      "id": "accomf",
+      "nombre": "Asociación Colombiana de Cirugía Oral y Maxilofacial",
+      "sigla": "ACCOMF",
+      "url": "https://accomf.org/",
+      "imagen": "/images/agremiacion/accomf.jpg",
+      "categoria": "Cirugía",
+      "descripcion": "Cirugía oral, maxilofacial y reconstructiva",
+      "tipo": "entidad"
+    },
+    {
+      "id": "hepatologia",
+      "nombre": "Asociación Colombiana de Hepatología",
+      "sigla": "ACH",
+      "url": "http://www.higadocolombia.org",
+      "imagen": "/images/agremiacion/hepatologia.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Investigación y tratamiento de enfermedades hepáticas",
+      "tipo": "entidad"
+    },
+    {
+      "id": "achc",
+      "nombre": "Asociación Colombiana de Hospitales y Clínicas",
+      "sigla": "ACHC",
+      "url": "https://achc.org.co/",
+      "imagen": "/images/agremiacion/achc.jpg",
+      "categoria": "Hospitalaria",
+      "descripcion": "Fortalecimiento del sector hospitalario colombiano",
+      "tipo": "entidad"
+    },
+    {
+      "id": "acin",
+      "nombre": "Asociación Colombiana de Infectología",
+      "sigla": "ACIN",
+      "url": "https://www.acin.org/",
+      "imagen": "/images/agremiacion/acin.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Control y prevención de enfermedades infecciosas",
+      "tipo": "entidad"
+    },
+    {
+      "id": "acisd",
+      "nombre": "Asociación Colombiana de Instituciones de Salud Domiciliaria",
+      "sigla": "ACISD",
+      "url": "https://acisd.com.co/",
+      "imagen": "/images/agremiacion/acisd.jpg",
+      "categoria": "Hospitalaria",
+      "descripcion": "Promoción de la atención médica domiciliaria",
+      "tipo": "entidad"
+    },
+    {
+      "id": "acmi",
+      "nombre": "Asociación Colombiana de Medicina Interna",
+      "sigla": "ACMI",
+      "url": "https://acmi.org.co/",
+      "imagen": "/images/agremiacion/acmi.jpg",
+      "categoria": "Medicina",
+      "descripcion": "Desarrollo científico de la medicina interna",
+      "tipo": "entidad"
+    },
+    {
+      "id": "ascon",
+      "nombre": "Asociación Colombiana de Neonatología",
+      "sigla": "ASCON",
+      "url": "http://www.ascon.org.co",
+      "imagen": "/images/agremiacion/ascon.jpg",
+      "categoria": "Pediatría",
+      "descripcion": "Atención especializada del recién nacido",
+      "tipo": "entidad"
+    },
+    {
+      "id": "neumopediatria",
+      "nombre": "Asociación Colombiana de Neumología Pediátrica",
+      "sigla": "ACNP",
+      "url": "http://www.neumopediatriacolombia.com",
+      "imagen": "/images/agremiacion/neumopediatria.jpg",
+      "categoria": "Pediatría",
+      "descripcion": "Salud respiratoria en niños y adolescentes",
+      "tipo": "entidad"
+    },
+    {
+      "id": "asconi",
+      "nombre": "Asociación Colombiana de Neurología Infantil",
+      "sigla": "ASCONI",
+      "url": "http://www.asconi.com.co",
+      "imagen": "/images/agremiacion/asconi.jpg",
+      "categoria": "Pediatría",
+      "descripcion": "Neurología pediátrica y desarrollo infantil",
+      "tipo": "entidad"
+    },
+    {
+      "id": "sccot",
+      "nombre": "Asociación Colombiana de Ortopedia",
+      "sigla": "SCCOT",
+      "url": "https://sccot.org/",
+      "imagen": "/images/agremiacion/sccot.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Traumatología y cirugía ortopédica",
+      "tipo": "entidad"
+    },
+    {
+      "id": "radiologia",
+      "nombre": "Asociación Colombiana de Radiología",
+      "sigla": "ACR",
+      "url": "http://www.acronline.org",
+      "imagen": "/images/agremiacion/radiologia.jpg",
+      "categoria": "Diagnóstico",
+      "descripcion": "Diagnóstico por imágenes y medicina nuclear",
+      "tipo": "entidad"
+    },
+    {
+      "id": "gestarsalud",
+      "nombre": "Asociación de Empresas Gestoras del Aseguramiento en Salud",
+      "sigla": "GESTARSALUD",
+      "url": "https://www.gestarsalud.com/",
+      "imagen": "/images/agremiacion/gestarsalud.jpg",
+      "categoria": "Aseguramiento",
+      "descripcion": "Gestión del aseguramiento en salud",
+      "tipo": "entidad"
+    },
+    {
+      "id": "fecolsog",
+      "nombre": "Federación Colombiana de Obstetricia y Ginecología",
+      "sigla": "FECOLSOG",
+      "url": "https://fecolsog.org/",
+      "imagen": "/images/agremiacion/fecolsog.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Salud reproductiva y ginecológica femenina",
+      "tipo": "entidad"
+    },
+    {
+      "id": "scare",
+      "nombre": "Sociedad Colombiana de Anestesiología y Reanimación",
+      "sigla": "SCARE",
+      "url": "http://www.scare.org.co",
+      "imagen": "/images/agremiacion/scare.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Anestesiología, dolor y cuidados críticos",
+      "tipo": "entidad"
+    },
+    {
+      "id": "socmef",
+      "nombre": "Sociedad Colombiana de Medicina Familiar",
+      "sigla": "SOCMEF",
+      "url": "http://socmef.co/",
+      "imagen": "/images/agremiacion/socmef.jpg",
+      "categoria": "Medicina",
+      "descripcion": "Atención primaria y medicina familiar",
+      "tipo": "entidad"
+    },
+    {
+      "id": "scp",
+      "nombre": "Sociedad Colombiana de Pediatría",
+      "sigla": "SCP",
+      "url": "https://scp.com.co/",
+      "imagen": "/images/agremiacion/scp.jpg",
+      "categoria": "Pediatría",
+      "descripcion": "Salud integral de niños y adolescentes",
+      "tipo": "entidad"
+    },
+    {
+      "id": "scu",
+      "nombre": "Sociedad Colombiana de Urología",
+      "sigla": "SCU",
+      "url": "http://www.scu.org.co",
+      "imagen": "/images/agremiacion/scu.jpg",
+      "categoria": "Especialidades",
+      "descripcion": "Urología y andrología especializada",
+      "tipo": "entidad"
+    },
+    {
+      "id": "slipe",
+      "nombre": "Sociedad Latinoamericana de Infectología Pediátrica",
+      "sigla": "SLIPE",
+      "url": "http://www.slipe.org",
+      "imagen": "/images/agremiacion/slipe.jpg",
+      "categoria": "Pediatría",
+      "descripcion": "Infectología pediátrica latinoamericana",
+      "tipo": "entidad"
+    }
+  ]
+}
