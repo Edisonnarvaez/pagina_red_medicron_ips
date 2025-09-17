@@ -19,7 +19,7 @@ const Transparencia: React.FC = () => {
                 { nombre: "Misión, Visión y Funciones", enlace: "/quienes-somos" },
                 { nombre: "Estructura Orgánica y Organigrama", enlace: "/organigrama" },
                 { nombre: "Directorio de Funcionarios", enlace: "/talento-humano" },
-                { nombre: "Directorio de Entidades", enlace: "#directorio-entidades" },
+                { nombre: "Directorio de Entidades", enlace: "/enlacese-externos" },
                 { nombre: "Localización Física, Sucursales", enlace: "/sedes" },
                 { nombre: "Horarios de Atención", enlace: "/contacto" },
                 { nombre: "Servicios que Brinda", enlace: "/servicios" }

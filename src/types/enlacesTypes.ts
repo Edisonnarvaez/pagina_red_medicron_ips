@@ -123,24 +123,24 @@ export const CATEGORIAS_CONFIG: Record<CategoriaKey, CategoriaInfo> = {
 
 export const COLORES_SECCIONES = {
   internos: {
-    primary: "blue",
-    bg: "bg-blue-50",
-    border: "border-blue-200",
-    text: "text-blue-800",
-    hover: "hover:bg-blue-100 hover:border-blue-300"
+    primary: "primary",
+    bg: "bg-primary-50",
+    border: "border-primary-200",
+    text: "text-primary-800",
+    hover: "hover:bg-primary-100 hover:border-primary-300"
   },
   externos: {
-    primary: "green", 
-    bg: "bg-green-50",
-    border: "border-green-200",
-    text: "text-green-800",
-    hover: "hover:bg-green-100 hover:border-green-300"
+    primary: "medical", 
+    bg: "bg-medical-50",
+    border: "border-medical-200",
+    text: "text-medical-800",
+    hover: "hover:bg-medical-100 hover:border-medical-300"
   },
   institucionales: {
-    primary: "purple",
-    bg: "bg-purple-50", 
-    border: "border-purple-200",
-    text: "text-purple-800",
-    hover: "hover:bg-purple-100 hover:border-purple-300"
+    primary: "accent",
+    bg: "bg-accent-50", 
+    border: "border-accent-200",
+    text: "text-accent-800",
+    hover: "hover:bg-accent-100 hover:border-accent-300"
   }
 };
