@@ -35,7 +35,7 @@ const EnlacesExternosPage: React.FC = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
         {/* Hero Section con diseño moderno */}
-        <section className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
+        <section className="relative bg-gradient-to-r from-medical-600 via-primary-600 to-medical-700 text-white py-20">
           <div className="absolute inset-0 bg-black opacity-10"></div>
           <div className="relative max-w-6xl mx-auto px-8 text-center">
             <div className="inline-block p-3 bg-white bg-opacity-20 rounded-full mb-6">
