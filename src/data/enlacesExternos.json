@@ -3,7 +3,7 @@
     {
       "id": "historia-clinica-prueba",
       "nombre": "Historia Clínica - Prueba",
-      "url": "http://192.168.59.230/SaludIPSPrueba/Home/HC",
+      "url": "http://192.168.59.231/SaludIPSPrueba/Home/HC",
       "descripcion": "Sistema interno de historias clínicas en ambiente de prueba para desarrollo y testing",
       "icono": "🏥",
       "categoria": "Red Interna",
@@ -41,7 +41,7 @@
     {
       "id": "saludips-prueba",
       "nombre": "SaludIPS Prueba",
-      "url": "http://186.115.218.10/SaludIPSprueba/",
+      "url": "http://152.200.161.234/SaludIPSPrueba/Home/HC",
       "descripcion": "Ambiente de pruebas del sistema principal",
       "icono": "🧪",
       "categoria": "Externo",
