@@ -6,12 +6,15 @@ import { SEOHelmet } from '../components/SEO';
 import AccessibleFormField from '../components/AccessibleFormField';
 
 interface FormData {
+    documentoTipo?: string;
+    documentoNumero?: string;
     nombre: string;
     apellido: string;
     email: string;
     telefono: string;
     tipoConsulta: string;
     sede: string;
+    eps: string;
     mensaje: string;
 }
 
@@ -22,12 +25,15 @@ interface FormStatus {
 
 const Contacto: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
+        documentoTipo: '',
+        documentoNumero: '',
         nombre: '',
         apellido: '',
         email: '',
         telefono: '',
         tipoConsulta: '',
         sede: '',
+        eps: '',
         mensaje: ''
     });
 
@@ -56,6 +62,22 @@ const Contacto: React.FC = () => {
         { value: 'sede-la_cruz', label: 'Sede - La Cruz' },
         { value: 'hospital-tuquerres', label: 'Hospital - Túquerres' },
         { value: 'sede-tumaco', label: 'Sede Tumaco' }
+    ];
+
+    const eps = [
+        { value: 'emssanar', label: 'Emssanar EPS' },
+        { value: 'fomag', label: 'FOMAG' },
+        { value: 'sanitas', label: 'Sanitas EPS' },
+        { value: 'otra', label: 'Otra / Particular' }   
+        
+    ];
+
+    const tiposDocumentos = [
+        { value: 'cc', label: 'Cédula de Ciudadanía' },
+        { value: 'ce', label: 'Cédula de Extranjería' },
+        { value: 'ti', label: 'Tarjeta de Identidad' },
+        { value: 'rc', label: 'Registro Civil' },
+        { value: 'pasaporte', label: 'Pasaporte' }
     ];
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -107,12 +129,15 @@ const Contacto: React.FC = () => {
             // Limpiar el formulario después de 3 segundos
             setTimeout(() => {
                 setFormData({
+                    documentoTipo: '',
+                    documentoNumero: '',
                     nombre: '',
                     apellido: '',
                     email: '',
                     telefono: '',
                     tipoConsulta: '',
                     sede: '',
+                    eps: '',
                     mensaje: ''
                 });
                 setFormStatus({ type: 'idle', message: '' });
@@ -131,12 +156,15 @@ const Contacto: React.FC = () => {
                 // Limpiar el formulario
                 setTimeout(() => {
                     setFormData({
+                        documentoTipo: '',
+                        documentoNumero: '',
                         nombre: '',
                         apellido: '',
                         email: '',
                         telefono: '',
                         tipoConsulta: '',
                         sede: '',
+                        eps: '',
                         mensaje: ''
                     });
                     setFormStatus({ type: 'idle', message: '' });
@@ -314,7 +342,42 @@ const Contacto: React.FC = () => {
                                 <h3 id="contact-form-title" className="sr-only">
                                     Formulario de contacto accesible
                                 </h3>
+
+                                {/* Tipo de consulta y Sede con componentes accesibles */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <AccessibleFormField
+                                        type="select"
+                                        name="documentoTipo"
+                                        label="Tipo de Documento"
+                                        value={formData.documentoTipo}
+                                        required={true}
+                                        placeholder="Selecciona el tipo de documento"
+                                        helpText="Esto nos ayuda a identificarte en nuestros sistemas de informacion de salud"
+                                        options={tiposDocumentos.map(documentoTipo => ({ 
+                                            value: documentoTipo.value, 
+                                            label: documentoTipo.label 
+                                        }))}
+                                        onChange={handleAccessibleFieldChange('documentoTipo')}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                    <AccessibleFormField
+                                        type="text"
+                                        name="documentoNumero"
+                                        label="documentoNumero"
+                                        value={formData.documentoNumero}
+                                        required={true}
+                                        placeholder="Tu numero de documento"
+                                        helpText="Ingresa tu numero tal como aparece en tu documento de identidad"
+                                        onChange={handleAccessibleFieldChange('documentoNumero')}
+                                        minLength={2}
+                                        maxLength={50}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
+                                    
+                                </div>
                                 
+
+
                                 {/* Nombres con componentes accesibles */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <AccessibleFormField
@@ -406,7 +469,23 @@ const Contacto: React.FC = () => {
                                         onChange={handleAccessibleFieldChange('sede')}
                                         className="bg-white/70 backdrop-blur-sm"
                                     />
+                                    <AccessibleFormField
+                                        type="select"
+                                        name="eps"
+                                        label="EPS del Usuario"
+                                        value={formData.eps}
+                                        required={false}
+                                        placeholder="Selecciona una EPS (opcional)"
+                                        helpText="Si tu consulta es sobre una EPS específica, selecciónala aquí"
+                                        options={eps.map(eps => ({ 
+                                            value: eps.value, 
+                                            label: eps.label 
+                                        }))}
+                                        onChange={handleAccessibleFieldChange('eps')}
+                                        className="bg-white/70 backdrop-blur-sm"
+                                    />
                                 </div>
+
 
                                 {/* Mensaje con componente accesible */}
                                 <AccessibleFormField
