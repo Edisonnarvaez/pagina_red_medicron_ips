@@ -217,7 +217,7 @@ const Inicio: React.FC = () => {
                     {/* Subtítulo impactante - RESPONSIVO */}
                     <div className="max-w-5xl text-center mb-12 sm:mb-16 animate-slide-up px-4" style={{ animationDelay: '0.4s' }}>
                         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-white font-bold mb-4 sm:mb-6 leading-tight font-display">
-                            Cuidando vidas con <span className="text-azul-600">Calidad</span><br />
+                            Cuidamos vidas con <span className="text-azul-600">Calidad</span><br />
                             y <span className="text-medical-600">Humanidad</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">

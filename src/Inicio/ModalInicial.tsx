@@ -9,33 +9,7 @@ interface ModalPortafolioProps {
 }
 
 export default function ModalPortafolio({ showPortafolioModal, setShowPortafolioModal }: ModalPortafolioProps) {
-    const [step, setStep] = useState<1 | 2>(1); // Comenzar en pantalla 1 (docentes)
-    const [timeLeft, setTimeLeft] = useState<string>("");
-
-    // Fecha límite en zona horaria de Colombia (Bogotá, UTC-5)
-    const targetDate = new Date("2025-08-28T23:59:59-05:00");
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            // Obtener fecha actual en zona horaria de Colombia
-            const now = new Date();
-            const colombiaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Bogota"}));
-            const difference = targetDate.getTime() - colombiaTime.getTime();
-
-            if (difference <= 0) {
-                clearInterval(interval);
-                setTimeLeft("¡El plazo ha finalizado!");
-            } else {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((difference / (1000 * 60)) % 60);
-                const seconds = Math.floor((difference / 1000) % 60);
-                setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, [targetDate]);
+    const [step, setStep] = useState<1 | 2>(2); // Comenzar en pantalla 2 (información FOMAG)
 
     // Manejo de teclas para navegación
     useEffect(() => {
@@ -56,7 +30,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     setStep(1);
                     break;
                 case '2':
-                    setStep(1);
+                    setStep(2);
                     break;
             }
         };
@@ -73,8 +47,10 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     onClick={() => setShowPortafolioModal(false)}
                 >
                     <div 
-                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl max-w-6xl lg:max-w-7xl xl:max-w-none w-full max-h-[95vh] lg:max-h-[90vh] shadow-2xl animate-scale-in border modal-scrollbar ${
-                            step === 1 ? 'bg-transparent border-transparent' : 'bg-white border-gray-200'
+                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl shadow-2xl animate-scale-in border modal-scrollbar ${
+                            step === 1 
+                                ? 'max-w-6xl lg:max-w-7xl xl:max-w-none w-full max-h-[95vh] lg:max-h-[90vh] bg-transparent border-transparent' 
+                                : 'max-w-2xl lg:max-w-3xl w-full h-auto max-h-[85vh] bg-transparent border-transparent'
                         }`}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -90,7 +66,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Controladores de navegación */}
                         <div className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-30">
                             <button
-                                onClick={() => setStep(step === 1 ? 1 : 1)}
+                                onClick={() => setStep(step === 1 ? 2 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronLeft size={16} className="sm:text-lg" />
@@ -99,7 +75,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         
                         <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-30">
                             <button
-                                onClick={() => setStep(step === 1 ? 1 : 1)}
+                                onClick={() => setStep(step === 1 ? 2 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronRight size={16} className="sm:text-lg" />
@@ -109,15 +85,15 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Indicadores de pantalla y ayuda de teclado */}
                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-30">
                             <div className="flex space-x-2">
-                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
-                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
+                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white/40' : 'bg-white'}`} />
+                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 2 ? 'bg-white' : 'bg-white/40'}`} />
                             </div>
                             <div className="hidden sm:flex items-center space-x-2 text-white/60 text-xs">
                                 <span>↔ Flechas</span>
                                 <span>•</span>
                                 <span>ESC Cerrar</span>
                                 <span>•</span>
-                                <span>1/1 Directo</span>
+                                <span>1/2 Directo</span>
                             </div>
                         </div>
 
@@ -162,100 +138,31 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         >
                                             Ver Servicios Online
                                         </Link>
-                                        
-                                        {/*<button
-                                            onClick={() => setStep(2)}
-                                            className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 text-white py-3 sm:py-4 lg:py-6 xl:py-8 transition-colors duration-200 font-medium hover:scale-[1.02] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl rounded-xl lg:rounded-2xl"
-                                        >
-                                            ← Volver a Invitación Docentes
-                                        </button>*/}
                                     </div>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {/* 
+                        {/* PANTALLA 2 - Información FOMAG - COMPACTA */}
                         {step === 2 && (
-                            <div className="modal-section relative w-full h-full overflow-hidden bg-cover bg-center bg-no-repeat text-white rounded-2xl sm:rounded-3xl"
-                                style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-                            >
-                                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
-
-                                <div className="relative z-10 h-full overflow-y-auto">
-                                    <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 min-h-full flex flex-col justify-center">
+                            <div className="modal-section relative w-full overflow-hidden rounded-2xl sm:rounded-3xl">
+                                {/* Contenedor de la imagen responsive - Compacto y centrado */}
+                                <div className="relative w-full flex flex-col items-center justify-center pt-6 pb-4 px-4 sm:px-6">
+                                    <img 
+                                        src="/modales/informacion_fomag.png" 
+                                        alt="Información FOMAG - Red Medicron IPS"
+                                        className="max-w-full object-contain rounded-lg shadow-2xl"
+                                        style={{ 
+                                            maxHeight: '70vh',
+                                            width: 'auto',
+                                            height: 'auto'
+                                        }}
+                                    />
                                     
-                                    <div className="inline-flex items-center bg-medical-500/20 backdrop-blur-sm rounded-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 lg:py-4 border border-medical-400/30 mb-3 sm:mb-4 lg:mb-6">
-                                        <MdHealthAndSafety className="text-medical-400 mr-2 sm:mr-3 lg:mr-4" size={16} />
-                                        <span className="text-medical-300 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">ELECCIÓN IPS PRIMARIA FOMAG</span>
-                                    </div>
-
-                                    <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight">
-                                        <span className="block text-white mb-1 sm:mb-2 lg:mb-3">¡Docente, elige a</span>
-                                        <span className="block bg-gradient-to-r from-medical-300 to-medical-500 bg-clip-text text-transparent">
-                                            Red Medicron IPS
-                                        </span>
-                                        <span className="block text-white text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold mt-1 sm:mt-2 lg:mt-3">
-                                            como tu IPS primaria!
-                                        </span>
-                                    </h3>
-
-                                    <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                                        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-gray-200 leading-relaxed">
-                                            Queremos acompañarte con <span className="text-medical-300 font-bold">atención médica de calidad</span>. 
-                                            Realiza tu elección antes del cierre del plazo.
-                                        </p>
-                                        
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-white/20 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto">
-                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 mb-2 lg:mb-4">
-                                                🎯 <strong>¿Quiénes pueden elegir?</strong>
-                                            </p>
-                                            <ul className="text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 space-y-1 lg:space-y-2">
-                                                <li>✅ Docentes activos del magisterio</li>
-                                                <li>✅ Pensionados del magisterio</li>
-                                                <li>✅ Beneficiarios del sistema FOMAG</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-gradient-to-r from-red-600/90 to-red-700/90 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-red-400/30 max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto">
-                                        <p className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-2 sm:mb-3 lg:mb-4">⏰ TIEMPO RESTANTE:</p>
-                                        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-mono bg-black/50 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg">
-                                            {timeLeft}
-                                        </div>
-                                        <p className="text-red-200 text-xs sm:text-sm lg:text-base xl:text-lg mt-2 lg:mt-4 font-medium">Hasta el 28 de agosto de 2025 - 11:59 PM (Hora Colombia)</p>
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 items-center justify-center pt-4 lg:pt-8 xl:pt-12 pb-6 lg:pb-12 xl:pb-16">
-                                        <a
-                                            href="http://200.116.57.140:8080/formulario_primaria/public/formulario"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group w-full sm:w-auto bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 rounded-xl sm:rounded-2xl lg:rounded-3xl font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                                        >
-                                            <span className="mr-2 sm:mr-3 lg:mr-4">🚀 REALIZAR ELECCIÓN AHORA</span>
-                                            <div className="w-2 h-2 lg:w-3 lg:h-3 bg-white/30 rounded-full animate-pulse"></div>
-                                        </a>
-                                        
-                                        <button
-                                            onClick={() => setStep(1)}
-                                            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-6 xl:py-8 rounded-xl sm:rounded-2xl lg:rounded-3xl font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 hover:text-white transition-all duration-300"
-                                        >
-                                            📋 Ver Portafolio de Servicios
-                                        </button>
-                                    </div>
-
-                                    
-                                    <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 text-center pb-4 sm:pb-6 lg:pb-12 xl:pb-16">
-                                        <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-white/70 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto leading-relaxed">
-                                            Al elegir Red Medicron IPS tendrás acceso a servicios de salud de alta calidad, 
-                                            tecnología avanzada y atención humanizada en toda la región de Nariño.
-                                        </p>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
-                        )}*/}
+                        )}
                     </div>
                 </div>
             )}
