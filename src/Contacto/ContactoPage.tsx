@@ -267,6 +267,7 @@ const Contacto: React.FC = () => {
                                     <div className="flex-1">
                                         <h4 className="font-bold text-gray-800 mb-1">Email</h4>
                                         <p className="text-gray-600 font-medium break-all">notificaciones@redmedicronips.com.co</p>
+                                        <p className="text-gray-600 font-medium break-all">citas@redmedicronips.com.co</p>
                                     </div>
                                 </div>
 
