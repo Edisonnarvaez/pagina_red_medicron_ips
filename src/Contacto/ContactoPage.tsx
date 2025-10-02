@@ -434,7 +434,7 @@ const Contacto: React.FC = () => {
                                         name="telefono"
                                         label="Teléfono"
                                         value={formData.telefono}
-                                        required={false}
+                                        required={true}
                                         placeholder="300 123 4567"
                                         helpText="Incluye código de área. Solo números, espacios y guiones"
                                         onChange={handleAccessibleFieldChange('telefono')}
