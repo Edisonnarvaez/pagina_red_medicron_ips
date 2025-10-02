@@ -77,7 +77,7 @@ const Inicio: React.FC = () => {
         {
             id: 3,
             titulo: "Líneas telefónicas para solicitar citas",
-            descripcion: "Citas en Nariño al 318 338 0107 y en Tuquerres al 321 666 0990.",
+            descripcion: "Citas en Nariño al 602 738 2377 y en Tuquerres al 321 666 0990.",
             gradiente: "from-primary-400 to-medical-500",
             imagen: "/images/sliderCitas-1.jpg",
             acciones: [
