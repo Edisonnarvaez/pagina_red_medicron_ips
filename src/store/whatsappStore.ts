@@ -41,7 +41,7 @@ const contactOptions: ContactOption[] = [
   },
   {
     id: 'hospital',
-    label: 'Citas Hospital',
+    label: 'Citas Hospital San Jose de Tuquerres',
     number: '3216660990',
     description: 'Servicios hospitalarios generales',
     icon: '🏨'
