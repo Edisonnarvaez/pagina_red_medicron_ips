@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp, FaTimes } from 'react-icons/fa';
+import { useWhatsAppStore } from '../../store/whatsappStore';
+import WhatsAppModal from './WhatsAppModal';
 
 const WhatsAppFloatButton: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [showTooltip, setShowTooltip] = useState(false);
+    const { showTooltip, setShowTooltip, openModal, isModalOpen } = useWhatsAppStore();
 
     // Mostrar el botón después de 2 segundos
     useEffect(() => {
@@ -27,12 +29,11 @@ const WhatsAppFloatButton: React.FC = () => {
         }
     }, [isVisible]);
 
-    // Mensaje predeterminado para WhatsApp
-    const whatsappMessage = encodeURIComponent(
-        "¡Hola Red Medicron IPS! 👋\n\nMe gustaría obtener información sobre sus servicios de salud. ¿Podrían ayudarme?\n\nGracias."
-    );
-
-    const whatsappUrl = `https://wa.me/573183380107?text=${whatsappMessage}`;
+    // Manejar click del botón
+    const handleButtonClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        openModal();
+    };
 
     if (!isVisible) return null;
 
@@ -41,7 +42,7 @@ const WhatsAppFloatButton: React.FC = () => {
             {/* Botón flotante de WhatsApp */}
             <div className={`fixed bottom-6 right-6 z-40 ${isVisible ? 'animate-bounce-in' : ''}`}>
                 {/* Tooltip */}
-                {showTooltip && (
+                {showTooltip && !isModalOpen && (
                     <div className="absolute bottom-full right-0 mb-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 p-3 animate-bounce-in">
                         <div className="flex items-start justify-between">
                             <div className="flex-1">
@@ -66,17 +67,15 @@ const WhatsAppFloatButton: React.FC = () => {
 
                 {/* Botón principal */}
                 <div className="relative">
-                    {/* Anillo de pulso */}
+                {/* Anillo de pulso */}
+                {!isModalOpen && (
                     <div className="absolute inset-0 rounded-full bg-green-400 animate-pulse-ring"></div>
-                    
-                    <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-float hover:animate-none"
+                )}                    <button
+                        onClick={handleButtonClick}
+                        className={`group relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 ${isModalOpen ? 'scale-95 bg-green-600' : 'animate-float hover:animate-none'}`}
                         onMouseEnter={() => setShowTooltip(true)}
                         onMouseLeave={() => setShowTooltip(false)}
-                        aria-label="Contactar por WhatsApp"
+                        aria-label="Opciones de contacto WhatsApp"
                     >
                         <FaWhatsapp className="text-white text-3xl drop-shadow-sm" />
                         
@@ -90,9 +89,12 @@ const WhatsAppFloatButton: React.FC = () => {
                             💬 Chatea con nosotros
                             <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-gray-900 border-r-transparent border-t-transparent"></div>
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
+            
+            {/* Modal de opciones de WhatsApp */}
+            <WhatsAppModal />
         </>
     );
 };
