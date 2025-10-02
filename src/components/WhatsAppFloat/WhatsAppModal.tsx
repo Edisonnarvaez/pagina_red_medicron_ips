@@ -148,7 +148,7 @@ const WhatsAppModal: React.FC = () => {
                 </div>
                 <div className="bg-blue-50 rounded-2xl rounded-tl-sm p-2.5 text-xs text-blue-800 max-w-[85%]">
                   <p className="font-medium">⏰ Horario de atención:</p>
-                  <p>Lunes a Viernes: 7:00 AM - 5:00 PM</p>
+                  <p>Lunes a Viernes: 7:00 AM - 3:30 PM</p>
                   <p className="mt-1 text-blue-600">💬 Respuesta inmediata en horario laboral</p>
                 </div>
               </div>
