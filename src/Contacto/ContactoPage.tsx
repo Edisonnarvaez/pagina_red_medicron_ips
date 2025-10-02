@@ -293,7 +293,7 @@ const Contacto: React.FC = () => {
                                         <div className="space-y-1">
                                             <p className="text-gray-600">Lun - Vie: 7:00 AM - 5:00 PM</p>
                                             <p className="text-gray-600">Sábados: 8:00 AM - 12:00 PM</p>
-                                            <p className="text-sm text-red-600 font-medium">🚨 Urgencias 24/7</p>
+                                            <p className="text-sm text-red-600 font-medium">🚨 Urgencias Hospital San Jose de Tuquerres 24/7</p>
                                         </div>
                                     </div>
                                 </div>
