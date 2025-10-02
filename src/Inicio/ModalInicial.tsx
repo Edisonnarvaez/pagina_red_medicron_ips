@@ -150,7 +150,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                 {/* Contenedor de la imagen responsive - Compacto y centrado */}
                                 <div className="relative w-full flex flex-col items-center justify-center pt-6 pb-4 px-4 sm:px-6">
                                     <img 
-                                        src="/modales/informacion_fomag.png" 
+                                        src="/images/modales/informacion_fomag.png" 
                                         alt="Información FOMAG - Red Medicron IPS"
                                         className="max-w-full object-contain rounded-lg shadow-2xl"
                                         style={{ 
