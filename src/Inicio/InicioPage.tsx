@@ -709,7 +709,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-white font-bold text-lg mb-2">Llámanos</h3>
                             <p className="text-white/80 mb-4">Atención telefónica.</p>
                             <a href="tel:+573183380107" className="text-acento font-semibold hover:text-warning transition-colors">
-                                +57 318 338 0107
+                                602 738 2377
                             </a>
                         </div>
 
