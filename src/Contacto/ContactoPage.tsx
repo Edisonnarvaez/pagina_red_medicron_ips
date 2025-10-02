@@ -233,6 +233,12 @@ const Contacto: React.FC = () => {
                                             <h4 className="font-bold text-gray-800 mb-1">Líneas de Atención</h4>
                                             <div className="space-y-1">
                                                 <p className="text-gray-600 font-medium">+57 (318) 338-0107</p>
+                                                <p className="text-sm text-gray-500">Lineas para citas de nefroprotección</p>
+                                                <p className="text-gray-600 font-medium">+57 (316) 090-2783</p>
+                                                <p className="text-gray-600 font-medium">+57 (318) 3807-4300</p>
+                                                <p className="text-sm text-gray-500">Lineas para citas de FOMAG</p>
+                                                <p className="text-gray-600 font-medium">+57 (602) 738-2377</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 3:30 PM</p>
                                                 <p className="text-gray-600">Hospital Túquerres: +57 (321) 666-0990</p>
                                                 <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 5:00 PM</p>
                                             </div>
