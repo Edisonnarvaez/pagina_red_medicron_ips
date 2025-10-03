@@ -185,85 +185,183 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             preparado para acompañarlos con calidez, seguridad y excelencia en cada consulta.
                                         </p>
 
-                                        {/* Grid de sedes con imágenes de fondo */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                                            {/* Pasto */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[180px] sm:min-h-[200px]">
-                                                {/* Imagen de fondo */}
-                                                <div
-                                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                                    style={{ backgroundImage: 'url(/sedes/Obrero.jpeg)' }}
-                                                />
-                                                {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                                        {/* Grid mejorado de sedes con efectos modernos */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+                                            {/* Pasto - Sede Principal */}
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-medical-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/Obrero.jpeg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-medical-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                                {/* Contenido */}
-                                                <div className="relative z-10">
-                                                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2 drop-shadow-lg">PASTO</h4>
-                                                    <div className="text-gray-200 text-xs sm:text-sm leading-relaxed space-y-1">
-                                                        <p><strong>Sede Obrero:</strong> Carrera 26 #9-22 Barrio Obrero</p>
-                                                        <p><strong>Sede Aurora:</strong> Carrera 29 #10-29 Barrio Aurora</p>
-                                                        <p><strong>Sede Integral de Terapias:</strong> Calle 20 #11-40 Barrio Fátima</p>
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-medical-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-medical-200 transition-colors duration-300">
+                                                                PASTO
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-medical-400 to-primary-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-2 text-gray-100 text-sm sm:text-base leading-relaxed">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🏥 Sede Obrero</p>
+                                                                <p className="text-xs sm:text-sm">Carrera 26 #9-22 Barrio Obrero</p>
+                                                            </div>
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🌟 Sede Aurora</p>
+                                                                <p className="text-xs sm:text-sm">Carrera 29 #10-29 Barrio Aurora</p>
+                                                            </div>
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🏃‍♀️ Terapias Integral</p>
+                                                                <p className="text-xs sm:text-sm">Calle 20 #11-40 Barrio Fátima</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {/* Ipiales */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[180px] sm:min-h-[200px]">
-                                                {/* Imagen de fondo */}
-                                                <div
-                                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                                    style={{ backgroundImage: 'url(/sedes/ipiales.jpg)' }}
-                                                />
-                                                {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-primary-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/ipiales.jpg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-primary-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                                {/* Contenido */}
-                                                <div className="relative z-10">
-                                                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2 drop-shadow-lg">IPIALES</h4>
-                                                    <div className="text-gray-200 text-xs sm:text-sm leading-relaxed">
-                                                        <p>Carrera 4A #11-52 Barrio San Felipe</p>
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-primary-200 transition-colors duration-300">
+                                                                IPIALES
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-primary-400 to-medical-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-3">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-primary-200 mb-1">🏢 Sede Principal</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Carrera 4A #11-52</p>
+                                                                <p className="text-xs sm:text-sm text-primary-200">Barrio San Felipe</p>
+                                                            </div>
+                                                            
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-primary-200 mb-1">🕒 Horarios</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Lunes a Viernes</p>
+                                                                <p className="text-xs sm:text-sm text-primary-200">Atención personalizada</p>
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {/* Tumaco */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[180px] sm:min-h-[200px]">
-                                                {/* Imagen de fondo */}
-                                                <div
-                                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                                    style={{ backgroundImage: 'url(/sedes/Tumaco.jpg)' }}
-                                                />
-                                                {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105 md:col-span-2 xl:col-span-1">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-accent-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/Tumaco.jpg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-accent-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                                {/* Contenido */}
-                                                <div className="relative z-10">
-                                                    <h4 className="text-lg sm:text-xl font-bold text-white mb-2 drop-shadow-lg">TUMACO</h4>
-                                                    <div className="text-gray-200 text-xs sm:text-sm leading-relaxed">
-                                                        <p>Carrera 7 #15A-14 Calle Rafael Nuñez y Córdoba</p>
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-accent-200 transition-colors duration-300">
+                                                                TUMACO
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-accent-400 to-primary-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-3">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-accent-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-accent-200 mb-1">🌊 Sede Costera</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Carrera 7 #15A-14</p>
+                                                                <p className="text-xs sm:text-sm text-accent-200">Calle Rafael Nuñez y Córdoba</p>
+                                                            </div>
+                                                            
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-accent-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-accent-200 mb-1">🏖️ Región Pacífica</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Atención especializada</p>
+                                                                <p className="text-xs sm:text-sm text-accent-200">Costa Nariñense</p>
+                                                            </div>
+                                                            
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        {/* Información de contacto */}
-                                        <div className="text-center mb-4 sm:mb-6">
-                                            <p className="font-semibold text-white text-base sm:text-lg">
-                                                Información citas: <span className="text-blue-300">(602) 738 2377</span>
-                                            </p>
-                                            <p className="text-xs sm:text-sm text-gray-300 mt-2 px-2">
-                                                En <span className="font-semibold text-blue-300">RED MEDICRON IPS</span>, su salud y la de su familia son nuestra prioridad.
-                                            </p>
+                                        {/* Información de contacto mejorada */}
+                                        <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
+                                            <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl">
+                                                <div className="text-center space-y-4">
+                                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-medical-500 to-primary-500 rounded-full mb-4 shadow-lg">
+                                                        <span className="text-3xl">📞</span>
+                                                    </div>
+                                                    
+                                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                                                        Información y Citas
+                                                    </h3>
+                                                    
+                                                    <div className="bg-black/30 rounded-xl p-4 border border-medical-300/30">
+                                                        <p className="text-2xl sm:text-3xl font-bold text-medical-300 mb-2">
+                                                            (602) 738 2377
+                                                        </p>
+                                                        <p className="text-sm sm:text-base text-gray-200">
+                                                            Horario de atención telefónica
+                                                        </p>
+                                                    </div>
+                                                    
+                                                    <div className="bg-gradient-to-r from-medical-500/20 to-primary-500/20 rounded-xl p-4 border border-white/20">
+                                                        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                                                            En <span className="font-bold text-medical-300 bg-gradient-to-r from-medical-300 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
+                                                            su salud y la de su familia son nuestra prioridad.
+                                                        </p>
+                                                        <p className="text-xs sm:text-sm text-gray-300 mt-2">
+                                                            ✨ Atención de calidad • 🤝 Compromiso humano • 💙 Excelencia médica
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        {/* Logo */}
+                                        {/* Logo mejorado */}
                                         <div className="flex justify-center">
-                                            <img
-                                                src="/logoRMIPS.png"
-                                                alt="Red Medicron IPS"
-                                                className="h-10 sm:h-12 lg:h-16 object-contain"
-                                            />
+                                            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/30 transform hover:scale-105 transition-all duration-300">
+                                                <img
+                                                    src="/logoRMIPS.png"
+                                                    alt="Red Medicron IPS"
+                                                    className="h-12 sm:h-16 lg:h-20 object-contain filter drop-shadow-lg"
+                                                />
+                                            </div>
                                         </div>
                                         </div>
                                     </div>
