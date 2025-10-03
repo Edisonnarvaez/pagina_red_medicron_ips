@@ -163,7 +163,7 @@ const Inicio: React.FC = () => {
         { numero: "100,000+", descripcion: "Pacientes atendidos", icon: MdGroups, color: "from-primary-500 to-primary-700" },
         { numero: "98%", descripcion: "Satisfacción del usuario", icon: MdStars, color: "from-medical-500 to-medical-700" },
         { numero: "24/7", descripcion: "Atención de urgencias", icon: MdHealthAndSafety, color: "from-accent-500 to-accent-700" },
-        { numero: "7", descripcion: "Sedes estratégicas", icon: FaMapMarkerAlt, color: "from-primary-600 to-medical-600" }
+        { numero: "8", descripcion: "Sedes estratégicas", icon: FaMapMarkerAlt, color: "from-primary-600 to-medical-600" }
     ];
 
     return (
