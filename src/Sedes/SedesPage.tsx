@@ -20,7 +20,7 @@ const Sedes: React.FC = () => {
             nombre: "Sede Obrero",
             tipo: "Sede principal",
             direccion: "Carrera 26 # 9-22, Pasto, Nariño -  Frente a la entrada principal de La Normal",
-            telefono: "(318) 338-0107",
+            telefono: ["(602) 738-2377","(318) 338-0107"],
             horario: "7:00 AM - 3:30 PM",
             servicios: ["Consulta externa", "Nefroprotección", "Especialistas"],
             esHospital: false,
@@ -31,19 +31,29 @@ const Sedes: React.FC = () => {
             nombre: "Sede Terapias Fatima",
             tipo: "Centro de Atención",
             direccion: "Calle 20 N° 11-40, Pasto, Nariño",
-            telefono: "(318) 338-0107",
+            telefono: "Whatsapp 316 090 6607",
             horario: "7:00 AM - 4:30 PM",
             servicios: ["Terapias", "Servicios complementarios"],
             esHospital: false,
             icon: MdLocalHospital,
             imagen: "/sedes/Fatima.jpeg"
         },
-        
+        {
+            nombre: "Sede Aurora",
+            tipo: "Centro de Atención",
+            direccion: "Calle 11 N° 29-27, Pasto, Nariño",
+            telefono: ["(602) 738-2377","(318) 338-0107"],
+            horario: "7:00 AM a 12:00 PM - 1:30 PM a 5:30 PM",
+            servicios: ["Odontologia"],
+            esHospital: false,
+            icon: MdLocalHospital,
+            imagen: "/sedes/aurora.jpeg"
+        },
         {
             nombre: "Sede Ipiales",
             tipo: "Centro de Atención",
             direccion: "Carrera 4a No 14-52, Ipiales, Nariño",
-            telefono: "(318) 338-0107",
+            telefono: ["(602) 738-2377","(318) 338-0107"],
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
@@ -54,7 +64,7 @@ const Sedes: React.FC = () => {
             nombre: "Sede Tumaco",
             tipo: "Centro de Atención",
             direccion: "Carrera 7 15A - 14, Tumaco, Nariño",
-            telefono: "(318) 338-0107",
+            telefono: ["(602) 738-2377","(318) 338-0107"],
             horario: "7:00 AM - 5:00 PM",
             servicios: ["Consulta externa", "Nefroprotección"],
             esHospital: false,
@@ -114,7 +124,7 @@ const Sedes: React.FC = () => {
                     {/* Estadísticas */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
-                            <div className="text-2xl font-bold text-verdeOscuro">7</div>
+                            <div className="text-2xl font-bold text-verdeOscuro">8</div>
                             <div className="text-sm text-grisOscuro">Sedes</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
@@ -122,7 +132,7 @@ const Sedes: React.FC = () => {
                             <div className="text-sm text-grisOscuro">Hospital 24h</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
-                            <div className="text-2xl font-bold text-verdeOscuro">6</div>
+                            <div className="text-2xl font-bold text-verdeOscuro">7</div>
                             <div className="text-sm text-grisOscuro">Centros</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">

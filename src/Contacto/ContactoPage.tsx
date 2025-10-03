@@ -236,9 +236,13 @@ const Contacto: React.FC = () => {
                                                 <p className="text-sm text-gray-500">Lineas para citas de nefroprotección</p>
                                                 <p className="text-gray-600 font-medium">+57 (316) 090-2783</p>
                                                 <p className="text-gray-600 font-medium">+57 (318) 807-4300</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 3:30 PM</p>
                                                 <p className="text-sm text-gray-500">Lineas para citas de FOMAG</p>
                                                 <p className="text-gray-600 font-medium">(602) 738-2377</p>
-                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 3:30 PM</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM a 12:00 PM - 1:30 PM a 5:00 PM</p>
+                                                <p className="text-sm text-gray-500">Whatsapp para citas de Terapias</p>
+                                                <p className="text-gray-600 font-medium">+57 (316) 090-6607</p>
+                                                <p className="text-sm text-gray-500">Lun - Jue: 7:00 AM - 10:00 AM</p>
                                                 <p className="text-gray-600">Hospital Túquerres: </p>
                                                 <p className="text-gray-600">+57 (321) 666-0990</p>
                                                 <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 5:00 PM</p>

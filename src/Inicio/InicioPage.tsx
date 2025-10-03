@@ -447,7 +447,7 @@ const Inicio: React.FC = () => {
                             <div className="w-16 h-16 bg-gradient-to-br from-medical-500 to-medical-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-glow-green">
                                 <MdHealthAndSafety className="text-white text-2xl" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4 font-display">7 Sedes Especializadas</h3>
+                            <h3 className="text-2xl font-bold text-white mb-4 font-display">8 Sedes Especializadas</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Consulta externa, nefroprotección, promoción y prevención en toda la región.</p>
                             <div className="flex items-center text-medical-400 font-semibold">
                                 <span>Ubicaciones</span>
