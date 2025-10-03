@@ -47,7 +47,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     onClick={() => setShowPortafolioModal(false)}
                 >
                     <div
-                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl shadow-2xl animate-scale-in border modal-scrollbar ${step === 1
+                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl shadow-2xl animate-scale-in border ${step === 1
                             ? 'max-w-6xl lg:max-w-7xl xl:max-w-none w-full max-h-[95vh] lg:max-h-[90vh] bg-transparent border-transparent'
                             : 'max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl w-full h-auto max-h-[90vh] bg-transparent border-transparent'
                             }`}
@@ -143,30 +143,32 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                             </div>
                         )}
 
-                        {/* PANTALLA 2 - Información FOMAG - RESPONSIVE CORREGIDO */}
+                        {/* PANTALLA 2 - Información FOMAG - CAPAS COMPLETAMENTE CORREGIDAS */}
                         {step === 2 && (
-                            <div className="modal-section relative w-full rounded-2xl sm:rounded-3xl overflow-hidden">
-                                {/* Contenedor principal con scroll y altura mínima */}
-                                <div className="relative w-full min-h-[80vh] overflow-y-auto max-h-[90vh]">
-                                    {/* Background con múltiples capas - AHORA CUBREN TODO EL CONTENIDO */}
-                                    <div className="absolute top-0 left-0 right-0 min-h-full bg-gradient-to-br from-primary-950 via-primary-900 to-medical-950"
-                                        style={{ height: '100%', minHeight: 'inherit' }} />
-                                    <div className="absolute top-0 left-0 right-0 min-h-full bg-gradient-to-tr from-medical-900/50 via-transparent to-accent-900/30"
-                                        style={{ height: '100%', minHeight: 'inherit' }} />
-                                    <div className="absolute top-0 left-0 right-0 min-h-full bg-medical-pattern opacity-10"
-                                        style={{ height: '100%', minHeight: 'inherit' }} />
+                            <div className="modal-section relative w-full rounded-2xl sm:rounded-3xl overflow-hidden h-[90vh]">
+                                {/* Contenedor de scroll - ASEGURA SCROLL COMPLETO CON BORDES REDONDEADOS */}
+                                <div className="relative w-full h-full overflow-y-auto modal-scrollbar rounded-2xl sm:rounded-3xl">
+                                    {/* Background con múltiples capas - ESTAS CAPAS AHORA CUBREN TODO */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-medical-950" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-900/50 via-transparent to-accent-900/30" />
+                                    <div className="absolute inset-0 bg-medical-pattern opacity-10" />
 
                                     {/* Logo FOMAG superpuesto */}
-                                    <div className="absolute top-0 left-0 right-0 min-h-full fomag-logo-responsive bg-contain bg-center bg-no-repeat mix-blend-multiply"
+                                    <div className="absolute inset-0 fomag-logo-responsive bg-contain bg-center bg-no-repeat mix-blend-multiply rounded-2xl sm:rounded-3xl"
                                         style={{
                                             backgroundImage: `url('https://www.fomag.gov.co/wp-content/uploads/2025/04/Logo-color.png')`,
-                                            backgroundPosition: 'center',
-                                            height: '100%',
-                                            minHeight: 'inherit'
+                                            backgroundPosition: 'center'
                                         }} />
 
-                                    {/* Contenido con z-index elevado y padding adecuado */}
-                                    <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12">
+                                    {/* Contenedor interno que permite scroll completo con bordes redondeados */}
+                                    <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
+                                        {/* Background adicional para asegurar cobertura completa */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-medical-950 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-900/50 via-transparent to-accent-900/30 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-medical-pattern opacity-10 rounded-2xl sm:rounded-3xl" />
+
+                                        {/* Contenido con z-index elevado y padding adecuado para scroll */}
+                                        <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12 min-h-full">
                                         {/* Encabezado */}
                                         <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                                             USUARIOS <span className="text-blue-300">FOMAG</span>
@@ -267,6 +269,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                 alt="Red Medicron IPS"
                                                 className="h-10 sm:h-12 lg:h-16 object-contain"
                                             />
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
