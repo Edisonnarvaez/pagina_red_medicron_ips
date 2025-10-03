@@ -5,7 +5,7 @@ import WhatsAppModal from './WhatsAppModal';
 
 const WhatsAppFloatButton: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const { showTooltip, setShowTooltip, openModal, isModalOpen } = useWhatsAppStore();
+    const { showTooltip, setShowTooltip, openModal, closeModal, isModalOpen } = useWhatsAppStore();
 
     // Mostrar el botón después de 2 segundos
     useEffect(() => {
@@ -94,7 +94,10 @@ const WhatsAppFloatButton: React.FC = () => {
             </div>
             
             {/* Modal de opciones de WhatsApp */}
-            <WhatsAppModal />
+            <WhatsAppModal 
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            />
         </>
     );
 };

@@ -1,162 +1,192 @@
-import React, { useEffect } from 'react';
-import { FaTimes, FaWhatsapp } from 'react-icons/fa';
+import { useState } from 'react';
+import {
+  FaWhatsapp,
+  FaPhone,
+  FaSpinner
+} from 'react-icons/fa';
+import {
+  MdInfo,
+  MdAccessTime,
+  MdClose
+} from 'react-icons/md';
 import { useWhatsAppStore } from '../../store/whatsappStore';
 
-interface ContactOption {
-  id: string;
-  label: string;
-  number: string;
-  description: string;
-  icon: string;
+const getCategoryIcon = (category: string) => {
+  const icons = {
+    nefroproteccion: '🫀',
+    terapias: '🏃‍♀️',
+    fomag: '👨‍⚕️',
+    hospital: '🏥',
+    general: '📞'
+  };
+  return icons[category as keyof typeof icons] || '📞';
+};
+
+interface WhatsAppModalProps {
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const WhatsAppModal: React.FC = () => {
-  const { isModalOpen, contactOptions, closeModal } = useWhatsAppStore();
+export function WhatsAppModal({ isOpen, onClose }: WhatsAppModalProps) {
+  const { contactOptions } = useWhatsAppStore();
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Cerrar modal con ESC
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    };
+  if (!isOpen) return null;
 
-    if (isModalOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+  // Obtener categorías únicas
+  const categories = ['all', ...Array.from(new Set(contactOptions.map(option => option.category)))];
+
+  // Filtrar opciones según la categoría seleccionada
+  const filteredOptions = selectedCategory === 'all' 
+    ? contactOptions 
+    : contactOptions.filter(option => option.category === selectedCategory);
+
+  const handleWhatsAppClick = async (phoneNumber: string, message: string) => {
+    setIsLoading(true);
+    try {
+      const formattedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${formattedMessage}`;
+      window.open(whatsappUrl, '_blank');
+      
+      // Simular un pequeño delay para mostrar el loading
+      setTimeout(() => {
+        setIsLoading(false);
+        onClose();
+      }, 1000);
+    } catch (error) {
+      console.error('Error al abrir WhatsApp:', error);
+      setIsLoading(false);
     }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isModalOpen, closeModal]);
-
-  if (!isModalOpen) return null;
-
-  const generateWhatsAppUrl = (number: string, service: string) => {
-    const message = `Hola! Necesito información sobre ${service} de Red Medicron IPS.`;
-    return `https://wa.me/57${number}?text=${encodeURIComponent(message)}`;
-  };
-
-  const handleContactClick = (option: ContactOption) => {
-    const url = generateWhatsAppUrl(option.number, option.label);
-    window.open(url, '_blank', 'noopener,noreferrer');
-    closeModal();
   };
 
   return (
     <>
-      {/* Overlay para cerrar al hacer click fuera */}
+      {/* Overlay invisible para detectar clics fuera del modal */}
       <div 
-        className="fixed inset-0 z-40 md:bg-transparent bg-black bg-opacity-30 backdrop-blur-sm md:backdrop-blur-none"
-        onClick={closeModal}
+        className="fixed inset-0 z-40" 
+        onClick={onClose}
       />
       
-      {/* Chat Popup */}
-      <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-50 w-80 md:w-96 max-w-[calc(100vw-2rem)]">
-        <div 
-          className="bg-white rounded-2xl shadow-2xl overflow-hidden animate-slide-up border border-gray-200"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* Header - Estilo Chat */}
-          <div className="bg-gradient-to-r from-green-500 to-green-600 p-4 text-white relative">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                {/* Avatar del chat */}
-                <div className="relative">
-                  <div className="w-10 h-10 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
-                    <FaWhatsapp className="text-green-600 text-lg" />
-                  </div>
-                  {/* Indicador online */}
-                  <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-300 border-2 border-white rounded-full"></div>
-                </div>
-                <div>
-                  <h2 className="text-base font-semibold">Red Medicron IPS</h2>
-                  <p className="text-green-100 text-xs flex items-center">
-                    <span className="w-2 h-2 bg-green-300 rounded-full mr-1.5 animate-pulse"></span>
-                    En línea • Responde en minutos
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={closeModal}
-                className="text-white hover:bg-white hover:bg-opacity-20 p-1.5 rounded-full transition-colors"
-                aria-label="Cerrar chat"
-              >
-                <FaTimes className="text-lg" />
-              </button>
+      {/* Modal posicionado */}
+      <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] md:max-w-96">
+        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[80vh] animate-slide-up border border-gray-200">
+        {/* Header mejorado */}
+        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 relative">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition-all duration-200 hover:rotate-90"
+          >
+            <MdClose size={20} />
+          </button>
+          
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="bg-white bg-opacity-20 rounded-full p-3">
+              <FaWhatsapp size={24} />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">Contáctanos por WhatsApp</h2>
+              <p className="text-green-100 text-sm">Estamos aquí para ayudarte</p>
             </div>
           </div>
 
-          {/* Content - Estilo Chat */}
-          <div className="p-4 bg-gray-50 min-h-[400px] max-h-[500px] overflow-y-auto">
-            {/* Mensaje de bienvenida */}
-            <div className="mb-4">
-              <div className="flex items-start space-x-2">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <FaWhatsapp className="text-white text-sm" />
-                </div>
-                <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm max-w-[85%]">
-                  <p className="text-gray-800 text-sm leading-relaxed">
-                    ¡Hola!👋 Bienvenido a Red Medicron IPS
-                  </p>
-                  <p className="text-gray-800 text-sm leading-relaxed mt-1">
-                    Selecciona el servicio que necesitas y ponte en contacto con nosotros:
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* Selector de categoría mejorado */}
+          <div className="mb-2">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full bg-white bg-opacity-20 text-white placeholder-green-200 border border-green-400 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30 transition-all duration-200"
+            >
+              <option value="all" className="text-gray-800">Todos los servicios</option>
+              {categories.filter(cat => cat !== 'all').map(category => (
+                <option key={category} value={category} className="text-gray-800">
+                  {getCategoryIcon(category)} {category.charAt(0).toUpperCase() + category.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-            {/* Opciones como botones de chat - Alineadas a la izquierda */}
-            <div className="space-y-2 flex flex-col items-start">
-              {contactOptions.map((option: ContactOption) => (
-                <button
-                  key={option.id}
-                  onClick={() => handleContactClick(option)}
-                  className="bg-white hover:bg-gray-50 rounded-2xl rounded-tl-sm p-3 border border-gray-200 hover:border-green-300 transition-all duration-200 text-left group shadow-sm hover:shadow-md max-w-[85%] mr-auto"
-                >
-                  <div className="flex items-center space-x-3">
-                    {/* Icono */}
-                    <div className="flex-shrink-0 w-8 h-8 bg-green-100 group-hover:bg-green-200 rounded-full flex items-center justify-center text-sm transition-colors">
-                      {option.icon}
+        {/* Lista de contactos mejorada */}
+        <div className="p-4 space-y-3 max-h-80 overflow-y-auto">
+          {filteredOptions.map((option) => (
+            <div
+              key={option.id}
+              className="bg-gray-50 rounded-xl p-4 hover:bg-green-50 hover:border-green-200 border border-gray-200 transition-all duration-200 cursor-pointer group"
+              onClick={() => handleWhatsAppClick(option.number, `Hola, estoy interesado en el servicio de ${option.label}`)}
+            >
+              <div className="flex items-start space-x-4">
+                {/* Icono más grande y atractivo */}
+                <div className="flex-shrink-0 w-14 h-14 bg-green-100 group-hover:bg-green-200 rounded-full flex items-center justify-center text-2xl transition-colors duration-200">
+                  {getCategoryIcon(option.category)}
+                </div>
+                
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-gray-800 group-hover:text-green-700 transition-colors duration-200">
+                      {option.label}
+                    </h3>
+                    <FaWhatsapp 
+                      className="text-green-500 group-hover:text-green-600 transition-colors duration-200" 
+                      size={18} 
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center text-sm text-gray-600">
+                      <MdAccessTime className="mr-2 text-gray-400" size={16} />
+                      <span>{option.schedule ? `${option.schedule.start} - ${option.schedule.end}` : 'Horario disponible'}</span>
                     </div>
                     
-                    {/* Contenido */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-medium text-gray-800 group-hover:text-green-700 transition-colors text-sm">
-                          {option.label}
-                        </h3>
-                        <FaWhatsapp className="text-green-500 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      <p className="text-xs text-gray-600 mt-0.5 opacity-80">
-                        {option.description}
-                      </p>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <FaPhone className="mr-2 text-gray-400" size={14} />
+                      <span>{option.number}</span>
                     </div>
+                    
+                    {option.description && (
+                      <div className="flex items-start text-sm text-gray-600">
+                        <MdInfo className="mr-2 text-gray-400 mt-0.5 flex-shrink-0" size={16} />
+                        <span className="line-clamp-2">{option.description}</span>
+                      </div>
+                    )}
                   </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Footer tipo chat */}
-            <div className="mt-4 pt-3 border-t border-gray-200">
-              <div className="flex items-start space-x-2">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs">ℹ️</span>
-                </div>
-                <div className="bg-blue-50 rounded-2xl rounded-tl-sm p-2.5 text-xs text-blue-800 max-w-[85%]">
-                  <p className="font-medium">⏰ Horario de atención:</p>
-                  <p>Lunes a Viernes: 7:00 AM - 3:30 PM</p>
-                  <p className="mt-1 text-blue-600">💬 Respuesta inmediata en horario laboral</p>
                 </div>
               </div>
             </div>
+          ))}
+          
+          {filteredOptions.length === 0 && (
+            <div className="text-center py-8 text-gray-500">
+              <FaWhatsapp size={48} className="mx-auto mb-4 text-gray-300" />
+              <p>No hay contactos disponibles para esta categoría</p>
+            </div>
+          )}
+        </div>
+
+        {/* Footer informativo mejorado */}
+        <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
+          <div className="flex items-center justify-center text-sm text-gray-600 space-x-2">
+            <MdInfo size={16} />
+            <span>Respuesta rápida durante horario de atención</span>
           </div>
+        </div>
+
+        {/* Loading overlay */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
+            <div className="text-center">
+              <FaSpinner className="animate-spin text-green-500 mx-auto mb-2" size={24} />
+              <p className="text-gray-600">Abriendo WhatsApp...</p>
+            </div>
+          </div>
+        )}
+        
+        {/* Flecha que apunta al botón flotante */}
+        <div className="absolute -bottom-2 right-8 w-4 h-4 bg-white transform rotate-45 shadow-lg"></div>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default WhatsAppModal;
