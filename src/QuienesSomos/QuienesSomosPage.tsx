@@ -28,7 +28,7 @@ const QuienesSomos: React.FC = () => {
 
     const estadisticas = [
         { numero: "2005", descripcion: "Año de fundación", icon: MdStar },
-        { numero: "7", descripcion: "Sedes en operación", icon: RiTeamFill },
+        { numero: "8", descripcion: "Sedes en operación", icon: RiTeamFill },
         { numero: "20+", descripcion: "Años de experiencia", icon: MdTrendingUp },
         { numero: "24/7", descripcion: "Atención hospitalaria", icon: MdHealthAndSafety }
     ];
@@ -132,7 +132,7 @@ const QuienesSomos: React.FC = () => {
                                         <div className="text-sm text-grisOscuro">Años</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-2xl font-bold text-verdeOscuro">7</div>
+                                        <div className="text-2xl font-bold text-verdeOscuro">8</div>
                                         <div className="text-sm text-grisOscuro">Sedes</div>
                                     </div>
                                     <div className="text-center">

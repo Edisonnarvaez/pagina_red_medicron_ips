@@ -99,12 +99,11 @@ const WhatsAppModal: React.FC = () => {
                 </div>
                 <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm max-w-[85%]">
                   <p className="text-gray-800 text-sm leading-relaxed">
-                    ¡Hola! 👋 Bienvenido a Red Medicron IPS
+                    ¡Hola!👋 Bienvenido a Red Medicron IPS
                   </p>
                   <p className="text-gray-800 text-sm leading-relaxed mt-1">
-                    Selecciona el servicio que necesitas y te conectaremos inmediatamente:
+                    Selecciona el servicio que necesitas y ponte en contacto con nosotros:
                   </p>
-                  <span className="text-xs text-gray-500 mt-1 block">Ahora</span>
                 </div>
               </div>
             </div>

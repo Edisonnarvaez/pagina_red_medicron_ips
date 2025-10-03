@@ -33,6 +33,13 @@ const contactOptions: ContactOption[] = [
     icon: '🏥'
   },
   {
+    id: 'terapias',
+    label: 'Citas Terapias',
+    number: '3160906607',
+    description: 'Segunda línea para citas de terapias',
+    icon: '🏥'
+  },
+  {
     id: 'fomag',
     label: 'Citas Fomag',
     number: '3183380107',
