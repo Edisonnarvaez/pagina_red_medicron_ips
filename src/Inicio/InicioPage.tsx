@@ -438,7 +438,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Hospital Tuquerres</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Urgencias 24/7, UCI, Cirugía, Servicios de primer nivel y hospitalización con tecnología avanzada.</p>
                             <div className="flex items-center text-accent-400 font-semibold">
-                                <span>Ver detalles</span>
+                                <span><a href="/sedes">Ver detalles</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
@@ -450,7 +450,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">8 Sedes Especializadas</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Consulta externa, nefroprotección, promoción y prevención en toda la región.</p>
                             <div className="flex items-center text-medical-400 font-semibold">
-                                <span>Ubicaciones</span>
+                                <span><a href="/sedes">Ubicaciones</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
@@ -462,7 +462,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Programas Especiales</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Telemedicina, nefroprotección, rehabilitación y programas de medicina preventiva.</p>
                             <div className="flex items-center text-primary-400 font-semibold">
-                                <span>Conoce más</span>
+                                <span><a href="/servicios">Conoce más</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
