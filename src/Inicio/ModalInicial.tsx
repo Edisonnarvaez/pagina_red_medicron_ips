@@ -222,7 +222,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                                 <p className="text-xs sm:text-sm">Carrera 29 #10-29 Barrio Aurora</p>
                                                             </div>
                                                             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
-                                                                <p className="font-semibold text-medical-200 mb-1">🏃‍♀️ Terapias Integral</p>
+                                                                <p className="font-semibold text-medical-200 mb-1">🏃‍♀️ Sede Integral de Terapias</p>
                                                                 <p className="text-xs sm:text-sm">Calle 20 #11-40 Barrio Fátima</p>
                                                             </div>
                                                         </div>
