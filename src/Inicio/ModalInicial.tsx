@@ -336,7 +336,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                             (602) 738 2377
                                                         </p>
                                                         <p className="text-sm sm:text-base text-gray-200">
-                                                            Horario de atención telefónica
+                                                            Horario de atención telefónica Lunes a Viernes de 8:00 AM a 5:00 PM
                                                         </p>
                                                     </div>
                                                     
