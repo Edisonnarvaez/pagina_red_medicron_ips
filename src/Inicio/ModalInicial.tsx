@@ -188,7 +188,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         {/* Grid de sedes con imágenes de fondo */}
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                                             {/* Pasto */}
-                                            <div className="relative p-3 sm:p-4 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -209,7 +209,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             </div>
 
                                             {/* Ipiales */}
-                                            <div className="relative p-3 sm:p-4 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -228,7 +228,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             </div>
 
                                             {/* Tumaco */}
-                                            <div className="relative p-3 sm:p-4 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
