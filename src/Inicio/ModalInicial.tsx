@@ -149,16 +149,11 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                 {/* Contenedor de scroll - ASEGURA SCROLL COMPLETO CON BORDES REDONDEADOS */}
                                 <div className="relative w-full h-full overflow-y-auto modal-scrollbar rounded-2xl sm:rounded-3xl">
                                     {/* Background con múltiples capas - ESTAS CAPAS AHORA CUBREN TODO */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-medical-950" />
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-900/50 via-transparent to-accent-900/30" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-750 via-primary-700 to-medical-750" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-700/50 via-transparent to-accent-700/30" />
                                     <div className="absolute inset-0 bg-medical-pattern opacity-10" />
 
-                                    {/* Logo FOMAG superpuesto */}
-                                    <div className="absolute inset-0 fomag-logo-responsive bg-contain bg-center bg-no-repeat mix-blend-multiply rounded-2xl sm:rounded-3xl"
-                                        style={{
-                                            backgroundImage: `url('https://www.fomag.gov.co/wp-content/uploads/2025/04/Logo-color.png')`,
-                                            backgroundPosition: 'center'
-                                        }} />
+                                    
 
                                     {/* Contenedor interno que permite scroll completo con bordes redondeados */}
                                     <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
@@ -171,13 +166,13 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12 min-h-full">
                                         {/* Encabezado */}
                                         <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
-                                            USUARIOS <span className="text-blue-300">FOMAG</span>
+                                            USUARIOS <span className="text-blue-400">FOMAG</span>
                                         </h2>
                                         <p className="text-center text-base sm:text-lg lg:text-xl font-semibold text-gray-300 mb-4 sm:mb-6">
                                             PASTO • IPIALES • TUMACO
                                         </p>
                                         <div className="text-center mb-4 sm:mb-6">
-                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-300 via-primary-300 to-medical-300 bg-clip-text text-transparent drop-shadow-xl">
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 via-primary-300 to-medical-400 bg-clip-text text-transparent drop-shadow-xl">
                                                 BIENVENIDOS A RED MEDICRON IPS
                                             </h3>
                                         </div>
@@ -255,7 +250,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         {/* Información de contacto */}
                                         <div className="text-center mb-4 sm:mb-6">
                                             <p className="font-semibold text-white text-base sm:text-lg">
-                                                Información citas: <span className="text-blue-300">6027382377</span>
+                                                Información citas: <span className="text-blue-300">(602) 738 2377</span>
                                             </p>
                                             <p className="text-xs sm:text-sm text-gray-300 mt-2 px-2">
                                                 En <span className="font-semibold text-blue-300">RED MEDICRON IPS</span>, su salud y la de su familia son nuestra prioridad.
@@ -273,6 +268,12 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         </div>
                                     </div>
                                 </div>
+                                {/* Logo FOMAG superpuesto */}
+                                    <div className="absolute inset-0 fomag-logo-responsive bg-contain bg-center bg-no-repeat mix-blend-multiply rounded-2xl sm:rounded-3xl"
+                                        style={{
+                                            backgroundImage: `url('https://www.fomag.gov.co/wp-content/uploads/2025/04/Logo-color.png')`,
+                                            backgroundPosition: 'center'
+                                        }} />
                             </div>
                         )}
                     </div>
