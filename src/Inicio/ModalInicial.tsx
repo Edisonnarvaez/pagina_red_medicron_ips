@@ -149,8 +149,8 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                 {/* Contenedor de scroll - ASEGURA SCROLL COMPLETO CON BORDES REDONDEADOS */}
                                 <div className="relative w-full h-full overflow-y-auto modal-scrollbar rounded-2xl sm:rounded-3xl">
                                     {/* Background con múltiples capas - ESTAS CAPAS AHORA CUBREN TODO */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-750 via-primary-700 to-medical-750" />
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-700/50 via-transparent to-accent-700/30" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-650" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-transparent to-accent-600" />
                                     <div className="absolute inset-0 bg-medical-pattern opacity-10" />
 
                                     
@@ -158,21 +158,21 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                     {/* Contenedor interno que permite scroll completo con bordes redondeados */}
                                     <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
                                         {/* Background adicional para asegurar cobertura completa */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-medical-950 rounded-2xl sm:rounded-3xl" />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-900/50 via-transparent to-accent-900/30 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-500 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-primary-400 rounded-2xl sm:rounded-3xl" />
                                         <div className="absolute inset-0 bg-medical-pattern opacity-10 rounded-2xl sm:rounded-3xl" />
 
                                         {/* Contenido con z-index elevado y padding adecuado para scroll */}
                                         <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12 min-h-full">
                                         {/* Encabezado */}
                                         <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
-                                            USUARIOS <span className="text-blue-400">FOMAG</span>
+                                            USUARIOS <span className="text-medical-400">FOMAG</span>
                                         </h2>
                                         <p className="text-center text-base sm:text-lg lg:text-xl font-semibold text-gray-300 mb-4 sm:mb-6">
                                             PASTO • IPIALES • TUMACO
                                         </p>
                                         <div className="text-center mb-4 sm:mb-6">
-                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 via-primary-300 to-medical-400 bg-clip-text text-transparent drop-shadow-xl">
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-medical-600 via-medical-400 to-primary-500 bg-clip-text text-transparent drop-shadow-xl">
                                                 BIENVENIDOS A RED MEDICRON IPS
                                             </h3>
                                         </div>
@@ -188,14 +188,14 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         {/* Grid de sedes con imágenes de fondo */}
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                                             {/* Pasto */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                                                     style={{ backgroundImage: 'url(/sedes/Obrero.jpeg)' }}
                                                 />
                                                 {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
+                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
 
                                                 {/* Contenido */}
                                                 <div className="relative z-10">
@@ -209,14 +209,14 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             </div>
 
                                             {/* Ipiales */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                                                     style={{ backgroundImage: 'url(/sedes/ipiales.jpg)' }}
                                                 />
                                                 {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
+                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
 
                                                 {/* Contenido */}
                                                 <div className="relative z-10">
@@ -228,14 +228,14 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             </div>
 
                                             {/* Tumaco */}
-                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/20 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
+                                            <div className="relative p-4 sm:p-5 lg:p-6 border border-white/50 rounded-lg sm:rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-all duration-300 group min-h-[140px] sm:min-h-[160px]">
                                                 {/* Imagen de fondo */}
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                                                     style={{ backgroundImage: 'url(/sedes/Tumaco.jpg)' }}
                                                 />
                                                 {/* Overlay oscuro para legibilidad */}
-                                                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
+                                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
 
                                                 {/* Contenido */}
                                                 <div className="relative z-10">
