@@ -497,7 +497,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                     
                                                     <div className="bg-gradient-to-r from-medical-500/20 to-primary-500/20 rounded-xl p-4 border border-white/20">
                                                         <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                                                            En <span className="font-bold text-primary-600 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
+                                                            En <span className="font-bold text-primary-400 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
                                                             su salud y la de su familia son nuestra prioridad.
                                                         </p>
                                                         <p className="text-xs sm:text-sm text-gray-300 mt-2">
