@@ -327,7 +327,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             PASTO • IPIALES • TUMACO
                                         </p>
                                         <div className="text-center mb-4 sm:mb-6">
-                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-700 via-primary-300 to-primary-600 bg-clip-text text-transparent drop-shadow-xl">
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-200 via-primary-300 to-primary-100 bg-clip-text text-transparent drop-shadow-xl">
                                                 BIENVENIDOS A RED MEDICRON IPS
                                             </h3>
                                         </div>
