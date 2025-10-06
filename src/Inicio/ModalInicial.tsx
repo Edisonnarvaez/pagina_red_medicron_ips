@@ -324,7 +324,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             USUARIOS <span className="text-medical-400">FOMAG</span>
                                         </h2>
                                         <p className="text-center text-base sm:text-lg lg:text-xl font-semibold text-gray-300 mb-4 sm:mb-6">
-                                            PASTO • IPIALES • TUMACO
+                                            <span className="font-bold text-medical-300 bg-gradient-to-r from-medical-300 to-primary-300 bg-clip-text text-transparent">PASTO • IPIALES • TUMACO</span>
                                         </p>
                                         <div className="text-center mb-4 sm:mb-6">
                                             <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-200 via-primary-300 to-primary-100 bg-clip-text text-transparent drop-shadow-xl">
@@ -497,7 +497,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                     
                                                     <div className="bg-gradient-to-r from-medical-500/20 to-primary-500/20 rounded-xl p-4 border border-white/20">
                                                         <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                                                            En <span className="font-bold text-medical-300 bg-gradient-to-r from-medical-300 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
+                                                            En <span className="font-bold text-primary-600 bg-gradient-to-r from-primary-500 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
                                                             su salud y la de su familia son nuestra prioridad.
                                                         </p>
                                                         <p className="text-xs sm:text-sm text-gray-300 mt-2">
