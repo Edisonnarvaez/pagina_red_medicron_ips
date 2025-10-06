@@ -41,9 +41,9 @@ const Sedes: React.FC = () => {
         {
             nombre: "Sede Aurora",
             tipo: "Centro de Atención",
-            direccion: "Calle 11 N° 29-27, Pasto, Nariño",
+            direccion: "Carrera 29 N° 10-29, Pasto, Nariño",
             telefono: ["(602) 738-2377"," - ","(318) 338-0107"],
-            horario: "7:00 AM a 12:00 PM - 1:30 PM a 5:30 PM",
+            horario: "7:00 AM a 12:00 PM - 1:30 PM a 5:00 PM",
             servicios: ["Odontologia"],
             esHospital: false,
             icon: MdLocalHospital,
