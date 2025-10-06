@@ -314,7 +314,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                     <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
                                         {/* Background adicional para asegurar cobertura completa */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-500 rounded-2xl sm:rounded-3xl" />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-medical-300 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-medical-200 rounded-2xl sm:rounded-3xl" />
                                         <div className="absolute inset-0 bg-medical-pattern opacity-10 rounded-2xl sm:rounded-3xl" />
 
                                         {/* Contenido con z-index elevado y padding adecuado para scroll */}
