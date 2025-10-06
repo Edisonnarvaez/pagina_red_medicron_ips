@@ -21,7 +21,7 @@
     {
       "id": "gestion-humana",
       "nombre": "Gestión Humana",
-      "url": "http://192.168.59.207/gestionhumana2",
+      "url": "http://192.168.59.207:8080/gestionhumana2",
       "descripcion": "Sistema de gestión de recursos humanos para uso interno",
       "icono": "👥",
       "categoria": "Red Interna",
