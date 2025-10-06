@@ -19,7 +19,7 @@ export const SeccionEnlacesInstitucionales: React.FC<Props> = ({ enlaces }) => {
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
           Plataformas 
           <span className="text-purple-700 font-semibold"> gubernamentales oficiales </span>
-          y servicios institucionales del sector salud
+          del sector salud
         </p>
         <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-700 mx-auto rounded-full"></div>
       </div>

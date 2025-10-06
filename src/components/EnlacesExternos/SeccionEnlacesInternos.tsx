@@ -17,7 +17,7 @@ export const SeccionEnlacesInternos: React.FC<Props> = ({ enlaces }) => {
           Enlaces Internos
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          Sistemas de acceso interno para 
+          Sistemas de acceso desde la red interna de la institución para
           <span className="text-blue-700 font-semibold"> personal autorizado </span>
           de Red Medicron IPS
         </p>

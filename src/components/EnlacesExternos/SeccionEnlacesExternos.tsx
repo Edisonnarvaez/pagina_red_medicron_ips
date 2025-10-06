@@ -17,9 +17,9 @@ export const SeccionEnlacesExternos: React.FC<Props> = ({ enlaces }) => {
           Enlaces Externos
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          Sistemas de acceso externo y 
-          <span className="text-emerald-700 font-semibold"> plataformas públicas </span>
-          para consultas y gestiones en línea
+          Sistemas de acceso externo para 
+          <span className="text-emerald-700 font-semibold"> personal autorizado </span>
+          de Red Medicron IPS
         </p>
         <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto rounded-full"></div>
       </div>
