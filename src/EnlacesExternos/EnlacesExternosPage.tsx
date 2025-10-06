@@ -59,7 +59,7 @@ const EnlacesExternosPage: React.FC = () => {
                 <div className="text-sm text-blue-100">{enlacesExternos.length} plataformas</div>
               </div>
               <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
-                <div className="text-3xl mb-3">�</div>
+                <div className="text-3xl mb-3">🏛️</div>
                 <div className="text-lg font-semibold">Institucionales</div>
                 <div className="text-sm text-blue-100">{enlacesInstitucionales.length} enlaces</div>
               </div>
