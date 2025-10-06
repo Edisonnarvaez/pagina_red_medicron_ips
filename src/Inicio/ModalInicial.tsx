@@ -412,7 +412,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                         
                                                         <div className="space-y-3">
                                                             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
-                                                                <p className="font-semibold text-primary-200 mb-1">🏢 Sede Principal</p>
+                                                                <p className="font-semibold text-primary-200 mb-1">🏢 Sede Ipiales</p>
                                                                 <p className="text-xs sm:text-sm text-gray-200">Carrera 4A #11-52</p>
                                                                 <p className="text-xs sm:text-sm text-primary-200">Barrio San Felipe</p>
                                                             </div>
@@ -456,7 +456,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                         
                                                         <div className="space-y-3">
                                                             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-accent-300/50 transition-colors duration-300">
-                                                                <p className="font-semibold text-accent-200 mb-1">🌊 Sede Costera</p>
+                                                                <p className="font-semibold text-accent-200 mb-1">🌊 Sede Tumaco</p>
                                                                 <p className="text-xs sm:text-sm text-gray-200">Carrera 7 #15A-14</p>
                                                                 <p className="text-xs sm:text-sm text-accent-200">Calle Rafael Nuñez y Córdoba</p>
                                                             </div>
