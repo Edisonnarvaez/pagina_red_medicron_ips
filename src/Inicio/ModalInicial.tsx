@@ -314,7 +314,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                     <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
                                         {/* Background adicional para asegurar cobertura completa */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-500 rounded-2xl sm:rounded-3xl" />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-medical-200 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-medical-600 rounded-2xl sm:rounded-3xl" />
                                         <div className="absolute inset-0 bg-medical-pattern opacity-10 rounded-2xl sm:rounded-3xl" />
 
                                         {/* Contenido con z-index elevado y padding adecuado para scroll */}
@@ -327,7 +327,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                             PASTO • IPIALES • TUMACO
                                         </p>
                                         <div className="text-center mb-4 sm:mb-6">
-                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-900 via-primary-600 to-primary-800 bg-clip-text text-transparent drop-shadow-xl">
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-700 via-primary-300 to-primary-600 bg-clip-text text-transparent drop-shadow-xl">
                                                 BIENVENIDOS A RED MEDICRON IPS
                                             </h3>
                                         </div>
