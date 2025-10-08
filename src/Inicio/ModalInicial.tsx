@@ -481,9 +481,11 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                     <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-medical-500 to-primary-500 rounded-full mb-4 shadow-lg">
                                                         <span className="text-3xl">📞</span>
                                                     </div>
-                                                    
+                                                    <h3 className="text-xl sm:text-4xl font-bold text-white mb-2">
+                                                        FOMAG
+                                                    </h3>
                                                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                                                        Información y Citas FOMAG
+                                                        Información y Citas
                                                     </h3>
                                                     
                                                     <div className="bg-black/30 rounded-xl p-4 border border-medical-300/30">
@@ -491,7 +493,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                             (602) 738 2377
                                                         </p>
                                                         <p className="text-sm sm:text-base text-gray-200">
-                                                            Horario de atención telefónica Lunes a Viernes de 8:00 AM a 5:00 PM
+                                                            Horario de atención telefónica Lunes a Viernes de 7:00 AM a 3:30 PM
                                                         </p>
                                                     </div>
                                                     
