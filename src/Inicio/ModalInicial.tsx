@@ -483,7 +483,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                     </div>
                                                     
                                                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                                                        Información y Citas
+                                                        Información y Citas FOMAG
                                                     </h3>
                                                     
                                                     <div className="bg-black/30 rounded-xl p-4 border border-medical-300/30">
