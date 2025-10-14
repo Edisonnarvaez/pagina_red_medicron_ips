@@ -76,7 +76,7 @@ const QuienesSomos: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-gradient-to-br from-azul to-azul-dark rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
                             <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center mb-6">
-                                <FaHeart className="text-2xl text-acento" />
+                                <FaHeart className="text-2xl text-azul-light" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">Misión</h3>
                             <p className="text-azul-light leading-relaxed">
