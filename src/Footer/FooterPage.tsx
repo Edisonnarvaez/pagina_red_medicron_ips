@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
 						<div className="space-y-3 text-sm">
 							<div className="flex items-start gap-3">
 								<FaMapMarkerAlt className="text-verdeLima mt-1 flex-shrink-0" size={14} />
-								<span className="text-white/80">Nariño, Colombia<br />7 sedes en el sur del país <br />Pasto Cra 26 #9 -22 Barrio Obrero <br />Tuquerres Calle 27 # 15-58 La Avenida </span>
+								<span className="text-white/80">Nariño, Colombia<br />8 sedes en el sur del país <br />Pasto Cra 26 #9 -22 Barrio Obrero <br />Tuquerres Calle 27 # 15-58 La Avenida </span>
 							</div>
 							<div className="flex items-center gap-3">
 								<FaPhone className="text-verdeLima flex-shrink-0" size={14} />

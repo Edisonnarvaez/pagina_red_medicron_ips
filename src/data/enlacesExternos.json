@@ -1,10 +1,10 @@
 {
   "enlacesInternos": [
     {
-      "id": "historia-clinica-prueba",
-      "nombre": "Historia Clínica - Prueba",
+      "id": "saludips-prueba",
+      "nombre": "SaludIPS - Pruebas",
       "url": "http://192.168.59.231/SaludIPSPrueba/Home/HC",
-      "descripcion": "Sistema interno de historias clínicas en ambiente de prueba para desarrollo y testing",
+      "descripcion": "Sistema interno de HC en ambiente de prueba para desarrollo y testing",
       "icono": "🏥",
       "categoria": "Red Interna",
       "tipo": "interno"
@@ -15,6 +15,15 @@
       "url": "http://192.168.59.230/SaludIPS",
       "descripcion": "Sistema principal de gestión de salud para uso interno del personal autorizado",
       "icono": "💻",
+      "categoria": "Red Interna",
+      "tipo": "interno"
+    },
+    {
+      "id": "gestion-humana",
+      "nombre": "Gestión Humana",
+      "url": "http://192.168.59.207:8080/gestionhumana2",
+      "descripcion": "Sistema de gestión de recursos humanos para uso interno",
+      "icono": "👥",
       "categoria": "Red Interna",
       "tipo": "interno"
     }
@@ -46,6 +55,15 @@
       "icono": "🧪",
       "categoria": "Externo",
       "tipo": "externo"
+    },
+    {
+      "id": "portal-institucional",
+      "nombre": "Portal Institucional",
+      "url": "http://www.red.redmedicronips.com.co/",
+      "descripcion": "Plataforma interna para empleados",
+      "icono": "💻",
+      "categoria": "Corporativo",
+      "tipo": "institucional"
     }
   ],
   "enlacesInstitucionales": [
@@ -68,12 +86,12 @@
       "tipo": "institucional"
     },
     {
-      "id": "portal-institucional",
-      "nombre": "Portal Institucional",
-      "url": "http://www.red.redmedicronips.com.co/",
-      "descripcion": "Plataforma interna para empleados",
-      "icono": "💻",
-      "categoria": "Corporativo",
+      "id": "minsalud",
+      "nombre": "Ministerio de Salud y Protección Social",
+      "url": "https://www.minsalud.gov.co/",
+      "descripcion": "Ministerio de Salud en Colombia",
+      "icono": "🏛️",
+      "categoria": "Gubernamental",
       "tipo": "institucional"
     }
   ],

@@ -233,7 +233,18 @@ const Contacto: React.FC = () => {
                                             <h4 className="font-bold text-gray-800 mb-1">Líneas de Atención</h4>
                                             <div className="space-y-1">
                                                 <p className="text-gray-600 font-medium">+57 (318) 338-0107</p>
-                                                <p className="text-gray-600">Hospital Túquerres: +57 (321) 666-0990</p>
+                                                <p className="text-sm text-gray-500">Lineas para citas de nefroprotección</p>
+                                                <p className="text-gray-600 font-medium">+57 (316) 090-2783</p>
+                                                <p className="text-gray-600 font-medium">+57 (318) 807-4300</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 3:30 PM</p>
+                                                <p className="text-sm text-gray-500">Lineas para citas de FOMAG</p>
+                                                <p className="text-gray-600 font-medium">(602) 738-2377</p>
+                                                <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 3:30 PM</p>
+                                                <p className="text-sm text-gray-500">Whatsapp para citas de Terapias</p>
+                                                <p className="text-gray-600 font-medium">+57 (316) 090-6607</p>
+                                                <p className="text-sm text-gray-500">Lun - Jue: 7:00 AM - 10:00 AM</p>
+                                                <p className="text-gray-600">Hospital Túquerres: </p>
+                                                <p className="text-gray-600">+57 (321) 666-0990</p>
                                                 <p className="text-sm text-gray-500">Lun - Vie: 7:00 AM - 5:00 PM</p>
                                             </div>
                                         </div>
@@ -260,6 +271,7 @@ const Contacto: React.FC = () => {
                                     <div className="flex-1">
                                         <h4 className="font-bold text-gray-800 mb-1">Email</h4>
                                         <p className="text-gray-600 font-medium break-all">notificaciones@redmedicronips.com.co</p>
+                                        <p className="text-gray-600 font-medium break-all">citas@redmedicronips.com.co</p>
                                     </div>
                                 </div>
 
@@ -285,7 +297,7 @@ const Contacto: React.FC = () => {
                                         <div className="space-y-1">
                                             <p className="text-gray-600">Lun - Vie: 7:00 AM - 5:00 PM</p>
                                             <p className="text-gray-600">Sábados: 8:00 AM - 12:00 PM</p>
-                                            <p className="text-sm text-red-600 font-medium">🚨 Urgencias 24/7</p>
+                                            <p className="text-sm text-red-600 font-medium">🚨 Urgencias Hospital San Jose de Tuquerres 24/7</p>
                                         </div>
                                     </div>
                                 </div>
@@ -426,7 +438,7 @@ const Contacto: React.FC = () => {
                                         name="telefono"
                                         label="Teléfono"
                                         value={formData.telefono}
-                                        required={false}
+                                        required={true}
                                         placeholder="300 123 4567"
                                         helpText="Incluye código de área. Solo números, espacios y guiones"
                                         onChange={handleAccessibleFieldChange('telefono')}

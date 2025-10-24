@@ -77,7 +77,7 @@ const Inicio: React.FC = () => {
         {
             id: 3,
             titulo: "Líneas telefónicas para solicitar citas",
-            descripcion: "Citas en Nariño al 318 338 0107 y en Tuquerres al 321 666 0990.",
+            descripcion: "Citas en Nariño al 602 738 2377 y en Tuquerres al 321 666 0990.",
             gradiente: "from-primary-400 to-medical-500",
             imagen: "/images/sliderCitas-1.jpg",
             acciones: [
@@ -163,7 +163,7 @@ const Inicio: React.FC = () => {
         { numero: "100,000+", descripcion: "Pacientes atendidos", icon: MdGroups, color: "from-primary-500 to-primary-700" },
         { numero: "98%", descripcion: "Satisfacción del usuario", icon: MdStars, color: "from-medical-500 to-medical-700" },
         { numero: "24/7", descripcion: "Atención de urgencias", icon: MdHealthAndSafety, color: "from-accent-500 to-accent-700" },
-        { numero: "7", descripcion: "Sedes estratégicas", icon: FaMapMarkerAlt, color: "from-primary-600 to-medical-600" }
+        { numero: "8", descripcion: "Sedes estratégicas", icon: FaMapMarkerAlt, color: "from-primary-600 to-medical-600" }
     ];
 
     return (
@@ -438,7 +438,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Hospital Tuquerres</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Urgencias 24/7, UCI, Cirugía, Servicios de primer nivel y hospitalización con tecnología avanzada.</p>
                             <div className="flex items-center text-accent-400 font-semibold">
-                                <span>Ver detalles</span>
+                                <span><a href="/sedes">Ver detalles</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
@@ -447,10 +447,10 @@ const Inicio: React.FC = () => {
                             <div className="w-16 h-16 bg-gradient-to-br from-medical-500 to-medical-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-glow-green">
                                 <MdHealthAndSafety className="text-white text-2xl" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4 font-display">7 Sedes Especializadas</h3>
+                            <h3 className="text-2xl font-bold text-white mb-4 font-display">8 Sedes Especializadas</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Consulta externa, nefroprotección, promoción y prevención en toda la región.</p>
                             <div className="flex items-center text-medical-400 font-semibold">
-                                <span>Ubicaciones</span>
+                                <span><a href="/sedes">Ubicaciones</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
@@ -462,7 +462,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-2xl font-bold text-white mb-4 font-display">Programas Especiales</h3>
                             <p className="text-white/80 mb-4 leading-relaxed">Telemedicina, nefroprotección, rehabilitación y programas de medicina preventiva.</p>
                             <div className="flex items-center text-primary-400 font-semibold">
-                                <span>Conoce más</span>
+                                <span><a href="/servicios">Conoce más</a></span>
                                 <FaArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
@@ -709,7 +709,7 @@ const Inicio: React.FC = () => {
                             <h3 className="text-white font-bold text-lg mb-2">Llámanos</h3>
                             <p className="text-white/80 mb-4">Atención telefónica.</p>
                             <a href="tel:+573183380107" className="text-acento font-semibold hover:text-warning transition-colors">
-                                +57 318 338 0107
+                                602 738 2377
                             </a>
                         </div>
 

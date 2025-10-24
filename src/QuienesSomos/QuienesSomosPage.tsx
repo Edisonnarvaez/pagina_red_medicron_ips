@@ -28,7 +28,7 @@ const QuienesSomos: React.FC = () => {
 
     const estadisticas = [
         { numero: "2005", descripcion: "Año de fundación", icon: MdStar },
-        { numero: "7", descripcion: "Sedes en operación", icon: RiTeamFill },
+        { numero: "8", descripcion: "Sedes en operación", icon: RiTeamFill },
         { numero: "20+", descripcion: "Años de experiencia", icon: MdTrendingUp },
         { numero: "24/7", descripcion: "Atención hospitalaria", icon: MdHealthAndSafety }
     ];
@@ -76,7 +76,7 @@ const QuienesSomos: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-gradient-to-br from-azul to-azul-dark rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
                             <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center mb-6">
-                                <FaHeart className="text-2xl text-acento" />
+                                <FaHeart className="text-2xl text-azul-light" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">Misión</h3>
                             <p className="text-azul-light leading-relaxed">
@@ -86,7 +86,7 @@ const QuienesSomos: React.FC = () => {
 
                         <div className="bg-gradient-to-br from-verdeLima to-verdeOscuro rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
                             <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center mb-6">
-                                <FaEye className="text-2xl text-acento" />
+                                <FaEye className="text-2xl text-verde-light" />
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">Visión</h3>
                             <p className="text-verde-light leading-relaxed">
@@ -132,7 +132,7 @@ const QuienesSomos: React.FC = () => {
                                         <div className="text-sm text-grisOscuro">Años</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-2xl font-bold text-verdeOscuro">7</div>
+                                        <div className="text-2xl font-bold text-verdeOscuro">8</div>
                                         <div className="text-sm text-grisOscuro">Sedes</div>
                                     </div>
                                     <div className="text-center">

@@ -9,39 +9,13 @@ interface ModalPortafolioProps {
 }
 
 export default function ModalPortafolio({ showPortafolioModal, setShowPortafolioModal }: ModalPortafolioProps) {
-    const [step, setStep] = useState<1 | 2>(1); // Comenzar en pantalla 1 (docentes)
-    const [timeLeft, setTimeLeft] = useState<string>("");
-
-    // Fecha límite en zona horaria de Colombia (Bogotá, UTC-5)
-    const targetDate = new Date("2025-08-28T23:59:59-05:00");
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            // Obtener fecha actual en zona horaria de Colombia
-            const now = new Date();
-            const colombiaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Bogota"}));
-            const difference = targetDate.getTime() - colombiaTime.getTime();
-
-            if (difference <= 0) {
-                clearInterval(interval);
-                setTimeLeft("¡El plazo ha finalizado!");
-            } else {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((difference / (1000 * 60)) % 60);
-                const seconds = Math.floor((difference / 1000) % 60);
-                setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, [targetDate]);
+    const [step, setStep] = useState<1 | 2>(2); // Comenzar en pantalla 2 (información FOMAG)
 
     // Manejo de teclas para navegación
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
             if (!showPortafolioModal) return;
-            
+
             switch (e.key) {
                 case 'Escape':
                     setShowPortafolioModal(false);
@@ -56,7 +30,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     setStep(1);
                     break;
                 case '2':
-                    setStep(1);
+                    setStep(2);
                     break;
             }
         };
@@ -68,14 +42,15 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
     return (
         <>
             {showPortafolioModal && (
-                <div 
+                <div
                     className="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-lg flex items-center justify-center p-2 sm:p-4 z-[90]"
                     onClick={() => setShowPortafolioModal(false)}
                 >
-                    <div 
-                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl max-w-6xl lg:max-w-7xl xl:max-w-none w-full max-h-[95vh] lg:max-h-[90vh] shadow-2xl animate-scale-in border modal-scrollbar ${
-                            step === 1 ? 'bg-transparent border-transparent' : 'bg-white border-gray-200'
-                        }`}
+                    <div
+                        className={`modal-container relative rounded-2xl sm:rounded-3xl lg:rounded-3xl shadow-2xl animate-scale-in border ${step === 1
+                            ? 'max-w-6xl lg:max-w-7xl xl:max-w-none w-full max-h-[95vh] lg:max-h-[90vh] bg-transparent border-transparent'
+                            : 'max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl w-full h-auto max-h-[90vh] bg-transparent border-transparent'
+                            }`}
                         onClick={(e) => e.stopPropagation()}
                     >
 
@@ -90,16 +65,16 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Controladores de navegación */}
                         <div className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-30">
                             <button
-                                onClick={() => setStep(step === 1 ? 1 : 1)}
+                                onClick={() => setStep(step === 1 ? 2 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronLeft size={16} className="sm:text-lg" />
                             </button>
                         </div>
-                        
+
                         <div className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-30">
                             <button
-                                onClick={() => setStep(step === 1 ? 1 : 1)}
+                                onClick={() => setStep(step === 1 ? 2 : 1)}
                                 className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 border border-white/30"
                             >
                                 <FaChevronRight size={16} className="sm:text-lg" />
@@ -109,153 +84,453 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                         {/* Indicadores de pantalla y ayuda de teclado */}
                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 z-30">
                             <div className="flex space-x-2">
-                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
-                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white' : 'bg-white/40'}`} />
+                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 1 ? 'bg-white/40' : 'bg-white'}`} />
+                                <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === 2 ? 'bg-white' : 'bg-white/40'}`} />
                             </div>
                             <div className="hidden sm:flex items-center space-x-2 text-white/60 text-xs">
                                 <span>↔ Flechas</span>
                                 <span>•</span>
                                 <span>ESC Cerrar</span>
                                 <span>•</span>
-                                <span>1/1 Directo</span>
+                                <span>1/2 Directo</span>
                             </div>
                         </div>
 
-                        {/* PANTALLA 1 - Portafolio (SECUNDARIA) */}
+                        {/* PANTALLA 1 - Portafolio Mejorado */}
                         {step === 1 && (
-                            <div className="modal-section relative w-full h-full overflow-hidden rounded-2xl sm:rounded-3xl bg-cover bg-center bg-no-repeat"
+                            <div className="modal-section relative w-full rounded-2xl sm:rounded-3xl overflow-hidden h-[90vh] bg-cover bg-center bg-no-repeat"
                                 style={{ backgroundImage: "url('/images/portafolio.jpg')" }}
                             >
                                 {/* Overlay que cubre toda el área uniformemente */}
-                                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
-                                
-                                <div className="relative z-10 h-full overflow-y-auto">
-                                    <div className="flex flex-col justify-center text-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 min-h-full">
-                                    <div className="flex justify-center mb-4 sm:mb-6 lg:mb-8">
-                                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 bg-gradient-to-br from-primary-500 to-medical-500 rounded-2xl lg:rounded-3xl flex items-center justify-center shadow-glow">
-                                            <MdHealthAndSafety className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" />
-                                        </div>
-                                    </div>
-                                    
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-                                        Portafolio de Servicios
-                                    </h3>
-                                    
-                                    <p className="text-gray-200 mb-6 sm:mb-8 lg:mb-12 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl lg:max-w-4xl mx-auto">
-                                        Descarga nuestro portafolio completo de servicios médicos y conoce todo lo que tenemos para ofrecerte.
-                                    </p>
+                                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/80 via-black/70 to-black/85 rounded-2xl sm:rounded-3xl" />
 
-                                    <div className="space-y-4 lg:space-y-6 max-w-lg lg:max-w-2xl mx-auto">
-                                        <a
-                                            href="/portafolio-servicios.pdf"
-                                            download
-                                            className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 rounded-xl lg:rounded-2xl font-semibold flex items-center justify-center hover:scale-[1.02] hover:from-primary-700 hover:to-primary-800 transition-all duration-300 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl shadow-xl"
-                                        >
-                                            <FaDownload className="mr-2 sm:mr-3 lg:mr-4 text-base lg:text-xl xl:text-2xl" />
-                                            Descargar Portafolio PDF
-                                        </a>
-                                        
-                                        <Link
-                                            to="/servicios"
-                                            className="w-full bg-medical-500 text-white py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 rounded-xl lg:rounded-2xl font-semibold flex items-center justify-center hover:bg-medical-600 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl shadow-xl"
-                                            onClick={() => setShowPortafolioModal(false)}
-                                        >
-                                            Ver Servicios Online
-                                        </Link>
-                                        
-                                        {/*<button
-                                            onClick={() => setStep(2)}
-                                            className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 text-white py-3 sm:py-4 lg:py-6 xl:py-8 transition-colors duration-200 font-medium hover:scale-[1.02] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl rounded-xl lg:rounded-2xl"
-                                        >
-                                            ← Volver a Invitación Docentes
-                                        </button>*/}
-                                    </div>
+                                {/* Contenedor de scroll */}
+                                <div className="relative w-full h-full overflow-y-auto modal-scrollbar rounded-2xl sm:rounded-3xl">
+                                    {/* Contenedor interno con bordes redondeados */}
+                                    <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
+
+                                        {/* Contenido principal */}
+                                        <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12 min-h-full">
+                                            {/* Encabezado */}
+                                            <div className="text-center mb-6 sm:mb-8">
+                                                <div className="flex justify-center mb-4">
+                                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-medical-500 rounded-full mb-4 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                                                        <MdHealthAndSafety className="text-3xl text-white" />
+                                                    </div>
+                                                </div>
+                                                
+                                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
+                                                    PORTAFOLIO DE <span className="text-medical-400">SERVICIOS</span>
+                                                </h2>
+                                                <p className="text-base sm:text-lg lg:text-xl font-semibold text-gray-300 mb-4">
+                                                    RED MEDICRON IPS
+                                                </p>
+                                                <div className="text-center mb-4">
+                                                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-500 via-medical-400 to-medical-500 bg-clip-text text-transparent drop-shadow-xl">
+                                                        SERVICIOS MÉDICOS ESPECIALIZADOS
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+                                            {/* Descripción introductoria */}
+                                            <p className="text-center text-gray-200 max-w-4xl mx-auto mb-8 text-sm sm:text-base lg:text-lg leading-relaxed px-2 sm:px-4">
+                                                Con <span className="text-medical-400 font-semibold">8 sedes</span> estratégicamente ubicadas en Nariño, ofrecemos servicios desde 
+                                                <span className="text-primary-400 font-semibold"> primer nivel hasta alta complejidad</span>. Nuestro Hospital en Tuquerres cuenta con 
+                                                <span className="text-accent-400 font-semibold"> UCI, quirófanos y atención 24/7</span>, complementado por nuestras sedes especializadas 
+                                                en <span className="text-medical-400 font-semibold">nefroprotección, odontología y terapias integrales</span>.
+                                            </p>
+
+                                            {/* Grid de opciones de portafolio */}
+                                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 max-w-5xl mx-auto">
+                                                {/* Descarga PDF */}
+                                                <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                    <div className="relative p-6 sm:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-primary-400 transition-all duration-500 h-[520px] sm:h-[550px] lg:h-[580px]">
+                                                        {/* Fondo decorativo */}
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-medical-500/20" />
+                                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                                        {/* Contenido */}
+                                                        <div className="relative z-10 h-full flex flex-col text-center">
+                                                            <div className="mb-6">
+                                                                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500/80 backdrop-blur-sm rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                                                    <FaDownload className="text-2xl text-white" />
+                                                                </div>
+                                                                <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-primary-200 transition-colors duration-300">
+                                                                    Portafolio PDF
+                                                                </h4>
+                                                                <div className="w-12 h-1 bg-gradient-to-r from-primary-400 to-medical-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300 mb-4" />
+                                                            </div>
+                                                            
+                                                            <div className="flex-1 flex flex-col justify-between">
+                                                                <div className="space-y-3 mb-6">
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-primary-200 mb-1">🏥 8 Sedes en Nariño</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">Hospital + 7 centros de atención</p>
+                                                                    </div>
+                                                                    
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-primary-200 mb-1">📋 Servicios Completos</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">Desde primer nivel hasta alta complejidad</p>
+                                                                    </div>
+                                                                    
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-primary-200 mb-1">💾 Descarga Instantánea</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">Formato PDF optimizado</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <a
+                                                                    href="/portafolio-servicios.pdf"
+                                                                    download
+                                                                    className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all duration-300 text-sm sm:text-base shadow-xl transform hover:scale-105"
+                                                                >
+                                                                    Descargar PDF
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {/* Ver Servicios Online */}
+                                                <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                    <div className="relative p-6 sm:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-medical-400 transition-all duration-500 h-[520px] sm:h-[550px] lg:h-[580px]">
+                                                        {/* Fondo decorativo */}
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-medical-500/20 to-accent-500/20" />
+                                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                                        {/* Contenido */}
+                                                        <div className="relative z-10 h-full flex flex-col text-center">
+                                                            <div className="mb-6">
+                                                                <div className="inline-flex items-center justify-center w-16 h-16 bg-medical-500/80 backdrop-blur-sm rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                                                    <MdHealthAndSafety className="text-2xl text-white" />
+                                                                </div>
+                                                                <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-medical-200 transition-colors duration-300">
+                                                                    Servicios Online
+                                                                </h4>
+                                                                <div className="w-12 h-1 bg-gradient-to-r from-medical-400 to-accent-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300 mb-4" />
+                                                            </div>
+                                                            
+                                                            <div className="flex-1 flex flex-col justify-between">
+                                                                <div className="space-y-3 mb-6">
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-medical-200 mb-1">🌐 Navegación Interactiva</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">Explora servicios por sede</p>
+                                                                    </div>
+                                                                    
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-medical-200 mb-1">🏨 Hospital Tuquerres</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">UCI, quirófanos, urgencias 24/7</p>
+                                                                    </div>
+                                                                    
+                                                                    <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                        <p className="font-semibold text-medical-200 mb-1">📱 Info Actualizada</p>
+                                                                        <p className="text-xs sm:text-sm text-gray-200">Horarios, contactos y especialidades</p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <Link
+                                                                    to="/servicios"
+                                                                    className="w-full bg-gradient-to-r from-medical-600 to-medical-700 text-white py-3 px-4 rounded-xl font-semibold hover:from-medical-700 hover:to-medical-800 transition-all duration-300 text-sm sm:text-base shadow-xl transform hover:scale-105"
+                                                                    onClick={() => setShowPortafolioModal(false)}
+                                                                >
+                                                                    Ver Servicios
+                                                                </Link>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Información de servicios destacados */}
+                                            <div className="max-w-5xl mx-auto mb-6">
+                                                <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl">
+                                                    <div className="text-center mb-6">
+                                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-full mb-4 shadow-lg">
+                                                            <span className="text-2xl">🏥</span>
+                                                        </div>
+                                                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                                                            Nuestros Servicios Destacados
+                                                        </h3>
+                                                    </div>
+                                                    
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm sm:text-base text-gray-200">
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-primary-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-primary-300 mb-2">🫀 Programa Nefroprotección</p>
+                                                            <p>Cuidado integral de salud renal en todas nuestras sedes</p>
+                                                        </div>
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-medical-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-medical-300 mb-2">🏥 Hospital Tuquerres</p>
+                                                            <p>UCI, quirófanos, urgencias 24/7, hospitalización</p>
+                                                        </div>
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-accent-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-accent-300 mb-2">🦷 Odontología Especializada</p>
+                                                            <p>Servicios dentales integrales en Sede Aurora</p>
+                                                        </div>
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-primary-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-primary-300 mb-2">🏃‍♀️ Terapias Integrales</p>
+                                                            <p>Fisioterapia, ocupacional, respiratoria en Sede Fátima</p>
+                                                        </div>
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-medical-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-medical-300 mb-2">🔬 Laboratorio Clínico</p>
+                                                            <p>Procesamiento de muestras con tecnología avanzada</p>
+                                                        </div>
+                                                        <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-accent-300/50 transition-colors duration-300">
+                                                            <p className="font-semibold text-accent-300 mb-2">📍 8 Sedes Estratégicas</p>
+                                                            <p>Pasto, Tuquerres, Ipiales, Tumaco, Buesaco, La Cruz</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Logo */}
+                                            <div className="flex justify-center">
+                                                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/30 transform hover:scale-105 transition-all duration-300">
+                                                    <img
+                                                        src="/logoRMIPS.png"
+                                                        alt="Red Medicron IPS"
+                                                        className="h-12 sm:h-16 lg:h-20 object-contain filter drop-shadow-lg"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {/* 
+                        {/* PANTALLA 2 - Información FOMAG - CAPAS COMPLETAMENTE CORREGIDAS */}
                         {step === 2 && (
-                            <div className="modal-section relative w-full h-full overflow-hidden bg-cover bg-center bg-no-repeat text-white rounded-2xl sm:rounded-3xl"
-                                style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-                            >
-                                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/80 via-black/70 to-black/85" />
-
-                                <div className="relative z-10 h-full overflow-y-auto">
-                                    <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 min-h-full flex flex-col justify-center">
-                                    
-                                    <div className="inline-flex items-center bg-medical-500/20 backdrop-blur-sm rounded-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 lg:py-4 border border-medical-400/30 mb-3 sm:mb-4 lg:mb-6">
-                                        <MdHealthAndSafety className="text-medical-400 mr-2 sm:mr-3 lg:mr-4" size={16} />
-                                        <span className="text-medical-300 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">ELECCIÓN IPS PRIMARIA FOMAG</span>
-                                    </div>
-
-                                    <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight">
-                                        <span className="block text-white mb-1 sm:mb-2 lg:mb-3">¡Docente, elige a</span>
-                                        <span className="block bg-gradient-to-r from-medical-300 to-medical-500 bg-clip-text text-transparent">
-                                            Red Medicron IPS
-                                        </span>
-                                        <span className="block text-white text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold mt-1 sm:mt-2 lg:mt-3">
-                                            como tu IPS primaria!
-                                        </span>
-                                    </h3>
-
-                                    <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                                        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto text-gray-200 leading-relaxed">
-                                            Queremos acompañarte con <span className="text-medical-300 font-bold">atención médica de calidad</span>. 
-                                            Realiza tu elección antes del cierre del plazo.
-                                        </p>
-                                        
-                                        <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-white/20 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto">
-                                            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 mb-2 lg:mb-4">
-                                                🎯 <strong>¿Quiénes pueden elegir?</strong>
-                                            </p>
-                                            <ul className="text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/80 space-y-1 lg:space-y-2">
-                                                <li>✅ Docentes activos del magisterio</li>
-                                                <li>✅ Pensionados del magisterio</li>
-                                                <li>✅ Beneficiarios del sistema FOMAG</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-gradient-to-r from-red-600/90 to-red-700/90 backdrop-blur-sm rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-red-400/30 max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto">
-                                        <p className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-2 sm:mb-3 lg:mb-4">⏰ TIEMPO RESTANTE:</p>
-                                        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-mono bg-black/50 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 rounded-lg sm:rounded-xl lg:rounded-2xl shadow-lg">
-                                            {timeLeft}
-                                        </div>
-                                        <p className="text-red-200 text-xs sm:text-sm lg:text-base xl:text-lg mt-2 lg:mt-4 font-medium">Hasta el 28 de agosto de 2025 - 11:59 PM (Hora Colombia)</p>
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 items-center justify-center pt-4 lg:pt-8 xl:pt-12 pb-6 lg:pb-12 xl:pb-16">
-                                        <a
-                                            href="http://200.116.57.140:8080/formulario_primaria/public/formulario"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group w-full sm:w-auto bg-gradient-to-r from-medical-500 to-medical-600 hover:from-medical-600 hover:to-medical-700 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-8 rounded-xl sm:rounded-2xl lg:rounded-3xl font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                                        >
-                                            <span className="mr-2 sm:mr-3 lg:mr-4">🚀 REALIZAR ELECCIÓN AHORA</span>
-                                            <div className="w-2 h-2 lg:w-3 lg:h-3 bg-white/30 rounded-full animate-pulse"></div>
-                                        </a>
-                                        
-                                        <button
-                                            onClick={() => setStep(1)}
-                                            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-3 sm:py-4 lg:py-6 xl:py-8 rounded-xl sm:rounded-2xl lg:rounded-3xl font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 hover:text-white transition-all duration-300"
-                                        >
-                                            📋 Ver Portafolio de Servicios
-                                        </button>
-                                    </div>
+                            <div className="modal-section relative w-full rounded-2xl sm:rounded-3xl overflow-hidden h-[90vh]">
+                                {/* Contenedor de scroll - ASEGURA SCROLL COMPLETO CON BORDES REDONDEADOS */}
+                                <div className="relative w-full h-full overflow-y-auto modal-scrollbar rounded-2xl sm:rounded-3xl">
+                                    {/* Background con múltiples capas - ESTAS CAPAS AHORA CUBREN TODO */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-650" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-transparent to-accent-600" />
+                                    <div className="absolute inset-0 bg-medical-pattern opacity-10" />
 
                                     
-                                    <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 text-center pb-4 sm:pb-6 lg:pb-12 xl:pb-16">
-                                        <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-white/70 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto leading-relaxed">
-                                            Al elegir Red Medicron IPS tendrás acceso a servicios de salud de alta calidad, 
-                                            tecnología avanzada y atención humanizada en toda la región de Nariño.
+
+                                    {/* Contenedor interno que permite scroll completo con bordes redondeados */}
+                                    <div className="relative min-h-full rounded-2xl sm:rounded-3xl overflow-hidden">
+                                        {/* Background adicional para asegurar cobertura completa */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-650 via-primary-600 to-medical-500 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-medical-600 via-primary-600 to-medical-600 rounded-2xl sm:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-medical-pattern opacity-10 rounded-2xl sm:rounded-3xl" />
+
+                                        {/* Contenido con z-index elevado y padding adecuado para scroll */}
+                                        <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-8 sm:pb-12 min-h-full">
+                                        {/* Encabezado */}
+                                        <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+                                            USUARIOS <span className="text-medical-400">FOMAG</span>
+                                        </h2>
+                                        <p className="text-center text-base sm:text-lg lg:text-xl font-semibold text-gray-300 mb-4 sm:mb-6">
+                                            <span className="font-bold text-medical-300 bg-gradient-to-r from-medical-300 to-primary-300 bg-clip-text text-transparent">PASTO • IPIALES • TUMACO</span>
                                         </p>
+                                        <div className="text-center mb-4 sm:mb-6">
+                                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-primary-200 via-primary-300 to-primary-100 bg-clip-text text-transparent drop-shadow-xl">
+                                                BIENVENIDOS A RED MEDICRON IPS
+                                            </h3>
+                                        </div>
+
+                                        {/* Texto introductorio */}
+                                        <p className="text-center text-gray-200 max-w-4xl mx-auto mb-6 sm:mb-8 text-xs sm:text-sm lg:text-base leading-relaxed px-2 sm:px-4">
+                                            Es un honor para nosotros recibirlos en nuestra institución, trabajamos con un
+                                            compromiso firme por su bienestar, brindándoles atención preferencial y de alta calidad
+                                            en los servicios de primer nivel de atención; nuestro equipo humano y profesional está
+                                            preparado para acompañarlos con calidez, seguridad y excelencia en cada consulta.
+                                        </p>
+
+                                        {/* Grid mejorado de sedes con efectos modernos */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+                                            {/* Pasto - Sede Principal */}
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-medical-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/Obrero.jpeg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-medical-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-medical-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-medical-200 transition-colors duration-300">
+                                                                PASTO
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-medical-400 to-primary-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-2 text-gray-100 text-sm sm:text-base leading-relaxed">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🏥 Sede Obrero</p>
+                                                                <p className="text-xs sm:text-sm">Carrera 26 #9-22 Barrio Obrero</p>
+                                                            </div>
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🌟 Sede Aurora</p>
+                                                                <p className="text-xs sm:text-sm">Carrera 29 #10-29 Barrio Aurora</p>
+                                                            </div>
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-medical-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-medical-200 mb-1">🏃‍♀️ Sede Integral de Terapias</p>
+                                                                <p className="text-xs sm:text-sm">Calle 20 #11-40 Barrio Fátima</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Ipiales */}
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-primary-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/ipiales.jpg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-primary-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-primary-200 transition-colors duration-300">
+                                                                IPIALES
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-primary-400 to-medical-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-3">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-primary-200 mb-1">🏢 Sede Ipiales</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Carrera 4A #11-52</p>
+                                                                <p className="text-xs sm:text-sm text-primary-200">Barrio San Felipe</p>
+                                                            </div>
+                                                            
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-primary-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-primary-200 mb-1">🕒 Horarios</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Lunes a Viernes</p>
+                                                                <p className="text-xs sm:text-sm text-primary-200">Atención personalizada</p>
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Tumaco */}
+                                            <div className="relative group cursor-pointer transform transition-all duration-500 hover:scale-105 md:col-span-2 xl:col-span-1">
+                                                <div className="relative p-6 sm:p-7 lg:p-8 border-2 border-white/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 hover:border-accent-400 transition-all duration-500 h-[420px] sm:h-[450px]">
+                                                    {/* Imagen de fondo con efectos */}
+                                                    <div
+                                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                                        style={{ backgroundImage: 'url(/sedes/Tumaco.jpg)' }}
+                                                    />
+                                                    {/* Overlay con gradiente dinámico */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 group-hover:via-accent-600/40 transition-all duration-500" />
+                                                    {/* Efecto de brillo en hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                                    {/* Contenido mejorado */}
+                                                    <div className="relative z-10 h-full flex flex-col justify-between">
+                                                        <div className="text-center mb-4">
+                                                            <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-500/80 backdrop-blur-sm rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
+                                                                <MdHealthAndSafety className="text-2xl text-white" />
+                                                            </div>
+                                                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-2xl group-hover:text-accent-200 transition-colors duration-300">
+                                                                TUMACO
+                                                            </h4>
+                                                            <div className="w-12 h-1 bg-gradient-to-r from-accent-400 to-primary-400 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-3">
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-accent-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-accent-200 mb-1">🌊 Sede Tumaco</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Carrera 7 #15A-14</p>
+                                                                <p className="text-xs sm:text-sm text-accent-200">Calle Rafael Nuñez y Córdoba</p>
+                                                            </div>
+                                                            
+                                                            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-white/20 group-hover:border-accent-300/50 transition-colors duration-300">
+                                                                <p className="font-semibold text-accent-200 mb-1">🏖️ Región Pacífica</p>
+                                                                <p className="text-xs sm:text-sm text-gray-200">Atención especializada</p>
+                                                                <p className="text-xs sm:text-sm text-accent-200">Costa Nariñense</p>
+                                                            </div>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Información de contacto mejorada */}
+                                        <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
+                                            <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl">
+                                                <div className="text-center space-y-4">
+                                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-medical-500 to-primary-500 rounded-full mb-4 shadow-lg">
+                                                        <span className="text-3xl">📞</span>
+                                                    </div>
+                                                    <h3 className="text-xl sm:text-4xl font-bold text-white mb-2">
+                                                        FOMAG
+                                                    </h3>
+                                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                                                        Información y Citas
+                                                    </h3>
+                                                    
+                                                    <div className="bg-black/30 rounded-xl p-4 border border-medical-300/30">
+                                                        <p className="text-2xl sm:text-3xl font-bold text-medical-300 mb-2">
+                                                            (602) 738 2377
+                                                        </p>
+                                                        <p className="text-sm sm:text-base text-gray-200">
+                                                            Horario de atención telefónica Lunes a Viernes de 7:00 AM a 3:30 PM
+                                                        </p>
+                                                    </div>
+                                                    
+                                                    <div className="bg-gradient-to-r from-medical-500/20 to-primary-500/20 rounded-xl p-4 border border-white/20">
+                                                        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                                                            En <span className="font-bold text-primary-400 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">RED MEDICRON IPS</span>, 
+                                                            su salud y la de su familia son nuestra prioridad.
+                                                        </p>
+                                                        <p className="text-xs sm:text-sm text-gray-300 mt-2">
+                                                            ✨ Atención de calidad • 🤝 Compromiso humano • 💙 Excelencia médica
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Logo mejorado */}
+                                        <div className="flex justify-center">
+                                            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/30 transform hover:scale-105 transition-all duration-300">
+                                                <img
+                                                    src="/logoRMIPS.png"
+                                                    alt="Red Medicron IPS"
+                                                    className="h-12 sm:h-16 lg:h-20 object-contain filter drop-shadow-lg"
+                                                />
+                                            </div>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
+                                {/* Logo FOMAG superpuesto */}
+                                    <div className="absolute inset-0 fomag-logo-responsive bg-contain bg-center bg-no-repeat mix-blend-multiply rounded-2xl sm:rounded-3xl"
+                                        style={{
+                                            backgroundImage: `url('https://www.fomag.gov.co/wp-content/uploads/2025/04/Logo-color.png')`,
+                                            backgroundPosition: 'center'
+                                        }} />
                             </div>
-                        )}*/}
+                        )}
                     </div>
                 </div>
             )}
