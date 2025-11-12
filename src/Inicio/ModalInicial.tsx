@@ -30,7 +30,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                     setStep(1);
                     break;
                 case '2':
-                    setStep(2);
+                    setStep(1);
                     break;
             }
         };
