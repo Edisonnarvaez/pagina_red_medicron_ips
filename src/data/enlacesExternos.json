@@ -39,20 +39,20 @@
       "tipo": "externo"
     },
     {
-      "id": "saludips",
-      "nombre": "SaludIPS",
-      "url": "http://186.115.218.10/SaludIPS/",
-      "descripcion": "Sistema principal de gestión de salud",
-      "icono": "🏥",
-      "categoria": "Externo",
-      "tipo": "externo"
-    },
-    {
       "id": "saludips-prueba",
       "nombre": "SaludIPS Prueba",
       "url": "http://152.200.161.234/SaludIPSPrueba/Home/HC",
       "descripcion": "Ambiente de pruebas del sistema principal",
       "icono": "🧪",
+      "categoria": "Externo",
+      "tipo": "externo"
+    },
+    {
+      "id": "saludips",
+      "nombre": "SaludIPS",
+      "url": "http://186.115.218.10/SaludIPS/",
+      "descripcion": "Sistema principal de gestión de salud",
+      "icono": "🏥",
       "categoria": "Externo",
       "tipo": "externo"
     },
