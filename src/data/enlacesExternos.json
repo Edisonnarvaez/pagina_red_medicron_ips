@@ -5,7 +5,7 @@
       "nombre": "SaludIPS - Pruebas",
       "url": "http://192.168.59.231/SaludIPSPrueba/Home/HC",
       "descripcion": "Sistema interno de HC en ambiente de prueba para desarrollo y testing",
-      "icono": "🏥",
+      "icono": "🧪",
       "categoria": "Red Interna",
       "tipo": "interno"
     },
@@ -14,7 +14,7 @@
       "nombre": "SaludIPS Interno",
       "url": "http://192.168.59.230/SaludIPS",
       "descripcion": "Sistema principal de gestión de salud para uso interno del personal autorizado",
-      "icono": "💻",
+      "icono": "🏥",
       "categoria": "Red Interna",
       "tipo": "interno"
     },
