@@ -32,7 +32,7 @@
     {
       "id": "visor-hc",
       "nombre": "Visor HC",
-      "url": "http://176.57.207.153/VisorHC/",
+      "url": "http://186.115.218.10/VisorHC/",
       "descripcion": "Visualizador de historias clínicas para consulta externa",
       "icono": "👁️",
       "categoria": "Externo",
@@ -50,7 +50,7 @@
     {
       "id": "saludips",
       "nombre": "SaludIPS",
-      "url": "http://176.57.207.153/SaludIPS/",
+      "url": "http://186.115.218.10/SaludIPS/",
       "descripcion": "Sistema principal de gestión de salud",
       "icono": "🏥",
       "categoria": "Externo",
