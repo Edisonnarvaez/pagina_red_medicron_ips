@@ -2,9 +2,9 @@
   "enlacesInternos": [
     {
       "id": "saludips-prueba",
-      "nombre": "SaludIPS - Pruebas",
+      "nombre": "SaludIPS-Pruebas",
       "url": "http://192.168.59.231/SaludIPSPrueba/Home/HC",
-      "descripcion": "Sistema interno de HC en ambiente de prueba para desarrollo y testing",
+      "descripcion": "Sistema interno de HC en ambiente de pruebas",
       "icono": "🧪",
       "categoria": "Red Interna",
       "tipo": "interno"
@@ -13,7 +13,7 @@
       "id": "saludips-interno",
       "nombre": "SaludIPS Interno",
       "url": "http://192.168.59.230/SaludIPS",
-      "descripcion": "Sistema principal de gestión de salud para uso interno del personal autorizado",
+      "descripcion": "Sistema interno de HC para el personal autorizado",
       "icono": "🏥",
       "categoria": "Red Interna",
       "tipo": "interno"
@@ -24,6 +24,15 @@
       "url": "http://192.168.59.207:8080/gestionhumana2",
       "descripcion": "Sistema de gestión de recursos humanos para uso interno",
       "icono": "👥",
+      "categoria": "Red Interna",
+      "tipo": "interno"
+    },
+    {
+      "id": "portal-institucional",
+      "nombre": "Portal Institucional PILOT",
+      "url": "http://www.red.redmedicronips.com.co/",
+      "descripcion": "Plataforma de gestion Institucional",
+      "icono": "💻",
       "categoria": "Red Interna",
       "tipo": "interno"
     }
@@ -58,9 +67,9 @@
     },
     {
       "id": "portal-institucional",
-      "nombre": "Portal Institucional",
-      "url": "http://www.red.redmedicronips.com.co/",
-      "descripcion": "Plataforma interna para empleados",
+      "nombre": "Portal Institucional PILOT",
+      "url": "https://www.pilot.redmedicronips.com.co/",
+      "descripcion": "Plataforma de gestion Institucional",
       "icono": "💻",
       "categoria": "Corporativo",
       "tipo": "institucional"

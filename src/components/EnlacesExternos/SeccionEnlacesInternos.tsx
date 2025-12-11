@@ -24,7 +24,7 @@ export const SeccionEnlacesInternos: React.FC<Props> = ({ enlaces }) => {
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {enlaces.map((enlace) => (
           <a
             key={enlace.id}
@@ -42,22 +42,20 @@ export const SeccionEnlacesInternos: React.FC<Props> = ({ enlaces }) => {
               {/* Efecto de brillo superior */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <div className="space-y-6">
-                {/* Header de la card */}
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-18 h-18 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      {enlace.icono}
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 mb-2">
-                      {enlace.nombre}
-                    </h3>
-                    <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-sm font-semibold rounded-full border border-blue-200">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-                      {enlace.categoria}
-                    </div>
+              <div className="text-center space-y-6">
+                {/* Icono principal */}
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-4xl mx-auto shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  {enlace.icono}
+                </div>
+                
+                {/* Título y categoría */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 mb-3">
+                    {enlace.nombre}
+                  </h3>
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 text-sm font-semibold rounded-full border border-indigo-200">
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></span>
+                    {enlace.categoria}
                   </div>
                 </div>
                 
