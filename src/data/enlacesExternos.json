@@ -71,8 +71,8 @@
       "url": "https://www.pilot.redmedicronips.com.co/",
       "descripcion": "Plataforma de gestion Institucional",
       "icono": "💻",
-      "categoria": "Corporativo",
-      "tipo": "institucional"
+      "categoria": "externo",
+      "tipo": "externo"
     }
   ],
   "enlacesInstitucionales": [
