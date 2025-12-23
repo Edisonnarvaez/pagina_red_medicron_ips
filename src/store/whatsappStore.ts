@@ -78,21 +78,6 @@ interface WhatsAppState {
 }
 
 const contactOptions: ContactOption[] = [
-//  {
-//    id: 'fomag',
-//    label: 'Citas Fomag',
-//    number: '3183380107',
-//    description: 'Citas para servicios Fomag',
-//    icon: '�‍⚕️',
-//    category: 'fomag',
-//    priority: 4,
-//    isActive: true,
-//    schedule: {
-//      start: '07:00',
-//      end: '15:30',
-//      timezone: 'America/Bogota'
-//    }
-//  },
   {
     id: 'nefroproteccion-1',
     label: 'Citas Nefroprotección 1',
