@@ -24,6 +24,16 @@ const EnlacesExternosPage: React.FC = () => {
     limpiarFiltros
   } = useEnlacesExternos();
 
+  const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+};
+
   return (
     <>
       <SEOHelmet
@@ -71,50 +81,98 @@ const EnlacesExternosPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16">
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-500 hover:scale-105 hover:bg-white/15">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('enlaces-internos')}
+                  className="relative w-full text-left scroll-mt-32
+                            bg-white/10 backdrop-blur-lg rounded-2xl p-6
+                            border border-white/20 hover:border-white/40
+                            transition-all duration-500 hover:scale-105 hover:bg-white/15
+                            cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/40
+                            flex flex-col justify-between
+                            p-8 min-h-[220px]
+                            text-center
+                            "
+                >
                   <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🏢</div>
-                  <div className="text-xl font-bold text-white mb-1">Enlaces Internos</div>
+                  <div className="text-xl font-bold text-white mb-1">Enlaces Internos </div>
                   <div className="text-sm text-white/80 font-medium">{enlacesInternos.length} sistemas corporativos</div>
                   <div className="mt-3 w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full transform group-hover:scale-x-110 transition-transform duration-700"></div>
                   </div>
-                </div>
+                </button>
               </div>
               
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-accent-400/30 to-primary-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-accent-300/50 transition-all duration-500 hover:scale-105 hover:bg-white/15">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('enlaces-externos')}
+                  className="relative w-full text-left scroll-mt-32
+                            bg-white/10 backdrop-blur-lg rounded-2xl p-6
+                            border border-white/20 hover:border-white/40
+                            transition-all duration-500 hover:scale-105 hover:bg-white/15
+                            cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/40
+                            flex flex-col justify-between
+                            p-8 min-h-[220px]
+                            text-center
+                            "
+                >
                   <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🌐</div>
                   <div className="text-xl font-bold text-white mb-1">Enlaces Externos</div>
                   <div className="text-sm text-white/80 font-medium">{enlacesExternos.length} plataformas públicas</div>
                   <div className="mt-3 w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-accent-400 to-orange-300 rounded-full transform group-hover:scale-x-110 transition-transform duration-700"></div>
                   </div>
-                </div>
+                </button>
               </div>
               
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-medical-400/30 to-primary-500/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-medical-300/50 transition-all duration-500 hover:scale-105 hover:bg-white/15">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('enlaces-institucionales')}
+                  className="relative w-full text-left scroll-mt-32
+                            bg-white/10 backdrop-blur-lg rounded-2xl p-6
+                            border border-white/20 hover:border-white/40
+                            transition-all duration-500 hover:scale-105 hover:bg-white/15
+                            cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/40
+                            flex flex-col justify-between
+                            p-8 min-h-[220px]
+                            text-center
+                            "
+                >
                   <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🏛️</div>
                   <div className="text-xl font-bold text-white mb-1">Institucionales</div>
                   <div className="text-sm text-white/80 font-medium">{enlacesInstitucionales.length} enlaces oficiales</div>
                   <div className="mt-3 w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-medical-400 to-green-300 rounded-full transform group-hover:scale-x-110 transition-transform duration-700"></div>
                   </div>
-                </div>
+                </button>
               </div>
               
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400/30 to-teal-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-green-300/50 transition-all duration-500 hover:scale-105 hover:bg-white/15">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('entidades-salud')}
+                  className="relative w-full text-left scroll-mt-32
+                            bg-white/10 backdrop-blur-lg rounded-2xl p-6
+                            border border-white/20 hover:border-white/40
+                            transition-all duration-500 hover:scale-105 hover:bg-white/15
+                            cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/40
+                            flex flex-col justify-between
+                            p-8 min-h-[220px]
+                            text-center
+                            "
+                >
                   <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🏥</div>
                   <div className="text-xl font-bold text-white mb-1">Entidades Salud</div>
                   <div className="text-sm text-white/80 font-medium">{entidadesSalud.length} organizaciones</div>
                   <div className="mt-3 w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-green-400 to-emerald-300 rounded-full transform group-hover:scale-x-110 transition-transform duration-700"></div>
                   </div>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -125,7 +183,7 @@ const EnlacesExternosPage: React.FC = () => {
           {/* Enlaces Internos con contenedor modernizado */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-indigo-50/50 rounded-3xl blur-3xl transform -rotate-1"></div>
-            <div className="relative">
+            <div id="enlaces-internos" className="relative scroll-mt-32">
               <SeccionEnlacesInternos enlaces={enlacesInternos} />
             </div>
           </div>
@@ -133,7 +191,7 @@ const EnlacesExternosPage: React.FC = () => {
           {/* Enlaces Externos con contenedor modernizado */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-accent-50/50 to-orange-50/50 rounded-3xl blur-3xl transform rotate-1"></div>
-            <div className="relative">
+            <div id="enlaces-externos" className="relative scroll-mt-32">
               <SeccionEnlacesExternos enlaces={enlacesExternos} />
             </div>
           </div>
@@ -141,7 +199,7 @@ const EnlacesExternosPage: React.FC = () => {
           {/* Enlaces Institucionales con contenedor modernizado */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-medical-50/50 to-green-50/50 rounded-3xl blur-3xl transform -rotate-1"></div>
-            <div className="relative">
+            <div id="enlaces-institucionales" className="relative scroll-mt-32">
               <SeccionEnlacesInstitucionales enlaces={enlacesInstitucionales} />
             </div>
           </div>
@@ -149,7 +207,7 @@ const EnlacesExternosPage: React.FC = () => {
           {/* Entidades del Sector Salud con contenedor modernizado */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-teal-50/50 rounded-3xl blur-3xl transform rotate-1"></div>
-            <div className="relative">
+            <div id="entidades-salud" className="relative scroll-mt-32">
               <SeccionEntidadesSalud
                 entidades={entidadesFiltradas}
                 filtroCategoria={filtroCategoria}
