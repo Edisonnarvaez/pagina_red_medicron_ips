@@ -39,17 +39,6 @@ const Sedes: React.FC = () => {
             imagen: "/sedes/Fatima.jpeg"
         },
         {
-            nombre: "Sede Aurora",
-            tipo: "Centro de Atención",
-            direccion: "Carrera 29 N° 10-29, Pasto, Nariño",
-            telefono: ["(602) 738-2377"," - ","(318) 338-0107"],
-            horario: "7:00 AM a 12:00 PM - 1:30 PM a 5:00 PM",
-            servicios: ["Odontologia"],
-            esHospital: false,
-            icon: MdLocalHospital,
-            imagen: "/sedes/aurora.jpeg"
-        },
-        {
             nombre: "Sede Ipiales",
             tipo: "Centro de Atención",
             direccion: "Carrera 4a No 14-52, Ipiales, Nariño",
@@ -124,7 +113,7 @@ const Sedes: React.FC = () => {
                     {/* Estadísticas */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
-                            <div className="text-2xl font-bold text-verdeOscuro">8</div>
+                            <div className="text-2xl font-bold text-verdeOscuro">7</div>
                             <div className="text-sm text-grisOscuro">Sedes</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
