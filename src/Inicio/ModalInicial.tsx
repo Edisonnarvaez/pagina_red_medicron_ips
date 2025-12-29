@@ -134,7 +134,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
 
                                             {/* Descripción introductoria */}
                                             <p className="text-center text-gray-200 max-w-4xl mx-auto mb-8 text-sm sm:text-base lg:text-lg leading-relaxed px-2 sm:px-4">
-                                                Con <span className="text-medical-400 font-semibold">8 sedes</span> estratégicamente ubicadas en Nariño, ofrecemos servicios desde 
+                                                Con <span className="text-medical-400 font-semibold">7 sedes</span> estratégicamente ubicadas en Nariño, ofrecemos servicios desde 
                                                 <span className="text-primary-400 font-semibold"> primer nivel hasta alta complejidad</span>. Nuestro Hospital en Tuquerres cuenta con 
                                                 <span className="text-accent-400 font-semibold"> UCI, quirófanos y atención 24/7</span>, complementado por nuestras sedes especializadas 
                                                 en <span className="text-medical-400 font-semibold">nefroprotección, odontología y terapias integrales</span>.
@@ -275,7 +275,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                             <p>Procesamiento de muestras con tecnología avanzada</p>
                                                         </div>
                                                         <div className="bg-black/20 rounded-lg p-4 border border-white/10 hover:border-accent-300/50 transition-colors duration-300">
-                                                            <p className="font-semibold text-accent-300 mb-2">📍 8 Sedes Estratégicas</p>
+                                                            <p className="font-semibold text-accent-300 mb-2">📍 7 Sedes Estratégicas</p>
                                                             <p>Pasto, Tuquerres, Ipiales, Tumaco, Buesaco, La Cruz</p>
                                                         </div>
                                                     </div>
