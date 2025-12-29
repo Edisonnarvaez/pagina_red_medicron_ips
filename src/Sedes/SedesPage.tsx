@@ -121,7 +121,7 @@ const Sedes: React.FC = () => {
                             <div className="text-sm text-grisOscuro">Hospital 24h</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
-                            <div className="text-2xl font-bold text-verdeOscuro">7</div>
+                            <div className="text-2xl font-bold text-verdeOscuro">6</div>
                             <div className="text-sm text-grisOscuro">Centros</div>
                         </div>
                         <div className="bg-white/80 backdrop-blur rounded-xl p-4 shadow-lg">
