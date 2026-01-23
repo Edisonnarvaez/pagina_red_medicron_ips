@@ -50,7 +50,7 @@
     {
       "id": "saludips-prueba",
       "nombre": "SaludIPS Prueba",
-      "url": "http://152.200.161.234/SaludIPSPrueba/Home/HC",
+      "url": "http://201.182.248.51/SaludIPSPrueba/Home/HC",
       "descripcion": "Ambiente de pruebas del sistema principal",
       "icono": "🧪",
       "categoria": "Externo",
