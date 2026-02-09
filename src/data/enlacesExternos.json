@@ -59,7 +59,7 @@
     {
       "id": "saludips",
       "nombre": "SaludIPS",
-      "url": "http://186.115.218.10/SaludIPS/",
+      "url": "http://201.182.248.50/SaludIPS/",
       "descripcion": "Sistema principal de gestión de salud",
       "icono": "🏥",
       "categoria": "Externo",
