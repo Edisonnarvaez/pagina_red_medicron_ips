@@ -202,7 +202,7 @@ const LineaEtica: React.FC = () => {
                 noindex={true}
             />
             
-            <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-green-50 text-negro p-4 sm:p-6 lg:p-8 flex flex-col items-center">
+            <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-green-50 text-negro pt-28 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
             <div className="w-full max-w-4xl">
                 {/* Header */}
                 <div className="text-center mb-6 sm:mb-8">

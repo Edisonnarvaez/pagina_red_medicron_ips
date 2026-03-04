@@ -113,7 +113,7 @@ const Organigrama: React.FC = () => {
                 canonical="/organigrama"
             />
             
-            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex flex-col items-center">
+            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro px-4 sm:px-6 lg:px-8 pt-28 pb-12 flex flex-col items-center">
                 <div className="w-full max-w-7xl">
                     {/* Header */}
                     <div className="text-center mb-8 sm:mb-12">
