@@ -114,10 +114,10 @@ const TalentoHumano: React.FC = () => {
         },
         {
             id: 9,
-            nombre: "Ing. Orlando García P.",
+            nombre: "Ing. Aldemar Santiago Lucano.",
             cargo: "Coordinación de Facturación y TI",
             descripcion: "Administra los sistemas tecnológicos y procesos de facturación institucional.",
-            foto: "/funcionarios/Ing_Orlando.png",
+            foto: "/funcionarios/Ing_Aldemar.png",
             nivel: "coordinacion"
         },
         {
@@ -130,10 +130,10 @@ const TalentoHumano: React.FC = () => {
         },
         {
             id: 11,
-            nombre: "Dra. Mercedes Caicedo D.",
+            nombre: "Dra. Nelly Lucia Constain M.",
             cargo: "Coordinación Contable",
             descripcion: "Supervisa los procesos contables y el registro financiero institucional.",
-            foto: "/funcionarios/Dra_Mercedes.png",
+            foto: "/funcionarios/Dra_Nelly.png",
             nivel: "coordinacion"
         },
         {
