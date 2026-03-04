@@ -189,7 +189,7 @@ const Contacto: React.FC = () => {
                 canonical="/contacto"
             />
             
-            <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-medical-50 py-16 px-4 overflow-hidden">
+            <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-medical-50 pt-32 pb-20 px-4 overflow-hidden">
             {/* Elementos decorativos de fondo */}
             <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-medical-200/30 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -right-24 w-[350px] h-[350px] bg-primary-200/30 rounded-full blur-3xl" />
@@ -198,16 +198,17 @@ const Contacto: React.FC = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-medical-200/50 shadow-soft">
-                        <FaEnvelope className="text-medical-600 mr-3" size={20} />
-                        <span className="text-medical-700 font-bold text-sm tracking-wider uppercase">CONTÁCTANOS</span>
-                    </div>
+                    
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-800 mb-6 leading-tight">
                         Estamos Aquí Para 
                         <span className="block bg-gradient-to-r from-medical-600 to-primary-600 bg-clip-text text-transparent">
                             Ayudarte
                         </span>
                     </h1>
+                    <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-medical-200/50 shadow-soft">
+                        <FaEnvelope className="text-medical-600 mr-3" size={20} />
+                        <span className="text-medical-700 font-bold text-sm tracking-wider uppercase">CONTÁCTANOS</span>
+                    </div>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         Comunícate con nosotros para resolver tus dudas, agendar citas o conocer más sobre nuestros servicios de salud
                     </p>

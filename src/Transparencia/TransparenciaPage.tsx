@@ -156,7 +156,7 @@ const Transparencia: React.FC = () => {
                 canonical="/transparencia"
             />
 
-            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <section className="min-h-screen bg-gradient-to-br from-grisClaro via-white to-azul-light/10 text-negro px-4 sm:px-6 lg:px-8 pt-28 pb-12">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8 sm:mb-12">

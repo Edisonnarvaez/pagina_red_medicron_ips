@@ -142,7 +142,7 @@ const Accesibilidad: React.FC = () => {
                 canonical="/accesibilidad"
             />
             
-            <section className={`min-h-screen ${contraste ? 'bg-black text-white' : 'bg-gradient-to-br from-grisClaro via-white to-azul-light/10'} text-negro px-4 sm:px-6 lg:px-8 py-8 lg:py-12`} style={{ fontSize: `${fontSize}rem` }}>
+            <section className={`min-h-screen ${contraste ? 'bg-black text-white' : 'bg-gradient-to-br from-grisClaro via-white to-azul-light/10'} text-negro px-4 sm:px-6 lg:px-8 pt-28 pb-12`} style={{ fontSize: `${fontSize}rem` }}>
                 <div className="max-w-6xl mx-auto">
                     
                     {/* Header */}

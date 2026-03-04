@@ -13,7 +13,7 @@ const Contabilidad: React.FC = () => {
                 noindex={true}
             />
             
-            <section className="relative min-h-screen bg-gradient-to-br from-azul-light via-white to-verdeLima/20 text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+            <section className="relative min-h-screen bg-gradient-to-br from-azul-light via-white to-verdeLima/20 text-negro flex flex-col items-center px-4 pt-32 pb-20 overflow-hidden">
             {/* Fondo decorativo institucional */}
             <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-azul-light rounded-full blur-2xl opacity-30 -z-10" />
             <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-verdeLima/30 rounded-full blur-2xl opacity-20 -z-10" />
