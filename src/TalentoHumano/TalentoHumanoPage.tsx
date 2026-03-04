@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight, FaUserTie, FaUsers, FaAward, FaFileUpload, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { ButtonSpinner } from '../components/Loading';
 import { SEOHelmet } from '../components/SEO';
+import ConsejoCarousel, { type Miembro } from "../TalentoHumano/ConsejoCarousel";
+
 
 // Interfaces para el formulario de convocatoria
 interface FormDataConvocatoria {
@@ -23,10 +25,11 @@ interface FormStatus {
     message: string;
 }
 
+
 const TalentoHumano: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showConvocatoriaForm, setShowConvocatoriaForm] = useState(false);
-    
+
     // Estado del formulario de convocatoria
     const [formData, setFormData] = useState<FormDataConvocatoria>({
         nombre: '',
@@ -162,6 +165,51 @@ const TalentoHumano: React.FC = () => {
         }
     ];
 
+    const miembrosConsejo: Miembro[] = [
+        {
+            id: 1,
+            nombre: "Yuli Cabrera Eraso.",
+            cargo: "Presidente del Consejo de Administración",
+            foto: "/funcionarios/Ing_Yuli.png"
+        },
+        {
+            id: 2,
+            nombre: "Jesus Andres Vallejo C.",
+            cargo: "Secretario del Consejo de Administración",
+            foto: "/funcionarios/Dr_Jesus.png"
+        },
+        {
+            id: 3,
+            nombre: "Carolina Alejandra Cabrera C.",
+            cargo: "Miembro del Consejo de Administración",
+            foto: "/funcionarios/Dra_Carolina.png"
+        },
+        {
+            id: 4,
+            nombre: "Ines Graciela Arenas S.",
+            cargo: "Miembro del Consejo de Administración",
+            foto: "/funcionarios/Dra_Ines.png"
+        },
+        {
+            id: 5,
+            nombre: "Luis Ignacio Ortiz A.",
+            cargo: "Miembro del Consejo de Administración",
+            foto: "/funcionarios/Ing_Luis.png"
+        },
+        {
+            id: 6,
+            nombre: "Brigida del Rosario Torres G.",
+            cargo: "Miembro del Consejo de Administración",
+            foto: "/funcionarios/Dra_Brigida.png"
+        },
+        {
+            id: 7,
+            nombre: "Nora Lilia Cordoba C.",
+            cargo: "Miembro del Consejo de Administración",
+            foto: "/funcionarios/Dra_Nora.png"
+        }
+    ];
+
     const funcionariosPerSlide = 3;
     const totalSlides = Math.ceil(funcionarios.length / funcionariosPerSlide);
 
@@ -203,7 +251,7 @@ const TalentoHumano: React.FC = () => {
     };
 
     const validateForm = (): boolean => {
-        if (!formData.nombre.trim() || !formData.apellido.trim() || !formData.email.trim() || 
+        if (!formData.nombre.trim() || !formData.apellido.trim() || !formData.email.trim() ||
             !formData.telefono.trim() || !formData.numeroDocumento.trim() || !formData.cargoAspira.trim()) {
             setFormStatus({
                 type: 'error',
@@ -234,7 +282,7 @@ const TalentoHumano: React.FC = () => {
 
     const handleSubmitConvocatoria = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!validateForm()) return;
 
         setFormStatus({ type: 'loading', message: 'Enviando tu postulación...' });
@@ -259,10 +307,10 @@ const TalentoHumano: React.FC = () => {
 
             // URL de Google Apps Script - CAMBIAR POR LA URL REAL
             const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw2bkZw2ll2GqKj-0b8LGRgDJyrlCtV_HUNShbxNZMsV_OEiCv91LrIffqfQHZaWcg/exec';
-            
+
             console.log('Enviando datos a:', SCRIPT_URL);
             console.log('Datos a enviar:', submitData);
-            
+
             await fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors', // Necesario para Google Apps Script
@@ -273,13 +321,13 @@ const TalentoHumano: React.FC = () => {
             });
 
             console.log('Respuesta enviada (no-cors mode)');
-            
+
             // Con no-cors mode, asumimos éxito ya que no podemos leer la respuesta
             setFormStatus({
                 type: 'success',
                 message: '¡Postulación enviada exitosamente! Te contactaremos pronto.'
             });
-            
+
             // Limpiar formulario
             setFormData({
                 nombre: '',
@@ -301,11 +349,11 @@ const TalentoHumano: React.FC = () => {
             }, 3000);
         } catch (error) {
             console.error('Error al enviar postulación:', error);
-            
+
             // Si es un error de CSP/CORS pero usamos no-cors, el formulario sí funciona
             if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
                 console.log('💡 Error típico de CORS detectado, pero con no-cors el envío funciona');
-                
+
                 setFormStatus({
                     type: 'success',
                     message: '¡Postulación enviada exitosamente! Te contactaremos pronto.'
@@ -379,46 +427,48 @@ const TalentoHumano: React.FC = () => {
                 keywords="trabajo red medicron ips, empleo salud nariño, convocatorias médicas, recursos humanos ips, trabajar en salud túquerres"
                 canonical="/talento-humano"
             />
-            
-            <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/30 via-white to-azul-light text-negro flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
-            {/* Fondo decorativo institucional */}
-            <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-verdeLima/30 rounded-full blur-2xl opacity-40 -z-10" />
-            <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-azul-light rounded-full blur-2xl opacity-20 -z-10" />
 
-            <div className="w-full max-w-6xl flex flex-col items-center">
-                <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-center tracking-tight drop-shadow-sm">
-                    Nuestro <span className="text-verdeOscuro">Talento Humano</span>
-                </h2>
-                <p className="mb-10 text-center text-lg max-w-2xl">Nuestro equipo está conformado por profesionales de la salud, administrativos y personal de apoyo comprometidos con la excelencia, la ética y la humanización en la atención.</p>
+            <section className="relative min-h-screen bg-gradient-to-br from-verdeLima/30 via-white to-azul-light text-negro flex flex-col items-center px-4 pt-32 pb-20 overflow-hidden">
+                {/* Fondo decorativo institucional */}
+                <div className="absolute -top-24 -left-24 w-[350px] h-[350px] bg-verdeLima/30 rounded-full blur-2xl opacity-40 -z-10" />
+                <div className="absolute bottom-0 right-0 w-[250px] h-[250px] bg-azul-light rounded-full blur-2xl opacity-20 -z-10" />
 
-                {/* Valores y cultura */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full animate-fade-in">
-                    <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10 flex flex-col gap-4">
-                        <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Valores del Equipo</h3>
-                        <ul className="list-disc ml-6 text-base space-y-2">
-                            <li>Ética y responsabilidad</li>
-                            <li>Humanización en la atención</li>
-                            <li>Trabajo en equipo</li>
-                            <li>Innovación y mejora continua</li>
-                            <li>Respeto y diversidad</li>
-                        </ul>
+                <div className="w-full max-w-6xl flex flex-col items-center">
+
+                    <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-center tracking-tight drop-shadow-sm">
+
+                        Nuestro <span className="text-verdeOscuro">Talento Humano</span>
+                    </h2>
+                    <p className="mb-10 text-center text-lg max-w-2xl">Nuestro equipo está conformado por profesionales de la salud, administrativos y personal de apoyo comprometidos con la excelencia, la ética y la humanización en la atención.</p>
+
+                    {/* Valores y cultura */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full animate-fade-in">
+                        <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10 flex flex-col gap-4">
+                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Valores del Equipo</h3>
+                            <ul className="list-disc ml-6 text-base space-y-2">
+                                <li>Ética y responsabilidad</li>
+                                <li>Humanización en la atención</li>
+                                <li>Trabajo en equipo</li>
+                                <li>Innovación y mejora continua</li>
+                                <li>Respeto y diversidad</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10 flex flex-col gap-4">
+                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Cultura Organizacional</h3>
+                            <p>Fomentamos un ambiente laboral saludable, inclusivo y motivador, donde cada colaborador es protagonista del bienestar institucional y del servicio a la comunidad.</p>
+                        </div>
                     </div>
-                    <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10 flex flex-col gap-4">
-                        <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Cultura Organizacional</h3>
-                        <p>Fomentamos un ambiente laboral saludable, inclusivo y motivador, donde cada colaborador es protagonista del bienestar institucional y del servicio a la comunidad.</p>
-                    </div>
-                </div>
 
                 </div>
 
                 {/* Header de la página */}
-                <div className="text-center mb-12 animate-fade-in">
+                
                     <h2 className="text-4xl font-extrabold mb-4 text-verdeOscuro">Talento Humano</h2>
                     <p className="text-lg text-grisOscuro max-w-3xl mx-auto">
-                        Nuestro recurso más valioso son las personas. Conoce al equipo profesional que hace posible 
+                        Nuestro recurso más valioso son las personas. Conoce al equipo profesional que hace posible
                         brindar servicios de salud de excelencia en Red Medicron IPS.
                     </p>
-                </div>
+                
 
                 {/* Estructura Organizacional - Carrusel */}
                 <div className="mb-10 w-full animate-fade-in">
@@ -433,7 +483,7 @@ const TalentoHumano: React.FC = () => {
                     <div className="relative">
                         {/* Contenedor principal del carrusel */}
                         <div className="overflow-hidden rounded-2xl">
-                            <div 
+                            <div
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                             >
@@ -443,49 +493,49 @@ const TalentoHumano: React.FC = () => {
                                             {funcionarios
                                                 .slice(slideIndex * funcionariosPerSlide, (slideIndex + 1) * funcionariosPerSlide)
                                                 .map((funcionario) => (
-                                                <div 
-                                                    key={funcionario.id}
-                                                    className={`bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border-2 transition-all duration-300 hover:shadow-xl hover:scale-105 ${getNivelColor(funcionario.nivel)}`}
-                                                >
-                                                    {/* Foto del funcionario */}
-                                                    <div className="relative mb-4">
-                                                        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                                                            <img 
-                                                                src={funcionario.foto}
-                                                                alt={funcionario.nombre}
-                                                                className="w-full h-full object-cover"
-                                                                onError={(e) => {
-                                                                    // Fallback en caso de que la imagen no cargue
-                                                                    const target = e.target as HTMLImageElement;
-                                                                    target.style.display = 'none';
-                                                                    target.parentElement!.innerHTML = `
+                                                    <div
+                                                        key={funcionario.id}
+                                                        className={`bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border-2 transition-all duration-300 hover:shadow-xl hover:scale-105 ${getNivelColor(funcionario.nivel)}`}
+                                                    >
+                                                        {/* Foto del funcionario */}
+                                                        <div className="relative mb-4">
+                                                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                                                                <img
+                                                                    src={funcionario.foto}
+                                                                    alt={funcionario.nombre}
+                                                                    className="w-full h-full object-cover"
+                                                                    onError={(e) => {
+                                                                        // Fallback en caso de que la imagen no cargue
+                                                                        const target = e.target as HTMLImageElement;
+                                                                        target.style.display = 'none';
+                                                                        target.parentElement!.innerHTML = `
                                                                         <div class="w-full h-full bg-gradient-to-br from-verdeOscuro to-verdeLima flex items-center justify-center">
                                                                             <span class="text-white font-bold text-lg">${funcionario.nombre.split(' ').map(n => n[0]).join('').substring(0, 2)}</span>
                                                                         </div>
                                                                     `;
-                                                                }}
-                                                            />
+                                                                    }}
+                                                                />
+                                                            </div>
+                                                            {/* Ícono del nivel */}
+                                                            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-100">
+                                                                {getNivelIcon(funcionario.nivel)}
+                                                            </div>
                                                         </div>
-                                                        {/* Ícono del nivel */}
-                                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-100">
-                                                            {getNivelIcon(funcionario.nivel)}
-                                                        </div>
-                                                    </div>
 
-                                                    {/* Información del funcionario */}
-                                                    <div className="flex-1">
-                                                        <h4 className="font-bold text-verdeOscuro text-lg mb-1 leading-tight">
-                                                            {funcionario.nombre}
-                                                        </h4>
-                                                        <p className="text-sm text-azul font-semibold mb-3 leading-tight">
-                                                            {funcionario.cargo}
-                                                        </p>
-                                                        <p className="text-xs text-grisOscuro leading-relaxed">
-                                                            {funcionario.descripcion}
-                                                        </p>
+                                                        {/* Información del funcionario */}
+                                                        <div className="flex-1">
+                                                            <h4 className="font-bold text-verdeOscuro text-lg mb-1 leading-tight">
+                                                                {funcionario.nombre}
+                                                            </h4>
+                                                            <p className="text-sm text-azul font-semibold mb-3 leading-tight">
+                                                                {funcionario.cargo}
+                                                            </p>
+                                                            <p className="text-xs text-grisOscuro leading-relaxed">
+                                                                {funcionario.descripcion}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))}
+                                                ))}
                                         </div>
                                     </div>
                                 ))}
@@ -509,11 +559,10 @@ const TalentoHumano: React.FC = () => {
                                     <button
                                         key={index}
                                         onClick={() => goToSlide(index)}
-                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                                            index === currentSlide 
-                                                ? 'bg-verdeOscuro scale-125' 
+                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                                                ? 'bg-verdeOscuro scale-125'
                                                 : 'bg-gray-300 hover:bg-verdeLima'
-                                        }`}
+                                            }`}
                                         aria-label={`Ir a la diapositiva ${index + 1}`}
                                     />
                                 ))}
@@ -557,6 +606,15 @@ const TalentoHumano: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Carrusel de miembros del consejo de administración */}
+                <>
+                    <ConsejoCarousel
+                        miembros={miembrosConsejo}
+                        miembrosPerSlide={3}
+                        maxMiembros={7}
+                    />
+                </>
+
                 {/* Valores y Cultura Organizacional */}
                 <div className="mb-10 w-full animate-fade-in">
                     <h3 className="font-bold text-2xl mb-6 text-verdeOscuro text-center">Valores y Cultura Organizacional</h3>
@@ -568,7 +626,7 @@ const TalentoHumano: React.FC = () => {
                             <h4 className="font-bold text-verdeOscuro mb-2">Compromiso</h4>
                             <p className="text-sm text-grisOscuro">Dedicación absoluta con la salud y bienestar de nuestros pacientes.</p>
                         </div>
-                        
+
                         <div className="bg-white rounded-2xl shadow-lg p-6 text-center border border-verdeLima/10 hover:shadow-xl transition-shadow duration-300">
                             <div className="w-16 h-16 rounded-full bg-verdeLima/30 flex items-center justify-center mx-auto mb-4">
                                 <span className="text-2xl">💼</span>
@@ -576,7 +634,7 @@ const TalentoHumano: React.FC = () => {
                             <h4 className="font-bold text-verdeOscuro mb-2">Profesionalismo</h4>
                             <p className="text-sm text-grisOscuro">Excelencia técnica y ética en cada servicio que ofrecemos.</p>
                         </div>
-                        
+
                         <div className="bg-white rounded-2xl shadow-lg p-6 text-center border border-verdeLima/10 hover:shadow-xl transition-shadow duration-300">
                             <div className="w-16 h-16 rounded-full bg-azul/20 flex items-center justify-center mx-auto mb-4">
                                 <span className="text-2xl">❤️</span>
@@ -584,7 +642,7 @@ const TalentoHumano: React.FC = () => {
                             <h4 className="font-bold text-verdeOscuro mb-2">Humanización</h4>
                             <p className="text-sm text-grisOscuro">Atención cálida y humana en cada interacción con nuestros usuarios.</p>
                         </div>
-                        
+
                         <div className="bg-white rounded-2xl shadow-lg p-6 text-center border border-verdeLima/10 hover:shadow-xl transition-shadow duration-300">
                             <div className="w-16 h-16 rounded-full bg-acento/30 flex items-center justify-center mx-auto mb-4">
                                 <span className="text-2xl">🌟</span>
@@ -600,7 +658,7 @@ const TalentoHumano: React.FC = () => {
                     <div className="flex-1 bg-gradient-to-r from-verdeLima/30 to-azul-light/30 rounded-2xl p-6 shadow-lg flex flex-col items-center text-center border border-verdeLima/20">
                         <h4 className="font-bold text-xl mb-3 text-verdeOscuro">¡Únete a Nuestro Equipo!</h4>
                         <p className="mb-4 text-grisOscuro">Buscamos profesionales comprometidos con la excelencia en salud. Postúlate a nuestras convocatorias activas.</p>
-                        <button 
+                        <button
                             onClick={() => setShowConvocatoriaForm(true)}
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-azul to-verdeOscuro hover:from-verdeOscuro hover:to-azul text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
                         >
@@ -618,255 +676,254 @@ const TalentoHumano: React.FC = () => {
                     <span>¿Tienes dudas sobre talento humano? Escribe a <a href="mailto:gestionhumana@redmedicronips.com.co" className="underline text-azul">gestionhumana@redmedicronips.com.co</a></span>
                 </div>
 
-            {/* Modal de Formulario de Convocatoria */}
-            {showConvocatoriaForm && (
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[90] p-4 talent-modal">
-                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-                        {/* Header del modal */}
-                        <div className="bg-gradient-to-r from-azul to-verdeOscuro text-white p-6 rounded-t-2xl">
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <h3 className="text-2xl font-bold">Postulación Laboral</h3>
-                                    <p className="text-white/80 mt-1">Red Medicron IPS - Únete a nuestro equipo</p>
-                                </div>
-                                <button
-                                    onClick={() => setShowConvocatoriaForm(false)}
-                                    className="text-white hover:text-red-200 text-2xl font-bold transition-colors"
-                                >
-                                    ×
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Contenido del formulario */}
-                        <form onSubmit={handleSubmitConvocatoria} className="p-6">
-                            {/* Información Personal */}
-                            <div className="mb-6">
-                                <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
-                                    <FaUserTie className="text-azul" />
-                                    Información Personal
-                                </h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Modal de Formulario de Convocatoria */}
+                {showConvocatoriaForm && (
+                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[90] p-4 talent-modal">
+                        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+                            {/* Header del modal */}
+                            <div className="bg-gradient-to-r from-azul to-verdeOscuro text-white p-6 rounded-t-2xl">
+                                <div className="flex justify-between items-center">
                                     <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Nombre *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="nombre"
-                                            value={formData.nombre}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="Tu nombre"
-                                            required
-                                        />
+                                        <h3 className="text-2xl font-bold">Postulación Laboral</h3>
+                                        <p className="text-white/80 mt-1">Red Medicron IPS - Únete a nuestro equipo</p>
                                     </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Apellido *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="apellido"
-                                            value={formData.apellido}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="Tu apellido"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Email *
-                                        </label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="tu@email.com"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Teléfono *
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            name="telefono"
-                                            value={formData.telefono}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="3001234567"
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Tipo de Documento *
-                                        </label>
-                                        <select
-                                            name="tipoDocumento"
-                                            value={formData.tipoDocumento}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                        >
-                                            <option value="cedula">Cédula de Ciudadanía</option>
-                                            <option value="cedula_extranjeria">Cédula de Extranjería</option>
-                                            <option value="pasaporte">Pasaporte</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Número de Documento *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="numeroDocumento"
-                                            value={formData.numeroDocumento}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="Número de documento"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Información Profesional */}
-                            <div className="mb-6">
-                                <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
-                                    <FaAward className="text-azul" />
-                                    Información Profesional
-                                </h4>
-                                <div className="grid grid-cols-1 gap-4">
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Cargo al que Aspira *
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="cargoAspira"
-                                            value={formData.cargoAspira}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                            placeholder="Ej: Médico General, Enfermero, Administrativo..."
-                                            required
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Nivel Educativo
-                                        </label>
-                                        <select
-                                            name="nivelEducativo"
-                                            value={formData.nivelEducativo}
-                                            onChange={handleInputChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
-                                        >
-                                            <option value="">Selecciona tu nivel educativo</option>
-                                            <option value="bachiller">Bachiller</option>
-                                            <option value="tecnico">Técnico</option>
-                                            <option value="tecnologo">Tecnólogo</option>
-                                            <option value="universitario">Universitario</option>
-                                            <option value="especializacion">Especialización</option>
-                                            <option value="maestria">Maestría</option>
-                                            <option value="doctorado">Doctorado</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-grisOscuro mb-2">
-                                            Experiencia Laboral
-                                        </label>
-                                        <textarea
-                                            name="experiencia"
-                                            value={formData.experiencia}
-                                            onChange={handleInputChange}
-                                            rows={3}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all resize-none"
-                                            placeholder="Describe brevemente tu experiencia laboral relevante..."
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Adjuntar Hoja de Vida */}
-                            <div className="mb-6">
-                                <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
-                                    <FaFileUpload className="text-azul" />
-                                    Hoja de Vida
-                                </h4>
-                                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-azul transition-colors">
-                                    <input
-                                        type="file"
-                                        accept=".pdf"
-                                        onChange={handleFileChange}
-                                        className="hidden"
-                                        id="archivo-cv"
-                                        required
-                                    />
-                                    <label
-                                        htmlFor="archivo-cv"
-                                        className="cursor-pointer flex flex-col items-center gap-2"
+                                    <button
+                                        onClick={() => setShowConvocatoriaForm(false)}
+                                        className="text-white hover:text-red-200 text-2xl font-bold transition-colors"
                                     >
-                                        <FaFileUpload className="text-3xl text-azul" />
-                                        <span className="text-grisOscuro">
-                                            {formData.archivo ? formData.archivo.name : 'Haz clic para seleccionar tu CV en PDF'}
-                                        </span>
-                                        <span className="text-sm text-gray-400">Máximo 10MB - Solo archivos PDF</span>
-                                    </label>
+                                        ×
+                                    </button>
                                 </div>
                             </div>
 
-                            {/* Estado del formulario */}
-                            {formStatus.type !== 'idle' && (
-                                <div className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
-                                    formStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
-                                    formStatus.type === 'error' ? 'bg-red-50 text-red-700 border border-red-200' :
-                                    'bg-blue-50 text-blue-700 border border-blue-200'
-                                }`}>
-                                    {formStatus.type === 'success' && <FaCheckCircle className="text-green-500" />}
-                                    {formStatus.type === 'error' && <FaExclamationTriangle className="text-red-500" />}
-                                    {formStatus.type === 'loading' && <ButtonSpinner size="sm" color="primary" />}
-                                    <span>{formStatus.message}</span>
+                            {/* Contenido del formulario */}
+                            <form onSubmit={handleSubmitConvocatoria} className="p-6">
+                                {/* Información Personal */}
+                                <div className="mb-6">
+                                    <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
+                                        <FaUserTie className="text-azul" />
+                                        Información Personal
+                                    </h4>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Nombre *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="nombre"
+                                                value={formData.nombre}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="Tu nombre"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Apellido *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="apellido"
+                                                value={formData.apellido}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="Tu apellido"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Email *
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="tu@email.com"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Teléfono *
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="telefono"
+                                                value={formData.telefono}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="3001234567"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Tipo de Documento *
+                                            </label>
+                                            <select
+                                                name="tipoDocumento"
+                                                value={formData.tipoDocumento}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                            >
+                                                <option value="cedula">Cédula de Ciudadanía</option>
+                                                <option value="cedula_extranjeria">Cédula de Extranjería</option>
+                                                <option value="pasaporte">Pasaporte</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Número de Documento *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="numeroDocumento"
+                                                value={formData.numeroDocumento}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="Número de documento"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
-                            )}
 
-                            {/* Botones de acción */}
-                            <div className="flex gap-4 pt-4 border-t">
-                                <button
-                                    type="button"
-                                    onClick={() => setShowConvocatoriaForm(false)}
-                                    className="flex-1 px-6 py-3 border border-gray-300 text-grisOscuro rounded-lg hover:bg-gray-50 transition-colors"
-                                    disabled={formStatus.type === 'loading'}
-                                >
-                                    Cancelar
-                                </button>
-                                <button
-                                    type="submit"
-                                    disabled={formStatus.type === 'loading'}
-                                    className="flex-1 bg-gradient-to-r from-azul to-verdeOscuro text-white px-6 py-3 rounded-lg hover:from-verdeOscuro hover:to-azul transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                                >
-                                    {formStatus.type === 'loading' ? (
-                                        <>
-                                            <ButtonSpinner size="sm" color="white" />
-                                            Enviando...
-                                        </>
-                                    ) : (
-                                        <>
-                                            <FaPaperPlane />
-                                            Enviar Postulación
-                                        </>
-                                    )}
-                                </button>
-                            </div>
-                        </form>
+                                {/* Información Profesional */}
+                                <div className="mb-6">
+                                    <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
+                                        <FaAward className="text-azul" />
+                                        Información Profesional
+                                    </h4>
+                                    <div className="grid grid-cols-1 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Cargo al que Aspira *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="cargoAspira"
+                                                value={formData.cargoAspira}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                                placeholder="Ej: Médico General, Enfermero, Administrativo..."
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Nivel Educativo
+                                            </label>
+                                            <select
+                                                name="nivelEducativo"
+                                                value={formData.nivelEducativo}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                                            >
+                                                <option value="">Selecciona tu nivel educativo</option>
+                                                <option value="bachiller">Bachiller</option>
+                                                <option value="tecnico">Técnico</option>
+                                                <option value="tecnologo">Tecnólogo</option>
+                                                <option value="universitario">Universitario</option>
+                                                <option value="especializacion">Especialización</option>
+                                                <option value="maestria">Maestría</option>
+                                                <option value="doctorado">Doctorado</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-grisOscuro mb-2">
+                                                Experiencia Laboral
+                                            </label>
+                                            <textarea
+                                                name="experiencia"
+                                                value={formData.experiencia}
+                                                onChange={handleInputChange}
+                                                rows={3}
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent transition-all resize-none"
+                                                placeholder="Describe brevemente tu experiencia laboral relevante..."
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Adjuntar Hoja de Vida */}
+                                <div className="mb-6">
+                                    <h4 className="text-lg font-semibold text-verdeOscuro mb-4 flex items-center gap-2">
+                                        <FaFileUpload className="text-azul" />
+                                        Hoja de Vida
+                                    </h4>
+                                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-azul transition-colors">
+                                        <input
+                                            type="file"
+                                            accept=".pdf"
+                                            onChange={handleFileChange}
+                                            className="hidden"
+                                            id="archivo-cv"
+                                            required
+                                        />
+                                        <label
+                                            htmlFor="archivo-cv"
+                                            className="cursor-pointer flex flex-col items-center gap-2"
+                                        >
+                                            <FaFileUpload className="text-3xl text-azul" />
+                                            <span className="text-grisOscuro">
+                                                {formData.archivo ? formData.archivo.name : 'Haz clic para seleccionar tu CV en PDF'}
+                                            </span>
+                                            <span className="text-sm text-gray-400">Máximo 10MB - Solo archivos PDF</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                {/* Estado del formulario */}
+                                {formStatus.type !== 'idle' && (
+                                    <div className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${formStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
+                                            formStatus.type === 'error' ? 'bg-red-50 text-red-700 border border-red-200' :
+                                                'bg-blue-50 text-blue-700 border border-blue-200'
+                                        }`}>
+                                        {formStatus.type === 'success' && <FaCheckCircle className="text-green-500" />}
+                                        {formStatus.type === 'error' && <FaExclamationTriangle className="text-red-500" />}
+                                        {formStatus.type === 'loading' && <ButtonSpinner size="sm" color="primary" />}
+                                        <span>{formStatus.message}</span>
+                                    </div>
+                                )}
+
+                                {/* Botones de acción */}
+                                <div className="flex gap-4 pt-4 border-t">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowConvocatoriaForm(false)}
+                                        className="flex-1 px-6 py-3 border border-gray-300 text-grisOscuro rounded-lg hover:bg-gray-50 transition-colors"
+                                        disabled={formStatus.type === 'loading'}
+                                    >
+                                        Cancelar
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        disabled={formStatus.type === 'loading'}
+                                        className="flex-1 bg-gradient-to-r from-azul to-verdeOscuro text-white px-6 py-3 rounded-lg hover:from-verdeOscuro hover:to-azul transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    >
+                                        {formStatus.type === 'loading' ? (
+                                            <>
+                                                <ButtonSpinner size="sm" color="white" />
+                                                Enviando...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <FaPaperPlane />
+                                                Enviar Postulación
+                                            </>
+                                        )}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            )}
-        </section>
+                )}
+            </section>
         </>
     );
 };
