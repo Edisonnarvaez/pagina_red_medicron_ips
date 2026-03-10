@@ -26,12 +26,12 @@ const Asamblea: React.FC = () => {
                     convocatorias, decisiones y documentos relacionados con las asambleas ordinarias y extraordinarias.
                 </p>
 
-                {/* Asamblea General 2025 */}
+                {/* Asamblea General 2026 */}
                 <div className="mb-12 w-full animate-fade-in">
                     <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10">
                         <div className="text-center mb-6">
-                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Asamblea General Ordinaria 2025</h3>
-                            <p className="text-sm text-gray-600">Documentación completa de la asamblea del año 2025</p>
+                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Asamblea General Ordinaria 2026</h3>
+                            <p className="text-sm text-gray-600">Documentación completa de la asamblea del año 2026</p>
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -42,7 +42,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-azul">Convocatoria</h4>
                                 <p className="text-sm text-gray-600 mb-4">Documentos de convocatoria oficial y agenda de la asamblea</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
+                                {/*<div className="text-xs text-gray-500">Incluido en registros web 2026</div>*/}
                             </div>
 
                             {/* Actas y Decisiones */}
@@ -52,7 +52,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-verdeOscuro">Actas y Decisiones</h4>
                                 <p className="text-sm text-gray-600 mb-4">Registro oficial de las decisiones tomadas en la asamblea</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
+                                {/*<div className="text-xs text-gray-500">Incluido en registros web 2026</div>*/}
                             </div>
 
                             {/* Participación */}
@@ -62,7 +62,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-verdeLima">Participación</h4>
                                 <p className="text-sm text-gray-600 mb-4">Registro de asistencia y participación de asociados</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
+                                {/*<div className="text-xs text-gray-500">Incluido en registros web 2026</div>*/}
                             </div>
                         </div>
 
