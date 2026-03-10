@@ -131,7 +131,7 @@ const Asamblea: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center p-3 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors text-sm"
                                 >
-                                    Acceder a Registros Web 2024
+                                    Acceder a Registros Web 2025
                                 </a>
                                 <a 
                                     href="https://drive.google.com/file/d/18Bnq6SxUL9HfsH39hSXsIYdeayElo5r9/view?usp=drive_link" 
@@ -139,7 +139,7 @@ const Asamblea: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center p-3 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors text-sm"
                                 >
-                                    Acceder a Registros Web 2023
+                                    Acceder a Registros Web 2024
                                 </a>
                             </div>
                         </div>
