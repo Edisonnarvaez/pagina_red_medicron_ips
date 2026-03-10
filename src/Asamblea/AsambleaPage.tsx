@@ -26,12 +26,12 @@ const Asamblea: React.FC = () => {
                     convocatorias, decisiones y documentos relacionados con las asambleas ordinarias y extraordinarias.
                 </p>
 
-                {/* Asamblea General 2024 */}
+                {/* Asamblea General 2025 */}
                 <div className="mb-12 w-full animate-fade-in">
                     <div className="bg-white/90 rounded-2xl shadow-lg p-8 border border-verdeLima/10">
                         <div className="text-center mb-6">
-                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Asamblea General Ordinaria 2024</h3>
-                            <p className="text-sm text-gray-600">Documentación completa de la asamblea del año 2024</p>
+                            <h3 className="text-2xl font-bold text-verdeOscuro mb-2">Asamblea General Ordinaria 2025</h3>
+                            <p className="text-sm text-gray-600">Documentación completa de la asamblea del año 2025</p>
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -42,7 +42,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-azul">Convocatoria</h4>
                                 <p className="text-sm text-gray-600 mb-4">Documentos de convocatoria oficial y agenda de la asamblea</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2024</div>
+                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
                             </div>
 
                             {/* Actas y Decisiones */}
@@ -52,7 +52,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-verdeOscuro">Actas y Decisiones</h4>
                                 <p className="text-sm text-gray-600 mb-4">Registro oficial de las decisiones tomadas en la asamblea</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2024</div>
+                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
                             </div>
 
                             {/* Participación */}
@@ -62,7 +62,7 @@ const Asamblea: React.FC = () => {
                                 </div>
                                 <h4 className="font-bold text-lg mb-2 text-verdeLima">Participación</h4>
                                 <p className="text-sm text-gray-600 mb-4">Registro de asistencia y participación de asociados</p>
-                                <div className="text-xs text-gray-500">Incluido en registros web 2024</div>
+                                <div className="text-xs text-gray-500">Incluido en registros web 2025</div>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@ const Asamblea: React.FC = () => {
                         <div className="bg-gradient-to-r from-verdeOscuro/10 to-azul-light/10 rounded-xl p-6">
                             <h4 className="font-bold text-lg mb-4 text-center text-verdeOscuro">📁 Acceso a Documentos Completos</h4>
                             <div className="flex flex-col md:flex-row gap-4 justify-center">
-                                <a 
+                                {/* `<a 
                                     href="https://drive.google.com/file/d/1KssY29Mv035opypPtfzgqp4UaL1hq956/view?usp=drive_link" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
@@ -85,6 +85,24 @@ const Asamblea: React.FC = () => {
                                 >
                                     <span className="mr-2">📊</span>
                                     Ver Estados Financieros 2024
+                                </a>` */}
+                                <a 
+                                    href="https://drive.google.com/file/d/1u1wKmp4HfvwbBgd3hv6xTdFJ4vfZ1-TB/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer" 
+                                    className="flex items-center justify-center p-4 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors font-medium"
+                                >
+                                    <span className="mr-2">📄</span>
+                                    ACUERDO No. 59 convoca asamblea
+                                </a>
+                                <a 
+                                    href="https://drive.google.com/file/d/180R7iGrXAnkp4DUXNJiZn0KR8xEe9n3Z/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center p-4 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors font-medium"
+                                >
+                                    <span className="mr-2">📄</span>
+                                    CERTIFICACION ASOCAIDOS HABILES 2026
                                 </a>
                             </div>
                         </div>
@@ -99,7 +117,7 @@ const Asamblea: React.FC = () => {
                         {/* Asamblea 2023 */}
                         <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
                             <div className="text-center mb-4">
-                                <h4 className="text-xl font-bold text-verdeOscuro">Asamblea 2023</h4>
+                                <h4 className="text-xl font-bold text-verdeOscuro">Asambleas anteriores</h4>
                                 <p className="text-sm text-gray-600">Documentación histórica</p>
                             </div>
                             <div className="space-y-3">
@@ -107,6 +125,14 @@ const Asamblea: React.FC = () => {
                                     <span className="text-sm font-medium">Documentos completos</span>
                                     <span className="text-xs text-gray-600">En registros web</span>
                                 </div>
+                                <a 
+                                    href="https://drive.google.com/file/d/1KssY29Mv035opypPtfzgqp4UaL1hq956/view?usp=drive_link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="w-full flex items-center justify-center p-3 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors text-sm"
+                                >
+                                    Acceder a Registros Web 2024
+                                </a>
                                 <a 
                                     href="https://drive.google.com/file/d/18Bnq6SxUL9HfsH39hSXsIYdeayElo5r9/view?usp=drive_link" 
                                     target="_blank" 
@@ -129,7 +155,7 @@ const Asamblea: React.FC = () => {
                                     <span className="mr-3">📅</span>
                                     <div>
                                         <div className="font-medium">Asamblea Ordinaria 2025</div>
-                                        <div className="text-xs text-gray-600">Fecha por definir</div>
+                                        <div className="text-xs text-gray-600">26 DE MARZO DE 2026</div>
                                     </div>
                                 </div>
                                 <div className="flex items-center p-3 bg-white/50 rounded-lg">
