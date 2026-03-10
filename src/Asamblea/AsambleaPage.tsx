@@ -102,7 +102,7 @@ const Asamblea: React.FC = () => {
                                     className="flex items-center justify-center p-4 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors font-medium"
                                 >
                                     <span className="mr-2">📄</span>
-                                    CERTIFICACION ASOCAIDOS HABILES 2026
+                                    CERTIFICACION ASOCIADOS HABILES 2026
                                 </a>
                             </div>
                         </div>
