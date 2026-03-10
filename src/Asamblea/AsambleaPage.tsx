@@ -154,7 +154,7 @@ const Asamblea: React.FC = () => {
                                 <div className="flex items-center p-3 bg-white/50 rounded-lg">
                                     <span className="mr-3">📅</span>
                                     <div>
-                                        <div className="font-medium">Asamblea Ordinaria 2025</div>
+                                        <div className="font-medium">Asamblea Ordinaria 2026</div>
                                         <div className="text-xs text-gray-600">26 DE MARZO DE 2026</div>
                                     </div>
                                 </div>
