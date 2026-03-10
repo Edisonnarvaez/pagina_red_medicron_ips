@@ -28,6 +28,7 @@ import NotFound from './NotFound/NotFoundPage';
 import ModalPortafolio from './Inicio/ModalInicial';
 import WhatsAppFloatButton from './components/WhatsAppFloat/WhatsAppFloatButton';
 import SkipLinks from './components/SkipLinks';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [showPortafolioModal, setShowPortafolioModal] = useState(false);
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       {/* Skip Links para navegación accesible - Criterio F matriz ITA */}
       <SkipLinks />
       
