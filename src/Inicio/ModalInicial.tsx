@@ -45,6 +45,7 @@ interface FormStatus {
 export default function ModalPortafolio({ showPortafolioModal, setShowPortafolioModal }: ModalPortafolioProps) {
     const [currentView, setCurrentView] = useState(0); // 0 = convocatoria, 1 = portafolio
     const [showConvocatoriaForm, setShowConvocatoriaForm] = useState(false);
+    const convocatoriaPdfUrl = "/convocatoria-revisor-fiscal.pdf";
 
     const [formData, setFormData] = useState<FormDataConvocatoria>({
         nombre: "",
@@ -456,7 +457,7 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         <button
                                             type="button"
                                             onClick={() => setShowConvocatoriaForm(true)}
@@ -472,6 +473,22 @@ export default function ModalPortafolio({ showPortafolioModal, setShowPortafolio
                                                 </p>
                                             </div>
                                         </button>
+
+                                        <a
+                                            href={convocatoriaPdfUrl}
+                                            download
+                                            className="group flex items-center gap-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 hover:border-emerald-300 text-emerald-700 rounded-2xl px-6 py-4 transition-all duration-300 hover:-translate-y-0.5"
+                                        >
+                                            <div className="w-10 h-10 rounded-xl bg-white border border-emerald-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                                                <FaDownload size={13} className="text-emerald-600" />
+                                            </div>
+                                            <div className="min-w-0 text-left">
+                                                <p className="font-bold text-sm leading-tight">Descargar convocatoria</p>
+                                                <p className="text-emerald-600/80 text-xs truncate mt-0.5">
+                                                    PDF oficial de la convocatoria
+                                                </p>
+                                            </div>
+                                        </a>
 
                                         <Link
                                             to="/talento-humano"
