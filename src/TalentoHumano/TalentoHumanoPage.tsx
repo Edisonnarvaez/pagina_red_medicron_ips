@@ -11,7 +11,8 @@ import {
     FaExclamationTriangle,
     FaCalendarAlt,
     FaEnvelope,
-    FaFileAlt
+    FaFileAlt,
+    FaDownload
 } from 'react-icons/fa';
 import { ButtonSpinner } from '../components/Loading';
 import { SEOHelmet } from '../components/SEO';
@@ -38,6 +39,7 @@ interface FormStatus {
 const TalentoHumano: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showConvocatoriaForm, setShowConvocatoriaForm] = useState(false);
+    const convocatoriaPdfUrl = '/convocatoria-revisor-fiscal.pdf';
 
     const [formData, setFormData] = useState<FormDataConvocatoria>({
         nombre: '',
@@ -486,6 +488,15 @@ const TalentoHumano: React.FC = () => {
                                             <FaPaperPlane size={14} />
                                             Postularme ahora
                                         </button>
+
+                                        <a
+                                            href={convocatoriaPdfUrl}
+                                            download
+                                            className="w-full flex items-center justify-center gap-2 bg-emerald-400/15 border border-emerald-300/35 text-emerald-100 hover:text-white hover:bg-emerald-400/20 font-semibold py-3 px-6 rounded-2xl text-xs transition-all"
+                                        >
+                                            <FaDownload size={12} />
+                                            Descargar convocatoria
+                                        </a>
 
                                         <a
                                             href="mailto:jefaturagestionhumana@redmedicronips.com.co"
