@@ -164,7 +164,7 @@ const Inicio: React.FC = () => {
   ];
 
   /* ticker */
-  const ticker = ['8 Sedes en Nariño','UCI Tuquerres','Atención 24/7','Nefroprotección','Odontología','Terapias','Laboratorio','+15 Especialidades','Programa FOMAG','Telemedicina'];
+  const ticker = ['8 Sedes en Nariño','UCI Tuquerres','Atención 24/7','Nefroprotección','Odontología','Terapias','Laboratorio','+15 Especialidades','Telemedicina'];
 
   return (
     <>

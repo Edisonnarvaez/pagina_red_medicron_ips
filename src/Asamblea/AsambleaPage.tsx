@@ -104,6 +104,24 @@ const Asamblea: React.FC = () => {
                                     <span className="mr-2">📄</span>
                                     CERTIFICACION ASOCIADOS HABILES 2026
                                 </a>
+                                <a 
+                                    href="https://drive.google.com/file/d/1aDTWzmPF7JIKQfjSr9iNe3oC5vVRGPBa/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center p-4 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors font-medium"
+                                >
+                                    <span className="mr-2">📄</span>
+                                    Convocatoria Asamblea Diario del Sur
+                                </a>
+                                <a 
+                                    href="https://drive.google.com/drive/folders/1zQaTcwpZp94uhGJu44Z1QCyfw48U4EAy?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center p-4 bg-azul text-white rounded-lg hover:bg-azul/80 transition-colors font-medium"
+                                >
+                                    <span className="mr-2">📁</span>
+                                    Carpeta de Documentos de la Asamblea
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -217,3 +235,5 @@ const Asamblea: React.FC = () => {
 };
 
 export default Asamblea;
+
+
