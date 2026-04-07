@@ -28,6 +28,24 @@ const Contabilidad: React.FC = () => {
                 <div className="mb-12 w-full animate-fade-in">
                     <h3 className="text-2xl font-bold mb-6 text-verdeOscuro text-center">Estados Financieros por Año</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Estados Financieros 2025 */}
+                        <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
+                            <div className="text-center mb-4">
+                                <h4 className="text-xl font-bold text-verdeOscuro">2025</h4>
+                                <p className="text-sm text-gray-600">Estados Financieros Auditados</p>
+                            </div>
+                            <div className="space-y-3">
+                                <a 
+                                    href="https://drive.google.com/file/d/1rB74PHDmtJiMcn8JJ7VDSSuLBIvM3fKX/view?usp=drive_link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-between p-3 bg-verdeLima/10 rounded-lg hover:bg-verdeLima/20 transition-colors"
+                                >
+                                    <span className="text-sm font-medium">Estados Financieros</span>
+                                    <span className="text-azul text-xs">Ver PDF</span>
+                                </a>
+                            </div>
+                        </div>
                         {/* Estados Financieros 2024 */}
                         <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
                             <div className="text-center mb-4">
@@ -67,7 +85,7 @@ const Contabilidad: React.FC = () => {
                         </div>
 
                         {/* Estados Financieros 2022 */}
-                        <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
+                        {/* <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
                             <div className="text-center mb-4">
                                 <h4 className="text-xl font-bold text-verdeOscuro">2022</h4>
                                 <p className="text-sm text-gray-600">Estados Financieros Auditados</p>
@@ -83,7 +101,7 @@ const Contabilidad: React.FC = () => {
                                     <span className="text-azul text-xs">Ver PDF</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
