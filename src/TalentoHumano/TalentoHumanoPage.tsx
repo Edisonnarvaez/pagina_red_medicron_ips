@@ -39,7 +39,7 @@ interface FormStatus {
 const TalentoHumano: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showConvocatoriaForm, setShowConvocatoriaForm] = useState(false);
-    const convocatoriaPdfUrl = '/convocatoria-revisor-fiscal.pdf';
+    const reglamentoPdfUrl = '/dist/RIT RED MEDICRON JUNIO2026 .pdf';
 
     const [formData, setFormData] = useState<FormDataConvocatoria>({
         nombre: '',
@@ -213,18 +213,18 @@ const TalentoHumano: React.FC = () => {
         return <FaAward className="text-gray-500" />;
     };
 
-    const requisitosConvocatoria = [
-        "Contador Público con tarjeta profesional vigente",
-        "Mínimo 3 años de experiencia en sector salud (IPS / EPS / cooperativas)",
-        "Conocimiento en NIIF, Normativa Supersolidaria y Supersalud",
-        "Gestión de riesgos (SARLAFT / SAGRILAFT)",
+    const puntosClaveReglamento = [
+        "Actualización integral para la vigencia 2026",
+        "Jornada máxima semanal: 44 horas hasta el 14 de julio de 2026",
+        "Reducción a 42 horas semanales desde el 15 de julio de 2026",
+        "Incluye teletrabajo, trabajo en casa, permisos, sanciones y debido proceso",
     ];
 
-    const documentosConvocatoria = [
-        "Hoja de vida con soportes",
-        "Tarjeta profesional + certificado vigente",
-        "Antecedentes disciplinarios, fiscales, judiciales y REDAM",
-        "Propuesta técnica y económica",
+    const alcanceReglamento = [
+        "Aplica a todos los colaboradores de RED MEDICRON IPS",
+        "Documento institucional DI-DIR-005, versión 01",
+        "65 páginas con capítulos sobre jornada, licencias y SG-SST",
+        "Vigente desde el día siguiente a su publicación",
     ];
 
     return (
@@ -426,42 +426,42 @@ const TalentoHumano: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="w-full mb-14" id="convocatoria">
+                    <div className="w-full mb-14" id="reglamento">
                         <div className="relative rounded-3xl overflow-hidden shadow-xl mb-6">
-                            <div className="relative w-full bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 p-6 sm:p-8 overflow-hidden">
-                                <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-blue-700/30 pointer-events-none" />
-                                <div className="absolute bottom-0 left-1/3 w-48 h-48 rounded-full bg-blue-600/15 blur-2xl pointer-events-none" />
+                            <div className="relative w-full bg-gradient-to-br from-emerald-900 via-teal-800 to-slate-950 p-6 sm:p-8 overflow-hidden">
+                                <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-emerald-700/30 pointer-events-none" />
+                                <div className="absolute bottom-0 left-1/3 w-48 h-48 rounded-full bg-emerald-500/15 blur-2xl pointer-events-none" />
 
                                 <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                                     <div className="flex-1">
                                         <div className="flex flex-wrap items-center gap-3 mb-5">
-                                            <span className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+                                            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-emerald-200 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
                                                 <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block pulse-dot" />
-                                                Convocatoria activa
+                                                Documento institucional
                                             </span>
                                             <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-white/60 text-xs px-3 py-1.5 rounded-full">
-                                                RED MEDICRON IPS · 2026
+                                                DI-DIR-005 · Versión 01
                                             </span>
                                         </div>
 
                                         <h2 className="text-4xl sm:text-5xl font-black text-white leading-none tracking-tight mb-1">
-                                            REVISOR
+                                            REGLAMENTO
                                         </h2>
-                                        <h2 className="text-3xl sm:text-4xl font-black text-blue-300 leading-none tracking-tight mb-4">
-                                            FISCAL
+                                        <h2 className="text-3xl sm:text-4xl font-black text-emerald-300 leading-none tracking-tight mb-4">
+                                            INTERNO DE TRABAJO
                                         </h2>
 
-                                        <div className="w-12 h-0.5 bg-blue-400 mb-4" />
+                                        <div className="w-12 h-0.5 bg-emerald-400 mb-4" />
 
                                         <p className="text-white/70 text-sm sm:text-base font-medium mb-5">
-                                            Principal y Suplente · Periodo Mar 2026 – Mar 2029
+                                            Normas de jornada, licencias, permisos, seguridad y debido proceso laboral.
                                         </p>
 
                                         <div className="flex flex-wrap gap-2">
                                             {[
-                                                { icon: "📅", label: "Elección 26 Mar 2026" },
-                                                { icon: "💼", label: "Prestación de servicios" },
-                                                { icon: "💰", label: "$3.600.000 COP / mes" },
+                                                { icon: "📄", label: "65 páginas" },
+                                                { icon: "🕒", label: "44 → 42 horas" },
+                                                { icon: "🛡️", label: "SG-SST y convivencia" },
                                             ].map((c, i) => (
                                                 <span
                                                     key={i}
@@ -474,28 +474,30 @@ const TalentoHumano: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-4 min-w-[220px]">
-                                        <div className="bg-amber-400/15 border border-amber-400/35 rounded-2xl p-4 text-center">
-                                            <FaCalendarAlt className="text-amber-400 mx-auto mb-2" size={20} />
-                                            <p className="text-amber-300/80 text-xs font-bold uppercase tracking-wider mb-1">Fecha límite</p>
-                                            <p className="text-white font-extrabold text-lg leading-tight">24 de marzo</p>
-                                            <p className="text-white/60 text-sm">2026 · 5:00 PM</p>
+                                        <div className="bg-emerald-400/15 border border-emerald-400/35 rounded-2xl p-4 text-center">
+                                            <FaCalendarAlt className="text-emerald-300 mx-auto mb-2" size={20} />
+                                            <p className="text-emerald-200/80 text-xs font-bold uppercase tracking-wider mb-1">Vigencia</p>
+                                            <p className="text-white font-extrabold text-lg leading-tight">2026</p>
+                                            <p className="text-white/60 text-sm">Desde su publicación</p>
                                         </div>
 
-                                        <button
-                                            onClick={() => setShowConvocatoriaForm(true)}
-                                            className="conv-card-hover w-full flex items-center justify-center gap-2 bg-white text-blue-700 font-extrabold py-3 px-5 rounded-2xl text-sm shadow-lg hover:bg-blue-50 transition-colors"
+                                        <a
+                                            href={reglamentoPdfUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="conv-card-hover w-full flex items-center justify-center gap-2 bg-white text-emerald-700 font-extrabold py-3 px-5 rounded-2xl text-sm shadow-lg hover:bg-emerald-50 transition-colors"
                                         >
                                             <FaPaperPlane size={14} />
-                                            Postularme ahora
-                                        </button>
+                                            Abrir reglamento
+                                        </a>
 
                                         <a
-                                            href={convocatoriaPdfUrl}
+                                            href={reglamentoPdfUrl}
                                             download
-                                            className="w-full flex items-center justify-center gap-2 bg-emerald-400/15 border border-emerald-300/35 text-emerald-100 hover:text-white hover:bg-emerald-400/20 font-semibold py-3 px-6 rounded-2xl text-xs transition-all"
+                                            className="w-full flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white/80 hover:text-white hover:bg-white/15 font-semibold py-3 px-6 rounded-2xl text-xs transition-all"
                                         >
                                             <FaDownload size={12} />
-                                            Descargar convocatoria
+                                            Descargar PDF
                                         </a>
 
                                         <a
@@ -503,7 +505,7 @@ const TalentoHumano: React.FC = () => {
                                             className="w-full flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white/80 hover:text-white hover:bg-white/15 font-semibold py-3 px-6 rounded-2xl text-xs transition-all"
                                         >
                                             <FaEnvelope size={12} />
-                                            Enviar por correo
+                                            Solicitar aclaraciones
                                         </a>
                                     </div>
                                 </div>
@@ -511,9 +513,9 @@ const TalentoHumano: React.FC = () => {
 
                             <div className="grid grid-cols-3 divide-x divide-gray-100 border-b border-gray-100">
                                 {[
-                                    { icon: "📅", value: "26 Mar", label: "Fecha de elección" },
-                                    { icon: "💰", value: "$3.6M", label: "Honorarios/mes" },
-                                    { icon: "🗓️", value: "3 años", label: "Duración del cargo" },
+                                    { icon: "📄", value: "DI-DIR-005", label: "Código" },
+                                    { icon: "⏱️", value: "44 h", label: "Jornada actual" },
+                                    { icon: "✅", value: "65 págs.", label: "Documento" },
                                 ].map((s, i) => (
                                     <div key={i} className="bg-white py-5 px-3 flex flex-col items-center text-center gap-1.5">
                                         <span className="text-2xl">{s.icon}</span>
@@ -529,10 +531,10 @@ const TalentoHumano: React.FC = () => {
                                         <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow flex-shrink-0">
                                             <FaCheckCircle className="text-white" size={16} />
                                         </div>
-                                        <h4 className="font-bold text-gray-800 text-base">Requisitos principales</h4>
+                                        <h4 className="font-bold text-gray-800 text-base">Aspectos clave</h4>
                                     </div>
                                     <ul className="space-y-2">
-                                        {requisitosConvocatoria.map((req, i) => (
+                                        {puntosClaveReglamento.map((req, i) => (
                                             <li key={i} className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0 mt-1.5" />
                                                 {req}
@@ -546,10 +548,10 @@ const TalentoHumano: React.FC = () => {
                                         <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shadow flex-shrink-0">
                                             <FaFileAlt className="text-white" size={14} />
                                         </div>
-                                        <h4 className="font-bold text-gray-800 text-base">Documentos requeridos</h4>
+                                        <h4 className="font-bold text-gray-800 text-base">Alcance del documento</h4>
                                     </div>
                                     <ul className="space-y-2">
-                                        {documentosConvocatoria.map((doc, i) => (
+                                        {alcanceReglamento.map((doc, i) => (
                                             <li key={i} className="flex items-start gap-2 text-sm text-gray-600 leading-snug">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 mt-1.5" />
                                                 {doc}
@@ -743,7 +745,7 @@ const TalentoHumano: React.FC = () => {
                                                 value={formData.cargoAspira}
                                                 onChange={handleInputChange}
                                                 className="w-full rounded-xl border border-gray-200 bg-slate-50 px-4 py-3 text-sm text-gray-700 outline-none transition-all placeholder:text-gray-400 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100"
-                                                placeholder="Ej: Revisor Fiscal, Médico General..."
+                                                placeholder="Ej: camb, Médico General..."
                                                 required
                                             />
                                         </div>
