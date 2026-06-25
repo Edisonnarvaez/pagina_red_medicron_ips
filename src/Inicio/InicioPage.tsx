@@ -226,19 +226,45 @@ const Inicio: React.FC = () => {
             </div>
           </div>
 
-          {/* derecha — stats */}
-          <div className="fade-up grid grid-cols-2 gap-4" style={{animationDelay:'.45s'}}>
-            {stats.map((s, i) => (
-              <div key={i}
-                className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-400 cursor-default overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{background:`radial-gradient(circle at 70% 30%,${s.color}1a,transparent 70%)`}} />
-                <s.Icon className="mb-4 transition-transform duration-300 group-hover:scale-110" size={28} style={{color:s.color}} />
-                <div className="font-syne text-3xl font-extrabold text-white mb-1">{s.num}</div>
-                <div className="text-white/50 text-sm">{s.label}</div>
-                <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500 rounded-full" style={{background:s.color}} />
+          {/* aqui empeza el el call center */}
+          <div className="fade-up flex flex-col gap-5" style={{animationDelay:'.45s'}}>
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((s, i) => (
+                <div key={i}
+                  className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-400 cursor-default overflow-hidden">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{background:`radial-gradient(circle at 70% 30%,${s.color}1a,transparent 70%)`}} />
+                  <s.Icon className="mb-4 transition-transform duration-300 group-hover:scale-110" size={28} style={{color:s.color}} />
+                  <div className="font-syne text-3xl font-extrabold text-white mb-1">{s.num}</div>
+                  <div className="text-white/50 text-sm">{s.label}</div>
+                  <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500 rounded-full" style={{background:s.color}} />
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="tel:6027374154"
+              className="group relative overflow-hidden rounded-3xl border border-white/18 bg-gradient-to-r from-white/14 via-[#0057ff]/18 to-white/8 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#3d82ff]/60 hover:bg-white/16 hover:shadow-[0_18px_45px_rgba(0,87,255,.2)]"
+              aria-label="Llamar al nuevo numero de call center 602 737 4154"
+            >
+              <div className="absolute -right-12 -top-16 h-36 w-36 rounded-full bg-[#3d82ff]/24 blur-2xl transition-transform duration-500 group-hover:scale-125" />
+              <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-white text-[#0057ff] shadow-[0_10px_25px_rgba(0,87,255,.22)]">
+                    <FaPhone size={18} />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-bold uppercase tracking-widest text-[#7fb0ff]">Nuevo call center</span>
+                    <span className="mt-1 block font-syne text-2xl font-extrabold leading-none text-white sm:text-3xl">602 737 4154</span>
+                  </span>
+                </div>
+                <span className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-[#0057ff] transition-all duration-300 group-hover:bg-[#0057ff] group-hover:text-white">
+                  Llamar ahora
+                  <FaArrowRight size={11} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
               </div>
-            ))}
+            </a>
+            {/* aqui termina el call center */}
           </div>
         </div>
 
