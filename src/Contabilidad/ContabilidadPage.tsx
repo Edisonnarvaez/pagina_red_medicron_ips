@@ -108,7 +108,40 @@ const Contabilidad: React.FC = () => {
                 {/* Registros Web Completos */}
                 <div className="mb-12 w-full animate-fade-in">
                     <h3 className="text-2xl font-bold mb-6 text-verdeOscuro text-center">Registros Web y Documentación Institucional</h3>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                        {/* Registros Web 2025 */}
+                        <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
+                            <div className="text-center mb-6">
+                                <h4 className="text-xl font-bold text-verdeOscuro mb-2">Registros Web 2025</h4>
+                                <p className="text-sm text-gray-600">Documentación institucional completa</p>
+                            </div>
+                            
+                            <div className="space-y-3 mb-6">
+                                <div className="text-sm font-medium text-gray-700 mb-3">Documentos incluidos:</div>
+                                <ul className="text-xs space-y-1 text-gray-600 mb-4">
+                                    <li>• Informe de Gestion 2025</li>
+                                    <li>• Distribucion de Excedentes 2025</li>
+                                    <li>• Estados Fiancieros 2025</li>
+                                    <li>• Certificacion de Complumiento</li>
+                                    <li>• Cámara de Comercio Enero 2026</li>
+                                    <li>• Certificado Antecedentes Judiciales</li>
+                                    <li>• Estatutos Red Medicron IPS</li>
+                                    <li>• Asamblea General Ordinaria 2025</li>
+                                    <li>• Certificación Cargos Directivos</li>
+                                    <li>• Certificado Memoria Económica 2025</li>
+                                </ul>
+                            </div>
+                            
+                            <a 
+                                href="https://drive.google.com/file/d/12L-dIO3YDGd1hchwdvTr81j9K_XY2y9v/view?usp=drive_link" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="w-full flex items-center justify-center p-4 bg-verdeOscuro text-white rounded-lg hover:bg-verdeOscuro/80 transition-colors font-medium"
+                            >
+                                <span>Descargar Registros Web 2025</span>
+                            </a>
+                        </div>
                         
                         {/* Registros Web 2024 */}
                         <div className="bg-white/90 rounded-2xl shadow-lg p-6 border border-verdeLima/10">
