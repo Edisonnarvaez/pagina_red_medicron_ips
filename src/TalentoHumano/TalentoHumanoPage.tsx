@@ -83,6 +83,7 @@ const TalentoHumano: React.FC = () => {
         { id: 7, nombre: "Nora Lilia Cordoba C.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Nora.png" },
     ];
 
+    
     const funcionariosPerSlide = 3;
     const totalSlides = Math.ceil(funcionarios.length / funcionariosPerSlide);
 
