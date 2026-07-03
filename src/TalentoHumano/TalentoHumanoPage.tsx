@@ -65,7 +65,7 @@ const TalentoHumano: React.FC = () => {
         { id: 6, nombre: "Jefe Dania Granda O.", cargo: "Jefatura de Gestión de Calidad", descripcion: "Supervisa la implementación y mejora continua del sistema de calidad.", foto: "/funcionarios/Jefe_Dania.png", nivel: "gerencial" },
         { id: 7, nombre: "Dra. Sandra Moncayo B.", cargo: "Jefatura Servicios de Salud", descripcion: "Coordina los servicios asistenciales y la atención médica especializada.", foto: "/funcionarios/Dra_Sandra.png", nivel: "gerencial" },
         { id: 8, nombre: "Dra. Carolina Cabrera C.", cargo: "Coordinación Administrativa", descripcion: "Gestiona los procesos administrativos y el soporte operativo institucional.", foto: "/funcionarios/Dra_Carolina.png", nivel: "coordinacion" },
-        { id: 9, nombre: "Ing. Aldemar Santiago Lucano.", cargo: "Coordinación de Facturación y TI", descripcion: "Administra los sistemas tecnológicos y procesos de facturación institucional.", foto: "/funcionarios/Ing_Aldemar.png", nivel: "coordinacion" },
+        { id: 9, nombre: "Ing. Edison Stiven Narvaez.", cargo: "Profesional TI", descripcion: "Administra los sistemas tecnológicos institucionales.", foto: "/funcionarios/Ing_Edison.png", nivel: "coordinacion" },
         { id: 10, nombre: "Dra. Diana Hejeile R.", cargo: "Coordinación Gestión de Talento Humano", descripcion: "Apoya la gestión del personal y desarrollo del capital humano institucional.", foto: "/funcionarios/Dra_Diana.png", nivel: "coordinacion" },
         { id: 11, nombre: "Dra. Nelly Lucia Constain M.", cargo: "Coordinación Contable", descripcion: "Supervisa los procesos contables y el registro financiero institucional.", foto: "/funcionarios/Dra_Nelly.png", nivel: "coordinacion" },
         { id: 12, nombre: "Jefe Lizeth De La Cruz L.", cargo: "Coordinación Crónicos", descripcion: "Coordina los programas de atención para pacientes con enfermedades crónicas.", foto: "/funcionarios/Jefe_Lizeth.png", nivel: "coordinacion" },
@@ -74,12 +74,12 @@ const TalentoHumano: React.FC = () => {
     ];
 
     const miembrosConsejo: Miembro[] = [
-        { id: 1, nombre: "Yuli Cabrera Eraso.", cargo: "Presidente del Consejo de Administración", foto: "/funcionarios/Ing_Yuli.png" },
-        { id: 2, nombre: "Jesus Andres Vallejo C.", cargo: "Secretario del Consejo de Administración", foto: "/funcionarios/Dr_Jesus.png" },
-        { id: 3, nombre: "Carolina Alejandra Cabrera C.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Carolina.png" },
-        { id: 4, nombre: "Ines Graciela Arenas S.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Ines.png" },
+        { id: 1, nombre: "Carolina Alejandra Cabrera C.", cargo: "Presidente del Consejo de Administración", foto: "/funcionarios/Dra_Carolina.png" },
+        { id: 2, nombre: "Brigida Del Rosario Torres Guerrero.", cargo: "Secretaria del Consejo de Administración", foto: "/funcionarios/Dra_Brigida.png" },
+        { id: 3, nombre: "Mercedes Johana Caicedo", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Mercedes.png" },
+        { id: 4, nombre: "Johon Neider Rodriguez Ortega", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dr_Johon.png" },
         { id: 5, nombre: "Luis Ignacio Ortiz A.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Ing_Luis.png" },
-        { id: 6, nombre: "Brigida del Rosario Torres G.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Brigida.png" },
+        { id: 6, nombre: "Erika Patricia Salas González", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Erika.png" },
         { id: 7, nombre: "Nora Lilia Cordoba C.", cargo: "Miembro del Consejo de Administración", foto: "/funcionarios/Dra_Nora.png" },
     ];
 
