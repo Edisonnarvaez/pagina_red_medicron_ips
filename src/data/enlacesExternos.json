@@ -39,15 +39,6 @@
   ],
   "enlacesExternos": [
     {
-      "id": "visor-hc",
-      "nombre": "Visor HC",
-      "url": "http://186.115.218.10/VisorHC/",
-      "descripcion": "Visualizador de historias clínicas para consulta externa",
-      "icono": "👁️",
-      "categoria": "Externo",
-      "tipo": "externo"
-    },
-    {
       "id": "saludips-prueba",
       "nombre": "SaludIPS Prueba",
       "url": "http://201.182.248.51/SaludIPSPrueba/Home/HC",
@@ -62,6 +53,15 @@
       "url": "http://201.182.248.50/SaludIPS/",
       "descripcion": "Sistema principal de gestión de salud",
       "icono": "🏥",
+      "categoria": "Externo",
+      "tipo": "externo"
+    },
+    {
+      "id": "visor-hc",
+      "nombre": "Visor HC",
+      "url": "http://186.115.218.10/VisorHC/",
+      "descripcion": "Visualizador de historias clínicas para consulta externa",
+      "icono": "👁️",
       "categoria": "Externo",
       "tipo": "externo"
     },
