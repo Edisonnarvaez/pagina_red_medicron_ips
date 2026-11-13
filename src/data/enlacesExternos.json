@@ -12,7 +12,7 @@
     {
       "id": "saludips-interno",
       "nombre": "SaludIPS Interno",
-      "url": "http://192.168.59.230/SaludIPS",
+      "url": "http://192.168.59.232/SaludIPS",
       "descripcion": "Sistema interno de HC para el personal autorizado",
       "icono": "🏥",
       "categoria": "Red Interna",
